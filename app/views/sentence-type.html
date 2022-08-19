@@ -1,0 +1,172 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h2 class="govuk-heading-l">Record a lost bed</h2>
+      <p> Record beds that have been lost within your AP estate.</p>
+   
+ <!-- Number of beds lost -->
+
+      {{ govukInput({
+        label: {
+          text: "Number of beds lost"
+        },
+        classes: "govuk-input--width-2",
+        id: "width-2",
+        name: "width-2"
+      }) }}
+
+
+
+ <!-- Rooms lost  -->
+      {{ govukCheckboxes({
+        idPrefix: "rooms",
+        name: "rooms",
+        fieldset: {
+          legend: {
+            text: "Which rooms are out of service??",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "1-1",
+            text: "Room 1 - Bed 1"
+          },
+          {
+            value: "1-2",
+            text: "Room 1 - Bed 2"
+          },
+          {
+            value: "2-1",
+            text: "Room 2 - Bed 1"
+          },
+          {
+            value: "3-1",
+            text: "Room 3 - Bed 1"
+          },
+          {
+            value: "4-1",
+            text: "Room 4 - Bed 1"
+          },
+          {
+            value: "5-1",
+            text: "Room 5 - Bed 1"
+          },
+          {
+            value: "5-2",
+            text: "Room 5 - Bed 2"
+          },
+          {
+            value: "6-1",
+            text: "Room 6 - Bed 1"
+          }
+        ]
+      }) }}      
+
+ <!-- Start date -->
+
+      {{ govukDateInput({
+        id: "start-date",
+        namePrefix: "start-date",
+        fieldset: {
+          legend: {
+            text: "Start date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        }
+      }) }}
+
+ <!-- End date -->
+      {{ govukDateInput({
+        id: "end-date",
+        namePrefix: "end-date",
+        fieldset: {
+          legend: {
+            text: "End date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        }
+      }) }}
+      <br>
+      
+
+      {{ govukRadios({
+        idPrefix: "lost-bed-reason",
+        name: "lost-placement-reason",
+        fieldset: {
+          legend: {
+            text: "What is the reason for marking this bed as lost?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Accident-flood-fire",
+            text: "Accident, flood or fire"
+          },
+          {
+            value: "Damange",
+            text: "Damage by resident"
+          },
+          {
+            value: "doubleroom-risk",
+            text: "Double room with single occupancy (risk)"
+          },
+          {
+            value: "doubleroom-helath",
+            text: "Double room with single occupancy (health)"
+          },
+          {
+            value: "refurbishment",
+            text: "Refurbishment"
+          },
+          {
+            value: "staff-shortage",
+            text: "Staff shortage or illness"
+          },
+          {
+            value: "other",
+            text: "Other"
+          }
+        ]
+      }) }}
+
+      {{ govukTextarea({
+        name: "Additional notes",
+        id: "Notes",
+        label: {
+          text: "Additional notes"
+        }
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
