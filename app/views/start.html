@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Use this service to apply for a placement in an approved premises (AP) on behalf of an individual who'll be on probation.</p>
+      <p>If an individual is leaving prison, you should aim to complete your application <a href=""> 6 months before they are released.</a></p>
+      <p> You can leave and return to your application at any time. Your progress will be saved.</p>
+    
+      {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+        <p><b>You need</b></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>an up to date OASys – we'll use this to pre-fill some of your application</li>
+            <li>the individual’s CRN </li>
+            <li>the oral hearing date, if applicable and if known</li>
+          </ul>
+
+          <p><b>You need to understand:</b></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>eligibility requirements - you'll need to demonstrate why an AP is necessary over other interventions and accommodation options</li>
+              <li>factors impacting which location, type of AP, and type of room will be suitable</li>
+              <li>how you'll prepare for move on after the AP</li>
+            </ul>
+  
+    </div>
+
+   
+  </div>
+{% endblock %}

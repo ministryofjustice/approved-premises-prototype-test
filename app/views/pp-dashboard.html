@@ -1,0 +1,230 @@
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Approved Premises applications</h2>
+
+  {% set applicationsHtml %}
+    <h2 class="govuk-heading-m">Applications</h2>
+      {{ govukTable({
+        head: [
+          {
+            text: "Service user"
+          },
+          {
+            text: "CRN"
+          },
+          {
+            text: "Tier"
+          },
+          {
+            text: "Arrival date"
+          },
+          {
+            text: "Days since application received"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "David Francis"
+            },
+            {
+              text: "D067268"
+            },
+            {
+              text: "A1"
+            },
+            {
+              text: "13 Sep 2022"
+            },
+            {
+              text: "6 days"
+            },
+            {
+              text: "Not started"
+            }
+          ],
+          [
+            {
+              text: "David Francis"
+            },
+            {
+              text: "D067268"
+            },
+            {
+              text: "A1"
+            },
+            {
+              text: "13 Sep 2022"
+            },
+            {
+              text: "6 days"
+            },
+            {
+              text: "Not started"
+            }
+          ],
+          [
+            {
+              text: "David Francis"
+            },
+            {
+              text: "D067268"
+            },
+            {
+              text: "A1"
+            },
+            {
+              text: "13 Sep 2022"
+            },
+            {
+              text: "6 days"
+            },
+            {
+              text: "Not started"
+            }
+          ]
+        ]
+      }) }}
+  {% endset -%}
+
+  {% set furtherInfoHtml %}
+    <h2 class="govuk-heading-m">Further information request</h2>
+      {{ govukTable({
+        head: [
+          {
+            text: "Service user"
+          },
+          {
+            text: "CRN"
+          },
+          {
+            text: "Arrival date"
+          },
+          {
+            text: "Assessor"
+          },
+          {
+            text: "Days since request received"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "David Francis"
+            },
+            {
+              text: "D067268"
+            },
+            {
+              text: "18th Aug 2022"
+            },{
+              text: "James Tully"
+            },
+            {
+              text: "1 day"
+            },
+            {
+              text: "Info Request"
+            }
+          ],
+          [
+            {
+              text: "David Francis"
+            },
+            {
+              text: "D067268"
+            },
+            {
+              text: "18th Aug 2022"
+            },{
+              text: "James Tully"
+            },
+            {
+              text: "1 day"
+            },
+            {
+              text: "Info Request"
+            }
+          ],
+          [
+            {
+              text: "David Francis"
+            },
+            {
+              text: "D067268"
+            },
+            {
+              text: "18th Aug 2022"
+            },{
+              text: "James Tully"
+            },
+            {
+              text: "1 day"
+            },
+            {
+              text: "Info Request"
+            }
+          ]
+        ]
+      }) }}
+  {% endset -%}
+
+  {{ govukTabs({
+    items: [
+      {
+        label: "Applications",
+        id: "applications",
+        panel: {
+          html: applicationsHtml
+        }
+      },
+      {
+        label: "Further information request",
+        id: "past-week",
+        panel: {
+          html: furtherInfoHtml
+        }
+      }
+    ]
+  }) }}  
+  </div> 
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Start a new application</h2>
+    <p>Start a new application for an Approved Premises by clicking on the start button below.</p>
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/index"
+    }) }}
+  </div>
+
+
+</div>
+{% endblock %}
