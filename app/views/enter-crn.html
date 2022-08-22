@@ -1,0 +1,42 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Enter CRN</h2>
+      <p>Enter the CRN for the individual needing an AP placement. We'll import their details into your application.</p>
+
+      {{ govukInput({
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "For example, a CRN is DO16821"
+        },
+        id: "enter-crn",
+        name: "enter-crn",
+        inputmode: "alphanumeric",
+        pattern: "[0-9]*",
+        spellcheck: false
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/check-details"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
