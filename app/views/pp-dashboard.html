@@ -2,6 +2,9 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+{%- from "moj/components/badge/macro.njk" import mojBadge -%}
+
+
 
 
 
@@ -23,208 +26,159 @@
 
     <h2 class="govuk-heading-l">Approved Premises applications</h2>
 
-  {% set applicationsHtml %}
-    <h2 class="govuk-heading-m">Applications</h2>
-      {{ govukTable({
-        head: [
-          {
-            text: "Service user"
-          },
-          {
-            text: "CRN"
-          },
-          {
-            text: "Tier"
-          },
-          {
-            text: "Arrival date"
-          },
-          {
-            text: "Days since application received"
-          },
-          {
-            text: "Status"
-          }
-        ],
-        rows: [
-          [
-            {
-              text: "David Francis"
-            },
-            {
-              text: "D067268"
-            },
-            {
-              text: "A1"
-            },
-            {
-              text: "13 Sep 2022"
-            },
-            {
-              text: "6 days"
-            },
-            {
-              text: "Not started"
-            }
-          ],
-          [
-            {
-              text: "David Francis"
-            },
-            {
-              text: "D067268"
-            },
-            {
-              text: "A1"
-            },
-            {
-              text: "13 Sep 2022"
-            },
-            {
-              text: "6 days"
-            },
-            {
-              text: "Not started"
-            }
-          ],
-          [
-            {
-              text: "David Francis"
-            },
-            {
-              text: "D067268"
-            },
-            {
-              text: "A1"
-            },
-            {
-              text: "13 Sep 2022"
-            },
-            {
-              text: "6 days"
-            },
-            {
-              text: "Not started"
-            }
-          ]
-        ]
-      }) }}
-  {% endset -%}
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#past-day">
+              Applications
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+              Further information request
+            </a>
+          </li>
 
-  {% set furtherInfoHtml %}
-    <h2 class="govuk-heading-m">Further information request</h2>
-      {{ govukTable({
-        head: [
-          {
-            text: "Service user"
-          },
-          {
-            text: "CRN"
-          },
-          {
-            text: "Arrival date"
-          },
-          {
-            text: "Assessor"
-          },
-          {
-            text: "Days since request received"
-          },
-          {
-            text: "Status"
-          }
-        ],
-        rows: [
-          [
-            {
-              text: "David Francis"
-            },
-            {
-              text: "D067268"
-            },
-            {
-              text: "18th Aug 2022"
-            },{
-              text: "James Tully"
-            },
-            {
-              text: "1 day"
-            },
-            {
-              text: "Info Request"
-            }
-          ],
-          [
-            {
-              text: "David Francis"
-            },
-            {
-              text: "D067268"
-            },
-            {
-              text: "18th Aug 2022"
-            },{
-              text: "James Tully"
-            },
-            {
-              text: "1 day"
-            },
-            {
-              text: "Info Request"
-            }
-          ],
-          [
-            {
-              text: "David Francis"
-            },
-            {
-              text: "D067268"
-            },
-            {
-              text: "18th Aug 2022"
-            },{
-              text: "James Tully"
-            },
-            {
-              text: "1 day"
-            },
-            {
-              text: "Info Request"
-            }
-          ]
-        ]
-      }) }}
-  {% endset -%}
+        </ul>
+        <div class="govuk-tabs__panel" id="past-day">
+          <h2 class="govuk-heading-l">Applications</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Service user</th>
+                <th scope="col" class="govuk-table__header">CRN</th>
+                <th scope="col" class="govuk-table__header">Tier</th>
+                <th scope="col" class="govuk-table__header">Arrival date</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="">David Francis</a></td>
+                <td class="govuk-table__cell">783JSAA</td>
+                <td class="govuk-table__cell">
+                  {{ mojBadge({
+                    text: 'A1',
+                    classes: 'moj-badge--red'
+                  }) }}
+                </td>
+                <td class="govuk-table__cell">19 September 2022</td>
+                <td class="govuk-table__cell">
+                  {{govukTag({
+                    text: "SUBMITTED"
+                  })}}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="">Paul Farmer</a></td>
+                <td class="govuk-table__cell">894DBAS</td>
+                <td class="govuk-table__cell">
+                  {{ mojBadge({
+                    text: 'A1',
+                    classes: 'moj-badge--red'
+                  }) }}
+                </td>
+                <td class="govuk-table__cell">25 October 2022</td>
+                <td class="govuk-table__cell">
+                  {{govukTag({
+                    text: "In Progress",
+                    classes: "govuk-tag--blue"
+                  })}}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
+                <td class="govuk-table__cell">123AKMO</td>
+                <td class="govuk-table__cell">
+                  {{ mojBadge({
+                    text: 'B1',
+                    classes: 'moj-badge--purple'
+                  }) }}
+                </td>
+                <td class="govuk-table__cell">13 November 2022</td>
+                <td class="govuk-table__cell">
+                  {{govukTag({
+                    text: "In Progress",
+                    classes: "govuk-tag--blue"
+                  })}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-  {{ govukTabs({
-    items: [
-      {
-        label: "Applications",
-        id: "applications",
-        panel: {
-          html: applicationsHtml
-        }
-      },
-      {
-        label: "Further information request",
-        id: "past-week",
-        panel: {
-          html: furtherInfoHtml
-        }
-      }
-    ]
-  }) }}  
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+          <h2 class="govuk-heading-l">Further information request</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Service user</th>
+                <th scope="col" class="govuk-table__header">CRN</th>
+                <th scope="col" class="govuk-table__header">Arrival date</th>
+                <th scope="col" class="govuk-table__header">Assessor</th>
+                <th scope="col" class="govuk-table__header">Days since request</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="">Jaza Sanson</a></td>
+                <td class="govuk-table__cell">783JSAA</td>
+                <td class="govuk-table__cell">18</td>
+                <td class="govuk-table__cell">Jamie Jones</td>
+                <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">
+                  {{govukTag({
+                    text: "Info Request",
+                    classes: "govuk-tag--yellow"
+                  })}}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="">Lewis Wolf</a> </td>
+                <td class="govuk-table__cell"> 712LWWA</td>
+                <td class="govuk-table__cell">13 Sep 2022</td>
+                <td class="govuk-table__cell">Carlos Sainz</td>
+                <td class="govuk-table__cell">1 day</td>
+                <td class="govuk-table__cell">
+                  {{govukTag({
+                    text: "Info Request",
+                    classes: "govuk-tag--yellow"
+                  })}}
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
+                <td class="govuk-table__cell">894DBAS</td>
+                <td class="govuk-table__cell">29 Aug 2022</td>
+                <td class="govuk-table__cell">Rowan King</td>
+                <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">
+                  {{govukTag({
+                    text: "Info Request",
+                    classes: "govuk-tag--yellow"
+                  })}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
   </div> 
+ 
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Start a new application</h2>
     <p>Start a new application for an Approved Premises by clicking on the start button below.</p>
 
     {{ govukButton({
-      text: "Save and continue",
-      href: "/index"
+      text: "Start now",
+      href: "/enter-crn"
     }) }}
   </div>
-
 
 </div>
 {% endblock %}
