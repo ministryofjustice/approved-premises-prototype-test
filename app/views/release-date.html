@@ -1,0 +1,70 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+    {% set dateHtml %}
+      {{ govukInput({
+        id: "release-date-known",
+        name: "release-date-known",
+        type: "date",
+        autocomplete: "date",
+        spellcheck: false,
+        classes: "govuk-!-width-one-half",
+        label: {
+          text: "Expected date of release"
+        }
+      }) }}
+      {% endset -%}
+
+     
+
+      {{ govukRadios({
+        idPrefix: "contact",
+        name: "contact",
+        fieldset: {
+          legend: {
+            text: "Do you know Robert Brown’s release date?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "release-date-known",
+            text: "Yes",
+            checked: false,
+            conditional: {
+              html: dateHtml
+            }
+          },
+          {
+            value: "releast-date-unknown",
+            text: "No, the release date is to be determined by the parole board or other hearing"
+          }
+        ]
+      }) }}
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/index"
+    }) }}
+
+
+  </div>
+</div>
+
+
+{% endblock %}
