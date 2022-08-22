@@ -1,4 +1,5 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% extends "layout.html" %}
 
@@ -16,152 +17,48 @@
       href: "/index"
     }) }}
  
-    <h2 class="govuk-heading-l">Record a lost bed</h2>
-      <p> Record beds that have been lost within your AP estate.</p>
-   
- <!-- Number of beds lost -->
+    <h2 class="govuk-heading-l">Which of the following best described the sentence type [name] is on?</h2>
 
-      {{ govukInput({
-        label: {
-          text: "Number of beds lost"
-        },
-        classes: "govuk-input--width-2",
-        id: "width-2",
-        name: "width-2"
-      }) }}
-
-
-
- <!-- Rooms lost  -->
-      {{ govukCheckboxes({
-        idPrefix: "rooms",
-        name: "rooms",
-        fieldset: {
-          legend: {
-            text: "Which rooms are out of service??",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: "Select all that apply."
-        },
-        items: [
-          {
-            value: "1-1",
-            text: "Room 1 - Bed 1"
-          },
-          {
-            value: "1-2",
-            text: "Room 1 - Bed 2"
-          },
-          {
-            value: "2-1",
-            text: "Room 2 - Bed 1"
-          },
-          {
-            value: "3-1",
-            text: "Room 3 - Bed 1"
-          },
-          {
-            value: "4-1",
-            text: "Room 4 - Bed 1"
-          },
-          {
-            value: "5-1",
-            text: "Room 5 - Bed 1"
-          },
-          {
-            value: "5-2",
-            text: "Room 5 - Bed 2"
-          },
-          {
-            value: "6-1",
-            text: "Room 6 - Bed 1"
-          }
-        ]
-      }) }}      
-
- <!-- Start date -->
-
-      {{ govukDateInput({
-        id: "start-date",
-        namePrefix: "start-date",
-        fieldset: {
-          legend: {
-            text: "Start date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        }
-      }) }}
-
- <!-- End date -->
-      {{ govukDateInput({
-        id: "end-date",
-        namePrefix: "end-date",
-        fieldset: {
-          legend: {
-            text: "End date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        }
-      }) }}
-      <br>
-      
 
       {{ govukRadios({
-        idPrefix: "lost-bed-reason",
-        name: "lost-placement-reason",
-        fieldset: {
-          legend: {
-            text: "What is the reason for marking this bed as lost?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
+        idPrefix: "sentence-type",
+        name: "sentence-type",
+        hint: {
+          text: "Select the option which best describes the situation"
         },
         items: [
           {
-            value: "Accident-flood-fire",
-            text: "Accident, flood or fire"
+            value: "Standard-determinate-custody",
+            text: "Standard determinate custody"
           },
           {
-            value: "Damange",
-            text: "Damage by resident"
+            value: "Community-Order ",
+            text: "Community Order "
           },
           {
-            value: "doubleroom-risk",
-            text: "Double room with single occupancy (risk)"
+            value: "bail-placement",
+            text: "Bail placement"
           },
           {
-            value: "doubleroom-helath",
-            text: "Double room with single occupancy (health)"
+            value: "extended-determinate",
+            text: "Extended determinate custody"
           },
           {
-            value: "refurbishment",
-            text: "Refurbishment"
+            value: "ipp",
+            text: "Indeterminate Public Protection"
           },
           {
-            value: "staff-shortage",
-            text: "Staff shortage or illness"
+            value: "non-statutory",
+            text: "Non-statutory"
           },
           {
-            value: "other",
-            text: "Other"
+            value: "life",
+            text: "Life sentence"
           }
         ]
       }) }}
 
-      {{ govukTextarea({
-        name: "Additional notes",
-        id: "Notes",
-        label: {
-          text: "Additional notes"
-        }
-      }) }}
-
-        {{ govukButton({
+      {{ govukButton({
           text: "Save and continue",
           href: "/index"
         }) }}
