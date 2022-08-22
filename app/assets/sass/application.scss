@@ -18,7 +18,18 @@
     @import "patterns/step-by-step-related";
     @import "patterns/task-list";
 
+    @import "risk/predictor-scores";
+    @import "risk/widgets";
+    @import "risk/timeline";
+
     // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+ 
+    
+
+    .risk-information {
+        padding-top: 240px;
+    }
 
     .govuk-fieldset__heading {
         margin-top: 20px;
