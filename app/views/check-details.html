@@ -16,70 +16,71 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">Check details</h2>
-      <p>If '  booking.name ' has not arrived or no longer requires this bed, cancel this booking. Cancelling this booking will make this bed available to another person.</p>
+    <h2 class="govuk-heading-l">Confirm persons details</h2>
 
-        {{
-          govukSummaryList({
-            classes: 'govuk-summary-list--no-border',
-            rows: [
-              {
-                key: {
-                  text: "Name"
-                },
-                value: {
-                  text: "name"
-                }
-              },
-              {
-                key: {
-                  text: "CRN"
-                },
-                value: {
-                  text: "booking.CRN"
-                }
-              },
-              {
-                key: {
-                  text: "Arrival date"
-                },
-                value: {
-                  text: "dateTime"
-                }
-              },
-              {
-                key: {
-                  text: "Departure date"
-                },
-                value: {
-                  text: "dateTime"
-                }
-              }
-            ]
-          })
-        }}
+    
 
-
-        {{ govukDateInput({
-          id: "passport-issued",
-          namePrefix: "passport-issued",
-          fieldset: {
-            legend: {
-              text: "Date of cancellation",
-              name: "cancellation-date",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          }
-        }) }}
-<br>
-
-      
-
+          <p> Taken from NDelius, <b> 23 March 2022 </b></p>
+        <br>
+          <table class="govuk-table">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Names</th>
+                  <td class="govuk-table__cell">Robert Brown</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">CRN</th>
+                  <td class="govuk-table__cell">DO16821</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Date of Birth</th>
+                  <td class="govuk-table__cell">03/10/1991</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">NOMS number</th>
+                  <td class="govuk-table__cell">23/09/2022</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Sex</th>
+                  <td class="govuk-table__cell">Male</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Nationality</th>
+                  <td class="govuk-table__cell">British</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Religion or belief</th>
+                  <td class="govuk-table__cell">Christian</td>
+                </tr>
+              </tbody>
+            </table>
+    
+    
+            <table class="govuk-table">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Probation status</th>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag">
+                        In Custody
+                      </strong></td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Prison</th>
+                    <td class="govuk-table__cell">HMP Hewell</td>
+                  </tr>
+                </tbody>
+              </table>
+    
+              <p>If these details are wrong, update this case in nDelius before you continue.</p>
+              <p>If you've entered the wrong CRN, go back to the start.</p>
+    
         {{ govukButton({
           text: "Save and continue",
-          href: "/cancellation-confirmation"
+          href: "/sentence-type.html"
         }) }}
+
+       <p> <a href="index.html"> Back to CRU screen </a></p> 
   </div>
 </div>
 
