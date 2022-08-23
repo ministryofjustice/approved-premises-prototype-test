@@ -1,0 +1,74 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set opdPathway %}
+    {{ govukInput({
+      id: "opd-pathway-date",
+      name: "opd-pathway-date",
+      type: "date",
+      autocomplete: "date",
+      spellcheck: false,
+      classes: "govuk-!-width-one-half",
+      label: {
+        text: "When was [name] last consultation or formulation?"
+      }
+    }) }}
+    {% endset -%}
+
+   
+
+    {{ govukRadios({
+      idPrefix: "opd-pathway",
+      name: "opd-pathway",
+      fieldset: {
+        legend: {
+          text: "Has [name] been screened into the OPD pathway?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes-opd-pathway",
+          text: "Yes",
+          checked: false,
+          conditional: {
+            html: opdPathway
+          }
+        },
+        {
+          value: "not-screened",
+          text: "No"
+        }
+      ]
+    }) }}
+
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/index"
+  }) }}
+
+
+  </div>
+</div>
+
+
+{% endblock %}
