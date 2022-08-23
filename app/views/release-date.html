@@ -18,7 +18,7 @@
     {% set dateHtml %}
       {{ govukInput({
         id: "release-date-known",
-        name: "release-date-known",
+        name: "release-date",
         type: "date",
         autocomplete: "date",
         spellcheck: false,
@@ -29,11 +29,17 @@
       }) }}
       {% endset -%}
 
+      {% set html %}
+        <p>
+          If the arrival date is not yet known, this application will be paused once a suitability assessment has been made. The individual will then be matched to an Approved Premises after a direction to release has been made.
+        </p>
+      {% endset %}
+
      
 
       {{ govukRadios({
-        idPrefix: "contact",
-        name: "contact",
+        idPrefix: "release-date",
+        name: "release-date",
         fieldset: {
           legend: {
             text: "Do you know Robert Brown’s release date?",
@@ -57,6 +63,10 @@
         ]
       }) }}
 
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
     {{ govukButton({
       text: "Save and continue",
       href: "/index"
@@ -67,4 +77,7 @@
 </div>
 
 
+
 {% endblock %}
+
+
