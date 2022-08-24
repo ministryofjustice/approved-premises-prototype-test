@@ -1,0 +1,58 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Date of convicted offences</h2>
+
+
+    <h2 class="govuk-heading-m">Is the offence a current or previous offence?</h2>
+    
+    {{ govukCheckboxes({
+      idPrefix: "secreting-history",
+      name: "secreting-history",
+      fieldset: {
+        legend: {
+          text: "In person sex offence, adult victim",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "esap-1",
+          text: "Current"
+        },
+        {
+          value: "esap-1",
+          text: "Previous"
+        }
+      ]
+    }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/type-of-convicted-offence"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
