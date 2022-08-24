@@ -1,0 +1,99 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">What is the purpose of the AP placement?</h2>
+      
+    {% set otherReason %}
+    {{ govukInput({
+      id: "other-reason",
+      name: "other-reason",
+      type: "text",
+      label: {
+        text: "Please specify other purpose"
+      }
+    }) }}
+    {% endset -%}
+
+   
+    {{ govukCheckboxes({
+      idPrefix: "placement-purpose",
+      name: "placement-purpose",
+      fieldset: {
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "publicProtection",
+          text: "Public protection"
+        },
+        {
+          value: "prevent-contact",
+          text: "Prevent contact with a previous victim"
+        },
+        {
+          value: "readjust",
+          text: "Help individual readjust to life outside of custody"
+        },
+        {
+          value: "drug-alcohol-monitoring",
+          text: "Provide drug or alcohol monitoring"
+        },
+        {
+          value: "prevent-self-harm",
+          text: "Prevent self harm or suicide"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "other-reason",
+          text: "Other (please specify)",
+          conditional: {
+            html: otherReason
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-s">Provide a summary of how an AP will enhance and support risk management</h2>
+    <p>For example, if you think monitoring and control through an approved premises will manage risk more effectively than a tag, curfew or other condition that can be managed in the community.</p>
+      
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail"
+    }) }}
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/index.html"
+    }) }}
+
+
+  </div>
+</div>
+
+
+{% endblock %}

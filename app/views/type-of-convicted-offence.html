@@ -1,0 +1,64 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">What type of offending has Robert Brown been convicted for?  </h2>
+      <p class="govuk-body">This information will be used to match the applicant to a bed in an AP</p>
+
+      {{ govukCheckboxes({
+        idPrefix: "offence-convictions",
+        name: "offence",
+        hint: {
+          text: "You can select more than one option"
+        },
+        items: [
+          {
+            value: "arson",
+            text: "Arson"
+          },
+          {
+            value: "sexual-offence",
+            text: "Sexual Offence"
+          },
+          {
+            value: "hate-crimes",
+            text: "Hate Crimes"
+          }
+        ]
+      }) }}      
+
+
+
+
+
+
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/date-of-convicted-offence"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

@@ -19,7 +19,7 @@
 
           <h1 class="govuk-heading-l"> Apply </h1>
 
-          <h2 class="govuk-heading-m"> Task list pages </h2> 
+          <h2 class="govuk-heading-m"> Task list pages </h2> <p> I have designed the task list pages but have not made them dynamic yet, they're currently static. I need to learn how to pull in the data through routing to present within the risk widgets.</p>
           <p><a href="task-list-standard.html">Task list - Standard</a></p>
           <p><a href="task-list-pipe.html">Task list - PIPE</a></p>
           <p><a href="task-list-esap.html">Task list - ESAP</a></p>
@@ -30,16 +30,45 @@
             <p><a href="start.html"><b>Start page</b></a></p>
             <p><a href="enter-crn">Enter CRN </a></p>
             <p><a href="check-details.html">Check details </a></p>
-           
+            <p><a href="sentence-type.html"><b>Sentence type</b></a> - currently these do not route through to the sentence details page. Work needs to be done so that each selected radio button presents the relevant page title and radio options dynamically, rather than making static pages for each.</p>
+            <ul>
+              <li><p><a href="">Sentence type - details (Not started) </a></p></li>
+            </ul>
+            <p><a href="release-date"><b>Release date</b></a> - asks user whether they know the release date. Then branches into the following pages based off the radio selection.</p>
+            <ul>
+              <li><p><a href="oral-hearing-date">Do you know the Oral Hearing date? (Parole)</a></p></li>
+              <li> <p><a href="placement-date.html">Is [release-date] the date you want the placement to start?</a></p>
+              </li>
+            </ul>
             
-            <p><a href="sentence-type.html">Sentence type</a></p>
-            <p><a href="">Sentence type - details (Not started) </a></p>
-            <p><a href="release-date">Do you know the release date?</a></p>
-            <p><a href="oral-hearing-date">Do you know the Oral Hearing date? (Parole)</a></p>
-            <p><a href="placement-date.html">Is [release-date] the date you want the placement to start?</a></p>
-        
+            <p>Users will then be directed to task list</p>
 
-            <p><a href="apply-ap-type.html">Type of AP</a></p>
+            <p><a href="type-of-ap.html"><b>Type of AP</b></a></p>
+            <ul>
+              <p>If PIPE is selected</p>
+              <li><p><a href="pipe-referral.html">PIPE - Has PiP been screened into the OPD pathway?</a></p></li>
+              <li><p><a href="pipe-opd-screening.html">PIPE - Has a referral for PIPE placement been recommended in the OPD pathway plan? </a></p></li>
+              <p>If ESAP is selected</p>
+              <li> <p><a href="esap-placement-reasons.html">ESAP - Reasons PiP requires an enhanced security (ESAP) placement</a></p>
+              <li> <p><a href="esap-placement-enhanced-searches.html">ESAP - Enhanced room searches using body worn technology</a></p>
+              </li>
+            </ul>
+
+            <p><b><a href="purpose-of-placement.html">Purpose of placement</a></b></p>
+            
+          <h2 class="govuk-heading-m"> Risk information </h2>
+          <p>These screens have not been designed yet whilst we're waiting to hear from the ARNS team to understand how we present this information to users</p>
+            <p><b><a href="">Import OASys information</a></b></p>
+            <p><b><a href="">View risk information</a></b></p>
+
+
+          
+            <p><a href="convicted-offences.html"><b>Convicted offences</b></a></p>
+            <ul>
+              <li> <p><a href="type-of-convicted-offence.html">Type of convicted offence</a></p></li>
+              <li> <p><a href="convicted-offence-so.html">Convicted offence - SO</a></p></li>
+              <li> <p><a href="date-of-convicted-offence.html">Date of convicted offence</a></p></li>
+            </ul>
         
   </div>
 </div>
