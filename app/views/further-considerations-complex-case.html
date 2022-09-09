@@ -1,0 +1,87 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Approved Premises
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Complex case board</span>
+      Further placement considerations
+    </h1>
+    <p>This information is used to match a person with a suitable room in a suitable premises.</p>
+
+
+    <!-- Nunjucks detail -->
+   
+    {% set complexCase %}
+      {{ govukTextarea({
+        id: "text-complex-case",
+        name: "text-complex-case",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    <!-- Radio area -->
+
+
+    {{ govukRadios({
+      idPrefix: "complex-case-board",
+      name: "complex-case-board",
+      fieldset: {
+        legend: {
+          text: "Does {{ name }} gender identity require a complex case board to review their application?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-complex-case",
+          text: "Yes",
+          conditional: {
+            html: complexCase
+          }
+        },
+        {
+          value: "no-complex-case",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/further-considerations-catering"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+

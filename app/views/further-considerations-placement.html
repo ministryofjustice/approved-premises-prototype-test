@@ -1,0 +1,91 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HMPPS Approved Premises
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Previous placements</span>
+      Further placement considerations
+    </h1>
+    <p>This information is used to match a person with a suitable room in a suitable premises.</p>
+
+
+    <!-- Nunjucks detail -->
+   
+    {% set previousPlacement %}
+      {{ govukTextarea({
+        id: "exploitation-from-others",
+        name: "exploitation-from-others",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    <!-- Radio area -->
+
+
+    {{ govukRadios({
+      idPrefix: "previous-placement",
+      name: "previous-placement",
+      fieldset: {
+        legend: {
+          text: "Has Robert Brown stayed or been offered a placement in an AP before?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-previous-placement",
+          text: "Yes",
+          conditional: {
+            html: previousPlacement
+          }
+        },
+        {
+          value: "no-previous-placement",
+          text: "No"
+        },
+        {
+          value: "unsure-previous-placement",
+          text: "I don't know"
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/further-considerations-complex-case"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
