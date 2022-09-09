@@ -1,0 +1,288 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Room sharing</span>
+      Further placement considerations
+    </h1>
+    <p>This information is used to match a person with a suitable room in a suitable premises.</p>
+
+
+    <!-- Nunjucks detail -->
+   
+    {% set riskToStaff %}
+      {{ govukTextarea({
+        id: "arson-yes",
+        name: "arson-yes",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {% set riskToResident %}
+    {{ govukTextarea({
+      id: "arson-yes",
+      name: "arson-yes",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Provide details"
+      }
+    }) }}
+    {% endset -%}
+
+    {% set bedroomSharing %}
+      {{ govukTextarea({
+        id: "arson-yes",
+        name: "arson-yes",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {% set benefitBedShare %}
+      {{ govukTextarea({
+        id: "arson-yes",
+        name: "arson-yes",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {% set roomshareNotSuitable %}
+      {{ govukTextarea({
+        id: "arson-yes",
+        name: "arson-yes",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {% set bathroomNotSuitable %}
+      {{ govukTextarea({
+        id: "arson-yes",
+        name: "arson-yes",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    <!-- Radio area -->
+
+
+    {{ govukRadios({
+      idPrefix: "risk-to-staff",
+      name: "risk-to-staff",
+      fieldset: {
+        legend: {
+          text: "Is there any evidence that Robert Brown may pose a risk to AP staff?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-risktostaff",
+          text: "Yes",
+          conditional: {
+            html: riskToStaff
+          }
+        },
+        {
+          value: "no-risktostaff",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "risk-to-resident",
+      name: "risk-to-resident",
+      fieldset: {
+        legend: {
+          text: "Is there any evidence that Robert Brown may pose a risk to other AP residents?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-risk-resident",
+          text: "Yes",
+          conditional: {
+            html: riskToResident
+          }
+        },
+        {
+          value: "no-risk-resident",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "sharing-bedroom",
+      name: "sharing-bedroom",
+      fieldset: {
+        legend: {
+          text: "Do you have any concerns about Robert Brown sharing a bedroom?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-bed-share",
+          text: "Yes",
+          conditional: {
+            html: bedroomSharing
+          }
+        },
+        {
+          value: "no-bed-share",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "benefit-bed-share",
+      name: "benefit-bed-share",
+      fieldset: {
+        legend: {
+          text: "Is there potential for the person to benefit from a room share?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-benefit",
+          text: "Yes",
+          conditional: {
+            html: benefitBedShare
+          }
+        },
+        {
+          value: "no-benefit",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "evident-trauma",
+      name: "evident-trauma",
+      fieldset: {
+        legend: {
+          text: "Is there any evidence of previous trauma or significant event in the persons history which would indicate that room share may not be suitable",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, a survivor of sexual abuse or violence or a witness of suicide in custody."
+      },
+      items: [
+        {
+          value: "yes-trauma",
+          text: "Yes",
+          conditional: {
+            html: roomshareNotSuitable
+          }
+        },
+        {
+          value: "no-trauma",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+    {{ govukRadios({
+      idPrefix: "bathroom-share",
+      name: "bathroom-share",
+      fieldset: {
+        legend: {
+          text: "Do you have any concerns about Robert Brown sharing a bathroom?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-bathroom",
+          text: "Yes",
+          conditional: {
+            html: bathroomNotSuitable
+          }
+        },
+        {
+          value: "no-bathroom",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+
+
+
+
+
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/further-considerations-vulnerability"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
