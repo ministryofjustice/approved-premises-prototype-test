@@ -29,7 +29,7 @@
       name: "secreting-history",
       fieldset: {
         legend: {
-          text: "In person sex offence, adult victim",
+          text: "Offence 1",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
         }
@@ -46,6 +46,49 @@
       ]
     }) }}
 
+    {{ govukCheckboxes({
+      idPrefix: "secreting-history",
+      name: "secreting-history",
+      fieldset: {
+        legend: {
+          text: "Offence 2",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "esap-1",
+          text: "Current"
+        },
+        {
+          value: "esap-1",
+          text: "Previous"
+        }
+      ]
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "secreting-history",
+      name: "secreting-history",
+      fieldset: {
+        legend: {
+          text: "Offence ",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "esap-1",
+          text: "Current"
+        },
+        {
+          value: "esap-1",
+          text: "Previous"
+        }
+      ]
+    }) }}
 
         {{ govukButton({
           text: "Save and continue",
