@@ -1,0 +1,111 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+    <h1 class="govuk-heading-l">
+      Healthcare information
+    </h1>
+
+
+    <!-- Radio area -->
+    {{ govukRadios({
+      idPrefix: "fully-vaccinated",
+      name: "fully-vaccinated",
+      fieldset: {
+        legend: {
+          text: "Has Robert Brown been fully vaccinated for COVID-19?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "With a minimum of two vaccinations and a booster received."
+      },
+      items: [
+        {
+          value: "yes-vaccinated",
+          text: "Yes"
+        },
+        {
+          value: "no-vaccinated",
+          text: "No"
+        },
+        {
+          value: "unsure-vaccinated",
+          text: "I don't know"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "high-risk",
+      name: "high-risk",
+      fieldset: {
+        legend: {
+          text: "Is Robert Brown high risk to COVID-19?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "This includes immunosuppressed disorders and those eligible for nMAB treatment or higher risk"
+      },
+      items: [
+        {
+          value: "yes-high-risk",
+          text: "Yes"
+        },
+        {
+          value: "no-high-risk",
+          text: "No"
+        },
+        {
+          value: "unsure-high-risk",
+          text: "I don't know"
+        }
+      ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "additional-covid-information",
+      id: "additional-covid-information",
+      label: {
+        text: "Other considerations and comments on COVID-19",
+        classes: "govuk-label--s",
+        isPageHeading: true
+        }
+       }) }}
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/further-considerations-vulnerability"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+

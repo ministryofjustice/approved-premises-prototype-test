@@ -1,0 +1,71 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h2 class="govuk-heading-l">Placement duration and move on</h2>
+   
+    <h3 class="govuk-heading-m">What duration of placement do you recommend?</h3>
+    <p> We'll use this to calculate the date Robert Brown will be expected to leave the AP, if they're accepted. </p>
+  
+
+    {{ govukDetails({
+      summaryText: "How to decide the duration of an AP placement",
+      text: "Standard AP placements usually last up to 12 weeks but can sometimes be longer. PIPE placements usually last up to 26 weeks. Consider the level of support and risk management you expect the AP to provide and how long it will take to be effective. When is Robert Brown most likely to resettle successfully in the community?"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Weeks"
+      },
+      classes: "govuk-input--width-2",
+      id: "width-2",
+      name: "width-2"
+    }) }}
+
+    <h3 class="govuk-heading-m"> Expected dates of stay in Approved Premises:  </h3>
+    <p><b>Arrival date:</b> {arrival-date}</p>
+    <p><b>Departure date:</b> {departure-date}</p>
+
+<br>
+    {{ govukTextarea({
+      name: "additional-placement-information",
+      id: "additional-placement-information",
+      label: {
+        text: "Provide any additional information",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        hint: {
+          text: "If the duration of placement is not a standard length (12 weeks) provide reason as to why it is not."
+        }
+       }) }}
+
+
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

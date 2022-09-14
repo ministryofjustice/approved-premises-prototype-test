@@ -1,0 +1,63 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">What features of AP will support the management of risk  </h2>
+      <p class="govuk-body"><b>All Approved Premises offer the following standard features to support the management of risk </b></p>
+
+      <p class="govuk-body">You can buy:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>24 hour staff support and monitoring</li>
+          <li>Overnight curfew (from 11pm until 6am)</li>
+          <li>CCTV</li>
+          <li>Room searches</li>
+          <li>Purposeful activities</li>
+          <li>Medication monitoring</li>
+        </ul>
+
+    
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            classes: "govuk-label--s",
+            text: "Provide details on how these features will help to manage risk"
+          }
+        }) }}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            classes: "govuk-label--s",
+            text: "Provide details on additional features you think will support [name]s management of risk"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/date-of-convicted-offences"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
