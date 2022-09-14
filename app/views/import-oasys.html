@@ -1,0 +1,192 @@
+g{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+        Which of the following sections of OASys do you want to import?
+          </h1>
+        </legend>
+        <br>
+
+        <p class="govuk-body">We'll automatically import:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>offence details</li>
+          <li>RoSH summary</li>
+          <li>any MAPPA or hate-based information</li>
+          <li>sections linked to RoSH</li>
+          <li>Risk Management plan</li>
+        </ul>
+        <p> Select any sections that include additional detail that's relevant to the risk an AP will help mitigate or the needs an AP can meet.</p>
+        <p> You will be able to edit the information that is pulled in from OASys and this information will be presented at the assessment stage. </p>
+
+<br>
+
+      <h2 class="govuk-heading-m"> Needs linked to risk of serious harm are automatically imported </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Section 9 - Alcohol misuse</li>
+        <li>Section 8 -  Drug misuse</li>
+      </ul>
+      
+
+<!--- INSERT TABLE -->
+      </div>
+      </div>
+<br><br>
+
+<div class="govuk-grid-column-full">
+  <table class="govuk-table">
+       <caption class="govuk-table__caption govuk-table__caption--m">Optional - Needs linked to reoffending </caption>
+       <thead class="govuk-table__head">
+
+         <tr class="govuk-table__row">
+           <th scope="col" class="govuk-table__header">Section of OASys</th>
+           <th scope="col" class="govuk-table__header">Linked to RoSH</th>
+           <th scope="col" class="govuk-table__header">Linked to Reoffending</th>
+         </tr>
+
+       </thead>
+       <tbody class="govuk-table__body">
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">3. Accomodation</label>
+             </div>
+           </td>
+          <td scope="row" class="govuk-table__cell">No</td>
+          <td scope="row" class="govuk-table__cell">Yes</td>
+         </tr>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">6. Relationships</label>
+             </div>
+           </td>
+          <td scope="row" class="govuk-table__cell">No</td>
+          <td scope="row" class="govuk-table__cell">Yes</td>
+         </tr>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">10. Emotional Well-being</label>
+             </div>
+           </td>
+          <td scope="row" class="govuk-table__cell">No</td>
+          <td scope="row" class="govuk-table__cell">Yes</td>
+         </tr>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">11. Thinking & Behaviour</label>
+             </div>
+           </td>
+          <td scope="row" class="govuk-table__cell">No</td>
+          <td scope="row" class="govuk-table__cell">Yes</td>
+         </tr>
+
+       </tbody>
+     </table>
+
+<br>
+     <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Optional - Needs linked to reoffending </caption>
+          <thead class="govuk-table__head">
+
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Section of OASys</th>
+              <th scope="col" class="govuk-table__header">Linked to RoSH</th>
+              <th scope="col" class="govuk-table__header">Linked to Reoffending</th>
+            </tr>
+
+          </thead>
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste"> 4.ETE </label>
+                </div>
+              </td>
+             <td scope="row" class="govuk-table__cell">No</td>
+             <td scope="row" class="govuk-table__cell">Yes</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">7. Lifestyle and Associates</label>
+                </div>
+              </td>
+             <td scope="row" class="govuk-table__cell">No</td>
+             <td scope="row" class="govuk-table__cell">Yes</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">13. Health</label>
+                </div>
+              </td>
+             <td scope="row" class="govuk-table__cell">No</td>
+             <td scope="row" class="govuk-table__cell">Yes</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">12. Attitudes</label>
+                </div>
+              </td>
+             <td scope="row" class="govuk-table__cell">No</td>
+             <td scope="row" class="govuk-table__cell">Yes</td>
+            </tr>
+        </div>
+
+          </tbody>
+        </table>
+
+      </fieldset>
+    </div>
+
+        </fieldset>
+      </div>
+
+
+
+    <form class="form" action="/oasys-risk-information-rosh" method="post">
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

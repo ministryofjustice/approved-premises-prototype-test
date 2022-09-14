@@ -1,0 +1,74 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+    {% set pduTransfer %}
+      {{ govukInput({
+        id: "pdu-transfer-info",
+        name: "pdu-transfer-info",
+        type: "text",
+        autocomplete: "text",
+        spellcheck: false,
+        label: {
+          text: "Who have you agreed this with? Enter the probation practitioner's full name."
+        }
+      }) }}
+      {% endset -%} 
+
+      {{ govukRadios({
+        idPrefix: "release-date",
+        name: "release-date",
+        fieldset: {
+          legend: {
+            text: "Have you agreed Robert Brown's transfer/supervision with the receiving PDU?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "release-date-known",
+            text: "Yes",
+            checked: false,
+            conditional: {
+              html: pduTransfer
+            }
+          },
+          {
+            value: "releast-date-unknown",
+            text: "No, I still need to make arrangements"
+          },
+          {
+            value: "releast-date-unknown",
+            text: "No management and supervision will be maintained by the existing Probation Practitioner."
+          }
+        ]
+      }) }}
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/index"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,72 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Access needs</h2>
+ 
+    {% set placementAdjustment %}
+      {{ govukTextarea({
+        id: "pdu-transfer-info",
+        name: "pdu-transfer-info",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+      {% endset -%} 
+
+      {{ govukRadios({
+        idPrefix: "release-date",
+        name: "release-date",
+        fieldset: {
+          legend: {
+            text: "Does the placement require adjustments for the mobility, disability, or accessibility [pull in from application] needs you selected?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "placement-adjustments-yes",
+            text: "Yes",
+            checked: false,
+            conditional: {
+              html: placementAdjustment
+            }
+          },
+          {
+            value: "no-placement-adjustments",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/index"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+

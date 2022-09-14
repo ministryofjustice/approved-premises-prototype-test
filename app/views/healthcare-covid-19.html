@@ -14,94 +14,90 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "/task-list-standard"
+  href: "/index"
 }) }}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+ 
     <h1 class="govuk-heading-l">
-      Healthcare needs
+      Healthcare information
     </h1>
 
 
-    <!-- Nunjucks detail -->
-
-    {% set additionalHealthcare %}
-      {{ govukTextarea({
-        id: "additional-healthcare-needs",
-        name: "additional-healthcare-needs",
-        type: "textarea",
-        spellcheck: false,
-        classes: "textarea",
-        label: {
-          text: "Provide details"
-        }
-      }) }}
-    {% endset -%}
-
     <!-- Radio area -->
-
-
     {{ govukRadios({
-      idPrefix: "risk-to-staff",
-      name: "risk-to-staff",
+      idPrefix: "fully-vaccinated",
+      name: "fully-vaccinated",
       fieldset: {
         legend: {
-          text: "Does the person have any additional health issues  or care and support needs",
+          text: "Has Robert Brown been fully vaccinated for COVID-19?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
-      items: [
-        {
-          value: "yes-additional-healthcare",
-          text: "Yes",
-          conditional: {
-            html: additionalHealthcare
-          }
-        },
-        {
-          value: "no-additional-healthcaref",
-          text: "No"
-        },
-        {
-          value: "unsure-additional-healthcare",
-          text: "I don't know"
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
-      idPrefix: "risk-to-resident",
-      name: "risk-to-resident",
-      fieldset: {
-        legend: {
-          text: "Has a care act assessment been completed?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
+      hint: {
+        text: "With a minimum of two vaccinations and a booster received."
       },
       items: [
         {
-          value: "yes-CAA",
+          value: "yes-vaccinated",
           text: "Yes"
         },
         {
-          value: "no-CAA",
+          value: "no-vaccinated",
           text: "No"
         },
         {
-          value: "unsure-CAA",
+          value: "unsure-vaccinated",
           text: "I don't know"
         }
       ]
     }) }}
+
+    {{ govukRadios({
+      idPrefix: "high-risk",
+      name: "high-risk",
+      fieldset: {
+        legend: {
+          text: "Is Robert Brown high risk to COVID-19?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "This includes immunosuppressed disorders and those eligible for nMAB treatment or higher risk"
+      },
+      items: [
+        {
+          value: "yes-high-risk",
+          text: "Yes"
+        },
+        {
+          value: "no-high-risk",
+          text: "No"
+        },
+        {
+          value: "unsure-high-risk",
+          text: "I don't know"
+        }
+      ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "additional-covid-information",
+      id: "additional-covid-information",
+      label: {
+        text: "Other considerations and comments on COVID-19",
+        classes: "govuk-label--s",
+        isPageHeading: true
+        }
+       }) }}
 
 
     {{ govukButton({
       text: "Save and continue",
-      href: "/healthcare-covid-19"
+      href: "/further-considerations-vulnerability"
     }) }}
 
 
@@ -111,3 +107,5 @@
 
 
 {% endblock %}
+
+

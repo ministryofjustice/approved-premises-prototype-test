@@ -1,0 +1,194 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Location factors</h1>
+
+
+<h2 class="govuk-heading-m">What is the preferred location for the AP placement?</h2>
+    
+{{ govukSelect({
+      id: "ap-pdu",
+      name: "ap-pdu",
+      label: {
+        text: "Probation delivery unit (PDU) location"
+      },
+      items: [
+        {
+          value: "northumberland",
+          text: "Northumberland"
+        },
+        {
+          value: "tyne-and-wear",
+          text: "Tyne and Wear",
+          selected: true
+        },
+        {
+          value: "example",
+          text: "Example"
+        },
+        {
+          value: "example",
+          text: "Example"
+        }
+      ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "positive-location-factors",
+      id: "positive-location-factors",
+      label: {
+        text: "Give details of any positive factors for Robert Brown in this location.",
+        classes: "govuk-label--s",
+        isPageHeading: true
+        }
+       }) }}
+
+             
+      <!-- Radio area -->
+
+        {% set placementRestrictions %}
+        {{ govukTextarea({
+          id: "arson-yes",
+          name: "arson-yes",
+          type: "textarea",
+          spellcheck: false,
+          classes: "textarea",
+          label: {
+            text: "Give details of any positive factors for Robert Brown in this location."
+          }
+        }) }}
+      {% endset -%}
+  
+      {% set alternativeLocation %}
+      {{ govukInput({
+        id: "arson-yes",
+        name: "arson-yes",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details of any restraining orders, exclusion zones, inclusion zones or other location based licence conditions."
+        }
+      }) }}
+      {% endset -%}
+  
+      {{ govukRadios({
+        idPrefix: "risk-to-staff",
+        name: "risk-to-staff",
+        fieldset: {
+          legend: {
+            text: "Are there any restrictions linked to placement location?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Where there's a risk to a known person, exclusion zones or limits on movements."
+        },
+        items: [
+          {
+            value: "yes-risktostaff",
+            text: "Yes",
+            conditional: {
+              html: placementRestrictions
+            }
+          },
+          {
+            value: "no-risktostaff",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+      {{ govukRadios({
+        idPrefix: "risk-to-resident",
+        name: "risk-to-resident",
+        fieldset: {
+          legend: {
+            text: "If an AP Placement is not available in the persons preferred area, would a placement in an alternative locality be considered?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "This includes other PDU’s within the region"
+        },
+        items: [
+          {
+            value: "yes-risk-resident",
+            text: "Yes",
+            conditional: {
+              html: alternativeLocation
+            }
+          },
+          {
+            value: "no-risk-resident",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+      {{ govukRadios({
+        idPrefix: "sharing-bedroom",
+        name: "sharing-bedroom",
+        fieldset: {
+          legend: {
+            text: "Is Robert Brown moving to a different area where they'll be managed by a different probation delivery unit (PDU)?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "If Robert Brown is moving to a different area but will continue to be managed by their current PDU, select No."
+        },
+        items: [
+          {
+            value: "yes-bed-share",
+            text: "Yes"
+          },
+          {
+            value: "no-bed-share",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+     
+  
+  
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/location-pdu-transfer"
+    }) }}
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
