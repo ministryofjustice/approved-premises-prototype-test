@@ -35,7 +35,11 @@
         </p>
       {% endset %}
 
-     
+      {% set noReleaseDate %}
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+      {% endset -%}
 
       {{ govukRadios({
         idPrefix: "release-date",
@@ -58,18 +62,18 @@
           },
           {
             value: "releast-date-unknown",
-            text: "No, the release date is to be determined by the parole board or other hearing"
+            text: "No, the release date is to be determined by the parole board or other hearing",
+            conditional: {
+              html: noReleaseDate
+            }
           }
         ]
       }) }}
 
-      {{ govukNotificationBanner({
-        html: html
-      }) }}
 
     {{ govukButton({
       text: "Save and continue",
-      href: "/index"
+      href: "/placement-date"
     }) }}
 
 
