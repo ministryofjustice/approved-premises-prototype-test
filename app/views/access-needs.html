@@ -114,15 +114,15 @@
         }) }}
       {% endset -%}
   
-      {% set Interpreter %}
+      {% set needInterpreter %}
       {{ govukInput({
-        id: "interpreter-yes",
-        name: "interpreter-yes",
+        id: "arson-yes",
+        name: "arson-yes",
         type: "textarea",
         spellcheck: false,
         classes: "textarea",
         label: {
-          text: "Which language?"
+          text: "Does Robert Brown need an interpreter?"
         }
       }) }}
       {% endset -%}
@@ -132,21 +132,24 @@
         name: "risk-to-staff",
         fieldset: {
           legend: {
-            text: "Does Robert Brown need an interpreter?",
+            text: "Are there any restrictions linked to placement location?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          text: "Where there's a risk to a known person, exclusion zones or limits on movements."
+        },
         items: [
           {
-            value: "yes-interpreter",
+            value: "yes-risktostaff",
             text: "Yes",
             conditional: {
               html: placementRestrictions
             }
           },
           {
-            value: "no-interpreter",
+            value: "no-risktostaff",
             text: "No"
           }
         ]

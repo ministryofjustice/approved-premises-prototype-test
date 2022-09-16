@@ -5,16 +5,21 @@
 
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+   
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+{% endblock %}
+
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
- 
-{{ govukBackLink({
-  text: "Back",
-  href: "/index"
-}) }}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -94,7 +99,8 @@
           text: "Save and continue",
           href: "/type-of-convicted-offence"
         }) }}
-  </div>
+
+      </div>
 </div>
 
 
