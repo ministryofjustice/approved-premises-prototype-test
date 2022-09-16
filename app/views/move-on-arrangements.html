@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -15,42 +15,37 @@
       text: "Back",
       href: "/index"
     }) }}
-
+ 
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
-
-    {{ govukSelect({
-      id: "ap-pdu",
-      name: "ap-pdu",
-      label: {
-        text: "Probation delivery unit (PDU) location"
+  
+    {{ govukRadios({
+      idPrefix: "move-on-arrangements",
+      name: "move-on-arrangements",
+      fieldset: {
+        legend: {
+          text: "Are move on arrangements already in place for when Robert Brown leaves the AP?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
       },
       items: [
         {
-          value: "northumberland",
-          text: "Northumberland"
+          value: "yes-moveon-arrangements",
+          text: "Yes"
         },
         {
-          value: "tyne-and-wear",
-          text: "Tyne and Wear",
-          selected: true
-        },
-        {
-          value: "example",
-          text: "Example"
-        },
-        {
-          value: "example",
-          text: "Example"
+          value: "no-moveon-arrangements",
+          text: "No"
         }
       ]
     }) }}
 
     {{ govukButton({
       text: "Save and continue",
-       href: "/move-on-arrangements"
+      href: "/move-on-accommodation"
     }) }}
-
+    
   </div>
 </div>
 

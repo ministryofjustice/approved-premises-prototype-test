@@ -1,0 +1,91 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/index"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+ 
+
+    <h2 class="govuk-heading-l">Emergancy referral</h2>
+  
+
+    {% set additionalLicenseConditions %}
+      {{ govukTextarea({
+        id: "other-accommodation",
+        name: "other-accommodation",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "additional-license-conditions",
+      name: "additional-license-conditions",
+      fieldset: {
+        legend: {
+          text: "Have additional Licence conditions been requested as an alternative to recall?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-license-conditions",
+          text: "Yes",
+          conditional: {
+            html: additionalLicenseConditions
+          }
+        },
+        {
+          value: "no-license-conditions",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukTextarea({
+      name: "ooh-information",
+      id: "ooh-information",
+      label: {
+        text: "In the event of a breach, provide any further information to support Out of Hours (OoH) decision making.",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        hint: {
+          text: "For example, include any required actions or views from OM regarding OoH recall following curfew breach"
+        }
+       }) }}
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/index"
+    }) }}
+    
+  </div>
+</div>
+
+
+{% endblock %}
