@@ -65,12 +65,10 @@ ESAPs (enhanced security APs) offer additional security measures and are intende
 
       </div>
 
-
-    <form class="form" action="/task-list" method="post">
-
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-      </form>
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/task-list-standard.html"
+      }) }}
 
     </div>
   </div>
