@@ -1,0 +1,196 @@
+g{% extends "layout.html" %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+
+{% block pageTitle %}
+  Associated documents
+{% endblock %}
+
+{% block beforeContent %}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Select associated documents</h2>
+            <p> Imported from OASys  <b> 23 March 2022 </b></p>
+            <p>Select any additional documents that you want to include to support your application. </p>
+
+      
+        {% set detailsHTML %}
+          <p class="govuk-body">
+            Please ensure that identified documents have been attached to this application. 
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+              <li>Precons</li>
+              <li>CPS documents from current event</li>
+              <li>SO registration</li>
+              <li>Sexual harm prevention order (SOPO)  </li>
+              <li>Psychiatric reports</li>
+              <li>Parole reports</li>
+              <li>ARMS assessment</li>
+              <li>Pre sentence</li>
+              <li>Bail notice</li>
+              <li>VOO</li>
+              <li>Exclusion zone map</li>     
+          </ul>
+      {% endset %}
+
+            {{ govukDetails({
+              summaryText: "View required documents",
+              html: detailsHTML
+            }) }}
+      
+      </div>
+    </div>
+
+
+    <div class="govuk-grid-column-full">
+
+      <p class="moj-pagination__results" style="float: right; padding-bottom: 20px;">Showing <b>7</b> documents</p>
+
+      <table class="govuk-table">
+       <thead class="govuk-table__head">
+
+         <tr class="govuk-table__row">
+           <th scope="col" class="govuk-table__header">Document name</th>
+           <th scope="col" class="govuk-table__header">Date uploaded</th>
+           <th scope="col" class="govuk-table__header">Download</th>
+           <th scope="col" class="govuk-table__header">Provide description</th>
+         </tr>
+
+       </thead>
+       <tbody class="govuk-table__body">
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">file-name-1</label>
+             </div>
+           </td>
+           <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+          <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+            </div>
+          </td>
+         </tr>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">file-name-2</label>
+             </div>
+           </td>
+          <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+          <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+            </div>
+          </td>
+         </tr>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">pre-cons.doc</label>
+             </div>
+           </td>
+          <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+          <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+            </div>
+          </td>
+         </tr>
+
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">pre-cons.doc</label>
+            </div>
+          </td>
+         <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+         <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+         <td class="govuk-table__cell">
+           <div class="govuk-form-group">
+             <input class="govuk-input" id="event-name" name="event-name" type="text">
+           </div>
+         </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">pre-cons.doc</label>
+            </div>
+          </td>
+         <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+         <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+         <td class="govuk-table__cell">
+           <div class="govuk-form-group">
+             <input class="govuk-input" id="event-name" name="event-name" type="text">
+           </div>
+         </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">pre-cons.doc</label>
+            </div>
+          </td>
+         <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+         <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+         <td class="govuk-table__cell">
+           <div class="govuk-form-group">
+             <input class="govuk-input" id="event-name" name="event-name" type="text">
+           </div>
+         </td>
+        </tr>
+
+         <tr class="govuk-table__row">
+           <td class="govuk-table__cell">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+               <label class="govuk-label govuk-checkboxes__label" for="waste">exclusion-zone.pdf</label>
+             </div>
+           </td>
+           <td scope="row" class="govuk-table__cell">23 Mar 2022</td>
+          <td scope="row" class="govuk-table__cell"><a href="">Download</a></td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <input class="govuk-input" id="event-name" name="event-name" type="text">
+            </div>
+          </td>
+         </tr>
+
+       </tbody>
+     </table>
+  </div>
+
+    {{ govukButton({
+      text: "Attach documents",
+      href: "/index"
+    }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

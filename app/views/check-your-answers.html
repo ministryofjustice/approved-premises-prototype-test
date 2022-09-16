@@ -1,0 +1,320 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h2 class="govuk-heading-l">Check your answers</h2>
+
+  <!-- Person details --> 
+    <h3 class="govuk-heading-m">Person details</h3>
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "CRN"
+            },
+            value: {
+              text: "D012923"
+            }
+          },
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Robert Brown"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+            }
+          }
+        ]
+      }) }}
+
+     <!-- Sentence type  --> 
+     <h3 class="govuk-heading-m">Sentence type</h3>
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Which of the following best describes the sentence type [name] is on?"
+            },
+            value: {
+              text: "{sentence-type}"
+            }
+          },
+          {
+            key: {
+              text: "What type of release will the application support / Which of the following options best describes the situation"
+            },
+            value: {
+              text: "{sentence-type-details}"
+            }
+          }
+        ]
+      }) }}
+
+    <!-- Date of arrival  --> 
+      <h3 class="govuk-heading-m">Date of arrival at Approved Premises</h3>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you know Robert Brown’s release date?"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Expected arrival date"
+            },
+            value: {
+              text: "03/12/2022"
+            }
+          }
+        ]
+      }) }}
+
+        <!-- Type of Approved Premises placement  --> 
+        <h3 class="govuk-heading-m">Type of Approved Premises required</h3>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Which type of AP does Robert require?"
+              },
+              value: {
+                text: "{type-of-ap}"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+    <!-- Confirm the need for an AP  --> 
+    <h3 class="govuk-heading-m">Confirm the need for an AP</h3>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "What is the purpose of the AP placement?"
+            },
+            value: {
+              text: "Sarah Philips"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Provide a summary of how an AP will enhance/support {name} risk management"
+            },
+            value: {
+              text: "Example content"
+            }
+          }
+        ]
+      }) }}
+
+      <!-- Choose sections of OASys to import  --> 
+    <h3 class="govuk-heading-m">Import and edit OASys information</h3>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Sections of OASys imported to application"
+          },
+          value: {
+            html: '<ul>
+              <li>9. Drug misuse</li>
+              <li>10. Alcohol misuse</li>
+            </ul>'
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Who is at risk"
+          },
+          value: {
+            text: "Males whom Mr Brown believes have wronged him, or partners (current partner, , children (daughter and unborn child)"
+          },
+
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "What is the nature of the risk"
+          },
+          value: {
+            text: "Violence, Threats, Physical harm"
+          }
+        },
+        {
+          key: {
+            text: "When is the risk likely to be greatest"
+          },
+          value: {
+            text: "HROSH to partners, medium to male peers, medium to children (context of DV). He has some contact with a woman in Birmingham who I believe is pregnant. He is occassionally using drugs in custody and there's a risk he will return to them on release. History of aggressive behaviour in custody; level of violence deployed in current offence was significant. If he is need of drugs, there is no telling how he will behave despite his stated motivation to avoid such behaviour in the future and address his drug use. Says he is currently drug free in custody but has been making fermented liquids in his cell in an effort to drink."
+          }
+        },
+        {
+          key: {
+            text: "What circumstances are likely to increase risk"
+          },
+          value: {
+            text: "HROSH to partners, medium to male peers, medium to children (context of DV). He has some contact with a woman in Birmingham who I believe is pregnant. He is occassionally using drugs in custody and there's a risk he will return to them on release. History of aggressive behaviour in custody; level of violence deployed in current offence was significant. If he is need of drugs, there is no telling how he will behave despite his stated motivation to avoid such behaviour in the future and address his drug use. Says he is currently drug free in custody but has been making fermented liquids in his cell in an effort to drink."
+          }
+        }
+      ]
+    }) }}
+
+    <!-- Detail about managing risks and needs  --> 
+    <h3 class="govuk-heading-m">Detail about managing risks and needs</h3>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Provide details on how these features will help to manage risk"
+            },
+            value: {
+              text: "Sarah Philips"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Provide details on additional features you think will support [name]s management of risk"
+            },
+            value: {
+              text: "Example content"
+            }
+          },
+          {
+            key: {
+              text: "Has {{name}} ever been convicted of any of the following offences? "
+            },
+            value: {
+              text: "{convicted-of-offence}"
+            }
+          },
+          {
+            key: {
+              text: "What type of offending has Robert Brown been convicted for?  "
+            },
+            value: {
+              text: "{convicted-of-offence}"
+            }
+          },
+          {
+            key: {
+              text: "Is the offence a current or previous offence? "
+            },
+            value: {
+              text: "{convicted-of-offence}"
+            }
+          },
+          {
+            key: {
+              text: "Does Robert Brown need a specialist arson room?"
+            },
+            value: {
+              text: "{convicted-of-offence}"
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

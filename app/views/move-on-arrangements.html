@@ -1,0 +1,53 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+
+    <h2 class="govuk-heading-l">Placement duration and move on</h2>
+  
+    {{ govukRadios({
+      idPrefix: "move-on-arrangements",
+      name: "move-on-arrangements",
+      fieldset: {
+        legend: {
+          text: "Are move on arrangements already in place for when Robert Brown leaves the AP?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-moveon-arrangements",
+          text: "Yes"
+        },
+        {
+          value: "no-moveon-arrangements",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/move-on-accommodation"
+    }) }}
+    
+  </div>
+</div>
+
+
+{% endblock %}
