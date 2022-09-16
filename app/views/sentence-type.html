@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -16,11 +16,11 @@
       text: "Back",
       href: "/task-list-standard"
     }) }}
- 
+
     <h2 class="govuk-heading-l">Which of the following best described the sentence type the person is on?</h2>
 
     <form action="/sentence-type-info" method="post" novalidate>
-      
+
       {{ govukRadios({
         idPrefix: "sentence-type",
         name: "sentence-type",
@@ -66,7 +66,7 @@
         ]
       }) }}
 
-      
+
       <input type="hidden" name="answers-checked" value="true">
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
