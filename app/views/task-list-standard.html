@@ -1,19 +1,24 @@
-{% from "govuk/components/input/macro.njk" import govukInput %}
-   {% from "components/widgets/macro.njk" import widgets %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+{% from "components/widgets/macro.njk" import widgets %}
+
 
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+ Approved Premises - Task list
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
 {% endblock %}
 
 {% block content %}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "/index"
-  }) }}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
@@ -26,7 +31,7 @@
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Before you continue
+            <span class="app-task-list__section-number">1. </span> Reasons for placement
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -124,7 +129,7 @@
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Considerations for when the placement ends
+            <span class="app-task-list__section-number">3. </span> Considerations for when the placement ends
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -140,12 +145,12 @@
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Select associated documents 
+            <span class="app-task-list__section-number">4. </span> Add documents 
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Select associated documents 
+                Attach required documents 
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
             </li>
@@ -185,8 +190,14 @@
       </ol>
 
       {{ govukButton({
-        text: "Submit",
+        text: "Submit application",
         href: "/index.html"
+      }) }}
+
+      {{ govukButton({
+        text: "Save and come back later",
+        classes: "govuk-button--secondary",
+        href: "/pp-dashboard.html"
       }) }}
 
 
