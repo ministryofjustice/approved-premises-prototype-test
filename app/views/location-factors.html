@@ -68,8 +68,8 @@
 
         {% set placementRestrictions %}
         {{ govukTextarea({
-          id: "arson-yes",
-          name: "arson-yes",
+          id: "placement-restrictions",
+          name: "placement-restrictions",
           type: "textarea",
           spellcheck: false,
           classes: "textarea",
@@ -81,8 +81,8 @@
   
       {% set alternativeLocation %}
       {{ govukInput({
-        id: "arson-yes",
-        name: "arson-yes",
+        id: "alternative-location-input",
+        name: "alternative-location-input",
         type: "textarea",
         spellcheck: false,
         classes: "textarea",
@@ -93,8 +93,8 @@
       {% endset -%}
   
       {{ govukRadios({
-        idPrefix: "risk-to-staff",
-        name: "risk-to-staff",
+        idPrefix: "placement-restrictions",
+        name: "placement-restrictions",
         fieldset: {
           legend: {
             text: "Are there any restrictions linked to placement location?",
@@ -107,22 +107,22 @@
         },
         items: [
           {
-            value: "yes-risktostaff",
+            value: "yes-exclusion",
             text: "Yes",
             conditional: {
               html: placementRestrictions
             }
           },
           {
-            value: "no-risktostaff",
+            value: "no-exclusion",
             text: "No"
           }
         ]
       }) }}
   
       {{ govukRadios({
-        idPrefix: "risk-to-resident",
-        name: "risk-to-resident",
+        idPrefix: "alternative-location",
+        name: "alternative-location",
         fieldset: {
           legend: {
             text: "If an AP Placement is not available in the persons preferred area, would a placement in an alternative locality be considered?",
@@ -135,22 +135,22 @@
         },
         items: [
           {
-            value: "yes-risk-resident",
+            value: "yes-alternative-location",
             text: "Yes",
             conditional: {
               html: alternativeLocation
             }
           },
           {
-            value: "no-risk-resident",
+            value: "no-alternative-location",
             text: "No"
           }
         ]
       }) }}
   
       {{ govukRadios({
-        idPrefix: "sharing-bedroom",
-        name: "sharing-bedroom",
+        idPrefix: "managed-pdu",
+        name: "managed-pdu",
         fieldset: {
           legend: {
             text: "Is Robert Brown moving to a different area where they'll be managed by a different probation delivery unit (PDU)?",
@@ -163,11 +163,11 @@
         },
         items: [
           {
-            value: "yes-bed-share",
+            value: "yes-managed-pdu",
             text: "Yes"
           },
           {
-            value: "no-bed-share",
+            value: "no-managed-pdu",
             text: "No"
           }
         ]

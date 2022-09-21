@@ -22,8 +22,8 @@
     {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "waste",
-        name: "waste",
+        idPrefix: "placement-reasons",
+        name: "placement-reasons",
         fieldset: {
           legend: {
             text: "Select at least one of the following reasons.",
@@ -33,11 +33,11 @@
         },
         items: [
           {
-            value: "esap-1",
+            value: "placement-reasons-1",
             text: "History of secreting items relevant to risk and re-offending in their room - requires enhanced room search through the use of body worn technology"
           },
           {
-            value: "esap-2",
+            value: "placement-reasons-2",
             text: "History of engaging in behaviours which are most effectively monitored via enhanced CCTV technology - requires enhanced CCTV provision"
           }
         ]
@@ -57,27 +57,27 @@
         },
         items: [
           {
-            value: "esap-1",
+            value: "esap-required-1",
             text: "A diagnosis of autism or neurodiverse traits"
           },
           {
-            value: "esap-2",
+            value: "esap-required-2",
             text: "A complex personality presentation which has created challenges in the prison and where an AP PIPE is deemed unsuitable"
           },
           {
-            value: "esap-2",
+            value: "esap-required-3",
             text: "A non-NSD case where enhanced national standards are required to manage the risks posed and thought to be beneficial to risk reduction"
           },
           {
-            value: "esap-2",
+            value: "esap-required-4",
             text: "Individual has spent time in a Care and Separation Unit in the last 24 months"
           },
           {
-            value: "esap-2",
+            value: "esap-required-5",
             text: "Individual has required a 2/3 prison officer unlock in the last 12 months."
           },
           {
-            value: "esap-2",
+            value: "esap-required-6",
             text: "Individual has been identified as a known/suspected corrupter of staff"
           }
         ]
