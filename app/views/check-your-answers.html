@@ -20,7 +20,7 @@
     <h2 class="govuk-heading-l">Check your answers</h2>
 
   <!-- Person details --> 
-    <h3 class="govuk-heading-m">Person details</h3>
+    <h3 class="govuk-heading-m" id="cya-header">Person details</h3>
      {{ govukSummaryList({
         rows: [
           {
@@ -36,7 +36,7 @@
               text: "Name"
             },
             value: {
-              text: "Robert Brown"
+              text: "{name}"
             }
           },
           {
@@ -59,7 +59,7 @@
       }) }}
 
      <!-- Sentence type  --> 
-     <h3 class="govuk-heading-m">Sentence type</h3>
+     <h3 class="govuk-heading-m" id="cya-header">Sentence type</h3>
      {{ govukSummaryList({
         rows: [
           {
@@ -82,12 +82,12 @@
       }) }}
 
     <!-- Date of arrival  --> 
-      <h3 class="govuk-heading-m">Date of arrival at Approved Premises</h3>
+      <h3 class="govuk-heading-m" id="cya-header">Date of arrival at Approved Premises</h3>
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Do you know Robert Brown’s release date?"
+              text: "Do you know {name}’s release date?"
             },
             value: {
               text: "Yes"
@@ -114,7 +114,7 @@
       }) }}
 
         <!-- Type of Approved Premises placement  --> 
-        <h3 class="govuk-heading-m">Type of Approved Premises required</h3>
+        <h3 class="govuk-heading-m" id="cya-header">Type of Approved Premises required</h3>
         {{ govukSummaryList({
           rows: [
             {
@@ -139,7 +139,7 @@
 
 
     <!-- Confirm the need for an AP  --> 
-    <h3 class="govuk-heading-m">Confirm the need for an AP</h3>
+    <h3 class="govuk-heading-m" id="cya-header">Confirm the need for an AP</h3>
       {{ govukSummaryList({
         rows: [
           {
@@ -171,7 +171,7 @@
       }) }}
 
       <!-- Choose sections of OASys to import  --> 
-    <h3 class="govuk-heading-m">Import and edit OASys information</h3>
+    <h3 class="govuk-heading-m" id="cya-header">Import and edit OASys information</h3>
     {{ govukSummaryList({
       rows: [
         {
@@ -240,7 +240,7 @@
     }) }}
 
     <!-- Detail about managing risks and needs  --> 
-    <h3 class="govuk-heading-m">Detail about managing risks and needs</h3>
+    <h3 class="govuk-heading-m" id="cya-header">Detail about managing risks and needs</h3>
       {{ govukSummaryList({
         rows: [
           {
@@ -266,6 +266,15 @@
             },
             value: {
               text: "Example content"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
             }
           },
           {
@@ -273,15 +282,15 @@
               text: "Has {{name}} ever been convicted of any of the following offences? "
             },
             value: {
-              text: "{convicted-of-offence}"
+              text: "{data}"
             }
           },
           {
             key: {
-              text: "What type of offending has Robert Brown been convicted for?  "
+              text: "What type of offending has {name} been convicted for?  "
             },
             value: {
-              text: "{convicted-of-offence}"
+              text: "{data}"
             }
           },
           {
@@ -289,25 +298,490 @@
               text: "Is the offence a current or previous offence? "
             },
             value: {
-              text: "{convicted-of-offence}"
+              text: "{data}"
             }
           },
           {
             key: {
-              text: "Does Robert Brown need a specialist arson room?"
+              text: "Does {name} need a specialist arson room?"
             },
             value: {
-              text: "{convicted-of-offence}"
+              text: "{data}"
             }
           }
         ]
       }) }}
 
 
+<!-- Review prison information  --> 
+    <h3 class="govuk-heading-m" id="cya-header">Review prison information</h3>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Selected behaviour notes that support application"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Additional circumstances that have helped Robert do well in the past (optional)"
+          },
+          value: {
+            text: "Example content"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <!-- Describe location factors  --> 
+    <h3 class="govuk-heading-m" id="cya-header">Describe location factors</h3>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Preferred location for AP placement"
+          },
+          value: {
+            text: "{data}"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Give details of any positive factors for {name} in this location."
+          },
+          value: {
+            text: "Example content"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Are there any restrictions linked to placement location?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "If an AP Placement is not available in the persons preferred area, would a placement in an alternative locality be considered?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit (PDU)?"
+          },
+          value: {
+            text: "{data}"
+          }
+        }
+      ]
+    }) }}
+
+    <!-- Health and access needs  --> 
+    <h3 class="govuk-heading-m" id="cya-header">Health and access needs</h3>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Does {name} require use of a wheelchair?"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Does Robert have any other mobility, disability, or accessibility needs?"
+          },
+          value: {
+            text: "Example content"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Does [name] need an interpreter?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Does [name] have any additional health issues or care and support needs? "
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Has a care act assessment been completed?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Has Robert Brown been fully vaccinated for COVID-19?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },{
+          key: {
+            text: "Is Robert Brown high risk to COVID-19?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Other considerations and comments on COVID-19"
+          },
+          value: {
+            text: "{data}"
+          }
+        }
+      ]
+    }) }}
+
+    <!-- Further placement considerations  --> 
+    <h3 class="govuk-heading-m" id="cya-header">Further placement considerations</h3>
+    <h2 class="govuk-heading-m">Room sharing</h2>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Is there any evidence that Robert Brown may pose a risk to AP staff?"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Is there any evidence that Robert Brown may pose a risk to other AP residents?"
+          },
+          value: {
+            text: "Example content"
+          }
+        },
+        {
+          key: {
+            text: "Do you have any concerns about Robert Brown sharing a bedroom?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Is there potential for the person to benefit from a room share?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Is there any evidence of previous trauma or significant event in the persons history which would indicate that room share may not be suitable"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "Do you have any concerns about Robert Brown sharing a bathroom?"
+          },
+          value: {
+            text: "{data}"
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Vulnerability</h2>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Are you aware that Robert is vulnerable to exploitation from others?"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Is there any evidence or expectation that Robert may groom, radicalise or exploit others?"
+          },
+          value: {
+            text: "Example content"
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Previous placements</h2>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Has Robert Brown stayed or been offered a placement in an AP before?"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Complex case board</h2>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Does Robert's gender identity require a complex case board to review their application?"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Catering requirements</h2>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Do you have any concerns about Robert Brown catering for themself?"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+     <!-- Move on information  --> 
+     <h3 class="govuk-heading-m" id="cya-header">Placement duration and move on information</h3>
+     {{ govukSummaryList({
+       rows: [
+         {
+           key: {
+             text: "What duration of placement do you recommend?"
+           },
+           value: {
+             text: "Sarah Philips"
+           },
+           actions: {
+             items: [
+               {
+                 href: "#",
+                 text: "Change",
+                 visuallyHiddenText: "name"
+               }
+             ]
+           }
+         },
+         {
+           key: {
+             text: "Additional comments to support duration of placement"
+           },
+           value: {
+             text: "Example content"
+           },
+           actions: {
+             items: [
+               {
+                 href: "#",
+                 text: "Change",
+                 visuallyHiddenText: "name"
+               }
+             ]
+           }
+         },
+         {
+           key: {
+             text: "Where is [name] most likely to live when he moves on from the AP?"
+           },
+           value: {
+             text: "{data}"
+           }
+         },
+         {
+          key: {
+            text: "Are move on arrangements already in place for when Robert Brown leaves the AP?"
+          },
+          value: {
+            text: "{data}"
+          }
+        },
+        {
+          key: {
+            text: "What type of accommodation will Robert Brown have when they leave the AP?"
+          },
+          value: {
+            text: "{data}"
+          }
+        }
+       ]
+     }) }}
 
 
+      <!-- Associated documents  --> 
+      <h3 class="govuk-heading-m" id="cya-header">Associated documents</h3>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "court-reports.pdf"
+            },
+            value: {
+              text: "link"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "exclusion-zone.pdf"
+            },
+            value: {
+              text: "Example content"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
-    
+
+     <!--- Back button -->
+
 
         {{ govukButton({
           text: "Save and continue",

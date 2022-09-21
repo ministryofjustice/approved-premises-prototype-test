@@ -30,26 +30,25 @@ g{% extends "layout.html" %}
 
             <ul class="moj-sub-navigation__list">
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" aria-current="page" href="#1">RoSH summary</a>
+                <a class="moj-sub-navigation__link" aria-current="page" href="risk-ROSH.html">RoSH summary</a>
               </li>
 
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#2">Offence details</a>
+                <a class="moj-sub-navigation__link" href="risk-offence-details.html">Offence details</a>
               </li>
 
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#3">Needs linked to risk</a>
+                <a class="moj-sub-navigation__link" href="risk-imported.html">Needs linked to risk</a>
               </li>
 
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#3">Risk Management Plan</a>
+                <a class="moj-sub-navigation__link" href="risk-management-plan.html">Risk Management Plan</a>
               </li>
 
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#3">Risk to self</a>
+                <a class="moj-sub-navigation__link" href="risk-to-self.html">Risk to self</a>
               </li>
             </ul>
-
           </nav>
   </div>  
   <div class="govuk-grid-column-two-thirds">
@@ -107,8 +106,8 @@ g{% extends "layout.html" %}
 
 
       {{ govukButton({
-        text: "Submit",
-        href: "/index.html"
+        text: "Next",
+        href: "/risk-offence-details.html"
       }) }}
 
     </div>

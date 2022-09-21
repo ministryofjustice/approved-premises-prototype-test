@@ -29,8 +29,8 @@
       {% endset -%} 
 
       {{ govukRadios({
-        idPrefix: "release-date",
-        name: "release-date",
+        idPrefix: "agreed-transfer",
+        name: "agreed-transfer",
         fieldset: {
           legend: {
             text: "Have you agreed Robert Brown's transfer/supervision with the receiving PDU?",
@@ -40,7 +40,7 @@
         },
         items: [
           {
-            value: "release-date-known",
+            value: "yes-agreed-transfer",
             text: "Yes",
             checked: false,
             conditional: {
@@ -48,11 +48,11 @@
             }
           },
           {
-            value: "releast-date-unknown",
+            value: "not-agreed-transfer",
             text: "No, I still need to make arrangements"
           },
           {
-            value: "releast-date-unknown",
+            value: "no-transfer-required",
             text: "No management and supervision will be maintained by the existing Probation Practitioner."
           }
         ]

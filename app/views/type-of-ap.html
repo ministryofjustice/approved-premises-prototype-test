@@ -37,26 +37,27 @@ ESAPs (enhanced security APs) offer additional security measures and are intende
             </p>
           </details>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="type-of-ap" name="type-of-ap" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="type-of-ap">
-                Standard
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="type-of-ap-2" name="type-of-ap" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="type-of-ap-2">
-                PIPE (physcologically informed planned environment)
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="type-of-ap-3" name="type-of-ap" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="type-of-ap-3">
-                ESAP (enhanced security AP)
-              </label>
-            </div>
-            </div>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "type-of-ap",
+          name: "where-do-you-live",
+          items: [
+            {
+              value: "standard",
+              text: "Standard"
+            },
+            {
+              value: "pipe",
+              text: "PIPE (physcologically informed planned environment)"
+            },
+            {
+              value: "esap",
+              text: "ESAP (enhanced security AP)"
+            }
+          ]
+        }) }}
+
           </div>
 
         </fieldset>

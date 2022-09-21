@@ -31,11 +31,11 @@
 
     {{ govukInput({
       label: {
-        text: "Weeks"
+        text: "Duration in weeks"
       },
       classes: "govuk-input--width-2",
-      id: "width-2",
-      name: "width-2"
+      id: "move-on-duration",
+      name: "move-on-duration"
     }) }}
 
     <h3 class="govuk-heading-m"> Expected dates of stay in Approved Premises:  </h3>
@@ -55,11 +55,7 @@
           text: "If the duration of placement is not a standard length (12 weeks) provide reason as to why it is not."
         }
        }) }}
-
-
-
-
-
+       
         {{ govukButton({
           text: "Save and continue",
           href: "/move-on-location"
