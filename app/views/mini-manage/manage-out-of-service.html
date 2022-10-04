@@ -1,0 +1,108 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h2 class="govuk-heading-l">Manage out of service bed </h2>
+   
+    {{ govukSummaryList({
+      classes: 'govuk-summary-list--no-border',
+      rows: [
+        {
+          key: {
+            text: "Number of bed lost"
+          },
+          value: {
+            text: "1"
+          }
+        },
+        {
+          key: {
+            text: "Start date"
+          },
+          value: {
+            text: "3 October 2022"
+          }
+        },
+        {
+          key: {
+            text: "Expected end date"
+          },
+          value: {
+            text: "10 October 2022"
+          }
+        },
+        {
+          key: {
+            text: "Reason for bed being marked as lost"
+          },
+          value: {
+            text: " out of service reason"
+          }
+        },
+        {
+          key: {
+            text: "Reference number"
+          },
+          value: {
+            text: "None provided"
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukDateInput({
+      id: "lost-bed-end-date",
+      namePrefix: "lost-bed-end-date",
+      fieldset: {
+        legend: {
+          text: "End date",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+        text: "Can you provide more detail?"
+      }
+    }) }}
+
+
+
+
+
+
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
