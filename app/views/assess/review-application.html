@@ -16,7 +16,7 @@
 
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-width">
 
@@ -24,25 +24,25 @@
     <div>
       <!-- Sub-navigation -->
           <nav class="moj-sub-navigation" aria-label="Sub navigation">
-      
+
             <ul class="moj-sub-navigation__list">
               <li class="moj-sub-navigation__item">
                 <a class="moj-sub-navigation__link" aria-current="page" href="#person-details">Application details</a>
               </li>
-      
+
               <li class="moj-sub-navigation__item">
                 <a class="moj-sub-navigation__link" href="#risk">Risk</a>
               </li>
-      
+
 
               <li class="moj-sub-navigation__item">
                 <a class="moj-sub-navigation__link" href="#approved-premises-requirements">AP requirements</a>
               </li>
-              
+
               <li class="moj-sub-navigation__item">
                 <a class="moj-sub-navigation__link" href="#prison">Prison information</a>
               </li>
-      
+
               <li class="moj-sub-navigation__item">
                 <a class="moj-sub-navigation__link" href="#location">Location factors</a>
               </li>
@@ -56,7 +56,7 @@
               </li>
             </ul>
           </nav>
-        </div> 
+        </div>
 
     <!-- Person details -->
     <div class="main-box">
@@ -169,7 +169,7 @@
       </div>
     </div>
 
-     <!--  Approved Premises requirements --> 
+     <!--  Approved Premises requirements -->
      <div class="main-box">
       <div class="box-title govuk-heading-m" id="approved-premises-requirements">
       Approved Premises requirements
@@ -201,16 +201,16 @@
                 text: "Standard"
               }
             }
-          ] 
+          ]
         }) }}
         </div>
       </div>
 
-      <!--- If PIPE/ ESAP ARE SELECTED, INCLUDE THE FOLLOWING ANSWERS ---> 
+      <!--- If PIPE/ ESAP ARE SELECTED, INCLUDE THE FOLLOWING ANSWERS --->
 
        <!-- If PIPE is selected, use following code -->
-    
-    <!-- 
+
+    <!--
       <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
         Approved Premises requirements
@@ -270,10 +270,10 @@
         ]
         }) }}
       </div>
-    </div> 
+    </div>
   -->
     <!-- If ESAP is are selected, use following code -->
-    <!-- 
+    <!--
       <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
         Approved Premises requirements
@@ -383,11 +383,11 @@
         ]
         }) }}
       </div>
-    </div> 
+    </div>
   -->
 
 
-  <!-- Purpose of placement --> 
+  <!-- Purpose of placement -->
   <div class="main-box">
     <div class="box-title govuk-heading-m" id="purpose-of-placement">
       Reasons for placement
@@ -459,7 +459,7 @@
 
         <p><a href="prison-adjudications.html">View additional prison information</a></p>
       </div>
-    </div>  
+    </div>
 
     <!-- If emergancy referral, show information here -->
 
@@ -626,7 +626,7 @@
  <!-- Further placement considerations  -->
     <div class="main-box">
       <div class="box-title govuk-heading-m" id="">
-        Further placement considerations 
+        Further placement considerations
       </div>
       <div class="box-content">
         <h2 class="govuk-heading-m">Room sharing</h2>
@@ -683,8 +683,8 @@
         }
         ]
         }) }}
-    
-    
+
+
         <h2 class="govuk-heading-m">Vulnerability</h2>
         {{ govukSummaryList({
         rows: [
@@ -706,7 +706,7 @@
         }
         ]
         }) }}
-    
+
         <h2 class="govuk-heading-m">Previous placements</h2>
         {{ govukSummaryList({
         rows: [
@@ -720,7 +720,7 @@
         }
         ]
         }) }}
-    
+
         <h2 class="govuk-heading-m">Complex case board</h2>
         {{ govukSummaryList({
         rows: [
@@ -734,7 +734,7 @@
         }
         ]
         }) }}
-    
+
         <h2 class="govuk-heading-m">Catering requirements</h2>
         {{ govukSummaryList({
         rows: [
@@ -804,7 +804,7 @@
     </div>
 
 
-  
+
 
 
     <!-- Associated documents  -->

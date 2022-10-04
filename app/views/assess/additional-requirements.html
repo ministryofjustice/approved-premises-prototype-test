@@ -1,0 +1,198 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h1 class="govuk-heading-l">Actions to support a placement</h1>
+
+      {{ govukRadios({
+        name: "identifies-risk-factors",
+        fieldset: {
+          legend: {
+            text: "Are additional actions required by the probation practitioner to make a placement viable?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes-risk-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-risk-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+
+      {{ govukTextarea({
+        name: "risk-factors-details",
+        id: "risk-factors-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+      <!-- Question-->
+     
+      {{ govukRadios({
+        name: "identifies-risk-factors",
+        fieldset: {
+          legend: {
+            text: "Are any additional curfews / sign ins recommended?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes-risk-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-risk-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+
+      {{ govukTextarea({
+        name: "risk-factors-details",
+        id: "risk-factors-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+    {% set unmanageableRisks %}
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="event-name">
+        Name of area manager
+      </label>
+      <input class="govuk-input" id="event-name" name="event-name" type="text">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="event-name">
+        Date of discussion
+      </label>
+      <input class="govuk-input" id="event-name" name="event-name" type="date">
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="more-detail">
+        Agreed measures following discussion
+      </label>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
+    </div>
+    {% endset %}
+
+    
+
+    <!-- Radio area -->
+
+      {{ govukRadios({
+        idPrefix: "assess-location-factors",
+        name: "assess-location-factors",
+        fieldset: {
+          legend: {
+            text: "Are there concerns that the individual poses a potentially unmanageable risk to staff / residents/ others?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "If yes, the application must be discussed with the AP Area Manager to identify additional support that may be required"
+        },
+        items: [
+          {
+            value: "yes-location-factors",
+            text: "Yes",
+            conditional: {
+              html: unmanageableRisks
+            }
+          },
+          {
+            value: "no-location-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "risk-factors-details",
+        id: "risk-factors-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+
+      {{ govukRadios({
+        name: "assess-move-on",
+        id: "assess-move-on",
+        fieldset: {
+          legend: {
+            text: "Additional recommendations for receiving AP manager",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "move-on-sufficient",
+            text: "Yes"
+          },
+          {
+            value: "move-on-not-sufficient",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+
+      {{ govukTextarea({
+        name: "move-on-details",
+        id: "move-on-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

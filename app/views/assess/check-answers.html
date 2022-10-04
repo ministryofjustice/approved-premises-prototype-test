@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-full-width">
+        <h1 class="govuk-heading-xl">Check your answers </h1>
+
+     <h2 class="govuk-heading-m">Screening </h2>
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is there sufficient information in the referral to make a decision?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Suitability assessment</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Does the application identify the risk factors that an AP placement can support?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does the application support how the AP will manage risk factors"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are there factors to take into account in relation to the location of placement?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Is the move on plan sufficient?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are additional actions required by the probation practitioner to make a placement viable?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are any additional curfews / sign ins recommended?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Are there concerns that the individual poses a potentially unmanageable risk to staff / residents/ others?"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Additional recommendations for receiving AP manager"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Placement needs</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Essential room requirements"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Desirable room requirements"
+            },
+            value: {
+              text: "{answers}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Assessment outcome</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Decision reason"
+            },
+            value: {
+              text: "{sentence-type-details}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <form action="/tasklist" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+         Confirm
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
