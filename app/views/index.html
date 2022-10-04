@@ -8,16 +8,25 @@
 {% block content %}
  
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
- 
-    <h1 class="govuk-heading-l"> Mini-manage </h1>
+  <div class="govuk-grid-column-full-width">
+
+    {% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set miniManageHtml %}
+<h1 class="govuk-heading-l"> Mini-manage </h1>
     <h2 class="govuk-heading-m"> Trial pages </h2>
       <p><a href="cancellation">Cancellation pages</a></p>
       <p><a href="lost-beds">Lost beds</a></p>
       <p><a href="capacity-component">Capacity component</a></p>
+      <p><a href="capacity-component-v2">Capacity component - updated design (27 September 22)</a></p>
+      <p><a href="mini-manage/out-of-service-beds">Out of service beds</a></p>
+      <p><a href="mini-manage/manage-out-of-service">Manage out of service beds</a></p>
 
+{% endset -%}
 
-          <h1 class="govuk-heading-l"> Apply </h1>
+{% set applyHtml %}
+<h1 class="govuk-heading-l"> Apply </h1>
             <p><b><a href="pp-dashboard">PP dashboard</a></b> - PP dashboard has been designed using tabs from GDS design system. I have used HTML rather than nunkucks to include the tags and badges from the MOJ/GDS design system. </p>
             <p><a href="start.html"><b>Start page</b></a></p>
             <p><a href="enter-crn">Enter CRN </a></p>
@@ -109,7 +118,7 @@
               <li><p><a href="further-considerations-placement.html">Further considerations - Previous placements</a></p></li>
               <li><p><a href="further-considerations-complex-case.html">Further considerations - Complex case board</a></p></li>
               <li><p><a href="further-considerations-catering.html">Further considerations - Catering</a></p></li>
-              <li><p><a href="further-placement-considerations-arson.html">Further considerations - arson</a></p></li>
+              <li><p><a href="further-considerations-arson.html">Arson</a></p></li>
             </ul>
         
           <br>
@@ -119,7 +128,7 @@
               <li><p><a href="move-on-location.html">Move on - location </a></p></li>
               <li><p><a href="move-on-arrangements.html">Move on - arrangements </a></p></li>
               <li><p><a href="move-on-accomodation.html">Move on - type of accomodation </a></p></li>
-              <li><p><a href="move-on-fn">Move on - if foreign national </a></p></li>
+              <li><p><a href="move-on-foreign-national.html">Move on - if foreign national </a></p></li>
             </ul>
 
           <br>
@@ -138,7 +147,86 @@
               <li><p><a href="emergency-late-submission.html">Emergency - late submission </a></p></li>
               <li><p><a href="emergency-additional-qs.html">Emergency - additional questions </a></p></li> 
             </ul>
+{% endset -%}
+
+{% set assessHtml %}
+    <h1 class="govuk-heading-l"> Assess </h1>
+    <p><a href="assess/empty-template.html">Empty template</a></p>
+    <br>
+    <p><a href="assess/assess-dashboard.html">Assessor dashboard</a></p>
+    <p><a href="assess/tasklist.html">Task list</a></p>
+    <p><a href="assess/review-assessment.html">Review assessment </a></p> 
+
+    <h2 class="govuk-heading-m">Review information</h2>
+    <p><a href="assess/review-application.html">Review application and documents</a></p>
+    <p><a href="assess/sufficient-information.html">Review risk information</a></p>
+    <ul>
+      <li><p><a href="assess/risk-ROSH.html">Risk - RoSH summary</a></p></li>
+      <li><p><a href="assess/risk-offence-details.html">Risk - Offence details</a></p></li>
+      <li><p><a href="assess/risk-imported.html">Risk - Supporting information</a></p></li>
+      <li><p><a href="assess/risk-to-self.html">Risk to self </a></p></li>
+      <li><p><a href="assess/risk-management-plan.html">Risk management plan </a></p></li>
+    </ul>
+    <p><a href="assess/prison-adjudications.html">Review prison information (adjudications)</a></p>
+
+
+
+    <h2 class="govuk-heading-m">Suitability assessment questions</h2>
+    <p><a href="assess/sufficient-information.html">Enough information in application</a></p>
+    <p><a href="assess/assessment-questions-1.html">Assessment questions</a></p>
+    <p><a href="assess/additional-requirements.html">Additional requirements for AP</a></p>
+
+    <h2 class="govuk-heading-m">Request further information (PP & Assessor screens)</h2>
+    <p><a href="assess/assessor-request-info.html">Request information (assessor)</a></p>
+    <p><a href="assess/pp-info-request.html">Provide information (Probation practicioner)</a></p>
+    <p><a href="assess/pp-check-info.html">Check additional information (Probation practicioner)</a></p>
+    <p><a href="assess/assessor-review-info.html">Review additional information (Assessor)</a></p>
+    
+    <h2 class="govuk-heading-m">Make a decision</h2>
+    <p><a href="assess/make-decision.html">Make a decision</a></p>
+
+    <h2 class="govuk-heading-m">Placement needs</h2>
+    <p><a href="assess/placement-needs.html">Placement needs</a></p>
+
+    <br>
+    <p><a href="assess/check-answers.html">Check your answers</a></p>
+
+    <p><a href="assess/suitable-confirmation-standard.html">Confirmation</a></p>
+    
+{% endset -%}
+
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Mini-manage",
+      id: "mini-manage",
+      panel: {
+        html: miniManageHtml
+      }
+    },
+    {
+      label: "Apply",
+      id: "apply",
+      panel: {
+        html: applyHtml
+      }
+    },
+    {
+      label: "Assess",
+      id: "assess",
+      panel: {
+        html: assessHtml
+      }
+    }
+  ]
+}) }}
+ 
+    
+
+          
             
+
 </div>
 
 

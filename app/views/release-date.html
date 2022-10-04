@@ -31,7 +31,7 @@
 
       {% set html %}
         <p>
-          If the arrival date is not yet known, this application will be paused once a suitability assessment has been made. The individual will then be matched to an Approved Premises after a direction to release has been made.
+          If the release date is not yet known, this application will be paused once a suitability assessment has been made. <br><br>If the application is successful the individual will be matched to an Approved Premises after a direction to release has been made.
         </p>
       {% endset %}
 
@@ -46,7 +46,7 @@
         name: "release-date",
         fieldset: {
           legend: {
-            text: "Do you know Robert Brown’s release date?",
+            text: "Do you know {booking.name} release date?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
