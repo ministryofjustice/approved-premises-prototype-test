@@ -186,31 +186,6 @@
     }) }}
 
     {{ govukRadios({
-      idPrefix: "benefit-bed-share",
-      name: "benefit-bed-share",
-      fieldset: {
-        legend: {
-          text: "Is there potential for the person to benefit from a room share?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "yes-benefit",
-          text: "Yes",
-          conditional: {
-            html: benefitBedShare
-          }
-        },
-        {
-          value: "no-benefit",
-          text: "No"
-        }
-      ]
-    }) }}
-
-    {{ govukRadios({
       idPrefix: "evident-trauma",
       name: "evident-trauma",
       fieldset: {
@@ -237,6 +212,33 @@
         }
       ]
     }) }}
+
+    {{ govukRadios({
+      idPrefix: "benefit-bed-share",
+      name: "benefit-bed-share",
+      fieldset: {
+        legend: {
+          text: "Is there potential for the person to benefit from a room share?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-benefit",
+          text: "Yes",
+          conditional: {
+            html: benefitBedShare
+          }
+        },
+        {
+          value: "no-benefit",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    
 
 
     {{ govukRadios({
