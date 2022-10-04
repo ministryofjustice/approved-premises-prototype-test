@@ -1,0 +1,331 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/assess/tasklist"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l">Review application and documents</h1>
+    <div>
+      <!-- Sub-navigation -->
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#person-details">Application details</a>
+              </li>
+      
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="risk-offence-details.html">Risk</a>
+              </li>
+      
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#prison">Prison information</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="risk-to-self.html">AP requirements</a>
+              </li>
+      
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="risk-to-self.html">Location factors</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="risk-to-self.html">Health</a>
+              </li>
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="risk-to-self.html">Documents</a>
+              </li>
+            </ul>
+          </nav>
+        </div> 
+
+     <!-- Person details --> 
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Person details
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "CRN"
+              },
+              value: {
+                text: "D012923"
+              }
+            },
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "{name}"
+              }
+            },
+            {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: "72 Guild Street<br>London<br>SE23 6FH"
+              }
+            },
+            {
+              key: {
+                text: "Contact details"
+              },
+              value: {
+                html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+              }
+            }
+          ]
+        }) }}
+      </div>
+    </div>
+
+     <!--  Custody information --> 
+     <div class="main-box">
+      <div class="box-title govuk-heading-m">
+       Custody information
+      </div>
+      <div class="box-content">
+      {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Release date"
+              },
+              value: {
+                text: "D012923"
+              }
+            },
+            {
+              key: {
+                text: "Current location"
+              },
+              value: {
+                text: "{name}"
+              }
+            },
+            {
+              key: {
+                text: "Status"
+              },
+              value: {
+                html: "72 Guild Street<br>London<br>SE23 6FH"
+              }
+            }
+          ] 
+        }) }}
+        </div>
+      </div>
+
+  <!-- Purpose of placement --> 
+  <div class="main-box">
+    <div class="box-title govuk-heading-m" id="purpose-of-placement">
+      Purpose of placement
+    </div>
+    <div class="box-content">
+     {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Desired outcomes of this placement"
+            },
+            value: {
+              text: "D012923"
+            }
+          },
+          {
+            key: {
+              text: "Features of an AP that are expected to be useful"
+            },
+            value: {
+              text: "{name}"
+            }
+          },
+          {
+            key: {
+              text: "How features are expected to help manage risk "
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+   
+  
+     <!-- Sentence information  --> 
+     <div class="main-box">
+      <div class="box-title govuk-heading-m" id="purpose-of-placement">
+        Sentence information
+      </div>
+      <div class="box-content">
+       {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Current offence"
+              },
+              value: {
+                text: "D012923"
+              }
+            },
+            {
+              key: {
+                text: "Date of sentence"
+              },
+              value: {
+                text: "{name}"
+              }
+            },
+            {
+              key: {
+                text: "Sentence length"
+              },
+              value: {
+                html: "72 Guild Street<br>London<br>SE23 6FH"
+              }
+            },
+            {
+              key: {
+                text: "Index offence"
+              },
+              value: {
+                html: "Info"
+              }
+            }
+          ]
+        }) }}
+      </div>
+    </div>
+
+     <!-- Risk information  --> 
+     <div class="main-box">
+      <div class="box-title govuk-heading-m" id="purpose-of-placement">
+        Risk information
+      </div>
+      <div class="box-content">
+       {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Current offence"
+              },
+              value: {
+                text: "D012923"
+              }
+            },
+            {
+              key: {
+                text: "Date of sentence"
+              },
+              value: {
+                text: "{name}"
+              }
+            },
+            {
+              key: {
+                text: "Sentence length"
+              },
+              value: {
+                html: "72 Guild Street<br>London<br>SE23 6FH"
+              }
+            },
+            {
+              key: {
+                text: "Index offence"
+              },
+              value: {
+                html: "Info"
+              }
+            }
+          ]
+        }) }}
+
+        <p><a href="risk-ROSH.html">Read more risk information</a></p>
+      </div>
+    </div>
+
+    <!---Prison information-->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="prison">
+        Prison information
+      </div>
+      <div class="box-content">
+       {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Positive  and negative behaviour notes that support this application"
+              },
+              value: {
+                text: "List out imported prison behaviours here on bullet points"
+              }
+            }
+          ]
+        }) }}
+
+        <p><a href="prison-adjudications.html">Read more prison information</a></p>
+      </div>
+    </div>
+
+
+
+     <!--- Back button -->
+
+     <div class="govuk-grid-column-two-thirds">
+      {{ govukRadios({
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Have you reviewed all of the application and documents provided?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-reviewed",
+            text: "Yes"
+          },
+          {
+            value: "no-reviewed",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/assess/tasklist"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

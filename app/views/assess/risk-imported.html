@@ -1,0 +1,91 @@
+g{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/assess/review-application"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div>
+      <h1 class="govuk-heading-l">
+        Edit risk information
+      </h1>
+
+      <p> Imported from OASys  <b> 23 March 2022 </b></p>
+      <p> OASys last updated  <b> 02 January 2022 </b></p> 
+      <p><a href="">Go to full OASys assessment (opens in new tab)</a></p>
+
+</div>
+<div>
+  <!-- Sub-navigation -->
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+  
+              <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link"  href="risk-ROSH.html">RoSH summary</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-offence-details.html">Offence details</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" aria-current="page" href="risk-imported.html">Supporting information</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-management-plan.html">Risk Management Plan</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-to-self.html">Risk to self</a>
+                </li>
+              </ul>
+            </nav>
+    </div>  
+    
+  <div class="govuk-grid-column-two-thirds">
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              Drug misuse
+            </h2>
+            <p><b>Identify drug misuse issues contributing to risks of offending and harm.</b></p>
+              <p>Mr Brown told me that he had experimented with many drugs throughout his teens. He first used heroin when he was 15 years old but states he did not become addicted until he was 18. He said that he had remained in the grip of this addiction since that time, with some periods of abstinence. He recalled that at its peak his heroin addiction was such that he was using up to 1/8 of an ounce daily, supplementing his own use by selling this substance.  Mr Brown has administered heroin intravenously. He commented that he had not yet experienced any serious side effects of compromised his physical health as a result of his use of illicit substances. Departmental records indicate that in the past Mr Brown has made efforts to call a halt to his drug use on several occasions but these attempts have generally been short lived. He completed the STAR programme in custody at HMP Featherstone but has been successful at obtaining drugs in custody since then. At that time he acknowledged that he needed help and self-referred to a detoxification programme. Previously, he has completed a 4 week Short Duration programme at HMP Hewell.</p>
+            <hr>
+          </div>
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              Alcohol misuse
+            </h2>
+            <p><b>Identify alcohol misuse issues contributing to risks of offending and harm.</b></p>
+              <p>Mr Brown told me that he has been drinking since he was a child. His drinking contributed to him becoming a drug user which led to his previous and current offences. He told me that he wants to drink and he is on an ACCT for trying to ferment liquids in his cell for the purpose of drinking. He is likely to seek out alcohol at the first opportunity upon release  which could lead him back to drug use.</p>
+            <hr>
+          </div>
+          
+          <div>
+            <p><a href="">Back to application</a></p>
+          </div>
+    </div>
+
+
+      <div class="risk-information">
+        <div class="govuk-grid-column-one-third">
+          {{ widgets(widgetData) }}
+        </div>
+      </div>
+
+
+
+    </div>
+  
+
+{% endblock %}

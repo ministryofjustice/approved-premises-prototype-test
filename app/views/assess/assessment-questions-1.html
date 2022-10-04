@@ -1,0 +1,189 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h1 class="govuk-heading-l">Suitability assessment</h1>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View guidance notes
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+       <p> Consider </p>
+          <ul>
+            <li> If there is an immediate risk of harm which the AP environment/ regime will support in managing (including risk to self).</li>
+            <li> Whether an AP placement would still be necessary if alternative accommodation was available.  If the assessor considers this is a referral for accommodation only, this must be clearly explained.  AP placements are not solely for accommodation purposes even for High Risk.  Consider whether  CAS3 may be more appropriate.</li>
+          </ul>
+            <p> Note that whilst there should be reference to the need for AP residence in the OASys Risk Management Plan, this may not be fully formed  at the point of a timely referral as a referral should be made 6 months prior to arrival which in many cases will be during the OMiC handover period.  However, whilst the OASys Risk Management Plan may not be detailed, it should meet the  OMiC Prison OASys Quality Assurance Standards which state that ‘For RMPs completed to inform recategorisation to open conditions and in preparation for ROTLs, licence conditions related to monitoring and control are recorded where applicable, including residence in an AP where required.  For RMPs completed at point of handover to COM, some consideration has been given to possible licence conditions related to monitoring and control where applicable, including residence in an AP where required.’</p>
+      </div>
+    </details>
+
+
+      {{ govukRadios({
+        name: "identifies-risk-factors",
+        fieldset: {
+          legend: {
+            text: "Does the application identify the risk factors that an AP placement can support?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes-risk-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-risk-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+
+      {{ govukTextarea({
+        name: "risk-factors-details",
+        id: "risk-factors-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+      <!-- Question-->
+     
+      {{ govukRadios({
+        name: "identifies-risk-factors",
+        fieldset: {
+          legend: {
+            text: "Does the application support how the AP will manage risk factors",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes-risk-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-risk-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+
+      {{ govukTextarea({
+        name: "risk-factors-details",
+        id: "risk-factors-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+
+
+      {{ govukRadios({
+        idPrefix: "assess-location-factors",
+        name: "assess-location-factors",
+        fieldset: {
+          legend: {
+            text: "Are there factors to take into account in relation to the location of placement?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "If yes, the application must be discussed with the AP Area Manager to identify additional support that may be required"
+        },
+        items: [
+          {
+            value: "yes-location-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-location-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "risk-factors-details",
+        id: "risk-factors-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+
+      {{ govukRadios({
+        name: "assess-move-on",
+        id: "assess-move-on",
+        fieldset: {
+          legend: {
+            text: "Is the move on plan sufficient?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "move-on-sufficient",
+            text: "Yes"
+          },
+          {
+            value: "move-on-not-sufficient",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+
+      {{ govukTextarea({
+        name: "move-on-details",
+        id: "move-on-details",
+        label: {
+          text: "Additional comments",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        }
+      }) }}
+
+
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/assess/tasklist"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

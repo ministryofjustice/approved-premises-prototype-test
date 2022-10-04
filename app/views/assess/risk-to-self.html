@@ -1,0 +1,124 @@
+g{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/assess/review-application"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div>
+      <h1 class="govuk-heading-l">
+        Edit risk information
+      </h1>
+
+      <p> Imported from OASys  <b> 23 March 2022 </b></p>
+      <p> OASys last updated  <b> 02 January 2022 </b></p> 
+      <p><a href="">Go to full OASys assessment (opens in new tab)</a></p>
+
+</div>
+<div>
+  <!-- Sub-navigation -->
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+  
+              <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-ROSH.html">RoSH summary</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-offence-details.html">Offence details</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-imported.html">Supporting information</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="risk-management-plan.html">Risk Management Plan</a>
+                </li>
+  
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" aria-current="page" href="risk-to-self.html">Risk to self</a>
+                </li>
+              </ul>
+            </nav>
+    </div>  
+     
+  <div class="govuk-grid-column-two-thirds">
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              Risk of suicide
+            </h2>
+            <h2 class="govuk-heading-s">
+              Yes
+            </h2>
+            <hr>
+          </div>
+
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              Risk of self harm
+            </h2>
+            <h2 class="govuk-heading-s">
+              Yes
+            </h2>
+            <hr>
+          </div>
+
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              Evidence of incidents of self harm in custody
+            </h2>
+            <h2 class="govuk-heading-s">
+              Yes
+            </h2>
+            <hr>
+          </div>
+
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              Evidence of triggers of self harm in custody
+            </h2>
+            <h2 class="govuk-heading-s">
+              Yes
+            </h2>
+            <hr>
+          </div>
+
+          <div class="oasys-information">
+            <h2 class="govuk-heading-m">
+              What circumstances are likely to increase risk of self harm and suicide
+            </h2>
+              <p> Example text from PP application</p>
+            <hr>
+          </div>
+
+          <div>
+            <p><a href="">Back to application</a></p>
+          </div>
+    </div>
+
+
+
+
+      <div class="risk-information">
+        <div class="govuk-grid-column-one-third">
+          {{ widgets(widgetData) }}
+        </div>
+      </div>
+
+
+
+    </div>
+  
+
+{% endblock %}
