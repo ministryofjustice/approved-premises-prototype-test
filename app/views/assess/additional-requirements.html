@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -17,7 +17,7 @@
       text: "Back",
       href: "/index"
     }) }}
- 
+
     <h1 class="govuk-heading-l">Actions to support a placement</h1>
 
       {{ govukRadios({
@@ -40,7 +40,7 @@
           }
         ]
       }) }}
-  
+
 
       {{ govukTextarea({
         name: "risk-factors-details",
@@ -53,7 +53,7 @@
       }) }}
 
       <!-- Question-->
-     
+
       {{ govukRadios({
         name: "identifies-risk-factors",
         fieldset: {
@@ -74,7 +74,7 @@
           }
         ]
       }) }}
-  
+
 
       {{ govukTextarea({
         name: "risk-factors-details",
@@ -107,7 +107,7 @@
     </div>
     {% endset %}
 
-    
+
 
     <!-- Radio area -->
 
@@ -172,7 +172,7 @@
           }
         ]
       }) }}
-  
+
 
       {{ govukTextarea({
         name: "move-on-details",
@@ -185,7 +185,7 @@
       }) }}
 
 
-    
+
 
         {{ govukButton({
           text: "Save and continue",

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -16,12 +16,12 @@
       text: "Back",
       href: "/index"
     }) }}
- 
+
     <h2 class="govuk-heading-l">Provide additional information </h2>
     <p>Caroline Swann has requested additional information to support your application for an Approved Premises placement for the person. </p>
     <p>You have [X] days to provide this information. </p>
     <p>Please provide information in the textboxes below. </p>
-   
+
       {{ govukTextarea({
         name: "assess-more-detail",
         id: "assess-more-detail",
@@ -31,7 +31,7 @@
           isPageHeading: true
         }
       }) }}
-    
+
         {{ govukButton({
           text: "Save and continue",
           href: "/assess/pp-check-info"
@@ -42,7 +42,7 @@
           classes: "govuk-button--secondary",
           href: "/pp-dashboard.html"
         }) }}
-  
+
   </div>
 </div>
 
