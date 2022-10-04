@@ -1,0 +1,29 @@
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% set html %}
+<p class="govuk-notification-banner__heading" style="margin-top: 0px;">
+  This Approved Premises is over capacity:
+</p>
+<ul>
+  <li> For [X] days from 8 Sept 2022 to 9 Sept 2022</li>
+  <li> For [X] days from 8 Sept 2022 to 9 Sept 2022</li>
+</ul>
+{% endset %}
+
+{{ govukNotificationBanner({
+html: html
+}) }}
+
+{% endblock %}
