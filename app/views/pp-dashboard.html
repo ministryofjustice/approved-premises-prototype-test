@@ -11,7 +11,12 @@
 {% endblock %}
 
 {% block content %}
- 
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
@@ -38,6 +43,7 @@
 
 
         </ul>
+
         <div class="govuk-tabs__panel" id="past-day">
           <h2 class="govuk-heading-l">Applications</h2>
           <table class="govuk-table">
@@ -229,8 +235,8 @@
 
         </div>
       </div>
-  </div> 
- 
+  </div>
+
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">Start a new application</h2>
     <p>Start a new application for an Approved Premises by clicking on the start button below.</p>
