@@ -3,7 +3,23 @@ const router = express.Router()
 const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
-// Add your routes here - above the module.exports line
+
+// Run this code when a form is submitted to 'juggling-balls-answer'
+router.post('/sufficient-info-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var sufficientInfo = req.session.data['sufficient-info']
+
+  // Check whether the variable matches a condition
+  if (sufficientInfo == "yes-enough-info"){
+    // Send user to next page
+    res.redirect('assess/tasklist')
+  } else {
+    // Send user to ineligible page
+    res.redirect('/index.html')
+  }
+
+})
 
 //pulling in from MOJ risk widgets
 router.get('/scores', function (req, res) {
