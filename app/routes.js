@@ -4,23 +4,6 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 
-// Run this code when a form is submitted to 'juggling-balls-answer'
-router.post('/sufficient-info-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var sufficientInfo = req.session.data['sufficient-info']
-
-  // Check whether the variable matches a condition
-  if (sufficientInfo == "yes-enough-info"){
-    // Send user to next page
-    res.redirect('assess/tasklist')
-  } else {
-    // Send user to ineligible page
-    res.redirect('/index.html')
-  }
-
-})
-
 //pulling in from MOJ risk widgets 
 router.get('/scores', function (req, res) {
   const riskScores = {
@@ -113,7 +96,98 @@ router.get('/scores', function (req, res) {
 
 // Add your routes here - above the module.exports line
 
+router.post('/ap-type-answer', function (req, res) {
 
+  var typeOfAp = req.session.data['type-of-ap']
+  console.log({typeOfAp})
+  console.log(req.session.data)
+
+  if (typeOfAp == "pipe"){
+    res.redirect('/pipe-referral')
+  } else if (typeOfAp == "esap"){
+    res.redirect('/esap-placement-reasons')
+  }  
+  else {
+    res.redirect('/task-list-standard')
+  }
+})
+
+//route for release dates 
+
+router.post('/release-date-answer', function (req, res) {
+
+  var releaseDateKnown = req.session.data['release-date']
+  console.log({releaseDateKnown})
+  console.log(req.session.data)
+
+  if (releaseDateKnown == "release-date-known"){
+    res.redirect('/placement-date')
+  } else {
+    res.redirect('/oral-hearing-date')
+  }
+})
+
+
+// convicted offences routing 
+
+router.post('/convicted-of-offences', function (req, res) {
+
+  var convictedOfOffences = req.session.data['convicted-offences']
+  console.log({convictedOfOffences})
+  console.log(req.session.data)
+
+  if (convictedOfOffences == "convicted-offences-yes"){
+    res.redirect('/type-of-convicted-offence')
+  } else {
+    res.redirect('purposeful-activities')
+  }
+})
+
+
+// convicted offences routing (if SO selected)
+
+router.post('/convicted-offence-answer', function (req, res) {
+
+  var offenceConvictions = req.session.data['offence-convictions']
+  console.log({offenceConvictions})
+  console.log(req.session.data)
+
+  if (offenceConvictions == "sexual-offence"){
+    res.redirect('/convicted-offence-so')
+  } else {
+    res.redirect('/date-of-convicted-offences')
+  }
+})
+
+// routing to additional PDU location information
+
+router.post('/location-pdu', function (req, res) {
+
+  var pduLocation = req.session.data['managed-pdu']
+  console.log({pduLocation})
+  console.log(req.session.data)
+
+  if (pduLocation == "yes-managed-pdu"){
+    res.redirect('/location-pdu-transfer')
+  } else {
+    res.redirect('/task-list-standard')
+  }
+})
+
+// routing to additional move on information for foreign national
+
+router.post('/foreign-national-move-on', function (req, res) {
+
+  var foreignNational = req.session.data['move-on-accommodation']
+  console.log({foreignNational})
+  console.log(req.session.data)
+
+  if (foreignNational == "accommodation-homeoffice"){
+    res.redirect('/move-on-foreign-national')
+  } else {
+    res.redirect('/task-list-standard')
+  }
+})
 
 
 module.exports = router

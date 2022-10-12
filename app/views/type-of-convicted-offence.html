@@ -22,9 +22,11 @@
 
     <h2 class="govuk-heading-l">What type of offending has Robert Brown been convicted for?  </h2>
       <p class="govuk-body">This information will be used to match the applicant to a bed in an AP</p>
-
+    
+      <form action="/convicted-offence-answer" method="post" novalidate>
+      
       {{ govukCheckboxes({
-        idPrefix: "offence-convictions",
+        id: "offence-convictions",
         name: "offence",
         hint: {
           text: "You can select more than one option"
@@ -45,10 +47,14 @@
         ]
       }) }}      
 
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/date-of-convicted-offences"
-        }) }}
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
   </div>
 </div>
 

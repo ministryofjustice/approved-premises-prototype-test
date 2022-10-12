@@ -31,107 +31,174 @@
               </li>
       
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="risk-offence-details.html">Risk</a>
+                <a class="moj-sub-navigation__link" href="#risk">Risk</a>
               </li>
       
+
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#approved-premises-requirements">AP requirements</a>
+              </li>
+              
               <li class="moj-sub-navigation__item">
                 <a class="moj-sub-navigation__link" href="#prison">Prison information</a>
               </li>
-
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="risk-to-self.html">AP requirements</a>
-              </li>
       
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="risk-to-self.html">Location factors</a>
+                <a class="moj-sub-navigation__link" href="#location">Location factors</a>
               </li>
 
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="risk-to-self.html">Health</a>
+                <a class="moj-sub-navigation__link" href="#health">Health</a>
               </li>
 
               <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="risk-to-self.html">Documents</a>
+                <a class="moj-sub-navigation__link" href="#documents">Documents</a>
               </li>
             </ul>
           </nav>
         </div> 
 
-     <!-- Person details --> 
+    <!-- Person details -->
     <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
         Person details
       </div>
       <div class="box-content">
         {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "CRN"
-              },
-              value: {
-                text: "D012923"
-              }
-            },
-            {
-              key: {
-                text: "Name"
-              },
-              value: {
-                text: "{name}"
-              }
-            },
-            {
-              key: {
-                text: "Address"
-              },
-              value: {
-                html: "72 Guild Street<br>London<br>SE23 6FH"
-              }
-            },
-            {
-              key: {
-                text: "Contact details"
-              },
-              value: {
-                html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
-              }
-            }
-          ]
+        rows: [
+        {
+        key: {
+        text: "Name"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "CRN"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Date of birth"
+        },
+        value: {
+        html: ""
+        }
+        },
+        {
+        key: {
+        text: "NOMS number"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Nationality"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Religion or belief"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Sex"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Status"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Prison"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
         }) }}
       </div>
     </div>
 
-     <!--  Custody information --> 
+    <!-- Choose sections of OASys to import  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="risk">
+        OASys Risk information
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Sections of OASys imported to application"
+        },
+        value: {
+        html: '<ul>
+          <li>9. Drug misuse</li>
+          <li>10. Alcohol misuse</li>
+        </ul>'
+        }
+        }
+        ]
+        }) }}
+        <p><a href="risk-ROSH.html">View detailed risk information</a></p>
+
+      </div>
+    </div>
+
+     <!--  Approved Premises requirements --> 
      <div class="main-box">
-      <div class="box-title govuk-heading-m">
-       Custody information
+      <div class="box-title govuk-heading-m" id="approved-premises-requirements">
+      Approved Premises requirements
       </div>
       <div class="box-content">
       {{ govukSummaryList({
           rows: [
             {
               key: {
-                text: "Release date"
+                text: "Date of release"
               },
               value: {
-                text: "D012923"
+                text: ""
               }
             },
             {
               key: {
-                text: "Current location"
+                text: "Date of arrival"
               },
               value: {
-                text: "{name}"
+                text: ""
               }
             },
             {
               key: {
-                text: "Status"
+                text: "Type of Approved Premises required"
               },
               value: {
-                html: "72 Guild Street<br>London<br>SE23 6FH"
+                text: "Standard"
               }
             }
           ] 
@@ -139,10 +206,191 @@
         </div>
       </div>
 
+      <!--- If PIPE/ ESAP ARE SELECTED, INCLUDE THE FOLLOWING ANSWERS ---> 
+
+       <!-- If PIPE is selected, use following code -->
+    
+    <!-- 
+      <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Approved Premises requirements
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Which type of AP does Robert require?"
+        },
+        value: {
+        text: "Psychologically Informed Planned Environment (PIPE)"
+        }
+        },
+        {
+        key: {
+        text: "Has Robert been screened into the OPD pathway?"
+        },
+        value: {
+        text: "Yes"
+        }
+        },
+        {
+          key: {
+          text: "When was Robert's last consultation or formulation?"
+          },
+          value: {
+          text: "Yes"
+          }
+          },
+        {
+        key: {
+        text: "Has a referral for PIPE placement been recommended in the OPD pathway plan?"
+        },
+        value: {
+        text: "Yes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "Provide any additional detail about why Robert needs a PIPE placement."
+          },
+          value: {
+          text: "Yes"
+          }
+          }
+        ]
+        }) }}
+      </div>
+    </div> 
+  -->
+    <!-- If ESAP is are selected, use following code -->
+    <!-- 
+      <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Approved Premises requirements
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Which type of AP does Robert require?"
+        },
+        value: {
+        text: "Enhanced Security Approved Premises (ESAP)"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Why does Robert Brown require an enhanced security placement (ESAP)?"
+        },
+        value: {
+        text: "List checkboxes selected"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "Do any of the following factors also apply?"
+          },
+          value: {
+          text: "List checkboxes"
+          }
+          },
+        {
+        key: {
+        text: "Which items does Robert have a history of secreting?"
+        },
+        value: {
+        text: "List selected checkboxes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "Have partnership agencies requested the sharing of intelligence captured via body worn technology?"
+          },
+          value: {
+          text: "Yes"
+          }
+          },
+          {
+          key: {
+          text: "Provide any supporting information about why Robert requires enhanced room searches."
+          },
+          value: {
+          text: "Yes"
+          }
+          },
+          {
+          key: {
+          text: "Which behaviours has Robert demonstrated that require enhanced CCTV provision to monitor?"
+          },
+          value: {
+          text: "Yes"
+          }
+          },
+          {
+          key: {
+          text: "Have partnership agencies requested the sharing of intelligence captured via enhanced CCTV?"
+          },
+          value: {
+          text: "Yes"
+          }
+          },
+          {
+          key: {
+          text: "Provide any supporting information about why Robert requires enhanced CCTV provision."
+          },
+          value: {
+          text: "Yes"
+          }
+          }
+        ]
+        }) }}
+      </div>
+    </div> 
+  -->
+
+
   <!-- Purpose of placement --> 
   <div class="main-box">
     <div class="box-title govuk-heading-m" id="purpose-of-placement">
-      Purpose of placement
+      Reasons for placement
     </div>
     <div class="box-content">
      {{ govukSummaryList({
@@ -152,7 +400,7 @@
               text: "Desired outcomes of this placement"
             },
             value: {
-              text: "D012923"
+              text: ""
             }
           },
           {
@@ -160,7 +408,7 @@
               text: "Features of an AP that are expected to be useful"
             },
             value: {
-              text: "{name}"
+              text: ""
             }
           },
           {
@@ -168,7 +416,7 @@
               text: "How features are expected to help manage risk "
             },
             value: {
-              html: "72 Guild Street<br>London<br>SE23 6FH"
+              text: ""
             }
           }
         ]
@@ -176,123 +424,417 @@
     </div>
   </div>
 
-   
-  
-     <!-- Sentence information  --> 
-     <div class="main-box">
-      <div class="box-title govuk-heading-m" id="purpose-of-placement">
-        Sentence information
-      </div>
-      <div class="box-content">
-       {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Current offence"
-              },
-              value: {
-                text: "D012923"
-              }
-            },
-            {
-              key: {
-                text: "Date of sentence"
-              },
-              value: {
-                text: "{name}"
-              }
-            },
-            {
-              key: {
-                text: "Sentence length"
-              },
-              value: {
-                html: "72 Guild Street<br>London<br>SE23 6FH"
-              }
-            },
-            {
-              key: {
-                text: "Index offence"
-              },
-              value: {
-                html: "Info"
-              }
-            }
-          ]
-        }) }}
-      </div>
-    </div>
 
-     <!-- Risk information  --> 
-     <div class="main-box">
-      <div class="box-title govuk-heading-m" id="purpose-of-placement">
-        Risk information
-      </div>
-      <div class="box-content">
-       {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Current offence"
-              },
-              value: {
-                text: "D012923"
-              }
-            },
-            {
-              key: {
-                text: "Date of sentence"
-              },
-              value: {
-                text: "{name}"
-              }
-            },
-            {
-              key: {
-                text: "Sentence length"
-              },
-              value: {
-                html: "72 Guild Street<br>London<br>SE23 6FH"
-              }
-            },
-            {
-              key: {
-                text: "Index offence"
-              },
-              value: {
-                html: "Info"
-              }
-            }
-          ]
-        }) }}
 
-        <p><a href="risk-ROSH.html">Read more risk information</a></p>
-      </div>
-    </div>
-
-    <!---Prison information-->
+    <!-- Review prison information  -->
     <div class="main-box">
       <div class="box-title govuk-heading-m" id="prison">
-        Prison information
+        Review prison information
       </div>
       <div class="box-content">
-       {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Positive  and negative behaviour notes that support this application"
-              },
-              value: {
-                text: "List out imported prison behaviours here on bullet points"
-              }
-            }
-          ]
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Selected prison case notes that support this application"
+        },
+        value: {
+        html: "<ul>
+                <li><b>Positive case note:</b> Example one</li>
+                <li><b>Positive case note:</b> Example one</li>
+                <li><b>Positive case note:</b> Example one</li>
+              </ul>"
+        }
+        },
+        {
+        key: {
+        text: "Additional circumstances that have helped Robert do well in the past"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
         }) }}
 
-        <p><a href="prison-adjudications.html">Read more prison information</a></p>
+        <p><a href="prison-adjudications.html">View additional prison information</a></p>
+      </div>
+    </div>  
+
+    <!-- If emergancy referral, show information here -->
+
+
+
+    <!-- Location factors  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="location">
+       Location factors
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Preferred location for AP placement"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Positive factors for {name} in this location."
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Are there any restrictions linked to placement location?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "If an AP Placement is not available in the persons preferred area, would a placement in an alternative
+        locality be considered?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit
+        (PDU)?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit
+        (PDU)?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+          key: {
+          text: "Have you agreed Robert Brown's transfer/supervision with the receiving PDU?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+            key: {
+            text: "Who have you agreed this with?"
+            },
+            value: {
+            text: ""
+            }
+            }
+        ]
+        }) }}
       </div>
     </div>
 
+<!-- Health and access needs  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="health">
+        Health and access needs
+      </div>
+      <div class="box-content">
+
+        {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "Does {name} require use of a wheelchair?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Does Robert have any other mobility, disability, or accessibility needs?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Does [name] need an interpreter?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Does [name] have any additional health issues or care and support needs? "
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Has a care act assessment been completed?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Has Robert Brown been fully vaccinated for COVID-19?"
+          },
+          value: {
+          text: ""
+          }
+          },{
+          key: {
+          text: "Is Robert Brown high risk to COVID-19?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Other considerations and comments on COVID-19"
+          },
+          value: {
+          text: ""
+          }
+          }
+          ]
+          }) }}
+      </div>
+    </div>
+
+
+ <!-- Further placement considerations  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="">
+        Further placement considerations 
+      </div>
+      <div class="box-content">
+        <h2 class="govuk-heading-m">Room sharing</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Is there any evidence that Robert Brown may pose a risk to AP staff?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Is there any evidence that Robert Brown may pose a risk to other AP residents?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Do you have any concerns about Robert Brown sharing a bedroom?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Is there potential for the person to benefit from a room share?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Is there any evidence of previous trauma or significant event in the persons history which would indicate
+        that room share may not be suitable"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Do you have any concerns about Robert Brown sharing a bathroom?"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
+        }) }}
+    
+    
+        <h2 class="govuk-heading-m">Vulnerability</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Are you aware that Robert is vulnerable to exploitation from others?"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Is there any evidence or expectation that Robert may groom, radicalise or exploit others?"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
+        }) }}
+    
+        <h2 class="govuk-heading-m">Previous placements</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Has Robert Brown stayed or been offered a placement in an AP before?"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
+        }) }}
+    
+        <h2 class="govuk-heading-m">Complex case board</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Does Robert's gender identity require a complex case board to review their application?"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
+        }) }}
+    
+        <h2 class="govuk-heading-m">Catering requirements</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Do you have any concerns about Robert Brown catering for themself?"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+<!-- Move on information  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Move on information
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "What duration of placement do you recommend?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Additional comments to support duration of placement"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Where is [name] most likely to live when he moves on from the AP?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "Are move on arrangements already in place for when Robert Brown leaves the AP?"
+          },
+          value: {
+          text: ""
+          }
+          },
+          {
+          key: {
+          text: "What type of accommodation will Robert Brown have when they leave the AP?"
+          },
+          value: {
+          text: ""
+          }
+          }
+          ]
+          }) }}
+      </div>
+    </div>
+
+
+  
+
+
+    <!-- Associated documents  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="documents">
+        Associated documents
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "court-reports.pdf"
+          },
+          value: {
+          text: "Description"
+          }
+          },
+          {
+          key: {
+          text: "exclusion-zone.pdf"
+          },
+          value: {
+          text: "Description"
+          }
+          }
+          ]
+          }) }}
+      </div>
+    </div>
 
 
      <!--- Back button -->

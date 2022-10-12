@@ -65,7 +65,10 @@
 
              
       <!-- Radio area -->
+      <form action="/location-pdu" method="post" novalidate>
+     
 
+     
         {% set placementRestrictions %}
         {{ govukTextarea({
           id: "placement-restrictions",
@@ -147,7 +150,8 @@
           }
         ]
       }) }}
-  
+     
+   
       {{ govukRadios({
         idPrefix: "managed-pdu",
         name: "managed-pdu",
@@ -173,15 +177,14 @@
         ]
       }) }}
   
-     
-  
-  
 
+      <input type="hidden" name="answers-checked" value="true">
 
-    {{ govukButton({
-      text: "Save and continue",
-      href: "/location-pdu-transfer"
-    }) }}
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
 
 
   </div>

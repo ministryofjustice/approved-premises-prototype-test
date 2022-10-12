@@ -34,6 +34,8 @@
       }) }}
     {% endset -%}
 
+    <form action="/foreign-national-move-on" method="post" novalidate>
+
     {{ govukRadios({
       idPrefix: "move-on-accommodation",
       name: "move-on-accommodation",
@@ -91,10 +93,13 @@
       ]
     }) }}
 
-    {{ govukButton({
-      text: "Save and continue",
-      href: "/index"
-    }) }}
+    <input type="hidden" name="answers-checked" value="true">
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+  </form>
     
   </div>
 </div>
