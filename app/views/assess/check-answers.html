@@ -254,16 +254,11 @@
         ]
       }) }}
 
-      <form action="/tasklist" method="post" novalidate>
-
-        <input type="hidden" name="answers-checked" value="true">
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-         Confirm
-        </button>
-
-      </form>
-
+   
+      {{ govukButton({
+        text: "Confirm",
+        href: "/assess/tasklist"
+      }) }}
     </div>
   </div>
 {% endblock %}
