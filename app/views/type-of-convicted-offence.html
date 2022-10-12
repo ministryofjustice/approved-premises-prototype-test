@@ -22,9 +22,9 @@
 
     <h2 class="govuk-heading-l">What type of offending has the person been convicted for?  </h2>
       <p class="govuk-body">This information will be used to match the applicant to a bed in an AP</p>
-    
+
       <form action="/convicted-offence-answer" method="post" novalidate>
-      
+
       {{ govukCheckboxes({
         id: "offence-convictions",
         name: "offence-convictions",
@@ -49,7 +49,7 @@
             text: "Child victim, non-sexual offence"
           }
         ]
-      }) }}      
+      }) }}
 
 
       <input type="hidden" name="answers-checked" value="true">
