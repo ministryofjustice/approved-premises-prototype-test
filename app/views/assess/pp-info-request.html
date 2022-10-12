@@ -23,8 +23,8 @@
     <p>Please provide information in the textboxes below. </p>
    
       {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
+        name: "assess-more-detail",
+        id: "assess-more-detail",
         label: {
           text: "Question submitted by Assessor",
           classes: "govuk-label--s",
@@ -34,7 +34,7 @@
     
         {{ govukButton({
           text: "Save and continue",
-          href: "/index"
+          href: "/assess/pp-check-info"
         }) }}
 
         {{ govukButton({
