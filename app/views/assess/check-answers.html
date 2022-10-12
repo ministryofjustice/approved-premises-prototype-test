@@ -24,7 +24,7 @@
               text: "Is there sufficient information in the referral to make a decision?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -48,7 +48,7 @@
               text: "Does the application identify the risk factors that an AP placement can support?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -65,7 +65,7 @@
               text: "Does the application support how the AP will manage risk factors"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -82,7 +82,7 @@
               text: "Are there factors to take into account in relation to the location of placement?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -99,7 +99,7 @@
               text: "Is the move on plan sufficient?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -116,7 +116,7 @@
               text: "Are additional actions required by the probation practitioner to make a placement viable?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -133,7 +133,7 @@
               text: "Are any additional curfews / sign ins recommended?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -150,7 +150,7 @@
               text: "Are there concerns that the individual poses a potentially unmanageable risk to staff / residents/ others?"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -167,7 +167,7 @@
               text: "Additional recommendations for receiving AP manager"
             },
             value: {
-              text: "{answers}"
+              text: ""
             },
             actions: {
               items: [
@@ -191,7 +191,10 @@
               text: "Essential room requirements"
             },
             value: {
-              text: "{answers}"
+              html: '<ul>
+                <li>Mens</li>
+                <li>Wheelchair accessible</li>
+                </ul>'
             },
             actions: {
               items: [
@@ -208,7 +211,10 @@
               text: "Desirable room requirements"
             },
             value: {
-              text: "{answers}"
+              html: '<ul>
+                <li>Catering</li>
+                <li>Arson</li>
+                </ul>'
             },
             actions: {
               items: [
@@ -233,7 +239,7 @@
               text: "Decision reason"
             },
             value: {
-              text: "{sentence-type-details}"
+              text: ""
             },
             actions: {
               items: [
@@ -248,16 +254,11 @@
         ]
       }) }}
 
-      <form action="/tasklist" method="post" novalidate>
-
-        <input type="hidden" name="answers-checked" value="true">
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-         Confirm
-        </button>
-
-      </form>
-
+   
+      {{ govukButton({
+        text: "Confirm",
+        href: "/assess/tasklist"
+      }) }}
     </div>
   </div>
 {% endblock %}
