@@ -30,9 +30,11 @@
       <li>Child victim, non-sexual offence</li>
     </ul>
 
+    <form action="/convicted-of-offences" method="post" novalidate>
+      
     {{ govukRadios({
       idPrefix: "convicted-offences",
-      name: "release-date",
+      name: "convicted-offences",
       items: [
         {
           value: "convicted-offences-yes",
@@ -45,11 +47,13 @@
       ]
     }) }}
 
+    <input type="hidden" name="answers-checked" value="true">
 
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/type-of-convicted-offence"
-        }) }}
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
   </div>
 </div>
 

@@ -37,11 +37,14 @@
             </p>
           </details>
 
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      
+      
+      <form action="/ap-type-answer" method="post" novalidate>
+          
 
         {{ govukRadios({
-          idPrefix: "type-of-ap",
-          name: "where-do-you-live",
+          id: "type-of-ap",
+          name: "type-of-ap",
           items: [
             {
               value: "standard",
@@ -49,11 +52,16 @@
             },
             {
               value: "pipe",
+
               text: "Psychologically Informed Planned Environment (PIPE)"
             },
             {
               value: "esap",
               text: "Enhanced Security Approved Premises (ESAP)"
+            },
+            {
+              value: "recovery-focused",
+              text: "Recovery focused Approved Premises"
             }
           ]
         }) }}
@@ -66,11 +74,15 @@
 
       </div>
 
-      {{ govukButton({
-        text: "Save and continue",
-        href: "/task-list-standard.html"
-      }) }}
+ 
 
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
     </div>
   </div>
 

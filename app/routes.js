@@ -113,5 +113,6 @@ router.get('/scores', function (req, res) {
 
 // Add your routes here - above the module.exports line
 
+router.post('/ap-type-answer', function (req, res) {
 
 module.exports = router

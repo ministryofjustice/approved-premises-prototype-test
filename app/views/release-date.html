@@ -14,8 +14,10 @@
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
- 
-    {% set dateHtml %}
+        
+    <form action="/release-date-answer" method="post" novalidate>
+      
+      {% set dateHtml %}
       {{ govukInput({
         id: "release-date-known",
         name: "release-date",
@@ -41,12 +43,13 @@
       }) }}
       {% endset -%}
 
+     
       {{ govukRadios({
-        idPrefix: "release-date",
+        id: "release-date",
         name: "release-date",
         fieldset: {
           legend: {
-            text: "Do you know {booking.name} release date?",
+            text: "Do you know the persons release date?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -55,13 +58,12 @@
           {
             value: "release-date-known",
             text: "Yes",
-            checked: false,
             conditional: {
               html: dateHtml
             }
           },
           {
-            value: "releast-date-unknown",
+            value: "release-date-unknown",
             text: "No, the release date is to be determined by the parole board or other hearing",
             conditional: {
               html: noReleaseDate
@@ -70,12 +72,13 @@
         ]
       }) }}
 
+      <input type="hidden" name="answers-checked" value="true">
 
-    {{ govukButton({
-      text: "Save and continue",
-      href: "/placement-date"
-    }) }}
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
 
+    </form>
 
   </div>
 </div>
