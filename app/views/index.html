@@ -1,5 +1,8 @@
 
 {% extends "layout.html" %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
 
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
@@ -9,9 +12,6 @@
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-width">
-
-    {% from "govuk/components/tabs/macro.njk" import govukTabs %}
-{% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set miniManageHtml %}
 <h1 class="govuk-heading-l"> Mini-manage </h1>
@@ -27,59 +27,46 @@
 
 {% set applyHtml %}
 <h1 class="govuk-heading-l"> Apply </h1>
-            <p><b><a href="pp-dashboard">PP dashboard</a></b> - PP dashboard has been designed using tabs from GDS design system. I have used HTML rather than nunkucks to include the tags and badges from the MOJ/GDS design system. </p>
+<p> From the PP dashboard, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the start screen. If a user selects a case that is in progress, they will be taken to the task list. </p>
+            <p><b><a href="pp-dashboard">PP dashboard</a></b></p>
+            
+            
+            <p>Users will go through the following pages when starting a new application</p>
             <p><a href="start.html"><b>Start page</b></a></p>
             <p><a href="enter-crn">Enter CRN </a></p>
             <p><a href="check-details.html">Check details </a></p>
-            <p><a href="type-of-ap.html"><b>Type of AP</b></a></p>
+            <p><a href="type-of-ap.html"><b>Type of AP</b></a> - If PIPE  or ESAP AP is selected the user will be asked a set of questions they need to complete.</p>
+          
             
             
           
-            <h2 class="govuk-heading-m"> Users will then be directed to task list </h2> <p> I have designed the task list pages but have not made them dynamic yet, they're currently static. I need to learn how to pull in the data through routing to present within the risk widgets.</p>
+            <p>Users will then be directed to task list</p>
             <p><a href="task-list-standard.html">Task list - Standard</a></p>
-            <p><a href="task-list-pipe.html">Task list - PIPE</a></p>
-            <p><a href="task-list-esap.html">Task list - ESAP</a></p>
             
 
-            <h2 class="govuk-heading-m"> Before you continue section </h2>
-            <p><a href="sentence-type.html"><b>Sentence type</b></a> - currently these do not route through to the sentence details page. Work needs to be done so that each selected radio button presents the relevant page title and radio options dynamically, rather than making static pages for each.</p>
+            <h2 class="govuk-heading-m"> Before you continue </h2>
+            <p>Within the 'before you continue' section, the user will be shown links to the following tasks, including the 'Type of AP'. We've decided to include this so that users can change their selected AP at a later point in the application.</p>
+            <p><a href="sentence-type.html"><b>Sentence type</b></a></p>
             <ul>
               <li><p><a href="">Sentence type - details (Not started) </a></p></li>
             </ul>
-            <p><a href="release-date"><b>Release date</b></a> - asks user whether they know the release date. Then branches into the following pages based off the radio selection.</p>
+            
+    
+            <p><a href="release-date"><b>Release date</b></a></p>
             <ul>
               <li><p><a href="oral-hearing-date">Do you know the Oral Hearing date? (Parole)</a></p></li>
               <li> <p><a href="placement-date.html">Is [release-date] the date you want the placement to start?</a></p>
               </li>
             </ul>
-            
-            <p>If PIPE AP is selected</p>
-            <ul>
-              <li><p><a href="pipe-referral.html">PIPE - Has PiP been screened into the OPD pathway?</a></p></li>
-              <li><p><a href="pipe-opd-screening.html">PIPE - Has a referral for PIPE placement been recommended in the OPD pathway plan? </a></p></li>
-              </ul>
-              <p>If ESAP AP is selected</p>
-              <ul>
-                <li> <p><a href="esap-placement-reasons.html">ESAP - Reasons PiP requires an enhanced security (ESAP) placement</a></p>  </li>
-                <li> <p><a href="esap-placement-cctv.html">ESAP - Enhanced room searches using body worn technology</a></p>  </li>
-                <li> <p><a href="esap-placement-secreting.html">ESAP - Enhanced room searches using body worn technology</a></p>  </li>
-            
-            </ul>
             <p><b><a href="purpose-of-placement.html">Purpose of placement</a></b></p>
           <br>
 
-          <h2 class="govuk-heading-m"> Risk and needs information </h2>
-          <p>These screens have not been designed yet whilst we're waiting to hear from the ARNS team to understand how we present this information to users</p>
+          <h2 class="govuk-heading-m"> Risk and needs factors </h2>
+          <p>Within the 'Risks and needs factors' section on the task list, the user will be shown the following tasks. Users will be asked to select sections of OASys to import, review and edit the OASys information to support the application, review prison information, provide detail about location factors and access and healthcare needs, and provide further information and considerations for the placement</p>
+         
             <p><b><a href="import-oasys.html">Import OASys information</a></b></p>
             <p><b><a href="risk-ROSH.html">Edit risk information</a></b></p>
-            <p><b><a href="risk-offence-details.html">Edit risk information</a></b></p>
-            <p><b><a href="risk-ROSH.html">Imported risk information</a></b></p>
-            <p><b><a href="risk-ROSH.html">Risk to self</a></b></p>
-            <p><b><a href="risk-ROSH.html">Risk management plan</a></b></p>
-          
-            <br>
-          <H2 class="govuk-heading-m">Add detail about managing risks and needs</H2>
-          <p><b><a href="useful-features-of-ap.html">Useful features in an AP</a></b></p>
+            <p><b><a href="useful-features-of-ap.html">Useful features in an AP</a></b></p>
           <br>
             <p><b>Convicted offences</b></p>
             <ul>
@@ -111,15 +98,7 @@
             </ul>
 
 
-             <p><b>Describe further considerations for placement</b></p>
-             <ul>
-              <li><p><a href="further-considerations-room-share.html">Further considerations - Room sharing</a></p></li>
-              <li><p><a href="further-considerations-vulnerability.html">Further considerations - Vulnerability</a></p></li>
-              <li><p><a href="further-considerations-placement.html">Further considerations - Previous placements</a></p></li>
-              <li><p><a href="further-considerations-complex-case.html">Further considerations - Complex case board</a></p></li>
-              <li><p><a href="further-considerations-catering.html">Further considerations - Catering</a></p></li>
-              <li><p><a href="further-considerations-arson.html">Arson</a></p></li>
-            </ul>
+             <p><b><a href="further-considerations-room-share.html">Describe further considerations for placement</a></b> - Within this section users will be asked a series of questions to provide detail about any further considerations. This includes risk information for residents and staff, previous placements, room sharing, catering, arson and complex case information.</p>
         
           <br>
              <h2 class="govuk-heading-m"> Considerations for when the placement ends </h2>
@@ -196,6 +175,44 @@
 {% endset -%}
 
 
+{% set designHistoryHtml %}
+<h1 class="govuk-heading-l">Design history</h1>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Screen</th>
+        <th scope="col" class="govuk-table__header" >Date of change</th>
+        <th scope="col" class="govuk-table__header" style="width: 30%;">Changes made</th>
+        <th scope="col" class="govuk-table__header" style="width: 40%;">Reason for change</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="import-oasys.html">Import OASys screen</a></td>
+        <td class="govuk-table__cell">12 Oct 2022</td>
+        <td class="govuk-table__cell">We've moved 'Drug and Alcohol' from <b>Needs linked to risk of serious harm are automatically imported</b> to the section above, "We'll automatically import:"</td>
+        <td class="govuk-table__cell">We have agreed that these will be imported for all users, so would like to show that this is imported with the other information that's automatically imported. </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="risk-ROSH.html">Risk information - ROSH</a></td>
+        <td class="govuk-table__cell">12 Oct 2022</td>
+        <td class="govuk-table__cell">We've removed the free text box at the bottom of the page for users to enter 'How will AP placement support this area in management of risk'</td>
+        <td class="govuk-table__cell">Users already provide detail about risk management on the 'purpose of placement' and 'Useful features of an AP' screen. We have not tested this with users, but believe the textbox might be confusing for users, as it's an empty textbox at the bottom of the OASys information. There's an assumption that this may be missed, or mistaken as an empty OASys field that's been pulled in. We're going to remove it for now and see how this tests in research.</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+    </tbody>
+  </table>
+
+    
+{% endset -%}
+
+
 {{ govukTabs({
   items: [
     {
@@ -217,6 +234,13 @@
       id: "assess",
       panel: {
         html: assessHtml
+      }
+    },
+    {
+      label: "Design history",
+      id: "design-history",
+      panel: {
+        html: designHistoryHtml
       }
     }
   ]
