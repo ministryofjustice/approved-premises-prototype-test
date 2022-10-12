@@ -1,0 +1,91 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h2 class="govuk-heading-l">Suitability assessment</h2>
+
+          {% set additionalEsapYes %}
+          {{ govukTextarea({
+            id: "assess-esap-info-yes",
+            name: "assess-esap-info-yes",
+            type: "textarea",
+            spellcheck: false,
+            classes: "textarea",
+            label: {
+              text: "Provide details to support the decision"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set additionalEsapNo %}
+        {{ govukTextarea({
+          id: "assess-esap-info-no",
+          name: "assess-esap-info-no",
+          type: "textarea",
+          spellcheck: false,
+          classes: "textarea",
+          label: {
+            text: "Provide details to support the decision"
+          }
+          }) }}
+        {% endset -%}
+
+      {{ govukRadios({
+        name: "additional-esap",
+        fieldset: {
+          legend: {
+            text: "Is an ESAP Placement necessary for the management of the person referred?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-esap-info",
+            text: "Yes",
+            conditional: {
+              html: additionalEsapYes
+            }
+          },
+          {
+            value: "no-esap-info",
+            text: "No",
+            conditional: {
+              html: additionalEsapNo
+            }
+          }
+        ]
+      }) }}
+
+  {{ govukTextarea({
+    name: "assess-esap-details",
+    id: "assess-esap-details",
+    label: {
+      text: "If the person is unsuitable for an ESAP placement  yet suitable for a standard placement, summarise the rationale for the decision."
+    }
+  }) }}
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
