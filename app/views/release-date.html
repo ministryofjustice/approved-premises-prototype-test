@@ -15,8 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
         
-    <form action="/release-date-answer" method="post" novalidate>
-      
+   
       {% set dateHtml %}
       {{ govukInput({
         id: "release-date-known",
@@ -43,7 +42,8 @@
       }) }}
       {% endset -%}
 
-     
+      <form action="/release-date-answer" method="post" novalidate>
+      
       {{ govukRadios({
         id: "release-date",
         name: "release-date",
