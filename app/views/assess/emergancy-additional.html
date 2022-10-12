@@ -1,0 +1,128 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index"
+    }) }}
+ 
+    <h2 class="govuk-heading-l">Suitability assessment</h2>
+   
+
+    {{ govukInsetText({
+      html: '<h2 class="govuk-heading-m">Application information</h2>
+      <p><b>Application date:</b> 13 October 2022</p>
+      <p><b>Reason for late referral:</b> Risk level has escalated</p>
+      <p><a href="">View emergancy information</a></p>'
+    }) }}
+
+   
+
+  {% set emergancyNo %}
+  {{ govukSelect({
+    id: "select-emergancy-reasons",
+    name: "select-emergancy-reasons",
+    label: {
+      text: "What is the reason for the late referral?"
+    },
+    items: [
+      {
+        value: "emergancy-reason-select",
+        text: "Select one",
+        selected: true
+      },
+      {
+        value: "emergancy-reason-risk-escalated",
+        text: "The risk level has recently escalated"
+      },
+      {
+        value: "emergancy-reason-rmp-broken",
+        text: "The release plan or risk management plan has broken down"
+      },
+      {
+        value: "emergancy-reason-further-offence",
+        text: "The individual has committed a further offence"
+      },
+      {
+        value: "emergancy-reason-alternative-recall",
+        text: "AP placement is an alternative to recall"
+      },
+      {
+        value: "emergancy-reason-parole",
+        text: "AP placement is a parole board or PPCS decision"
+      },
+      {
+        value: "emergancy-reason-sentence-short",
+        text: "The sentence is shorter than 12 months"
+      },
+      {
+        value: "emergancy-reason-bail",
+        text: "The individual will be on bail"
+      },
+      {
+        value: "emergancy-reason-other",
+        text: "Other (please specify below)"
+      }
+    ]
+  }) }}
+
+{% endset -%}
+
+    {{ govukRadios({
+      name: "additional-emergancy",
+      fieldset: {
+        legend: {
+          text: "Do you agree with the referrers reason for submission within 4 months of expected arrival?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-emergancy-info",
+          text: "Yes"
+        },
+        {
+          value: "no-emergancy-info",
+          text: "No",
+          conditional: {
+            html: emergancyNo
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukTextarea({
+        name: "assess-emergancy-details",
+        id: "assess-emergancy-details",
+        label: {
+          text: "Provide details to support the decision"
+        }
+      }) }}
+
+
+
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/index"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
