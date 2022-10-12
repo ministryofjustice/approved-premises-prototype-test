@@ -44,6 +44,8 @@
         </div>
       </details>
 
+      <form action="/assess-suficient-info" method="post" novalidate>
+
       {{ govukRadios({
         idPrefix: "sufficient-info",
         name: "sufficient-info",
@@ -62,11 +64,14 @@
           }
         ]
       }) }}
+      
+      <input type="hidden" name="answers-checked" value="true">
 
-     {{ govukButton({
-      text: "Save and continue",
-      href: "tasklist"
-    }) }}
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+  
+    </form>
 
   </div>
 </div>
