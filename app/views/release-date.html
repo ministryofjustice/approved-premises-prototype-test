@@ -15,14 +15,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
         
-   
+    <form action="/release-date-answer" method="post" novalidate>
+
       {% set dateHtml %}
       {{ govukInput({
-        id: "release-date-known",
-        name: "release-date",
+        id: "date-of-release",
+        name: "date-of-release",
         type: "date",
-        autocomplete: "date",
-        spellcheck: false,
         classes: "govuk-!-width-one-half",
         label: {
           text: "Expected date of release"
@@ -42,7 +41,6 @@
       }) }}
       {% endset -%}
 
-      <form action="/release-date-answer" method="post" novalidate>
       
       {{ govukRadios({
         id: "release-date",
