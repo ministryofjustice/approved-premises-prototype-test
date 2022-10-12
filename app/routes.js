@@ -189,5 +189,21 @@ router.post('/foreign-national-move-on', function (req, res) {
   }
 })
 
+// routing to request additional information page
+
+router.post('/assess-suficient-info', function (req, res) {
+
+  var sufficientInfo = req.session.data['sufficient-info']
+  console.log({sufficientInfo})
+  console.log(req.session.data)
+
+  if (sufficientInfo == "no-not-enough-info"){
+    res.redirect('/assess/assessor-request-info')
+  } else {
+    res.redirect('/assess/tasklist')
+  }
+})
+
+
 
 module.exports = router

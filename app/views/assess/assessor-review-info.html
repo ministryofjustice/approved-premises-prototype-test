@@ -45,6 +45,8 @@
         </div>
       </dl>
 
+      <form action="/tasklist.html" method="post" novalidate></form>
+
       {{ govukRadios({
         name: "further-info-required",
         fieldset: {
@@ -67,15 +69,11 @@
       }) }}
 
     
-      <form action="/confirmation" method="post" novalidate>
-
-        <input type="hidden" name="answers-checked" value="true">
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-         Save and continue
-        </button>
-
-      </form>
+      
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/assess/tasklist"
+      }) }}
 
     </div>
   </div>
