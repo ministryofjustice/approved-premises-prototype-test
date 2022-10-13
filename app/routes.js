@@ -194,6 +194,25 @@ router.post('/location-pdu', function (req, res) {
   }
 })
 
+
+// access needs routing
+
+router.post('/access-needs-selected', function (req, res) {
+
+  var healthcareNeeds = req.session.data['healthcare-needs']
+  console.log({healthcareNeeds})
+  console.log(req.session.data)
+
+  if (healthcareNeeds.length) {
+    res.redirect('/access-needs-additional-info')
+  } else {
+    res.redirect('/healthcare-needs')
+  }
+
+})
+
+
+
 // routing to additional move on information for foreign national
 
 router.post('/foreign-national-move-on', function (req, res) {
