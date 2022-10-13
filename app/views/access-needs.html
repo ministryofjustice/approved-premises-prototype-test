@@ -47,7 +47,8 @@
     }) }}
 
     <!-- Checkboxes -->
-    
+    <form action="/access-needs-selected" method="post" novalidate>
+      
     {{ govukCheckboxes({
       idPrefix: "healthcare-needs",
       name: "healthcare-needs",
@@ -156,13 +157,13 @@
   
      
   
-  
+      <input type="hidden" name="answers-checked" value="true">
 
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
 
-    {{ govukButton({
-      text: "Save and continue",
-      href: "/location-pdu-transfer"
-    }) }}
+    </form>
 
 
   </div>
