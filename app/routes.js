@@ -169,12 +169,15 @@ router.post('/convicted-offence-answer', function (req, res) {
   console.log({offenceConvictions})
   console.log(req.session.data)
 
-  if (offenceConvictions == "sexual-offence"){
+  if (offenceConvictions.includes("sexual-offence")) {
     res.redirect('/convicted-offence-so')
   } else {
     res.redirect('/date-of-convicted-offences')
   }
+
 })
+
+
 
 // routing to additional PDU location information
 

@@ -29,71 +29,94 @@
 
     <h2 class="govuk-heading-m">Is the offence a current or previous offence?</h2>
     
-    {{ govukCheckboxes({
-      idPrefix: "secreting-history",
-      name: "secreting-history",
-      fieldset: {
-        legend: {
-          text: "Offence 1",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "esap-1",
-          text: "Current"
-        },
-        {
-          value: "esap-1",
-          text: "Previous"
-        }
-      ]
-    }) }}
+    <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Offence</th>
+          <th class="govuk-table__header" style="width: 100px" scope="col">Current</th>
+          <th class="govuk-table__header" style="width: 100px;" scope="col">Previous</th>
+        </tr>
+      </thead>
+      
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Arson offence</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+   
+                </label>
+              </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+              </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Hate Crime</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"> </label>
+              </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"> </label>
+              </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Child sexual offence, in person</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"> </label>
+              </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"> </label>
+              </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Online sexual offence</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"> </label>
+              </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste"> </label>
+              </div>
+          </td>
+        </tr>
+       
+    
+      </tbody>
+    </table>
 
-    {{ govukCheckboxes({
-      idPrefix: "secreting-history",
-      name: "secreting-history",
-      fieldset: {
-        legend: {
-          text: "Offence 2",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "esap-1",
-          text: "Current"
-        },
-        {
-          value: "esap-1",
-          text: "Previous"
-        }
-      ]
-    }) }}
+  
 
-    {{ govukCheckboxes({
-      idPrefix: "secreting-history",
-      name: "secreting-history",
-      fieldset: {
-        legend: {
-          text: "Offence ",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-        {
-          value: "esap-1",
-          text: "Current"
-        },
-        {
-          value: "esap-1",
-          text: "Previous"
-        }
-      ]
-    }) }}
+
 
         {{ govukButton({
           text: "Save and continue",
