@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-l">Cancel this placement</h2>
-      <p>If '  booking.name ' has not arrived or no longer requires this bed, cancel this booking. Cancelling this booking will make this bed available to another person.</p>
+      <p>If '  booking.name ' has not arrived or no longer requires this bed, cancel this placement. Cancelling this placement will make this bed available to another person.</p>
 
         {{
           govukSummaryList({
@@ -65,7 +65,7 @@
           namePrefix: "passport-issued",
           fieldset: {
             legend: {
-              text: "Date of cancellation",
+              text: "What date was this placement cancelled?",
               name: "cancellation-date",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
@@ -87,19 +87,23 @@
           items: [
             {
               value: "england",
-              text: "Recall"
+              text: "Recall by probation practitioner"
             },
             {
               value: "scotland",
-              text: "Death"
+              text: "Request from probation practitioner"
             },
             {
               value: "wales",
-              text: "Request from PP"
+              text: "Admitted to hospital"
+            },
+            {
+              value: "wales",
+              text: "Offer withdrawn by Approved Premises"
             },
             {
               value: "northern-ireland",
-              text: "Non-arrival"
+              text: "Death"
             }
           ]
         }) }}
