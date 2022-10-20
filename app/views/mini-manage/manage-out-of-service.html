@@ -19,14 +19,14 @@
       href: "/index"
     }) }}
  
-    <h2 class="govuk-heading-l">Manage out of service bed </h2>
+    <h2 class="govuk-heading-l">Manage out of service beds </h2>
    
     {{ govukSummaryList({
       classes: 'govuk-summary-list--no-border',
       rows: [
         {
           key: {
-            text: "Number of bed lost"
+            text: "Number of beds out of service"
           },
           value: {
             text: "1"
@@ -34,7 +34,7 @@
         },
         {
           key: {
-            text: "Start date"
+            text: "Out of service from"
           },
           value: {
             text: "3 October 2022"
@@ -50,7 +50,7 @@
         },
         {
           key: {
-            text: "Reason for bed being marked as lost"
+            text: "Reason bed is out of service"
           },
           value: {
             text: " out of service reason"
@@ -58,7 +58,7 @@
         },
         {
           key: {
-            text: "Reference number"
+            text: "Work order reference number"
           },
           value: {
             text: "None provided"
@@ -86,7 +86,7 @@
       name: "more-detail",
       id: "more-detail",
       label: {
-        text: "Can you provide more detail?"
+        text: "Additional notes"
       }
     }) }}
 
@@ -98,7 +98,7 @@
     
 
         {{ govukButton({
-          text: "Save and continue",
+          text: "Update",
           href: "/index"
         }) }}
   </div>
