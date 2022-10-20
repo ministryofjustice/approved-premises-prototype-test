@@ -20,14 +20,14 @@
       href: "/index"
     }) }}
  
-    <h2 class="govuk-heading-l">Record a lost bed</h2>
-      <p> Record beds that have been lost within your AP estate.</p>
+    <h2 class="govuk-heading-l">Record an out of service bed</h2>
+      <p> Record beds that are out of service within your Approved Premises estate.</p>
    
  <!-- Number of beds lost -->
 
       {{ govukInput({
         label: {
-          text: "Number of beds lost"
+          text: "Number of beds out of service"
         },
         classes: "govuk-input--width-2",
         id: "width-2",
@@ -93,7 +93,7 @@
         namePrefix: "start-date",
         fieldset: {
           legend: {
-            text: "Start date",
+            text: "Out of service from",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -106,7 +106,7 @@
         namePrefix: "end-date",
         fieldset: {
           legend: {
-            text: "End date",
+            text: "Expected end date",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -120,7 +120,7 @@
         name: "lost-placement-reason",
         fieldset: {
           legend: {
-            text: "What is the reason for marking this bed as lost?",
+            text: "What is the reason this bed is out of service?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -128,15 +128,15 @@
         items: [
           {
             value: "Accident-flood-fire",
-            text: "Accident, flood or fire"
+            text: "Planned FM works required"
           },
           {
             value: "Damange",
-            text: "Damage by resident"
+            text: "Unplanned FM works required"
           },
           {
             value: "doubleroom-risk",
-            text: "Double room with single occupancy (risk)"
+            text: "Incident not requiring FM repair"
           },
           {
             value: "doubleroom-helath",
@@ -144,24 +144,36 @@
           },
           {
             value: "refurbishment",
-            text: "Refurbishment"
+            text: "Double room with single occupancy - other (non-FM)"
           },
           {
             value: "staff-shortage",
-            text: "Staff shortage or illness"
+            text: "Double room with single occupancy - risk (non-FM)"
           },
           {
             value: "other",
-            text: "Other"
+            text: "AP closure/operational reduction in capacity (non- FM)"
           }
         ]
       }) }}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          What is the work order reference number? (where applicable)
+        </label>
+        <input class="govuk-input" id="event-name" name="event-name" type="text">
+      </div>
 
       {{ govukTextarea({
         name: "Additional notes",
         id: "Notes",
         label: {
-          text: "Additional notes"
+          text: "Additional notes",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Provide  detail about why the bed is out of service. If FM works are required you should update this record with any progress on that work"
         }
       }) }}
 
