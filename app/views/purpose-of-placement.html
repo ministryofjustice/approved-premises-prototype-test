@@ -21,7 +21,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">What is the purpose of the AP placement?</h2>
+    <h2 class="govuk-heading-l">What is the purpose of the Approved Premises (AP) placement?</h2>
       
     {% set otherReason %}
     {{ govukInput({
@@ -46,23 +46,19 @@
       items: [
         {
           value: "publicProtection",
-          text: "Public protection"
+          text: "Enhanced levels of monitoring to support risk management"
         },
         {
           value: "prevent-contact",
-          text: "Prevent contact with a previous victim"
+          text: "Support resettlement into the community"
         },
         {
           value: "re-adjust",
-          text: "Help individual readjust to life outside of custody"
+          text: "Enhanced drug and alcohol support"
         },
         {
           value: "drug-alcohol-monitoring",
-          text: "Provide drug or alcohol monitoring"
-        },
-        {
-          value: "prevent-self-harm",
-          text: "Prevent self harm or suicide"
+          text: "Support the management of risk to self"
         },
         {
           divider: "or"
@@ -76,10 +72,6 @@
         }
       ]
     }) }}
-
-    <h2 class="govuk-heading-s">Provide a summary of how an AP will enhance and support risk management</h2>
-    <p>For example, if you think monitoring and control through an approved premises will manage risk more effectively than a tag, curfew or other condition that can be managed in the community.</p>
-      
     {{ govukTextarea({
       name: "more-detail",
       id: "more-detail"
