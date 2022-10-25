@@ -111,6 +111,7 @@ router.get('/scores', function (req, res) {
 })
 
 
+
 // Add your routes here - above the module.exports line
 
 router.post('/ap-type-answer', function (req, res) {
@@ -128,6 +129,25 @@ router.post('/ap-type-answer', function (req, res) {
     res.redirect('/task-list-standard')
   }
 })
+
+// routing for sentence type page
+
+router.post('/sentence-type-info', function (req, res) {
+
+  var sufficientInfo = req.session.data['sentence-type']
+  console.log({sufficientInfo})
+  console.log(req.session.data)
+
+  if (sufficientInfo == "non-statutory"){
+    res.redirect('/task-list-standard')
+  } else {
+    res.redirect('/sentence-type-details')
+  }
+})
+
+
+
+
 
 //route for release dates
 
@@ -242,7 +262,5 @@ router.post('/assess-suficient-info', function (req, res) {
     res.redirect('/tasklist')
   }
 })
-
-
 
 module.exports = router
