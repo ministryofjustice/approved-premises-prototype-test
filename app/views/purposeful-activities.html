@@ -1,0 +1,118 @@
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/task-list-standard"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Which of the purposeful activity pathways will assist the person rehabilitation in the AP</h2>
+      <p class="govuk-body">Give details of any additional non-criminogenic needs the person has that an AP may also be able to help meet. For example, support getting qualifications or finding work.</p>
+
+
+      {% set otherPurposefulActivity %}
+        {{ govukInput({
+          id: "other-activity",
+          name: "other-activity",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Other activities"
+          }
+        }) }}
+      {% endset -%}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "purposeful-activities",
+        name: "purposeful-activities",
+        hint: {
+          text: "You can select more than one option"
+        },
+        items: [
+          {
+            value: "accomodation",
+            text: "Accomodation"
+          },
+          {
+            value: "drugs-alcohol",
+            text: "Drugs and alcohol"
+          },
+          {
+            value: "children-and-families",
+            text: "Children and famiies"
+          },
+          {
+            value: "health",
+            text: "Health"
+          },
+          {
+            value: "education-training-employment",
+            text: "Education, training and employment"
+          },
+          {
+            value: "finance-debt",
+            text: "Finance benefits and debt"
+          },
+          {
+            value: "attitudes-behaviour",
+            text: "Attitudes, thinking and behaviour"
+          },
+          {
+            value: "abuse",
+            text: "Abuse"
+          },
+          {
+            value: "sex-working",
+            text: "Sex working"
+          },
+          {
+            value: "other",
+            text: "Other",
+            conditional: {
+              html: otherPurposefulActivity
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "purposeful-activity-more-detail",
+        id: "purposeful-activity-more-detail",
+        label: {
+          text: "Can you provide more detail?",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Provide a summary of how these will assist the persons rehabilitation within the AP (optional)"
+        }
+      }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/task-list-standard"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

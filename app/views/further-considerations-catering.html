@@ -21,7 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
  
     <h1 class="govuk-heading-l">
-      <span class="govuk-caption-l">Previous placements</span>
+      <span class="govuk-caption-l">Catering requirements</span>
       Further placement considerations
     </h1>
     <p>This information is used to match a person with a suitable room in a suitable premises.</p>
@@ -29,10 +29,10 @@
 
     <!-- Nunjucks detail -->
    
-    {% set previousPlacement %}
+    {% set cateringIssues %}
       {{ govukTextarea({
-        id: "placements",
-        name: "placements",
+        id: "catering",
+        name: "catering",
         type: "textarea",
         spellcheck: false,
         classes: "textarea",
@@ -46,33 +46,26 @@
 
 
     {{ govukRadios({
-      idPrefix: "previous-placement",
-      name: "previous-placement",
-      hint: {
-        text: "You may be able to find this information in {name} case notes."
-      },
+      idPrefix: "catering-issues",
+      name: "catering-issues",
       fieldset: {
         legend: {
-          text: "Has the person stayed or been offered a placement in an AP before?",
+          text: "Do you have any concerns about {{ name }} catering for themself?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
       items: [
         {
-          value: "yes-previous-placement",
+          value: "yes-catering-issues",
           text: "Yes",
           conditional: {
-            html: previousPlacement
+            html: complexCase
           }
         },
         {
-          value: "no-previous-placement",
+          value: "no-catering-issues",
           text: "No"
-        },
-        {
-          value: "unsure-previous-placement",
-          text: "I don't know"  
         }
       ]
     }) }}
@@ -80,7 +73,7 @@
 
     {{ govukButton({
       text: "Save and continue",
-      href: "/further-considerations-arson"
+      href: "/task-list-standard"
     }) }}
 
 

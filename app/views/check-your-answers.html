@@ -1,0 +1,1592 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/assess/tasklist"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+
+    <!-- Person details -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Person details
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Name"
+        },
+        value: {
+        text: "D012923"
+        }
+        },
+        {
+        key: {
+        text: "CRN"
+        },
+        value: {
+        text: "{name}"
+        }
+        },
+        {
+        key: {
+        text: "Date of birth"
+        },
+        value: {
+        html: "Date"
+        }
+        },
+        {
+        key: {
+        text: "NOMS number"
+        },
+        value: {
+        text: "{name}"
+        }
+        },
+        {
+        key: {
+        text: "Nationality"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Religion or belief"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Sex"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Status"
+        },
+        value: {
+        text: ""
+        }
+        },
+        {
+        key: {
+        text: "Prison"
+        },
+        value: {
+        text: ""
+        }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+
+    <!-- Approved Premises requirements  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Approved Premises requirements
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Which type of AP does Robert require?"
+        },
+        value: {
+        text: "Standard"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+
+    <!-- If PIPE is selected, use following code -->
+    <!-- 
+      <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Approved Premises requirements
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Which type of AP does Robert require?"
+        },
+        value: {
+        text: "Psychologically Informed Planned Environment (PIPE)"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Has Robert been screened into the OPD pathway?"
+        },
+        value: {
+        text: "Yes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "When was Robert's last consultation or formulation?"
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+        {
+        key: {
+        text: "Has a referral for PIPE placement been recommended in the OPD pathway plan?"
+        },
+        value: {
+        text: "Yes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "Provide any additional detail about why Robert needs a PIPE placement."
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          }
+        ]
+        }) }}
+      </div>
+    </div> 
+  -->
+    <!-- If ESAP is are selected, use following code -->
+    <!-- 
+      <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Approved Premises requirements
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Which type of AP does Robert require?"
+        },
+        value: {
+        text: "Enhanced Security Approved Premises (ESAP)"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Why does the person require an enhanced security placement (ESAP)?"
+        },
+        value: {
+        text: "List checkboxes selected"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "Do any of the following factors also apply?"
+          },
+          value: {
+          text: "List checkboxes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+        {
+        key: {
+        text: "Which items does Robert have a history of secreting?"
+        },
+        value: {
+        text: "List selected checkboxes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+          key: {
+          text: "Have partnership agencies requested the sharing of intelligence captured via body worn technology?"
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Provide any supporting information about why Robert requires enhanced room searches."
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Which behaviours has Robert demonstrated that require enhanced CCTV provision to monitor?"
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Have partnership agencies requested the sharing of intelligence captured via enhanced CCTV?"
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Provide any supporting information about why Robert requires enhanced CCTV provision."
+          },
+          value: {
+          text: "Yes"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          }
+        ]
+        }) }}
+      </div>
+    </div> 
+  -->
+
+
+    <!-- Sentence type  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Sentence type
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Which of the following best describes the sentence type the person is on?"
+        },
+        value: {
+        text: ""
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "What type of release will the application support - or - Which of the following options best describes
+        the
+        situation"
+        },
+        value: {
+        text: ""
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+
+    <!-- Date of arrival  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Date of arrival
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Do you know {name}’s release date?"
+        },
+        value: {
+        text: "Yes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "What is the expected date of release?"
+        },
+        value: {
+        text: "date"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Is [release-date] the date you want the placement to start?"
+        },
+        value: {
+        text: "Yes"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+    
+    <!--- If the user knows the release date show the following in list -->
+    <!--- {
+      key: {
+      text: "What is the expected date of release?"
+      },
+      value: {
+      text: "date"
+      },
+      actions: {
+      items: [
+      {
+      href: "#",
+      text: "Change",
+      visuallyHiddenText: "name"
+      }
+      ]
+      }
+      }
+      ---> 
+
+  <!--- If the placement date is not the same as the release date, show the following in list -->
+    <!--- {
+      key: {
+      text: "What is the expected arrival date"
+      },
+      value: {
+      text: "date"
+      },
+      actions: {
+      items: [
+      {
+      href: "#",
+      text: "Change",
+      visuallyHiddenText: "name"
+      }
+      ]
+      }
+      }
+      ---> 
+
+  <!--- If the user selects 'No, the release date is to be determined by the parole board' show the following in list -->
+    <!--- {
+      key: {
+      text: "Do you know {name} oral hearing date?"
+      },
+      value: {
+      text: "date"
+      },
+      actions: {
+      items: [
+      {
+      href: "#",
+      text: "Change",
+      visuallyHiddenText: "name"
+      }
+      ]
+      }
+      }
+      ---> 
+  
+  <!--- If the user selects 'Yes, show the following in list -->
+    <!--- {
+      key: {
+      text: "Date of oral hearing"
+      },
+      value: {
+      text: "date"
+      },
+      actions: {
+      items: [
+      {
+      href: "#",
+      text: "Change",
+      visuallyHiddenText: "name"
+      }
+      ]
+      }
+      }
+      ---> 
+
+
+
+
+
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Purpose of AP placement
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "What is the purpose of the AP placement?"
+        },
+        value: {
+        text: ""
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+
+    <!-- Choose sections of OASys to import  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        OASys Risk information
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Sections of OASys imported to application"
+        },
+        value: {
+        html: '<ul>
+          <li>9. Drug misuse</li>
+          <li>10. Alcohol misuse</li>
+        </ul>'
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+
+        {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+        {
+        heading: {
+        text: "RoSH summary"
+        },
+        content: {
+        html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+        }
+        },
+        {
+        heading: {
+        text: "Offence details"
+        },
+        content: {
+        html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+        }
+        },
+        {
+        heading: {
+        text: "Know your audience"
+        },
+        content: {
+        html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+        }
+        },
+        {
+        heading: {
+        text: "How people read"
+        },
+        content: {
+        html: "<p class='govuk-body'>This is the content for How people read.</p>"
+        }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Detail about managing risks and needs
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Describe why the enhanced services of an AP are needed to manage risk"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Provide details of additional measures that will be necessary for the management of risk"
+        },
+        value: {
+        text: "Example content"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Has {{name}} ever been convicted of any of the following offences? "
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "What type of offending has {name} been convicted for? "
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "What type of sexual offences has the person been convicted for?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Is the offence a current or previous offence? "
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Which of the purposeful activity pathways will assist {name} rehabilitation in the AP"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Provide a summary of how these will assist the persons rehabilitation within the AP"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+
+
+
+
+    <!-- Review prison information  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Review prison information
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Selected prison case notes that support this application"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Additional circumstances that have helped Robert do well in the past"
+        },
+        value: {
+        text: "Example content"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+      </div>
+    </div>  
+
+    <!-- Describe location factors  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Describe location factors
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Preferred location for AP placement"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Give details of any positive factors for {name} in this location."
+        },
+        value: {
+        text: "Example content"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Are there any restrictions linked to placement location?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "If an AP Placement is not available in the persons preferred area, would a placement in an alternative
+        locality be considered?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit
+        (PDU)?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit
+        (PDU)?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+          key: {
+          text: "Have you agreed Robert Brown's transfer/supervision with the receiving PDU?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+            key: {
+            text: "Who have you agreed this with?"
+            },
+            value: {
+            text: "{data}"
+            },
+            actions: {
+              items: [
+              {
+              href: "associated-documents.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+            }
+        ]
+        }) }}
+      </div>
+    </div>
+
+<!-- Health and access needs  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Health and access needs
+      </div>
+      <div class="box-content">
+
+        {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "Does {name} require use of a wheelchair?"
+          },
+          value: {
+          text: "Sarah Philips"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Does Robert have any other mobility, disability, or accessibility needs?"
+          },
+          value: {
+          text: "Example content"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Does the person need an interpreter?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+          key: {
+          text: "Does the person have any additional health issues or care and support needs? "
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+          key: {
+          text: "Has a care act assessment been completed?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+          key: {
+          text: "Has the person been fully vaccinated for COVID-19?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },{
+          key: {
+          text: "Is Robert Brown high risk to COVID-19?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+          key: {
+          text: "Other considerations and comments on COVID-19"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          }
+          ]
+          }) }}
+      </div>
+    </div>
+
+
+ <!-- Further placement considerations  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Further placement considerations 
+      </div>
+      <div class="box-content">
+        <h2 class="govuk-heading-m">Room sharing</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Is there any evidence that the person may pose a risk to AP staff?"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Is there any evidence that Robert Brown may pose a risk to other AP residents?"
+        },
+        value: {
+        text: "Example content"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Do you have any concerns about Robert Brown sharing a bedroom?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Is there potential for the person to benefit from a room share?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Is there any evidence of previous trauma or significant event in the persons history which would indicate
+        that room share may not be suitable"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        },
+        {
+        key: {
+        text: "Do you have any concerns about Robert Brown sharing a bathroom?"
+        },
+        value: {
+        text: "{data}"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        }
+        ]
+        }) }}
+    
+    
+        <h2 class="govuk-heading-m">Vulnerability</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Are you aware that the person is vulnerable to exploitation from others?"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        },
+        {
+        key: {
+        text: "Is there any evidence or expectation that the person may groom, radicalise or exploit others?"
+        },
+        value: {
+        text: "Example content"
+        },
+        actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+        }
+        ]
+        }) }}
+    
+        <h2 class="govuk-heading-m">Previous placements</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Has the person stayed or been offered a placement in an AP before?"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+    
+        <h2 class="govuk-heading-m">Complex case board</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Does the persons gender identity require a complex case board to review their application?"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name"
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+    
+        <h2 class="govuk-heading-m">Catering requirements</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Do you have any concerns about Robert Brown catering for themself?"
+        },
+        value: {
+        text: "Sarah Philips"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name",
+        classes: 'summarylist'
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+      </div>
+    </div>
+<!-- Move on information  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Move on information
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "What duration of placement do you recommend?"
+          },
+          value: {
+          text: "Sarah Philips"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Additional comments to support duration of placement"
+          },
+          value: {
+          text: "Example content"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "Where is the person most likely to live when he moves on from the AP?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+          key: {
+          text: "Are move on arrangements already in place for when Robert Brown leaves the AP?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+          key: {
+          text: "What type of accommodation will the person have when they leave the AP?"
+          },
+          value: {
+          text: "{data}"
+          },
+          actions: {
+            items: [
+            {
+            href: "associated-documents.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          }
+          ]
+          }) }}
+      </div>
+    </div>
+
+   
+    
+
+    
+  
+
+
+    <!-- Associated documents  -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="person-details">
+        Associated documents
+      </div>
+      <div class="box-content">
+        {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "court-reports.pdf"
+          },
+          value: {
+          text: "Description"
+          },
+          actions: {
+          items: [
+          {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "name"
+          }
+          ]
+          }
+          },
+          {
+          key: {
+          text: "exclusion-zone.pdf"
+          },
+          value: {
+          text: "Description"
+          },
+          actions: {
+          items: [
+          {
+          href: "associated-documents.html",
+          text: "Change",
+          visuallyHiddenText: "change"
+          }
+          ]
+          }
+          }
+          ]
+          }) }}
+      </div>
+    </div>
+
+    <!--- Back button -->
+        {{ govukButton({
+        text: "Save",
+        href: "/task-list-standard"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
