@@ -27,8 +27,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">What type of sexual offences has [name] been convicted for? </h2>
+    <h2 class="govuk-heading-l">What type of sexual offences has the person been convicted of? </h2>
       <p class="govuk-body">This information will be used to match a person to a bed in an Approved Premises</p>
+
+      {% set otherReason %}
+    {{ govukInput({
+      id: "other-reason",
+      name: "other-reason",
+      type: "text",
+      label: {
+        text: "Please specify"
+      }
+    }) }}
+    {% endset -%}
 
       {{ govukCheckboxes({
         idPrefix: "offence-convictions-so",
@@ -39,19 +50,26 @@
         items: [
           {
             value: "in-person-so-adult",
-            text: "In-person sex offence, adult victim"
+            text: "Contact sexual offences against an adult/adults"
           },
           {
             value: "online-so-adult",
-            text: "Online sex offence, adult victim"
+            text: "Non-contact sexual offences against an adult/adults"
           },
           {
             value: "in-person-so-child",
-            text: "In-person sex offence, child victim"
+            text: "Contact sexual offences against children"
           },
           {
             value: "online-so-child",
-            text: "Online sex offence, child victim"
+            text: "Non-contact sexual offences against children"
+          },
+          {
+            value: "other-reason",
+            text: "Other",
+            conditional: {
+              html: otherReason
+            }
           }
         ]
       }) }}      
