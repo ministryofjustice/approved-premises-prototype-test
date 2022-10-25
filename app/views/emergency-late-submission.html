@@ -17,7 +17,7 @@
     }) }}
  
 
-    <h2 class="govuk-heading-l">Emergency referral</h2>
+    <h2 class="govuk-heading-l">Emergency application</h2>
   
 
     {% set otherEmergencyReason %}
@@ -29,7 +29,7 @@
         spellcheck: false,
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Provide reason"
+          text: "Please specify"
         }
       }) }}
     {% endset -%}
@@ -78,7 +78,7 @@
         },
         {
           value: "accommodation-other",
-          text: "Other, please specify",
+          text: "Other",
           conditional: {
             html: otherEmergencyReason
           }
