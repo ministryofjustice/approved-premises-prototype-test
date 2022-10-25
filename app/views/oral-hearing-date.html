@@ -11,10 +11,10 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
- 
+
     {% set dateHtml %}
       {{ govukInput({
         id: "OH-date-known",
@@ -34,7 +34,7 @@
         If the oral hearing date is not yet known, this application will be paused once a suitability assessment has been made. <br><br> If the application is successful the individual will be matched to an Approved Premises after a direction to release has been made.
       </p>
     {% endset %}
-     
+
     {% set noHearinghtml %}
     {{ govukNotificationBanner({
       html: noHearingDatehtml
@@ -46,7 +46,7 @@
         name: "oh-date",
         fieldset: {
           legend: {
-            text: "Do you know {name} oral hearing date?",
+            text: "Do you know the persons oral hearing date?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }

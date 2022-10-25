@@ -1,0 +1,220 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/sentence-type"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if (data['sentence-type'] == "Standard-determinate-custody") %}
+
+    <h2 class="govuk-heading-l">What type of release will the application support?</h2>
+    
+    {{ govukRadios({
+      idPrefix: "sentence-standard-determinate",
+      name: "sentence-standard-determinate",
+      hint: {
+        text: "Select the option which best describes the situation"
+      },
+      items: [
+        {
+          value: "rotl",
+          text: "Release on Temporary Licence (ROTL)"
+        },
+        {
+          value: "hdc",
+          text: "Home detention curfew (HDC)"
+        },
+        {
+          value: "Licence",
+          text: "Licence"
+        },
+        {
+          value: "pss",
+          text: "Post Sentence Supervision (PSS)"
+        },
+        {
+          value: "release-recall",
+          text: "Re-release following recall"
+        }
+      ]
+    }) }}
+
+    {% elseif (data['sentence-type'] == "Community order") %}
+
+    <h2 class="govuk-heading-l">Is there a specified residency requirement as part of the order?</h2>
+    
+    {{ govukRadios({
+      idPrefix: "sentence-community-order",
+      name: "sentence-community-order",
+      hint: {
+        text: "Is there a specified residency requirement as part of the order?"
+      },
+      items: [
+        {
+          value: "yes-residency-requirement",
+          text: "Yes"
+        },
+        {
+          value: "no-residency-requirement",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {% elseif (data['sentence-type'] == "bail-placement") %}
+
+    <h2 class="govuk-heading-l">Which of the following options best describes the situation?</h2>
+      {{ govukRadios({
+        idPrefix: "sentence-bail",
+        name: "sentence-bail",
+        items: [
+          {
+            value: "bail-part-of-sentence",
+            text: "Bail assessment period as part of sentence"
+          },
+          {
+            value: "bail-for-protection",
+            text: "Bail placement for public protection"
+          }
+        ]
+      }) }}
+
+    {% elseif (data['sentence-type'] == "extended-determinate") %}
+    
+    <h2 class="govuk-heading-l">What type of release will the application support?</h2>
+      {{ govukRadios({
+        idPrefix: "sentence-extended-determinate",
+        name: "sentence-extended-determinate",
+        hint: {
+          text: "Select the option which best describes the situation"
+        },
+        items: [
+          {
+            value: "extended-determinate-rotl",
+            text: "Release on Temporary Licence (ROTL)"
+          },
+          {
+            value: "extended-determinate-license",
+            text: "License"
+          },
+          {
+            value: "extended-determinate-rerelease",
+            text: "Re-release following recall"
+          }
+        ]
+      }) }}
+
+      {% elseif (data['sentence-type'] == "ipp") %}
+
+      <h2 class="govuk-heading-l">What type of release will the application support?</h2>
+      {{ govukRadios({
+        idPrefix: "sentence-ipp",
+        name: "sentence-ipp",
+        hint: {
+          text: "Select the option which best describes the situation"
+        },
+        items: [
+          {
+            value: "ipp-rotl",
+            text: "Release on Temporary Licence (ROTL)"
+          },
+          {
+            value: "ipp-license",
+            text: "License"
+          },
+          {
+            value: "ipp-rerelease",
+            text: "Re-release following recall"
+          }
+        ]
+      }) }}
+
+
+      {% elseif (data['sentence-type'] == "life") %}
+      
+      <h2 class="govuk-heading-l">What type of release will the application support?</h2>
+      {{ govukRadios({
+        idPrefix: "sentence-life",
+        name: "sentence-life",
+        hint: {
+          text: "Select the option which best describes the situation"
+        },
+        items: [
+          {
+            value: "life-rotl",
+            text: "Release on Temporary Licence (ROTL)"
+          },
+          {
+            value: "life-license",
+            text: "License"
+          },
+          {
+            value: "life-rerelease",
+            text: "Re-release following recall"
+          }
+        ]
+      }) }}
+
+
+    {% endif %}
+
+      <!-- {{ govukRadios({
+        idPrefix: "sentence-type",
+        name: "sentence-type",
+        hint: {
+          text: "Select the option which best describes the situation"
+        },
+        items: [
+          {
+            value: "Standard-determinate-custody",
+            text: "Standard determinate custody"
+          },
+          {
+            value: "Community-Order ",
+            text: "Community Order "
+          },
+          {
+            value: "bail-placement",
+            text: "Bail placement"
+          },
+          {
+            value: "extended-determinate",
+            text: "Extended determinate custody"
+          },
+          {
+            value: "ipp",
+            text: "Indeterminate Public Protection"
+          },
+          {
+            value: "non-statutory",
+            text: "Non-statutory"
+          },
+          {
+            value: "life",
+            text: "Life sentence"
+          }
+        ]
+      }) }} -->
+
+      {{ govukButton({
+          text: "Save and continue",
+          href: "/task-list-standard"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
