@@ -1,8 +1,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% extends "layout.html" %}
 
@@ -108,12 +107,6 @@
         name: "more-detail",
         id: "more-detail"
       }) }}
-
-
-
-
-
-
 
     {{ govukButton({
       text: "Save and continue",
