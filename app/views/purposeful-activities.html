@@ -21,8 +21,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">Which of the purposeful activity pathways will assist {name} rehabilitation in the AP</h2>
-      <p class="govuk-body">Give details of any additional non-criminogenic needs the person has that an AP may also be able to help meet. For example, support getting qualifications or finding work.</p>
+    <h2 class="govuk-heading-l">Which rehabilitative interventions will support the Approved Premises (AP) placement?</h2>
+      <p class="govuk-body">Formerly known as purposeful activities. <br><br>Select any additional needs the person has that an AP could help meet. For example, support getting qualifications or finding work.</p>
 
 
       {% set otherPurposefulActivity %}
@@ -34,7 +34,7 @@
           spellcheck: false,
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Other activities"
+            text: "Please specify"
           }
         }) }}
       {% endset -%}
@@ -49,7 +49,7 @@
         items: [
           {
             value: "accomodation",
-            text: "Accomodation"
+            text: "Accommodation"
           },
           {
             value: "drugs-alcohol",
@@ -57,7 +57,7 @@
           },
           {
             value: "children-and-families",
-            text: "Children and famiies"
+            text: "Children and families"
           },
           {
             value: "health",
@@ -65,11 +65,11 @@
           },
           {
             value: "education-training-employment",
-            text: "Education, training and employment"
+            text: "Education, training, and employment"
           },
           {
             value: "finance-debt",
-            text: "Finance benefits and debt"
+            text: "Finance, benefits, and debt"
           },
           {
             value: "attitudes-behaviour",
@@ -93,19 +93,6 @@
         ]
       }) }}
 
-
-      {{ govukTextarea({
-        name: "purposeful-activity-more-detail",
-        id: "purposeful-activity-more-detail",
-        label: {
-          text: "Can you provide more detail?",
-          classes: "govuk-label--s",
-          isPageHeading: true
-        },
-        hint: {
-          text: "Provide a summary of how these will assist [name]s rehabilitation within the AP (optional)"
-        }
-      }) }}
 
         {{ govukButton({
           text: "Save and continue",
