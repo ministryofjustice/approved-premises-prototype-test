@@ -27,7 +27,7 @@
           <p> Imported from NOMIS: <b>[date-of-import]</b></p>
           <p> Imported from DPS: <b>[date-of-import]</b></p>
       
-          <p>Give evidence of any positive and negative behaviour to help AP managers understand factors that may help with Roberts risk management in an AP.</p>
+          <p>Select any prison case notes that will help Approved Premises (AP) managers understand factors that may help with the person's risk management in an AP.<br><br>Adjudications and ACCT (Assessment, Care in Custody and Teamwork) information will be sent automatically.</p>
       </div>
   
       <div>
@@ -58,9 +58,9 @@
 
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width:100px;">Selected</th>
-              <th scope="col" class="govuk-table__header">Created</th>
-              <th scope="col" class="govuk-table__header">Case note comments</th>
+              <th scope="col" class="govuk-table__header" style="width:100px;">Select</th>
+              <th scope="col" class="govuk-table__header" style="width:150px;">Date, time and officer</th>
+              <th scope="col" class="govuk-table__header">Comments</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
@@ -108,17 +108,17 @@
       </div>  
 
       <div class="govuk-grid-column-two-thirds">
-
+<br><br><br>
         {{ govukTextarea({
           name: "more-detail",
           id: "more-detail",
           label: {
-            text: "Can you provide more detail?",
+            text: "Are there additional circumstances that have helped the person do well in the past?",
             classes: "govuk-label--s",
             isPageHeading: true
           },
           hint: {
-            text: "Additional circumstances that have helped Robert do well in the past (optional)"
+            text: "Provide details (optional)"
           }
         }) }}
 
