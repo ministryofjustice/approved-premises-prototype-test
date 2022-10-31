@@ -1,16 +1,18 @@
-g{% extends "layout.html" %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
+
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Associated documents
 {% endblock %}
 
 {% block beforeContent %}
-
     {{ govukBackLink({
       text: "Back",
-      href: "/index"
+      href: "/task-list-standard"
     }) }}
 
 {% endblock %}
@@ -187,7 +189,7 @@ g{% extends "layout.html" %}
 
     {{ govukButton({
       text: "Attach documents",
-      href: "/index"
+      href: "/task-list-standard"
     }) }}
 
     </div>

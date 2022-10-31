@@ -22,7 +22,7 @@
  
     <div class="govuk-grid-row">
     
-      <div class="govuk-grid-column-two-thirds">
+      <div>
         <h2 class="govuk-heading-l">Prison information</h2>
           <p> Imported from NOMIS: <b>[date-of-import]</b></p>
           <p> Imported from DPS: <b>[date-of-import]</b></p>
@@ -30,24 +30,24 @@
           <p>Give evidence of any positive and negative behaviour to help AP managers understand factors that may help with Roberts risk management in an AP.</p>
       </div>
   
-      <div class="govuk-column-full-width">
-<!---
-        {{ mojSubNavigation({
-          label: 'Sub navigation',
-          items: [{
-            text: 'Nav item 1',
-            href: '#1',
-            active: true
-          }, {
-            text: 'Nav item 2',
-            href: '#2'
-          }, {
-            text: 'Nav item 3',
-            href: '#3'
-          }]
-        }) }}
+      <div>
+        <!-- Sub-navigation -->
+              <nav class="moj-sub-navigation" aria-label="Sub navigation">
+        
+                <ul class="moj-sub-navigation__list">
+                  <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page"  href="/assess/prison-adjudications.html">Adjudications</a>
+                  </li>
 
--->
+                  <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  href="/assess/prison-acct.html">ACCT</a>
+                  </li>
+                </ul>
+              </nav>
+          </div>  
+
+      <div class="govuk-column-full-width">
+        
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--m">Adjudications</caption>
 
