@@ -29,7 +29,7 @@
       name: "other-reason",
       type: "text",
       label: {
-        text: "Please specify other purpose"
+        text: "Please specify"
       }
     }) }}
     {% endset -%}
@@ -65,17 +65,14 @@
         },
         {
           value: "other-reason",
-          text: "Other (please specify)",
+          text: "Other",
           conditional: {
             html: otherReason
           }
         }
       ]
     }) }}
-    {{ govukTextarea({
-      name: "more-detail",
-      id: "more-detail"
-    }) }}
+    
 
 
     {{ govukButton({
