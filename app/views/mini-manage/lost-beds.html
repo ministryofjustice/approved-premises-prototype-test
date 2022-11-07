@@ -20,71 +20,29 @@
       href: "/index"
     }) }}
  
-    <h2 class="govuk-heading-l">Record a lost bed</h2>
-      <p> Record beds that have been lost within your AP estate.</p>
+    <h2 class="govuk-heading-l">Mark a bed as out of service</h2>
+      <p> Provide details of beds that are out of service within your AP estate.</p>
    
  <!-- Number of beds lost -->
 
       {{ govukInput({
         label: {
-          text: "Number of beds lost"
+          text: "Room number",
+          classes: "govuk-heading-s"
         },
         classes: "govuk-input--width-2",
         id: "width-2",
         name: "width-2"
       }) }}
 
-
-
- <!-- Rooms lost  -->
-      {{ govukCheckboxes({
-        idPrefix: "rooms",
-        name: "rooms",
-        fieldset: {
-          legend: {
-            text: "Which rooms are out of service??",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
+      {{ govukInput({
+        label: {
+          text: "Bed number"
         },
-        hint: {
-          text: "Select all that apply."
-        },
-        items: [
-          {
-            value: "1-1",
-            text: "Room 1 - Bed 1"
-          },
-          {
-            value: "1-2",
-            text: "Room 1 - Bed 2"
-          },
-          {
-            value: "2-1",
-            text: "Room 2 - Bed 1"
-          },
-          {
-            value: "3-1",
-            text: "Room 3 - Bed 1"
-          },
-          {
-            value: "4-1",
-            text: "Room 4 - Bed 1"
-          },
-          {
-            value: "5-1",
-            text: "Room 5 - Bed 1"
-          },
-          {
-            value: "5-2",
-            text: "Room 5 - Bed 2"
-          },
-          {
-            value: "6-1",
-            text: "Room 6 - Bed 1"
-          }
-        ]
-      }) }}      
+        classes: "govuk-input--width-2",
+        id: "width-2",
+        name: "width-2"
+      }) }}
 
  <!-- Start date -->
 
@@ -93,7 +51,7 @@
         namePrefix: "start-date",
         fieldset: {
           legend: {
-            text: "Start date",
+            text: "Out of service from",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
