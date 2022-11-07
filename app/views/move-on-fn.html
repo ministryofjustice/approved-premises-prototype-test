@@ -7,18 +7,18 @@
 {% endblock %}
 
 {% block content %}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     {{ govukBackLink({
       text: "Back",
-        href: "/move-on-accommodation"
+      href: "/index"
     }) }}
-
+ 
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
-
+  
 
     {% set fnInformed %}
       {{ govukInput({
@@ -64,9 +64,9 @@
 
     {{ govukButton({
       text: "Save and continue",
-      href: "/task-list-standard"
+      href: "/index"
     }) }}
-
+    
   </div>
 </div>
 

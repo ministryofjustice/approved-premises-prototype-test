@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -15,28 +15,42 @@
       text: "Back",
       href: "/index"
     }) }}
- 
+
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
-  
-    {{ govukInput({
+
+    {{ govukSelect({
+      id: "ap-pdu",
+      name: "ap-pdu",
       label: {
-        text: "Where is the person most likely to live when he moves on from the AP?",
-        classes: "govuk-label--m",
-        isPageHeading: true
+        text: "Probation delivery unit (PDU) location"
       },
-      hint: {
-        text: "PDU area or region"
-      },
-      id: "pdu-area",
-      name: "pdu-area"
+      items: [
+        {
+          value: "northumberland",
+          text: "Northumberland"
+        },
+        {
+          value: "tyne-and-wear",
+          text: "Tyne and Wear",
+          selected: true
+        },
+        {
+          value: "example",
+          text: "Example"
+        },
+        {
+          value: "example",
+          text: "Example"
+        }
+      ]
     }) }}
 
     {{ govukButton({
       text: "Save and continue",
        href: "/move-on-arrangements"
     }) }}
-    
+
   </div>
 </div>
 

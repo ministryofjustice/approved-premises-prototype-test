@@ -34,7 +34,7 @@ Home – GOV.UK Prototype Kit
         text: "Name"
         },
         value: {
-        text: "D012923"
+        text: "Robert Brown"
         }
         },
         {
@@ -42,7 +42,7 @@ Home – GOV.UK Prototype Kit
         text: "CRN"
         },
         value: {
-        text: "{name}"
+        text: "D012923"
         }
         },
         {
@@ -50,7 +50,7 @@ Home – GOV.UK Prototype Kit
         text: "Date of birth"
         },
         value: {
-        html: "Date"
+        html: "03 May 1966"
         }
         },
         {
@@ -58,7 +58,7 @@ Home – GOV.UK Prototype Kit
         text: "NOMS number"
         },
         value: {
-        text: "{name}"
+        text: ""
         }
         },
         {
@@ -137,7 +137,7 @@ Home – GOV.UK Prototype Kit
     </div>
 
     <!-- If PIPE is selected, use following code -->
-    <!-- 
+    <!--
       <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
         Approved Premises requirements
@@ -233,10 +233,10 @@ Home – GOV.UK Prototype Kit
         ]
         }) }}
       </div>
-    </div> 
+    </div>
   -->
     <!-- If ESAP is are selected, use following code -->
-    <!-- 
+    <!--
       <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
         Approved Premises requirements
@@ -400,7 +400,7 @@ Home – GOV.UK Prototype Kit
         ]
         }) }}
       </div>
-    </div> 
+    </div>
   -->
 
 
@@ -414,7 +414,7 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Which of the following best describes the sentence type [name] is on?"
+        text: "Which of the following best describes the sentence type the person is on?"
         },
         value: {
         text: ""
@@ -463,7 +463,7 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Do you know {name}’s release date?"
+        text: "Do you know the persons release date?"
         },
         value: {
         text: "Yes"
@@ -483,7 +483,7 @@ Home – GOV.UK Prototype Kit
         text: "What is the expected date of release?"
         },
         value: {
-        text: "date"
+        text: ""
         },
         actions: {
         items: [
@@ -516,7 +516,7 @@ Home – GOV.UK Prototype Kit
         }) }}
       </div>
     </div>
-    
+
     <!--- If the user knows the release date show the following in list -->
     <!--- {
       key: {
@@ -535,7 +535,7 @@ Home – GOV.UK Prototype Kit
       ]
       }
       }
-      ---> 
+      --->
 
   <!--- If the placement date is not the same as the release date, show the following in list -->
     <!--- {
@@ -555,7 +555,7 @@ Home – GOV.UK Prototype Kit
       ]
       }
       }
-      ---> 
+      --->
 
   <!--- If the user selects 'No, the release date is to be determined by the parole board' show the following in list -->
     <!--- {
@@ -575,8 +575,8 @@ Home – GOV.UK Prototype Kit
       ]
       }
       }
-      ---> 
-  
+      --->
+
   <!--- If the user selects 'Yes, show the following in list -->
     <!--- {
       key: {
@@ -595,7 +595,7 @@ Home – GOV.UK Prototype Kit
       ]
       }
       }
-      ---> 
+      --->
 
 
 
@@ -661,43 +661,7 @@ Home – GOV.UK Prototype Kit
         ]
         }) }}
 
-        {{ govukAccordion({
-        id: "accordion-default",
-        items: [
-        {
-        heading: {
-        text: "RoSH summary"
-        },
-        content: {
-        html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
-        }
-        },
-        {
-        heading: {
-        text: "Offence details"
-        },
-        content: {
-        html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
-        }
-        },
-        {
-        heading: {
-        text: "Know your audience"
-        },
-        content: {
-        html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
-        }
-        },
-        {
-        heading: {
-        text: "How people read"
-        },
-        content: {
-        html: "<p class='govuk-body'>This is the content for How people read.</p>"
-        }
-        }
-        ]
-        }) }}
+
       </div>
     </div>
 
@@ -713,7 +677,7 @@ Home – GOV.UK Prototype Kit
         text: "Describe why the enhanced services of an AP are needed to manage risk"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -730,7 +694,7 @@ Home – GOV.UK Prototype Kit
         text: "Provide details of additional measures that will be necessary for the management of risk"
         },
         value: {
-        text: "Example content"
+        text: ""
         },
         actions: {
         items: [
@@ -747,7 +711,7 @@ Home – GOV.UK Prototype Kit
         text: "Has {{name}} ever been convicted of any of the following offences? "
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -764,7 +728,7 @@ Home – GOV.UK Prototype Kit
         text: "What type of offending has {name} been convicted for? "
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -778,10 +742,10 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "What type of sexual offences has [name] been convicted for?"
+        text: "What type of sexual offences has the person been convicted for?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -798,7 +762,7 @@ Home – GOV.UK Prototype Kit
         text: "Is the offence a current or previous offence? "
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -815,7 +779,7 @@ Home – GOV.UK Prototype Kit
         text: "Which of the purposeful activity pathways will assist {name} rehabilitation in the AP"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -829,10 +793,10 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Provide a summary of how these will assist [name]s rehabilitation within the AP"
+        text: "Provide a summary of how these will assist the persons rehabilitation within the AP"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -865,7 +829,7 @@ Home – GOV.UK Prototype Kit
         text: "Selected prison case notes that support this application"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -882,7 +846,7 @@ Home – GOV.UK Prototype Kit
         text: "Additional circumstances that have helped Robert do well in the past"
         },
         value: {
-        text: "Example content"
+        text: ""
         },
         actions: {
         items: [
@@ -897,7 +861,7 @@ Home – GOV.UK Prototype Kit
         ]
         }) }}
       </div>
-    </div>  
+    </div>
 
     <!-- Describe location factors  -->
     <div class="main-box">
@@ -912,7 +876,7 @@ Home – GOV.UK Prototype Kit
         text: "Preferred location for AP placement"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
         items: [
@@ -929,7 +893,7 @@ Home – GOV.UK Prototype Kit
         text: "Give details of any positive factors for {name} in this location."
         },
         value: {
-        text: "Example content"
+        text: ""
         },
         actions: {
         items: [
@@ -946,7 +910,7 @@ Home – GOV.UK Prototype Kit
         text: "Are there any restrictions linked to placement location?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -964,7 +928,7 @@ Home – GOV.UK Prototype Kit
         locality be considered?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -982,7 +946,7 @@ Home – GOV.UK Prototype Kit
         (PDU)?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -1000,7 +964,7 @@ Home – GOV.UK Prototype Kit
         (PDU)?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -1017,7 +981,7 @@ Home – GOV.UK Prototype Kit
           text: "Have you agreed Robert Brown's transfer/supervision with the receiving PDU?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1034,7 +998,7 @@ Home – GOV.UK Prototype Kit
             text: "Who have you agreed this with?"
             },
             value: {
-            text: "{data}"
+            text: ""
             },
             actions: {
               items: [
@@ -1065,7 +1029,7 @@ Home – GOV.UK Prototype Kit
           text: "Does {name} require use of a wheelchair?"
           },
           value: {
-          text: "Sarah Philips"
+          text: ""
           },
           actions: {
           items: [
@@ -1082,7 +1046,7 @@ Home – GOV.UK Prototype Kit
           text: "Does Robert have any other mobility, disability, or accessibility needs?"
           },
           value: {
-          text: "Example content"
+          text: ""
           },
           actions: {
           items: [
@@ -1096,10 +1060,10 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Does [name] need an interpreter?"
+          text: "Does the person need an interpreter?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1113,10 +1077,10 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Does [name] have any additional health issues or care and support needs? "
+          text: "Does the person have any additional health issues or care and support needs? "
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1133,7 +1097,7 @@ Home – GOV.UK Prototype Kit
           text: "Has a care act assessment been completed?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1150,7 +1114,7 @@ Home – GOV.UK Prototype Kit
           text: "Has the person been fully vaccinated for COVID-19?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1166,7 +1130,7 @@ Home – GOV.UK Prototype Kit
           text: "Is Robert Brown high risk to COVID-19?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1183,7 +1147,7 @@ Home – GOV.UK Prototype Kit
           text: "Other considerations and comments on COVID-19"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1204,7 +1168,7 @@ Home – GOV.UK Prototype Kit
  <!-- Further placement considerations  -->
     <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
-        Further placement considerations 
+        Further placement considerations
       </div>
       <div class="box-content">
         <h2 class="govuk-heading-m">Room sharing</h2>
@@ -1215,7 +1179,7 @@ Home – GOV.UK Prototype Kit
         text: "Is there any evidence that the person may pose a risk to AP staff?"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -1232,7 +1196,7 @@ Home – GOV.UK Prototype Kit
         text: "Is there any evidence that Robert Brown may pose a risk to other AP residents?"
         },
         value: {
-        text: "Example content"
+        text: ""
         },
         actions: {
           items: [
@@ -1249,7 +1213,7 @@ Home – GOV.UK Prototype Kit
         text: "Do you have any concerns about Robert Brown sharing a bedroom?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -1266,7 +1230,7 @@ Home – GOV.UK Prototype Kit
         text: "Is there potential for the person to benefit from a room share?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -1284,7 +1248,7 @@ Home – GOV.UK Prototype Kit
         that room share may not be suitable"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -1301,7 +1265,7 @@ Home – GOV.UK Prototype Kit
         text: "Do you have any concerns about Robert Brown sharing a bathroom?"
         },
         value: {
-        text: "{data}"
+        text: ""
         },
         actions: {
           items: [
@@ -1315,17 +1279,17 @@ Home – GOV.UK Prototype Kit
         }
         ]
         }) }}
-    
-    
+
+
         <h2 class="govuk-heading-m">Vulnerability</h2>
         {{ govukSummaryList({
         rows: [
         {
         key: {
-        text: "Are you aware that Robert is vulnerable to exploitation from others?"
+        text: "Are you aware that the person is vulnerable to exploitation from others?"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -1339,10 +1303,10 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Is there any evidence or expectation that Robert may groom, radicalise or exploit others?"
+        text: "Is there any evidence or expectation that the person may groom, radicalise or exploit others?"
         },
         value: {
-        text: "Example content"
+        text: ""
         },
         actions: {
           items: [
@@ -1356,16 +1320,16 @@ Home – GOV.UK Prototype Kit
         }
         ]
         }) }}
-    
+
         <h2 class="govuk-heading-m">Previous placements</h2>
         {{ govukSummaryList({
         rows: [
         {
         key: {
-        text: "Has Robert Brown stayed or been offered a placement in an AP before?"
+        text: "Has the person stayed or been offered a placement in an AP before?"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -1379,16 +1343,16 @@ Home – GOV.UK Prototype Kit
         }
         ]
         }) }}
-    
+
         <h2 class="govuk-heading-m">Complex case board</h2>
         {{ govukSummaryList({
         rows: [
         {
         key: {
-        text: "Does Robert's gender identity require a complex case board to review their application?"
+        text: "Does the persons gender identity require a complex case board to review their application?"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -1402,7 +1366,7 @@ Home – GOV.UK Prototype Kit
         }
         ]
         }) }}
-    
+
         <h2 class="govuk-heading-m">Catering requirements</h2>
         {{ govukSummaryList({
         rows: [
@@ -1411,7 +1375,7 @@ Home – GOV.UK Prototype Kit
         text: "Do you have any concerns about Robert Brown catering for themself?"
         },
         value: {
-        text: "Sarah Philips"
+        text: ""
         },
         actions: {
         items: [
@@ -1441,7 +1405,7 @@ Home – GOV.UK Prototype Kit
           text: "What duration of placement do you recommend?"
           },
           value: {
-          text: "Sarah Philips"
+          text: ""
           },
           actions: {
           items: [
@@ -1458,7 +1422,7 @@ Home – GOV.UK Prototype Kit
           text: "Additional comments to support duration of placement"
           },
           value: {
-          text: "Example content"
+          text: ""
           },
           actions: {
           items: [
@@ -1472,10 +1436,10 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Where is [name] most likely to live when he moves on from the AP?"
+          text: "Where is the person most likely to live when he moves on from the AP?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1492,7 +1456,7 @@ Home – GOV.UK Prototype Kit
           text: "Are move on arrangements already in place for when Robert Brown leaves the AP?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1509,7 +1473,7 @@ Home – GOV.UK Prototype Kit
           text: "What type of accommodation will the person have when they leave the AP?"
           },
           value: {
-          text: "{data}"
+          text: ""
           },
           actions: {
             items: [
@@ -1526,11 +1490,11 @@ Home – GOV.UK Prototype Kit
       </div>
     </div>
 
-   
-    
 
-    
-  
+
+
+
+
 
 
     <!-- Associated documents  -->

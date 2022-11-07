@@ -16,10 +16,10 @@
   text: "Back",
   href: "/index"
 }) }}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
- 
+
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Previous placements</span>
       Further placement considerations
@@ -28,7 +28,7 @@
 
 
     <!-- Nunjucks detail -->
-   
+
     {% set previousPlacement %}
       {{ govukTextarea({
         id: "placements",
@@ -49,11 +49,11 @@
       idPrefix: "previous-placement",
       name: "previous-placement",
       hint: {
-        text: "You may be able to find this information in {name} case notes."
+        text: "You may be able to find this information in the persons case notes."
       },
       fieldset: {
         legend: {
-          text: "Has Robert Brown stayed or been offered a placement in an AP before?",
+          text: "Has the person stayed or been offered a placement in an AP before?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
@@ -90,5 +90,3 @@
 
 
 {% endblock %}
-
-

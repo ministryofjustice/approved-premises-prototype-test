@@ -29,8 +29,8 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-m">Does the person need a specialist arson room?</h1>
-    <p>Consider whether the person poses an ongoing risk of setting fires based on: </p>
+    <h1 class="govuk-heading-l">Does Robert Brown need a specialist arson room?</h1>
+    <p>Consider whether Robert Brown poses an ongoing risk of setting fires based on: </p>
       <ul class="govuk-list govuk-list--bullet">
         <li>their current and previous offences, </li>
         <li>factors outside of the offences they were charged for,</li>
@@ -38,8 +38,6 @@
         <li>and your expectations for how they'll behave in an AP setting.</li>
       </ul>
 
-
-    <!-- Nunjucks detail -->
     {% set arsonYes %}
       {{ govukTextarea({
         id: "arson-yes",
@@ -54,7 +52,6 @@
     {% endset -%}
 
 
-    <!-- Radio area  -->
     {{ govukRadios({
       idPrefix: "arson-room",
       name: "arson-room",
@@ -75,7 +72,7 @@
 
     {{ govukButton({
       text: "Save and continue",
-      href: "/task-list-standard"
+      href: "/index"
     }) }}
 
 

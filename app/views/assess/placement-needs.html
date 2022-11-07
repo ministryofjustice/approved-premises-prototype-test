@@ -16,12 +16,12 @@
 {% endblock %}
 
 
-{% block content %} 
+{% block content %}
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Placement needs </h2>
-      <p>Please specify the individual placement needs below. These will be used to match [name] to a bed in an Approved Premises. </p>
+      <p>Please specify the individual placement needs below. These will be used to match the person to a bed in an Approved Premises. </p>
       <p>Fields are pre-populated based off information supplied in the application. You can change these on the list below. </p>
 
 <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
@@ -32,7 +32,7 @@
       <th class="govuk-table__header" style="width: 100px;" scope="col">Desirable</th>
     </tr>
   </thead>
-  
+
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Mens</td>
@@ -337,10 +337,10 @@
   </tbody>
 </table>
 
-    
+
         {{ govukButton({
           text: "Save and continue",
-          href: "tasklist"
+          href: "task-list-Standard"
         }) }}
   </div>
 </div>

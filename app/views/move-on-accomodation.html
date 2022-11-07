@@ -7,20 +7,20 @@
 {% endblock %}
 
 {% block content %}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     {{ govukBackLink({
       text: "Back",
-      href: "/task-list-emergancy"
+      href: "/index"
     }) }}
+ 
 
+    <h2 class="govuk-heading-l">Placement duration and move on</h2>
+  
 
-    <h2 class="govuk-heading-l">Emergancy referral</h2>
-
-
-    {% set otherEmergencyReason %}
+    {% set otherAccommodation %}
       {{ govukInput({
         id: "other-accommodation",
         name: "other-accommodation",
@@ -29,68 +29,78 @@
         spellcheck: false,
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Provide reason"
+          text: "Other accommodation type"
         }
       }) }}
     {% endset -%}
 
+    <form action="/foreign-national-move-on" method="post" novalidate>
+
     {{ govukRadios({
-      idPrefix: "late-submission",
-      name: "late-submission",
+      idPrefix: "move-on-accommodation",
+      name: "move-on-accommodation",
       fieldset: {
         legend: {
-          text: "What is the reason for submitting this application less than 4 months before the AP is needed?",
+          text: "What type of accommodation will Robert Brown have when they leave the AP?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
-      hint: {
-        text: "This information helps HMPPS to improve this service."
-      },
       items: [
         {
           value: "accommodation-own",
-          text: "The risk level has recently escalated"
+          text: "Own accommodation"
         },
         {
           value: "accommodation-friends",
-          text: "The release plan or risk management plan has broken down"
+          text: "Living with partner, family or friends"
         },
         {
           value: "accommodation-la",
-          text: "The individual has committed a further offence"
+          text: "Rented through local authority"
         },
         {
           value: "accommodation-housing-association",
-          text: "AP placement is an alternative to recall"
+          text: "Rented through housing association"
         },
         {
           value: "accommodation-private-rented",
-          text: "AP placement is a parole board or PPCS decision"
+          text: "Private rented"
         },
         {
           value: "accommodation-supported-accommodation",
-          text: "The sentence is shorter than 12 months"
+          text: "Supported accommodation"
         },
         {
           value: "accommodation-supported-housing",
-          text: "The individual will be on bail"
+          text: "Supported housing"
+        },
+        {
+          value: "accommodation-cas3",
+          text: "CAS3 (Community Accommodation Service) provided"
+        },
+        {
+          value: "accommodation-homeoffice",
+          text: "Accommodation provided through Home Office section 10 for foreign national"
         },
         {
           value: "accommodation-other",
           text: "Other, please specify",
           conditional: {
-            html: otherEmergencyReason
+            html: otherAccommodation
           }
         }
       ]
     }) }}
 
-    {{ govukButton({
-      text: "Save and continue",
-      href: "/emergency-additional-qs"
-    }) }}
+    <input type="hidden" name="answers-checked" value="true">
 
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+  </form>
+    
   </div>
 </div>
 

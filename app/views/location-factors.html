@@ -18,14 +18,14 @@
   text: "Back",
   href: "/task-list-standard"
 }) }}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Location factors</h1>
 
 
 <h2 class="govuk-heading-m">What is the preferred location for the AP placement?</h2>
-    
+
 {{ govukSelect({
       id: "ap-pdu",
       name: "ap-pdu",
@@ -63,12 +63,13 @@
         }
        }) }}
 
-             
+
       <!-- Radio area -->
       <form action="/location-pdu" method="post" novalidate>
-     
 
-     
+
+
+
         {% set placementRestrictions %}
         {{ govukTextarea({
           id: "placement-restrictions",
@@ -81,7 +82,7 @@
           }
         }) }}
       {% endset -%}
-  
+
       {% set alternativeLocation %}
       {{ govukInput({
         id: "alternative-location-input",
@@ -94,7 +95,7 @@
         }
       }) }}
       {% endset -%}
-  
+
       {{ govukRadios({
         idPrefix: "placement-restrictions",
         name: "placement-restrictions",
@@ -122,7 +123,7 @@
           }
         ]
       }) }}
-  
+
       {{ govukRadios({
         idPrefix: "alternative-location",
         name: "alternative-location",
@@ -150,8 +151,8 @@
           }
         ]
       }) }}
-     
-   
+
+
       {{ govukRadios({
         idPrefix: "managed-pdu",
         name: "managed-pdu",
@@ -176,7 +177,8 @@
           }
         ]
       }) }}
-  
+
+      <input type="hidden" name="answers-checked" value="true">
 
       <input type="hidden" name="answers-checked" value="true">
 
@@ -193,5 +195,3 @@
 
 
 {% endblock %}
-
-

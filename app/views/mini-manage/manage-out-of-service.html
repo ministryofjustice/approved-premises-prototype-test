@@ -26,10 +26,18 @@
       rows: [
         {
           key: {
-            text: "Number of bed lost"
+            text: "Room number"
           },
           value: {
             text: "1"
+          }
+        },
+        {
+          key: {
+            text: "Bed number"
+          },
+          value: {
+            text: "3"
           }
         },
         {
@@ -67,6 +75,14 @@
       ]
     }) }}
 
+    <hr>
+<br>
+    <h2 class="govuk-heading-m">Room updates</h2> 
+    <h3 class="govuk-heading-s">Sarah Brown</h3> 
+    <p>26 October 2022, 12:04pm</p>
+    <p>Room was refurbished on dfhsdhsjfd, still awaiting new X, Y, X.</p>
+    <p><a href="">Edit note</a></p>
+
     {{ govukDateInput({
       id: "lost-bed-end-date",
       namePrefix: "lost-bed-end-date",
@@ -98,8 +114,8 @@
     
 
         {{ govukButton({
-          text: "Save and continue",
-          href: "/index"
+          text: "Update",
+          href: "/mini-manage/out-of-service-beds-v2"
         }) }}
   </div>
 </div>

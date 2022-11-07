@@ -4,7 +4,7 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 
-//pulling in from MOJ risk widgets 
+//pulling in from MOJ risk widgets
 router.get('/scores', function (req, res) {
   const riskScores = {
     current: {
@@ -94,6 +94,7 @@ router.get('/scores', function (req, res) {
 })
 
 
+
 // Add your routes here - above the module.exports line
 
 router.post('/ap-type-answer', function (req, res) {
@@ -106,13 +107,32 @@ router.post('/ap-type-answer', function (req, res) {
     res.redirect('/pipe-referral')
   } else if (typeOfAp == "esap"){
     res.redirect('/esap-placement-reasons')
-  }  
+  }
   else {
     res.redirect('/task-list-standard')
   }
 })
 
-//route for release dates 
+// routing for sentence type page
+
+router.post('/sentence-type-info', function (req, res) {
+
+  var sufficientInfo = req.session.data['sentence-type']
+  console.log({sufficientInfo})
+  console.log(req.session.data)
+
+  if (sufficientInfo == "non-statutory"){
+    res.redirect('/task-list-standard')
+  } else {
+    res.redirect('/sentence-type-details')
+  }
+})
+
+
+
+
+
+//route for release dates
 
 router.post('/release-date-answer', function (req, res) {
 
@@ -128,7 +148,7 @@ router.post('/release-date-answer', function (req, res) {
 })
 
 
-// convicted offences routing 
+// convicted offences routing
 
 router.post('/convicted-of-offences', function (req, res) {
 
@@ -152,13 +172,16 @@ router.post('/convicted-offence-answer', function (req, res) {
   console.log({offenceConvictions})
   console.log(req.session.data)
 
+
   if (offenceConvictions.includes("sexual-offence")) {
+    (Update link for ESAP assess tasklist)
     res.redirect('/convicted-offence-so')
   } else {
     res.redirect('/date-of-convicted-offences')
   }
 
 })
+
 
 
 
@@ -187,7 +210,7 @@ router.post('/access-needs-selected', function (req, res) {
   console.log(req.session.data)
 
   if (healthcareNeeds.length) {
-    res.redirect('/access-needs-additional-info')
+    res.redirect('/access-needs-follow-up')
   } else {
     res.redirect('/healthcare-needs')
   }
@@ -227,5 +250,19 @@ router.post('/assess-suficient-info', function (req, res) {
 })
 
 
+// routing to request additional information page
+
+router.post('/sentence-type-info', function (req, res) {
+
+  var sentenceType = req.session.data['sentence-type']
+  console.log({sentenceType})
+  console.log(req.session.data)
+
+  if (sentenceType == "non-statutory"){
+    res.redirect('/task-list-standard')
+  } else {
+    res.redirect('/sentence-type-details')
+  }
+})
 
 module.exports = router

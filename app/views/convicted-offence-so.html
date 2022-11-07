@@ -15,16 +15,11 @@
 {% endblock %}
 
 {% block content %}
- 
-{{ govukBackLink({
-  text: "Back",
-  href: "/task-list-standard"
-}) }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">What type of sexual offences has [name] been convicted for? </h2>
+    <h2 class="govuk-heading-l">What type of sexual offences has the person been convicted for? </h2>
       <p class="govuk-body">This information will be used to match the applicant to a bed in an AP</p>
 
       {{ govukCheckboxes({
@@ -51,7 +46,7 @@
             text: "Online sex offence, child victim"
           }
         ]
-      }) }}      
+      }) }}
 
         {{ govukButton({
           text: "Save and continue",

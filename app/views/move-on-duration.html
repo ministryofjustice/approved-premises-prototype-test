@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -17,12 +17,12 @@
       text: "Back",
       href: "/task-list-standard"
     }) }}
- 
+
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
-   
+
     <h3 class="govuk-heading-m">What duration of placement do you recommend?</h3>
     <p> We'll use this to calculate the date the person will be expected to leave the AP, if they're accepted. </p>
-  
+
 
     {{ govukDetails({
       summaryText: "How to decide the duration of an AP placement",
@@ -55,7 +55,7 @@
           text: "If the duration of placement is not a standard length (12 weeks) provide reason as to why it is not."
         }
        }) }}
-       
+
         {{ govukButton({
           text: "Save and continue",
           href: "/move-on-location"

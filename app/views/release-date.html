@@ -11,10 +11,10 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-        
+
     <form action="/release-date-answer" method="post" novalidate>
 
       {% set dateHtml %}
@@ -41,7 +41,7 @@
       }) }}
       {% endset -%}
 
-      
+
       {{ govukRadios({
         id: "release-date",
         name: "release-date",
@@ -84,5 +84,3 @@
 
 
 {% endblock %}
-
-

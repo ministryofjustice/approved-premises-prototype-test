@@ -16,10 +16,10 @@
   text: "Back",
   href: "/index"
 }) }}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
- 
+
     <h1 class="govuk-heading-l">
       <span class="govuk-caption-l">Catering requirements</span>
       Further placement considerations
@@ -28,7 +28,7 @@
 
 
     <!-- Nunjucks detail -->
-   
+
     {% set cateringIssues %}
       {{ govukTextarea({
         id: "catering",
@@ -50,7 +50,7 @@
       name: "catering-issues",
       fieldset: {
         legend: {
-          text: "Do you have any concerns about {{ name }} catering for themself?",
+          text: "Do you have any concerns about the person catering for themself?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
@@ -73,7 +73,7 @@
 
     {{ govukButton({
       text: "Save and continue",
-      href: "/index"
+      href: "/task-list-standard"
     }) }}
 
 
@@ -83,5 +83,3 @@
 
 
 {% endblock %}
-
-

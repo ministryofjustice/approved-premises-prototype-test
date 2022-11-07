@@ -16,39 +16,14 @@
   text: "Back",
   href: "/task-list-standard"
 }) }}
-
+ 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Access needs</h1>
 
-    {{ govukRadios({
-      idPrefix: "wheelchair-use",
-      name: "wheelchair-use",
-      fieldset: {
-        legend: {
-          text: "Does the person require use of a wheelchair?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      hint: {
-        html: '<p>If the person requires use of a wheelchair around the Approved Premises select yes. <a href="">What wheelchair accessibiltiy means within an AP.</a></p>'
-      },
-      items: [
-        {
-          value: "requires-wheelchair",
-          text: "Yes"
-        },
-        {
-          value: "doesnt-requires-wheelchair",
-          text: "No"
-        }
-      ]
-    }) }}
-
     <!-- Checkboxes -->
     <form action="/access-needs-selected" method="post" novalidate>
-
+      
     {{ govukCheckboxes({
       idPrefix: "healthcare-needs",
       name: "healthcare-needs",
@@ -82,39 +57,62 @@
         {
           value: "neurodivergent",
           text: "Neurodivergent conditions"
+        },
+        {
+          value: "other",
+          text: "Other"
+        },
+        {
+          value: "none",
+          text: "None of the above"
+        }
+      ]
+    }) }} 
+
+    <!-- Cultural needs -->
+
+    {% set culturalNeeds %}
+    {{ govukTextarea({
+      id: "cultural-needs-detail",
+      name: "cultural-needs-detail",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Provide details"
+      }
+    }) }}
+    {% endset -%}
+    
+    {{ govukRadios({
+      idPrefix: "cultural-needs",
+      name: "cultural-needs",
+      fieldset: {
+        legend: {
+          text: "Does the person have any religious or cultural needs?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-cultural-needs",
+          text: "Yes",
+          conditional: {
+            html: culturalNeeds
+          }
+        },
+        {
+          value: "no-cultural-needs",
+          text: "No"
         }
       ]
     }) }}
 
-
-      <!-- Text area -->
-
-    {{ govukTextarea({
-      name: "positive-location-factors",
-      id: "positive-location-factors",
-      label: {
-        text: "Provide details",
-        classes: "govuk-label--s",
-        isPageHeading: true
-        }
-       }) }}
-
-
+             
       <!-- Radio area -->
 
-        {% set placementRestrictions %}
-        {{ govukTextarea({
-          id: "placement-location-restrictions",
-          name: "placement-location-restrictions",
-          type: "textarea",
-          spellcheck: false,
-          classes: "textarea",
-          label: {
-            text: "Give details of any positive factors for the person in this location."
-          }
-        }) }}
-      {% endset -%}
-
+  
       {% set needInterpreter %}
       {{ govukInput({
         id: "interpreter-required",
@@ -127,7 +125,7 @@
         }
       }) }}
       {% endset -%}
-
+  
       {{ govukRadios({
         idPrefix: "interpreter-radios",
         name: "interpreter-radios",
@@ -153,10 +151,36 @@
         ]
       }) }}
 
-
-
-
-
+      {{ govukRadios({
+        idPrefix: "risk-to-resident",
+        name: "risk-to-resident",
+        fieldset: {
+          legend: {
+            text: "Has a care act assessment been completed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-CAA",
+            text: "Yes"
+          },
+          {
+            value: "no-CAA",
+            text: "No"
+          },
+          {
+            value: "unsure-CAA",
+            text: "I don't know"
+          }
+        ]
+      }) }}
+  
+    
+  
+     
+  
       <input type="hidden" name="answers-checked" value="true">
 
       <button type="submit" class="govuk-button" data-module="govuk-button">
@@ -172,3 +196,5 @@
 
 
 {% endblock %}
+
+

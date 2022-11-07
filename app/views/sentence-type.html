@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -16,9 +16,10 @@
       text: "Back",
       href: "/task-list-standard"
     }) }}
- 
-    <h2 class="govuk-heading-l">Which of the following best described the sentence type [name] is on?</h2>
 
+    <h2 class="govuk-heading-l">Which of the following best described the sentence type the person is on?</h2>
+
+    <form action="/sentence-type-info" method="post" novalidate>
 
       {{ govukRadios({
         idPrefix: "sentence-type",
@@ -29,39 +30,50 @@
         items: [
           {
             value: "Standard-determinate-custody",
-            text: "Standard determinate custody"
+            text: "Standard determinate custody",
+            checked: checked("sentence-type", "Standard-determinate-custody")
           },
           {
-            value: "Community-Order ",
-            text: "Community Order "
+            value: "Community order",
+            text: "Community order",
+            checked: checked("sentence-type", "Community order")
           },
           {
             value: "bail-placement",
-            text: "Bail placement"
+            text: "Bail placement",
+            checked: checked("sentence-type", "bail-placement")
           },
           {
             value: "extended-determinate",
-            text: "Extended determinate custody"
+            text: "Extended determinate custody",
+            checked: checked("sentence-type", "extended-determinate")
           },
           {
             value: "ipp",
-            text: "Indeterminate Public Protection"
+            text: "Indeterminate Public Protection",
+            checked: checked("sentence-type", "ipp")
           },
           {
             value: "non-statutory",
-            text: "Non-statutory"
+            text: "Non-statutory",
+            checked: checked("sentence-type", "non-statutory")
           },
           {
             value: "life",
-            text: "Life sentence"
+            text: "Life sentence",
+            checked: checked("sentence-type", "life")
           }
         ]
       }) }}
 
-      {{ govukButton({
-          text: "Save and continue",
-          href: "/task-list-standard"
-        }) }}
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
   </div>
 </div>
 

@@ -16,17 +16,17 @@
   text: "Back",
   href: "/task-list-standard"
 }) }}
- 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
- 
+
     <h1 class="govuk-heading-l">
       Healthcare needs
     </h1>
 
 
     <!-- Nunjucks detail -->
-   
+
     {% set additionalHealthcare %}
       {{ govukTextarea({
         id: "additional-healthcare-needs",
@@ -48,7 +48,7 @@
       name: "risk-to-staff",
       fieldset: {
         legend: {
-          text: "Does Robert Brown have any additional health issues  or care and support needs",
+          text: "Does the person have any additional health issues  or care and support needs",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
@@ -111,5 +111,3 @@
 
 
 {% endblock %}
-
-
