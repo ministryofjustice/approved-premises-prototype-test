@@ -1,0 +1,200 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Access needs
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/task-list-standard"
+}) }}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Access needs</h1>
+
+    <!-- Checkboxes -->
+    <form action="/access-needs-selected" method="post" novalidate>
+      
+    {{ govukCheckboxes({
+      idPrefix: "healthcare-needs",
+      name: "healthcare-needs",
+      fieldset: {
+        legend: {
+          text: "Does the person have any of the following needs?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, if the person has a visual impairment, uses a hearing aid or has a learning difficulty."
+      },
+      items: [
+        {
+          value: "mobility-needs",
+          text: "Mobility needs"
+        },
+        {
+          value: "visual-impairment",
+          text: "Visual impairment"
+        },
+        {
+          value: "laerning-disability",
+          text: "Learning disability"
+        },
+        {
+          value: "hearing-impairment",
+          text: "Hearing impairment"
+        },
+        {
+          value: "neurodivergent",
+          text: "Neurodivergent conditions"
+        },
+        {
+          value: "other",
+          text: "Other"
+        },
+        {
+          value: "none",
+          text: "None of the above"
+        }
+      ]
+    }) }} 
+
+    <!-- Cultural needs -->
+
+    {% set culturalNeeds %}
+    {{ govukTextarea({
+      id: "cultural-needs-detail",
+      name: "cultural-needs-detail",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Provide details"
+      }
+    }) }}
+    {% endset -%}
+    
+    {{ govukRadios({
+      idPrefix: "cultural-needs",
+      name: "cultural-needs",
+      fieldset: {
+        legend: {
+          text: "Does the person have any religious or cultural needs?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-cultural-needs",
+          text: "Yes",
+          conditional: {
+            html: culturalNeeds
+          }
+        },
+        {
+          value: "no-cultural-needs",
+          text: "No"
+        }
+      ]
+    }) }}
+
+             
+      <!-- Radio area -->
+
+  
+      {% set needInterpreter %}
+      {{ govukInput({
+        id: "interpreter-required",
+        name: "interpreter-required",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Which language?"
+        }
+      }) }}
+      {% endset -%}
+  
+      {{ govukRadios({
+        idPrefix: "interpreter-radios",
+        name: "interpreter-radios",
+        fieldset: {
+          legend: {
+            text: "Does the person need an interpreter?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-interpreter",
+            text: "Yes",
+            conditional: {
+              html: needInterpreter
+            }
+          },
+          {
+            value: "no-interpreter",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "risk-to-resident",
+        name: "risk-to-resident",
+        fieldset: {
+          legend: {
+            text: "Has a care act assessment been completed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-CAA",
+            text: "Yes"
+          },
+          {
+            value: "no-CAA",
+            text: "No"
+          },
+          {
+            value: "unsure-CAA",
+            text: "I don't know"
+          }
+        ]
+      }) }}
+  
+    
+  
+     
+  
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
