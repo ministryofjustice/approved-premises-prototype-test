@@ -10,12 +10,15 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "/task-list-standard"
-}) }}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/index"
+  }) }}
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">

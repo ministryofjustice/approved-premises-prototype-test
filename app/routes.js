@@ -171,10 +171,7 @@ router.post('/convicted-offence-answer', function (req, res) {
   var offenceConvictions = req.session.data['offence-convictions']
   console.log({offenceConvictions})
   console.log(req.session.data)
-
-
   if (offenceConvictions.includes("sexual-offence")) {
-    (Update link for ESAP assess tasklist)
     res.redirect('/convicted-offence-so')
   } else {
     res.redirect('/date-of-convicted-offences')

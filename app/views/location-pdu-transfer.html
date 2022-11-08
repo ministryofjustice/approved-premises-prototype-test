@@ -2,6 +2,8 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
 
 
 {% extends "layout.html" %}
@@ -9,6 +11,14 @@
 {% block pageTitle %}
   Home – GOV.UK Prototype Kit
 {% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/location-factors"
+}) }}
+{% endblock %}
+
 
 {% block content %}
 
