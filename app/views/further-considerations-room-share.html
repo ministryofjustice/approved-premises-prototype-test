@@ -10,13 +10,16 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
-
+{% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
-  href: "/index"
+  href: "/task-list-standard"
 }) }}
 
+{% endblock %}
+
+
+{% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -237,42 +240,6 @@
         }
       ]
     }) }}
-
-
-
-
-    {{ govukRadios({
-      idPrefix: "bathroom-share",
-      name: "bathroom-share",
-      fieldset: {
-        legend: {
-          text: "Do you have any concerns about the person sharing a bathroom?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "yes-bathroom",
-          text: "Yes",
-          conditional: {
-            html: bathroomNotSuitable
-          }
-        },
-        {
-          value: "no-bathroom",
-          text: "No"
-        }
-      ]
-    }) }}
-
-
-
-
-
-
-
-
 
     {{ govukButton({
       text: "Save and continue",
