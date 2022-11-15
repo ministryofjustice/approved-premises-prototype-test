@@ -25,11 +25,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">Which of the purposeful activity pathways will assist the person rehabilitation in the AP</h2>
+    <h2 class="govuk-heading-l">Which of the rehabilitative activities will assist the person rehabilitation in the AP</h2>
       <p class="govuk-body">Give details of any additional non-criminogenic needs the person has that an AP may also be able to help meet. For example, support getting qualifications or finding work.</p>
 
 
-      {% set otherPurposefulActivity %}
+      {% set otherRehabilitativeActivity %}
         {{ govukInput({
           id: "other-activity",
           name: "other-activity",
@@ -45,8 +45,8 @@
 
 
       {{ govukCheckboxes({
-        idPrefix: "purposeful-activities",
-        name: "purposeful-activities",
+        idPrefix: "Rehabilitative-activities",
+        name: "Rehabilitative-activities",
         hint: {
           text: "You can select more than one option"
         },
@@ -91,7 +91,7 @@
             value: "other",
             text: "Other",
             conditional: {
-              html: otherPurposefulActivity
+              html: otherRehabilitativeActivity
             }
           }
         ]
@@ -99,8 +99,8 @@
 
 
       {{ govukTextarea({
-        name: "purposeful-activity-more-detail",
-        id: "purposeful-activity-more-detail",
+        name: "Rehabilitative-activity-more-detail",
+        id: "Rehabilitative-activity-more-detail",
         label: {
           text: "Can you provide more detail?",
           classes: "govuk-label--s",

@@ -159,7 +159,7 @@ router.post('/convicted-of-offences', function (req, res) {
   if (convictedOfOffences == "convicted-offences-yes"){
     res.redirect('/type-of-convicted-offence')
   } else {
-    res.redirect('purposeful-activities')
+    res.redirect('rehabilitative-activities')
   }
 })
 
