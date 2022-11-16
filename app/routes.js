@@ -159,7 +159,7 @@ router.post('/convicted-of-offences', function (req, res) {
   if (convictedOfOffences == "convicted-offences-yes"){
     res.redirect('/type-of-convicted-offence')
   } else {
-    res.redirect('purposeful-activities')
+    res.redirect('rehabilitative-activities')
   }
 })
 
@@ -242,7 +242,7 @@ router.post('/assess-suficient-info', function (req, res) {
   if (sufficientInfo == "no-not-enough-info"){
     res.redirect('/assess/assessor-request-info')
   } else {
-    res.redirect('/tasklist')
+    res.redirect('/assess/tasklist')
   }
 })
 

@@ -8,16 +8,17 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/assess/tasklist"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {{ govukBackLink({
-      text: "Back",
-      href: "/index"
-    }) }}
-
     <h1 class="govuk-heading-l">Actions to support a placement</h1>
 
       {{ govukRadios({
