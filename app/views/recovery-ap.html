@@ -23,6 +23,47 @@
     <h1 class="govuk-heading-l"> Recovery focussed Approved Premises </h1>
 
       
+
+
+    {% set isflDetails %}
+    {{ govukTextarea({
+      id: "isfl-details",
+      name: "isfl-details",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Provide details"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set dartDetails %}
+  {{ govukTextarea({
+    id: "dart-details",
+    name: "dart-details",
+    type: "textarea",
+    spellcheck: false,
+    classes: "textarea",
+    label: {
+      text: "Provide details"
+    }
+  }) }}
+{% endset -%}
+
+{% set complianceDetails %}
+{{ govukTextarea({
+  id: "compliance-details",
+  name: "compliance-details",
+  type: "textarea",
+  spellcheck: false,
+  classes: "textarea",
+  label: {
+    text: "Provide details"
+  }
+}) }}
+{% endset -%}
+
       {{ govukRadios({
         idPrefix: "isfl-custody",
         name: "isfl-custody",
@@ -36,7 +77,10 @@
         items: [
           {
             value: "isfl-yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: isflDetails
+            }
           },
           {
             value: "isfl-no",
@@ -60,7 +104,10 @@
       items: [
         {
           value: "dart-yes",
-          text: "Yes"
+          text: "Yes",
+          conditional: {
+            html: dartDetails
+          }
         },
         {
           value: "dart-no",
@@ -84,7 +131,10 @@
       items: [
         {
           value: "compliance-yes",
-          text: "Yes"
+          text: "Yes",
+          conditional: {
+            html: complianceDetails
+          }
         },
         {
           value: "compliance-no",
