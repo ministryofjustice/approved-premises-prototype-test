@@ -107,6 +107,8 @@ router.post('/ap-type-answer', function (req, res) {
     res.redirect('/pipe-referral')
   } else if (typeOfAp == "esap"){
     res.redirect('/esap-placement-reasons')
+  } else if (typeOfAp == "recovery-focused"){
+    res.redirect('/recovery-ap')
   }
   else {
     res.redirect('/task-list-standard')

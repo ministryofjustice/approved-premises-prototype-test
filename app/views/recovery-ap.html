@@ -1,0 +1,108 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Recovery AP
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/type-of-ap"
+  }) }}
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l"> Recovery focussed Approved Premises </h1>
+
+      
+      {{ govukRadios({
+        idPrefix: "isfl-custody",
+        name: "isfl-custody",
+        fieldset: {
+          legend: {
+            text: "Has this person been in an ISFL in custody (Incentivised Substance Free Living Area)?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "isfl-yes",
+            text: "Yes"
+          },
+          {
+            value: "isfl-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    <!-- Radios 2 -->
+
+    {{ govukRadios({
+      idPrefix: "dart-engagement",
+      name: "dart-engagement",
+      fieldset: {
+        legend: {
+          text: "Has the person engaged with the DART Team in custody?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "dart-yes",
+          text: "Yes"
+        },
+        {
+          value: "dart-no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    <!-- Radio 3 -->
+
+    {{ govukRadios({
+      idPrefix: "recovery-ap-compliance",
+      name: "recovery-ap-compliance",
+      fieldset: {
+        legend: {
+          text: "Is this person willing to comply with the Recovery Focussed AP Regime?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "compliance-yes",
+          text: "Yes"
+        },
+        {
+          value: "compliance-no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/task-list-standard"
+    }) }}
+
+
+  </div>
+</div>
+
+
+{% endblock %}
