@@ -7,16 +7,20 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/assess/tasklist"
+  }) }}
+{% endblock %}
+
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "/index"
-    }) }}
-
+ 
 
     <h1 class="govuk-heading-l">Suitability assessment</h1>
     <h2 class="govuk-heading-m">Is there enough information in the application to make a decision?</h2>

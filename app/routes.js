@@ -242,7 +242,7 @@ router.post('/assess-suficient-info', function (req, res) {
   if (sufficientInfo == "no-not-enough-info"){
     res.redirect('/assess/assessor-request-info')
   } else {
-    res.redirect('/tasklist')
+    res.redirect('/assess/tasklist')
   }
 })
 

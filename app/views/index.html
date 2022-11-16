@@ -15,11 +15,11 @@
 
 {% set miniManageHtml %}
 <h1 class="govuk-heading-l"> Mini-manage </h1>
-    <h2 class="govuk-heading-m"> Trial pages </h2>
-      <p><a href="/mini-manage/cancellation">Cancellation pages</a></p>
+
+      <p><a href="/mini-manage/cancellation">Cancel a placement </a></p>
      
-      <p><a href="/mini-manage/capacity-component">Capacity component</a></p>
-      <p><a href="/mini-manage/capacity-component-v2">Capacity component - updated design (27 September 22)</a></p>
+      <p><a href="/mini-manage/capacity-component"> Premises capacity banner</a></p>
+      
      <h2 class="govuk-heading-m">Mark bed as out of service</h2> 
      <p><a href="/mini-manage/lost-beds">Mark a bed as out of service</a></p>
       <p><a href="mini-manage/out-of-service-beds-v2.html">View list of out of service beds (Concept)</a></p>
@@ -29,142 +29,26 @@
 
 {% set applyHtml %}
 <h1 class="govuk-heading-l"> Apply </h1>
-<p> From the PP dashboard, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the start screen. If a user selects a case that is in progress, they will be taken to the task list. </p>
-            <p><b><a href="pp-dashboard">PP dashboard</a></b></p>
-
-
-            <p>Users will go through the following pages when starting a new application</p>
-            <p><a href="start.html"><b>Start page</b></a></p>
-            <p><a href="enter-crn">Enter CRN </a></p>
-            <p><a href="check-details.html">Check details </a></p>
-            <p><a href="type-of-ap.html"><b>Type of AP</b></a> - If PIPE  or ESAP AP is selected the user will be asked a set of questions they need to complete.</p>
-
-
-
-
-            <p>Users will then be directed to task list</p>
-            <p><a href="task-list-standard.html">Task list - Standard</a></p>
-
-
-            <h2 class="govuk-heading-m"> Before you continue </h2>
-            <p>Within the 'before you continue' section, the user will be shown links to the following tasks, including the 'Type of AP'. We've decided to include this so that users can change their selected AP at a later point in the application.</p>
-            <p><a href="sentence-type.html"><b>Sentence type</b></a></p>
-            <ul>
-              <li><p><a href="">Sentence type - details (Not started) </a></p></li>
-            </ul>
-
-
-            <p><a href="release-date"><b>Release date</b></a></p>
-            <ul>
-              <li><p><a href="oral-hearing-date">Do you know the Oral Hearing date? (Parole)</a></p></li>
-              <li> <p><a href="placement-date.html">Is [release-date] the date you want the placement to start?</a></p>
-              </li>
-            </ul>
-
-
-            <h2 class="govuk-heading-m"> Users will then be directed to task list </h2> <p> I have designed the task list pages but have not made them dynamic yet, they're currently static. I need to learn how to pull in the data through routing to present within the risk widgets.</p>
-            <p><a href="task-list-standard.html">Task list - Standard</a></p>
-            <p><a href="task-list-pipe.html">Task list - PIPE</a></p>
-            <p><a href="task-list-esap.html">Task list - ESAP</a></p>
-            <p><a href="task-list-emergancy.html">Task list - Emergancy</a></p>
-
-            <h2 class="govuk-heading-m"> Before you continue section </h2>
-
-            <p><a href="type-of-ap.html"><b>Type of AP</b></a></p>
-            <p>If PIPE is selected</p>
-            <ul>
-              <li><p><a href="pipe-referral.html">PIPE - Has PiP been screened into the OPD pathway?</a></p></li>
-              <li><p><a href="pipe-opd-screening.html">PIPE - Has a referral for PIPE placement been recommended in the OPD pathway plan? </a></p></li>
-              </ul>
-              <p>If ESAP is selected</p>
-              <ul>
-                <li> <p><a href="esap-placement-reasons.html">ESAP - Reasons PiP requires an enhanced security (ESAP) placement</a></p>  </li>
-                <li> <p><a href="esap-placement-cctv.html">ESAP - Enhanced room searches using body worn technology</a></p>  </li>
-                <li> <p><a href="esap-placement-secreting.html">ESAP - Enhanced room searches using body worn technology</a></p>  </li>
-
-            </ul>
-            <p><b><a href="purpose-of-placement.html">Purpose of placement</a></b></p>
-          <br>
-
-          <h2 class="govuk-heading-m"> Risk and needs information </h2>
-          <p>These screens have not been designed yet whilst we're waiting to hear from the ARNS team to understand how we present this information to users</p>
-            <p><b><a href="">Import OASys information</a></b></p>
-            <p><b><a href="">Add detail about managing risks and needs</a></b></p>
-
-            <br>
-          <H2 class="govuk-heading-m">Add detail about managing risks and needs</H2>
-          <p><b><a href="useful-features-of-ap.html">Useful features in an AP</a></b></p>
-          <br>
-            <p><b>Convicted offences</b></p>
-            <ul>
-              <li>  <p><a href="convicted-offences.html">Any convicted offences?</a></p></li>
-              <li> <p><a href="type-of-convicted-offence.html">Type of convicted offence</a></p></li>
-              <li> <p><a href="convicted-offence-so.html">Convicted offence - SO</a></p></li>
-              <li> <p><a href="date-of-convicted-offences.html">Date of convicted offence</a></p></li>
-            </ul>
-
-            <p><b><a href="rehabilitative-activities">Rehabilitative activities</a></b></p>
-
-            <p><b><a href="prison-behaviours.html">Review prison information</a></b></p>
-            <p><a href="prison-tabs-concept.html"> Prison information - Combined using tabs</a></p>
-            <p><a href="location-factors.html"><b>Describe location factors</b></a> - the user will be directed to an additional page if the PiP is going to be managed by a different PDU.</p>
-
-
-            <p><b><a href="access-needs.html">Provide information about access and healthcare needs</a></b></p>
-             <p><b><a href="further-considerations-room-share.html">Describe further considerations for placement</a></b> - Within this section users will be asked a series of questions to provide detail about any further considerations. This includes risk information for residents and staff, previous placements, room sharing, catering, arson and complex case information.</p>
-
-
-             <h2 class="govuk-heading-m">Considerations for when the placement ends</h2>
-             <p>Within this section users will provide information about the move on plan. If a PiP is a foreign national, the user will be directed to an additional page to answer information about Home Office accomodation.</p>
-             <p><a href="move-on-duration.html">Add move on information</a></p>
-
-
-             <h2 class="govuk-heading-m">Add documents </h2>
-          <p><a href="associated-documents.html"> Associated documetns</a></p>
-          <br>
-             <h2 class="govuk-heading-m"> Check your answers </h2>
-             <p><a href="check-your-answers.html"> Check your answers screen</a></p>
-             <h2 class="govuk-heading-m"> Confirmation screen </h2>
-             <p><a href="confirmation.html"> Confirmation</a></p>
+<p> From the <a href="pp-dashboard">dashboard</a>, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the <a href="start.html">start screen</a>. If a user selects a case that is in progress, they will be taken to the <a href="task-list-standard.html">task list</a>.</p>
 
 
              <h2 class="govuk-heading-m">Emergancy referrals </h2>
-             <p>Emergancy referrals are for applications which are less than 4 months. These can be submitted by a practicioner in a normal way. The application will use the release date that is entered to show the additional tasks on the tasklist. There are two additional tasks to complete.</p>
-             <ul>
-              <li> <p><a href="task-list-emergancy.html">Task list - Emergancy</a></p></li>
-              <li><p><a href="emergency-late-submission.html">Emergency - late submission </a></p></li>
-              <li><p><a href="emergency-additional-qs.html">Emergency - additional questions </a></p></li>
-            </ul>
+             <p>Emergancy referrals are for applications which are less than 4 months. These can be submitted by a practicioner in a standard way. If the release date is less than four months, the user will be presented with the 'emergancy application tasklist'. </p>
+              <p>There are two additional tasks to complete.</p>
+            
+
+            <p><a href="task-list-emergancy.html">Emergancy task list</a></p>
+            <p><a href="emergency-late-submission.html">Emergency - late submission </a></p>
+            <p><a href="emergency-additional-qs.html">Emergency - additional questions </a></p>
+       
 {% endset -%}
 
 {% set assessHtml %}
     <h1 class="govuk-heading-l"> Assess </h1>
-    <p><a href="assess/empty-template.html">Empty template</a></p>
-    <br>
-    <p><a href="assess/assess-dashboard.html">Assessor dashboard</a></p>
-    <p><a href="assess/tasklist.html">Task list</a></p>
-    <p><a href="assess/review-assessment.html">Review assessment </a></p>
-
-    <h2 class="govuk-heading-m">Review information</h2>
-    <p><a href="assess/review-application.html">Review application and documents</a></p>
-    <p><a href="assess/sufficient-information.html">Review risk information</a></p>
-    <ul>
-      <li><p><a href="assess/risk-ROSH.html">Risk - RoSH summary</a></p></li>
-      <li><p><a href="assess/risk-offence-details.html">Risk - Offence details</a></p></li>
-      <li><p><a href="assess/risk-imported.html">Risk - Supporting information</a></p></li>
-      <li><p><a href="assess/risk-to-self.html">Risk to self </a></p></li>
-      <li><p><a href="assess/risk-management-plan.html">Risk management plan </a></p></li>
-    </ul>
-    <p><a href="assess/prison-adjudications.html">Review prison information (adjudications)</a></p>
-
-
-
-    <h2 class="govuk-heading-m">Suitability assessment questions</h2>
-    <p><a href="assess/sufficient-information.html">Enough information in application</a></p>
-    <p><a href="assess/assessment-questions-1.html">Assessment questions</a></p>
-    <p><a href="assess/additional-requirements.html">Additional requirements for AP</a></p>
-
-
+   
+    <p>An assessor will log in and arrive at their <a href="assess/assess-dashboard.html"> dashboard</a> where they can view cases that are in progress, have requested further information from a PP and cases that have been submitted.</p>
+    <p>If a user wants to view a case that's in progress, they will be taken to a <a href="assess/tasklist.html">task list</a> where they can work through each task. </p> 
+    
 
     <h2 class="govuk-heading-m">Additional assessment questions (PIPE, ESAP, Emergancy)</h2>
     <p> For emergancy, PIPE and ESAP assessments, users will be presented with an additional task on the list. They will be required to enter extra information to assess the information that's been provided in the Application. </p>
@@ -178,21 +62,7 @@
     <p><a href="assess/pp-check-info.html">Check additional information (Probation practicioner)</a></p>
     <p><a href="assess/assessor-review-info.html">Review additional information (Assessor)</a></p>
 
-    <h2 class="govuk-heading-m">Make a decision</h2>
-    <p><a href="assess/make-decision.html">Make a decision</a></p>
-
-    <h2 class="govuk-heading-m">Placement needs</h2>
-    <p><a href="assess/placement-needs.html">Placement needs</a></p>
-
-    <br>
-    <p><a href="assess/check-answers.html">Check your answers</a></p>
-
-    <p><a href="assess/suitable-confirmation-standard.html">Confirmation</a></p>
-
-
-    <h2 class="govuk-heading-m">Emergancy assessments</h2>
-    <p><a href="assess/assess-tasklist-emergancy.html">Emergancy task list</a></p>
-
+  
 {% endset -%}
 
 
@@ -255,13 +125,6 @@
       id: "assess",
       panel: {
         html: assessHtml
-      }
-    },
-    {
-      label: "Design history",
-      id: "design-history",
-      panel: {
-        html: designHistoryHtml
       }
     }
   ]
