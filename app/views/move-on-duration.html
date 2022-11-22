@@ -20,25 +20,36 @@
  
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
    
-    <h3 class="govuk-heading-m">What duration of placement do you recommend?</h3>
-    <p> We'll use this to calculate the date the person will be expected to leave the AP, if they're accepted. </p>
+    <h3 class="govuk-heading-m">What is the duration of placement required?</h3>
+    <p> We'll use the number of weeks to calculate the date the person will be expected to leave the Approved Premises (AP), if they're accepted.  </p>
   
 
-    {{ govukDetails({
-      summaryText: "How to decide the duration of an AP placement",
-      text: "Standard AP placements usually last up to 12 weeks but can sometimes be longer. PIPE placements usually last up to 26 weeks. Consider the level of support and risk management you expect the AP to provide and how long it will take to be effective. When is the person most likely to resettle successfully in the community?"
-    }) }}
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">How to decide the duration of an AP placement 
+        </span>
+      </summary>
+      <p class="govuk-details__text">
+        
+        
+        Standard AP placements typically last a maximum of 12 weeks but can be longer in exceptional circumstances where required for risk management purposes. <br><br> 
+      <br><br>
+      ESAP placements can last up to 52 weeks.
+      
+      PIPE placements usually last up to 26 weeks.
+      </p>
+          </details>
 
     {{ govukInput({
       label: {
-        text: "Duration in weeks"
+        text: "Number of weeks"
       },
       classes: "govuk-input--width-2",
       id: "move-on-duration",
       name: "move-on-duration"
     }) }}
 
-    <h3 class="govuk-heading-m"> Expected dates of stay in Approved Premises:  </h3>
+    <h3 class="govuk-heading-m"> Expected dates of stay in AP:  </h3>
     <p><b>Arrival date:</b> {arrival-date}</p>
     <p><b>Departure date:</b> {departure-date}</p>
 
@@ -52,7 +63,11 @@
         isPageHeading: true
         },
         hint: {
-          text: "If the duration of placement is not a standard length (12 weeks) provide reason as to why it is not."
+          text: "Consider the level of support and risk management you expect the AP to provide and how long it will take to be effective.
+          
+          
+          
+          If the duration of placement is not a standard length (12 weeks) provide reason as to why it is not."
         }
        }) }}
        
