@@ -20,56 +20,71 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Placement needs </h2>
-      <p>Please specify the individual placement needs below. These will be used to match the person to a bed in an Approved Premises. </p>
-      <p>Fields are pre-populated based off information supplied in the application. You can change these on the list below. </p>
+    <h2 class="govuk-heading-l">Matching information</h2>
+      <p>Please specify requirements for matching the person to a bed within an Approved Premises (AP).  </p>
+      <p>Options have been pre-selected based on information supplied in the application. If you disagree with any of these you can change them on the list below. </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Select any essential placement requirements
+            </h2>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Mens AP
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Womens AP
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Single Room <br> <a href="">View guidance on single room occupancy</a>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Wheelchair accessible room
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-m">Specify placement requirements</h2>
 
 <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th class="govuk-table__header" scope="col">Attributes</th>
+      <th class="govuk-table__header" scope="col">Placement requirements</th>
       <th class="govuk-table__header" style="width: 100px" scope="col">Essential</th>
       <th class="govuk-table__header" style="width: 100px;" scope="col">Desirable</th>
+      <th class="govuk-table__header" style="width: 100px;" scope="col">Neither</th>
     </tr>
   </thead>
-
-  <tbody class="govuk-table__body">
+  
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Mens</td>
+      <td class="govuk-table__cell">Enhanced Security AP (ESAP)</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+            <input class="govuk-radios__input" id="esap-attribute" name="esap-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="esap-attribute"></label>
           </div>
       </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
-          </div>
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Womens</td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="womens-attribute" name="womens-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="womens-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="womens-attribute" name="womens-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="womens-attribute"></label>
-          </div>
-      </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">ESAP</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -86,7 +101,7 @@
       </td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">PIPE</td>
+      <td class="govuk-table__cell">Psychologically Informed Planning Environment (PIPE)</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -101,61 +116,47 @@
             <label class="govuk-label govuk-radios__label" for="pipe-attribute"></label>
           </div>
       </td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Child, sexual offence</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="child-so-attribute" name="child-so-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="child-so-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="child-so-attribute" name="child-so-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="child-so-attribute"></label>
+            <input class="govuk-radios__input" id="pipe-attribute" name="pipe-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="pipe-attribute"></label>
           </div>
       </td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Adult, sexual offence</td>
+      <td class="govuk-table__cell">Recovery Focused AP</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="adult-so-attribute" name="adult-so-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="adult-so-attribute"></label>
+            <input class="govuk-radios__input" id="recovery-ap" name="recovery-ap" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="recovery-ap"></label>
           </div>
       </td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="adult-so-attribute" name="adult-so-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="adult-so-attribute"></label>
+            <input class="govuk-radios__input" id="recovery-ap" name="recovery-ap" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="recovery-ap"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="recovery-ap" name="recovery-ap" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="recovery-ap"></label>
           </div>
       </td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">None sexual offences against children</td>
+      <td class="govuk-table__cell">Semi specialist (mental health)</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="none-children-so-attribute" name="none-children-so-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="none-children-so-attribute"></label>
+            <input class="govuk-radios__input" id="mental-health-attribute" name="mental-health-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mental-health-attribute"></label>
           </div>
       </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="none-children-so-attribute" name="none-children-so-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="none-children-so-attribute"></label>
-          </div>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Semi specialist (Mental health)</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -173,7 +174,39 @@
     </tr>
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Semi specialist (Substance misuse)</td>
+      <td class="govuk-table__cell">Adapted for mobility needs</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mental-health-attribute" name="mental-health-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mental-health-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mental-health-attribute" name="mental-health-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mental-health-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mental-health-attribute" name="mental-health-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mental-health-attribute"></label>
+          </div>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adapted for hearing impairments</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="substance-misuse-attribute" name="substance-misuse-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="substance-misuse-attribute"></label>
+          </div>
+      </td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -191,7 +224,14 @@
     </tr>
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Arson</td>
+      <td class="govuk-table__cell">Adapted for visual impairments</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="arson-attribute" name="arson-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="arson-attribute"></label>
+          </div>
+      </td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -208,136 +248,219 @@
       </td>
     </tr>
 
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Designated arson room<br> <a href="">View arson room guidance</a></td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+          </div>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Catering provided</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+          </div>
+      </td>
+    </tr>
+
+    
+  </tbody>
+</table>
+
+<!-- Offence and risks table -->
+
+<h2 class="govuk-heading-m">Provide relevant offence and risk information</h2>
+
+<table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Offence and risk information</th>
+      <th class="govuk-table__header" style="width: 100px" scope="col">Relevant</th>
+      <th class="govuk-table__header" style="width: 100px;" scope="col">Not relevant</th>
+    </tr>
+  </thead>
+  
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Contact sexual offences against an adult/adults</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+    </tr>
+      
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Non-contact sexual offences against an adult/adults</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+    </tr>
+      
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Contact sexual offences against children</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+    </tr>
+      
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Non-contact sexual offences against children</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+    </tr>
+      
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Non-sexual offences against children</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+    </tr>
+      
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Arson offences</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+      <td class="govuk-table__cell">
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
+          </div>
+      </td>
+    </tr>
+      
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Hate based offences</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="hate-based-attribute" name="hate-based-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="hate-based-attribute"></label>
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
           </div>
       </td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="hate-based-attribute" name="hate-based-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="hate-based-attribute"></label>
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
           </div>
       </td>
     </tr>
-
+     
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Restricted mobility</td>
+      <td class="govuk-table__cell">Vulnerable to exploitation</td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
           </div>
       </td>
       <td class="govuk-table__cell">
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="restricted-mobility-attribute" name="restricted-mobility-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="restricted-mobility-attribute"></label>
-          </div>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Wheelchair accessible room</td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="wheelchair-attribute" name="wheelchair-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="wheelchair-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="wheelchair-attribute" name="wheelchair-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="wheelchair-attribute"></label>
+            <input class="govuk-radios__input" id="mens-attribute" name="mens-attribute" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="mens-attribute"></label>
           </div>
       </td>
     </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Adapted for hearing</td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="hearing-attribute" name="hearing-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="hearing-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="hearing-attribute" name="hearing-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="hearing-attribute"></label>
-          </div>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Adapted for visual</td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="visual-attribute" name="visual-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="visual-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="visual-attribute" name="visual-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="visual-attribute"></label>
-          </div>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Single room <a href="">View guidance on single room occupancy</a></td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="single-room-attribute" name="single-room-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="single-room-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="single-room-attribute" name="single-room-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="single-room-attribute"></label>
-          </div>
-      </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Catering</a></td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="catering-attribute" name="catering-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="catering-attribute"></label>
-          </div>
-      </td>
-      <td class="govuk-table__cell">
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="catering-attribute" name="catering-attribute" type="radio" value="england">
-            <label class="govuk-label govuk-radios__label" for="catering-attribute"></label>
-          </div>
-      </td>
-    </tr>
-
-  </tbody>
+</tbody>
 </table>
 
-
+    
         {{ govukButton({
           text: "Save and continue",
           href: "task-list-Standard"
