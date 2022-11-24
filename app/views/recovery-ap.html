@@ -51,18 +51,6 @@
   }) }}
 {% endset -%}
 
-{% set complianceDetails %}
-{{ govukTextarea({
-  id: "compliance-details",
-  name: "compliance-details",
-  type: "textarea",
-  spellcheck: false,
-  classes: "textarea",
-  label: {
-    text: "Provide details"
-  }
-}) }}
-{% endset -%}
 
       {{ govukRadios({
         idPrefix: "isfl-custody",
@@ -131,10 +119,7 @@
       items: [
         {
           value: "compliance-yes",
-          text: "Yes",
-          conditional: {
-            html: complianceDetails
-          }
+          text: "Yes"
         },
         {
           value: "compliance-no",
