@@ -19,14 +19,15 @@ Home – GOV.UK Prototype Kit
     }) }}
 
     <h2 class="govuk-heading-l">Make a decision</h2>
-    <p>This decision is conditional on a place being available in a suitable Approved Premises (AP) and any other
+    <p>This decision is conditional on a place being available in a suitable AP and any other
       requirements you have stipulated in the assessment.</p>
+    <p>Select one option from the list below. Options have been grouped by the reason for the decision.</p>
 
     {{ govukRadios({
     name: "accept-application",
     fieldset: {
     legend: {
-    text: "Accept",
+    text: "Accept as suitable for an AP",
     isPageHeading: true,
     classes: "govuk-fieldset__legend--s"
     }
@@ -34,11 +35,11 @@ Home – GOV.UK Prototype Kit
     items: [
     {
     value: "accept-match",
-    text: "Proceed to matching"
+    text: "Release date has been provided, proceed to matching"
     },
     {
     value: "accept-pending-release",
-    text: "Pending release information"
+    text: "Hold pending release decision"
     }
     ]
     }) }}
@@ -59,7 +60,7 @@ Home – GOV.UK Prototype Kit
     },
     {
     value: "reject-needs-cant-be-met",
-    text: "Health / social care / disability needs can’t be met"
+    text: "Health / social care / disability needs cannot be met"
     },
     {
     value: "reject-supervision-short",
