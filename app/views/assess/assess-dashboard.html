@@ -47,12 +47,13 @@
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Service user</th>
+                <th scope="col" class="govuk-table__header">Name</th>
                 <th scope="col" class="govuk-table__header">CRN</th>
                 <th scope="col" class="govuk-table__header">Tier</th>
                 <th scope="col" class="govuk-table__header">Arrival date</th>
-                <th scope="col" class="govuk-table__header" style="width: 90px;" >Current location</th>
-                <th scope="col" class="govuk-table__header" style="width: 150px;">Days since application received</th>
+                <th scope="col" class="govuk-table__header">Current location</th>
+                <th scope="col" class="govuk-table__header">Days since application received</th>
+                <th scope="col" class="govuk-table__header">Assessment due date</th>
                 <th scope="col" class="govuk-table__header">Status</th>
               </tr>
             </thead>
@@ -69,6 +70,7 @@
                 <td class="govuk-table__cell">19 Sep 2022</td>
                 <td class="govuk-table__cell">Leeds (HMP)</td>
                 <td class="govuk-table__cell">6</td>
+                <td class="govuk-table__cell">DD MON YEAR</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "SUBMITTED"
@@ -87,6 +89,7 @@
                 <td class="govuk-table__cell">25 Oct 2022</td>
                 <td class="govuk-table__cell">Hewell (HMP)</td>
                 <td class="govuk-table__cell">2</td>
+                <td class="govuk-table__cell">DD MON YEAR</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "In Progress",
@@ -106,6 +109,7 @@
                 <td class="govuk-table__cell">13 Nov 2022</td>
                 <td class="govuk-table__cell">Northumberland (HMP)</td>
                 <td class="govuk-table__cell">3</td>
+                <td class="govuk-table__cell">DD MON YEAR</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Info received",
@@ -126,8 +130,9 @@
                 <th scope="col" class="govuk-table__header">CRN</th>
                 <th scope="col" class="govuk-table__header">Tier</th>
                 <th scope="col" class="govuk-table__header">Arrival date</th>
-                <th scope="col" class="govuk-table__header" style="width: 90px;" >Days since application received</th>
-                <th scope="col" class="govuk-table__header" style="width: 150px;">Date of info request</th>
+                <th scope="col" class="govuk-table__header">Days since application received</th>
+                <th scope="col" class="govuk-table__header">Date of info request</th>
+                <th scope="col" class="govuk-table__header">Assessment due date</th>
                 <th scope="col" class="govuk-table__header">Status</th>
               </tr>
             </thead>
@@ -142,6 +147,7 @@
                 <td class="govuk-table__cell">Jamie Jones</td>
                 <td class="govuk-table__cell">3 days</td>
                 <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">22 Nov 2022</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Info Request",
@@ -159,6 +165,7 @@
                 <td class="govuk-table__cell">Carlos Sainz</td>
                 <td class="govuk-table__cell">1 day</td>
                 <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">22 Nov 2022</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Info Request",
@@ -176,6 +183,7 @@
                 <td class="govuk-table__cell">Rowan King</td>
                 <td class="govuk-table__cell">3 days</td>
                 <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">22 Nov 2022</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Info Request",
@@ -196,7 +204,7 @@
                 <th scope="col" class="govuk-table__header">CRN</th>
                 <th scope="col" class="govuk-table__header">Arrival date</th>
                 <th scope="col" class="govuk-table__header">Assessor</th>
-                <th scope="col" class="govuk-table__header">Days since request</th>
+                <th scope="col" class="govuk-table__header">Date completed</th>
                 <th scope="col" class="govuk-table__header">Status</th>
               </tr>
             </thead>
@@ -206,7 +214,7 @@
                 <td class="govuk-table__cell">783JSAA</td>
                 <td class="govuk-table__cell">18</td>
                 <td class="govuk-table__cell">Jamie Jones</td>
-                <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">DD MM YY</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Submitted"
@@ -218,7 +226,7 @@
                 <td class="govuk-table__cell"> 712LWWA</td>
                 <td class="govuk-table__cell">13 Sep 2022</td>
                 <td class="govuk-table__cell">Carlos Sainz</td>
-                <td class="govuk-table__cell">1 day</td>
+                <td class="govuk-table__cell">DD MM YY</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Submitted"
@@ -230,7 +238,7 @@
                 <td class="govuk-table__cell">894DBAS</td>
                 <td class="govuk-table__cell">29 Aug 2022</td>
                 <td class="govuk-table__cell">Rowan King</td>
-                <td class="govuk-table__cell">3 days</td>
+                <td class="govuk-table__cell">DD MM YY</td>
                 <td class="govuk-table__cell">
                   {{govukTag({
                     text: "Submitted"
