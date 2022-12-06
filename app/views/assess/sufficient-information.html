@@ -1,5 +1,8 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
 
 {% extends "layout.html" %}
 
@@ -49,6 +52,42 @@
 
       <form action="/assess-suficient-info" method="post" novalidate>
 
+        {% set notEnoughInfo %}
+        
+        <p>Contact the Probation Practicioner for additional information. Information requests should be responded to within 5 days.</p>
+        <p> You are required to log this information on the next screen.</p>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Sarah Philips"
+              }
+            },
+            {
+              key: {
+                text: "Email"
+              },
+              value: {
+                text: "email@ap.com"
+              }
+            },
+            {
+              key: {
+                text: "Contact number"
+              },
+              value: {
+                html: "01111111111"
+              }
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+
+      
       {{ govukRadios({
         idPrefix: "sufficient-info",
         name: "sufficient-info",
@@ -63,7 +102,10 @@
           },
           {
             value: "no-not-enough-info",
-            text: "No, I need more information"
+            text: "No, I need more information",
+            conditional: {
+              html: notEnoughInfo
+            }
           }
         ]
       }) }}

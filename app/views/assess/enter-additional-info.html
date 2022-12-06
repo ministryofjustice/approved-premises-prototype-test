@@ -1,0 +1,72 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/assess/tasklist"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Additional information to support application</h1>
+    <p>Provide any additional information that was provided from the probation practicioner to support this application.</p>
+    
+
+    
+    {{ govukTextarea({
+      name: "information-requested",
+      id: "information-requested",
+      label: {
+        text: "Information requested from PP"
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "date-info-received",
+      namePrefix: "date-info-received",
+      fieldset: {
+        legend: {
+          text: "When did you receive this information?"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+
+    {{ govukTextarea({
+      name: "pp-information-provided",
+      id: "pp-information-provided",
+      label: {
+        text: "Log additional information received from PP"
+      }
+    }) }}
+     
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: "/assess/tasklist"
+    }) }} 
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
