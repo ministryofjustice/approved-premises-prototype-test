@@ -26,7 +26,7 @@
     <h2 class="govuk-heading-l">Emergancy referral</h2>
   
 
-    {% set additionalLicenseConditions %}
+    {% set additionalLicenceConditions %}
       {{ govukTextarea({
         id: "other-accommodation",
         name: "other-accommodation",
@@ -41,8 +41,8 @@
     {% endset -%}
 
     {{ govukRadios({
-      idPrefix: "additional-license-conditions",
-      name: "additional-license-conditions",
+      idPrefix: "additional-licence-conditions",
+      name: "additional-licence-conditions",
       fieldset: {
         legend: {
           text: "Have additional Licence conditions been requested as an alternative to recall?",
@@ -52,14 +52,14 @@
       },
       items: [
         {
-          value: "yes-license-conditions",
+          value: "yes-licence-conditions",
           text: "Yes",
           conditional: {
-            html: additionalLicenseConditions
+            html: additionalLicenceConditions
           }
         },
         {
-          value: "no-license-conditions",
+          value: "no-licence-conditions",
           text: "No"
         }
       ]

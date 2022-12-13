@@ -104,7 +104,7 @@ router.post('/ap-type-answer', function (req, res) {
   console.log(req.session.data)
 
   if (typeOfAp == "pipe"){
-    res.redirect('/pipe-referral')
+    res.redirect('/pipe-application')
   } else if (typeOfAp == "esap"){
     res.redirect('/esap-placement-reasons')
   } else if (typeOfAp == "recovery-focused"){
@@ -261,6 +261,21 @@ router.post('/sentence-type-info', function (req, res) {
     res.redirect('/task-list-standard')
   } else {
     res.redirect('/sentence-type-details')
+  }
+})
+
+// routing to exemption information for cases that don't meet TIER
+
+router.post('/tier-exemption', function (req, res) {
+
+  var exemptionType = req.session.data['exemption-tier']
+  console.log({exemptionType})
+  console.log(req.session.data)
+
+  if (exemptionType == "yes-exemption"){
+    res.redirect('/exemption-questions')
+  } else {
+    res.redirect('/task-list-standard')
   }
 })
 

@@ -84,19 +84,6 @@
       }) }}
     {% endset -%}
 
-    {% set roomshareNotSuitable %}
-      {{ govukTextarea({
-        id: "unsuitable-roomshare",
-        name: "unsuitable-roomshare",
-        type: "textarea",
-        spellcheck: false,
-        classes: "textarea",
-        label: {
-          text: "Provide details"
-        }
-      }) }}
-    {% endset -%}
-
     {% set bathroomNotSuitable %}
       {{ govukTextarea({
         id: "unsuitable-bathroom",
@@ -188,33 +175,6 @@
       ]
     }) }}
 
-    {{ govukRadios({
-      idPrefix: "evident-trauma",
-      name: "evident-trauma",
-      fieldset: {
-        legend: {
-          text: "Is there any evidence of previous trauma or significant event in the person's history which would indicate that room share may not be suitable",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      hint: {
-        text: "For example, a survivor of sexual abuse or violence or a witness of suicide in custody."
-      },
-      items: [
-        {
-          value: "yes-trauma",
-          text: "Yes",
-          conditional: {
-            html: roomshareNotSuitable
-          }
-        },
-        {
-          value: "no-trauma",
-          text: "No"
-        }
-      ]
-    }) }}
 
     {{ govukRadios({
       idPrefix: "benefit-bed-share",

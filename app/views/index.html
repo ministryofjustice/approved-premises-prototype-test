@@ -30,13 +30,18 @@
 {% set applyHtml %}
 <h1 class="govuk-heading-l"> Apply </h1>
 <p> From the <a href="pp-dashboard">dashboard</a>, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the <a href="start.html">start screen</a>. If a user selects a case that is in progress, they will be taken to the <a href="task-list-standard.html">task list</a>.</p>
+<p>If the person's tier does not match the elegibility requirements, users will be shown the <a href="eligibility-drop-out">eligibility screen</a> where they can provide additional information for exceptional circumstances.</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li> If the user selects yes, they will be shown <a href="exemption-questions.html">exemption questions screen</a></li>
+  <li> If the user selects no, they will be shown <a href="exemption-drop-out.html"> a drop out screen</a></li>
+</ul>
 
 
              <h2 class="govuk-heading-m">Emergancy referrals </h2>
              <p>Emergancy referrals are for applications which are less than 4 months. These can be submitted by a practicioner in a standard way. If the release date is less than four months, the user will be presented with the 'emergancy application tasklist'. </p>
               <p>There are two additional tasks to complete.</p>
             
-
+              
             <p><a href="task-list-emergancy.html">Emergancy task list</a></p>
             <p><a href="emergency-late-submission.html">Emergency - late submission </a></p>
             <p><a href="emergency-additional-qs.html">Emergency - additional questions </a></p>
@@ -99,8 +104,15 @@
       </tr>
     </tbody>
   </table>
+{% endset -%}
 
+{% set cruAllocation %}
+<h1 class="govuk-heading-l"> CRU allocation </h1>
 
+<p> CRU staff will use the system to track cases that are being assessed and matched, and will have the ability to unalocate cases that aren't being completed. </p>
+<p>We have designed allocation screens for the CRU</p>
+
+<p><a href="/cru-allocation/cru-allocation-dashboard.html">CRU allocation dashboard</a></p>
 {% endset -%}
 
 
@@ -125,6 +137,13 @@
       id: "assess",
       panel: {
         html: assessHtml
+      }
+    },
+    {
+      label: "CRU Allocation",
+      id: "cru-allocation",
+      panel: {
+        html: cruAllocation
       }
     }
   ]

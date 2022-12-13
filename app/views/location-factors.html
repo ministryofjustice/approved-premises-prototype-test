@@ -28,32 +28,12 @@
 
 
 <h2 class="govuk-heading-m">What is the preferred location for the AP placement?</h2>
+<p>Guidance TBC</p>
 
-{{ govukSelect({
-      id: "ap-pdu",
-      name: "ap-pdu",
-      label: {
-        text: "Probation delivery unit (PDU) location"
-      },
-      items: [
-        {
-          value: "northumberland",
-          text: "Northumberland"
-        },
-        {
-          value: "tyne-and-wear",
-          text: "Tyne and Wear",
-          selected: true
-        },
-        {
-          value: "example",
-          text: "Example"
-        },
-        {
-          value: "example",
-          text: "Example"
-        }
-      ]
+    {{ govukInput({
+    classes: "govuk-input--width-10",
+     id: "ap-pdu",
+     name: "ap-pdu"
     }) }}
 
     {{ govukTextarea({
@@ -67,13 +47,55 @@
        }) }}
 
 
+    {% set alternativeLocation %}
+    {{ govukInput({
+      id: "alternative-location-input",
+      name: "alternative-location-input",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Type the PDU location below"
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "alternative-location",
+      name: "alternative-location",
+      fieldset: {
+        legend: {
+          text: "If an AP Placement is not available in the person's preferred area, would a placement in an alternative locality be considered?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "This includes other PDU’s within the region"
+      },
+      items: [
+        {
+          value: "yes-alternative-location",
+          text: "Yes",
+          conditional: {
+            html: alternativeLocation
+          }
+        },
+        {
+          value: "no-alternative-location",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
       <!-- Radio area -->
       <form action="/location-pdu" method="post" novalidate>
 
 
 
 
-        {% set placementRestrictions %}
+      {% set placementRestrictions %}
         {{ govukTextarea({
           id: "placement-restrictions",
           name: "placement-restrictions",
@@ -84,19 +106,6 @@
             text: "Provide details of any restraining orders, exclusion zones, inclusion zones or other location based licence conditions."
           }
         }) }}
-      {% endset -%}
-
-      {% set alternativeLocation %}
-      {{ govukInput({
-        id: "alternative-location-input",
-        name: "alternative-location-input",
-        type: "textarea",
-        spellcheck: false,
-        classes: "textarea",
-        label: {
-          text: "Type the PDU location below"
-        }
-      }) }}
       {% endset -%}
 
       {{ govukRadios({
@@ -127,36 +136,9 @@
         ]
       }) }}
 
-      {{ govukRadios({
-        idPrefix: "alternative-location",
-        name: "alternative-location",
-        fieldset: {
-          legend: {
-            text: "If an AP Placement is not available in the person's preferred area, would a placement in an alternative locality be considered?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "This includes other PDU’s within the region"
-        },
-        items: [
-          {
-            value: "yes-alternative-location",
-            text: "Yes",
-            conditional: {
-              html: alternativeLocation
-            }
-          },
-          {
-            value: "no-alternative-location",
-            text: "No"
-          }
-        ]
-      }) }}
-
-
-      {{ govukRadios({
+      <!-- removed 
+        
+        {{ govukRadios({
         idPrefix: "managed-pdu",
         name: "managed-pdu",
         fieldset: {
@@ -179,7 +161,7 @@
             text: "No"
           }
         ]
-      }) }}
+      }) }} --->
 
       <input type="hidden" name="answers-checked" value="true">
 

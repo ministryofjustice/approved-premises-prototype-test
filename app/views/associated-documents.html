@@ -27,26 +27,35 @@
 
 
         {% set detailsHTML %}
-          <p class="govuk-body">
-            Please ensure that identified documents have been attached to this application.
-          </p>
+        <b>Mandatory documents include: </b>
+          
           <ul class="govuk-list govuk-list--bullet">
-              <li>Precons</li>
               <li>CPS documents from current event</li>
-              <li>SO registration</li>
-              <li>Sexual harm prevention order (SOPO)  </li>
-              <li>Psychiatric reports</li>
-              <li>Parole reports</li>
-              <li>ARMS assessment</li>
-              <li>Pre sentence</li>
-              <li>Bail notice</li>
-              <li>VOO</li>
-              <li>Exclusion zone map</li>
+              <li>Previous convictions </li>
+
           </ul>
+
+          <b>Additional documents to support application:</b>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>ARMS assessment</li>
+            <li>Pre sentence reports</li>
+            <li>Psychiatric reports</li>
+            <li>Care Act Assessments</li>
+            <li>Restraining orders</li>
+            <br>
+            <li>Sexual Offence registrations</li>
+            <li>Sexual harm prevention order (SHPO)  </li>
+            <li>Psychiatric reports</li>
+            <li>Parole reports</li>
+            <li>Bail notice</li>
+            <li>Violent Offender Order (VOO) </li>
+            <li>Exclusion zone map</li>
+          </ul>
+
       {% endset %}
 
             {{ govukDetails({
-              summaryText: "View required documents",
+              summaryText: "View documents",
               html: detailsHTML
             }) }}
 
