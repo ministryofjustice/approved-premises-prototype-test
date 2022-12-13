@@ -1,0 +1,126 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Approved Premises prototype
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/task-list-standard"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+          <span class="govuk-caption-l">Claire Brown</span>
+          Caselist
+        </h2>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Qualifications"
+              },
+              value: {
+                text: "PIPE"
+              }
+            },
+            {
+              key: {
+                text: "Number of AP beds"
+              },
+              value: {
+                text: "24"
+              }
+            }
+          ]
+        }) }}
+      </div>
+      </div>
+    
+      <div>
+        <!-- Sub-navigation -->
+              <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+                <ul class="moj-sub-navigation__list">
+                  <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  aria-current="page"  href="">Incomplete (3)</a>
+                  </li>
+
+                  <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  href="">Completed (10)</a>
+                  </li>
+                </ul>
+              </nav>
+          </div>
+
+    <div class="govuk-column-full-width">
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 140px;">Person</th>
+            <th scope="col" class="govuk-table__header">CRN</th>
+            <th scope="col" class="govuk-table__header" style="width: 120px;"aria-sort="ascending">Arrival date</th>
+            <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Days until assessment due</th>
+            <th scope="col" class="govuk-table__header">Application type</th>
+            <th scope="col" class="govuk-table__header" style="width: 140px;">Status</th>
+            <th scope="col" class="govuk-table__header" style="width: 150px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Robert Brown</td>
+            <td scope="row" class="govuk-table__cell">8FONNDV</td>
+            <td scope="row" class="govuk-table__cell"> 22 Apr 2023</td>
+            <td scope="row" class="govuk-table__cell"> 5 days</td>
+            <td scope="row" class="govuk-table__cell"> Standard</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag">In Progress</strong>  </td>
+            <td scope="row" class="govuk-table__cell"> <a href="assessor-unassign-assessment.html">Unassign</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Steve Hallam</td>
+            <td scope="row" class="govuk-table__cell">894DBAH</td>
+            <td scope="row" class="govuk-table__cell"> 01 Apr 2023</td>
+            <td scope="row" class="govuk-table__cell"> 3 days </td>
+            <td scope="row" class="govuk-table__cell"> Emergancy</td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--grey">Not started</strong>  </td>
+            <td scope="row" class="govuk-table__cell"> <a href="assessor-unassign-assessment.html">Unassign</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">Ben Hudson</td>
+            <td scope="row" class="govuk-table__cell">5AJFBCB1</td>
+            <td scope="row" class="govuk-table__cell"> Parole case</td>
+            <td scope="row" class="govuk-table__cell"> 7 days</td>
+            <td scope="row" class="govuk-table__cell"> PIPE </td>
+            <td scope="row" class="govuk-table__cell"> <strong class="govuk-tag govuk-tag--orange">Escalated</strong>  </td>
+            <td scope="row" class="govuk-table__cell"> <a href="assessor-unassign-assessment.html">Unassign</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      </div>
+      
+     
+   </div>
+
+  </div>
+
+
+{% endblock %}
