@@ -145,7 +145,7 @@ router.post('/release-date-answer', function (req, res) {
   if (releaseDateKnown == "release-date-known"){
     res.redirect('/placement-date')
   } else {
-    res.redirect('/oral-hearing-date')
+    res.redirect('/task-list-standard')
   }
 })
 

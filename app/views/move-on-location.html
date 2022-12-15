@@ -18,32 +18,17 @@
 
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
-
-    {{ govukSelect({
+    
+    {{ govukInput({
+      classes: "govuk-input--width-10",
+      hint: {
+        text: "For example SW1"
+      },
       id: "ap-pdu",
       name: "ap-pdu",
       label: {
         text: "Probation delivery unit (PDU) location"
-      },
-      items: [
-        {
-          value: "northumberland",
-          text: "Northumberland"
-        },
-        {
-          value: "tyne-and-wear",
-          text: "Tyne and Wear",
-          selected: true
-        },
-        {
-          value: "example",
-          text: "Example"
-        },
-        {
-          value: "example",
-          text: "Example"
-        }
-      ]
+      }
     }) }}
 
     {{ govukButton({

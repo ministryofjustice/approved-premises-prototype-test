@@ -25,7 +25,7 @@
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Access needs</h1>
+    <h1 class="govuk-heading-l">Access, cultural and healthcare needs</h1>
 
     <!-- Checkboxes -->
     <form action="/access-needs-selected" method="post" novalidate>
@@ -41,7 +41,8 @@
         }
       },
       hint: {
-        text: "For example, if the person has a visual impairment, uses a hearing aid or has a learning difficulty."
+        html: '<p>For example, if the person has a visual impairment, uses a hearing aid or has an ADHD diagnosis</p>
+        <p>Further information can be provided on the next screen</p>'
       },
       items: [
         {
@@ -63,6 +64,10 @@
         {
           value: "neurodivergent",
           text: "Neurodivergent conditions"
+        },
+        {
+          value: "healthcare",
+          text: "Healthcare"
         },
         {
           value: "other",
@@ -162,7 +167,7 @@
         name: "risk-to-resident",
         fieldset: {
           legend: {
-            text: "Has a care act assessment been completed?",
+            text: "Has a Care Act assessment been completed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }

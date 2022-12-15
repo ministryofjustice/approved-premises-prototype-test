@@ -23,11 +23,10 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      <span class="govuk-caption-l">Catering requirements</span>
-      Further placement considerations
+      <span class="govuk-caption-l">Further placement considerations</span>
+      Catering requirements
     </h1>
-    <p>This information is used to match a person with a suitable room in a suitable premises.</p>
-
+  
 
     <!-- Nunjucks detail -->
 
@@ -46,17 +45,17 @@
 
     <!-- Radio area -->
 
+<h1 class="govuk-heading-m">Can this person be placed in a self-catered Approved Premises?</h1>
+
+{{ govukDetails({
+  summaryText: "View guidance",
+  html: '<p>Approved Premises (AP) placements are usually self-catered unless there are specific circumstances where a person requires a catered placement. </p>
+        <p>For example, foreign national offenders (FNO) without access to funds cannot be placed in a self-catered AP.</p>'
+}) }}
 
     {{ govukRadios({
       idPrefix: "catering-issues",
       name: "catering-issues",
-      fieldset: {
-        legend: {
-          text: "Do you have any concerns about the person catering for themself?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
       items: [
         {
           value: "yes-catering-issues",

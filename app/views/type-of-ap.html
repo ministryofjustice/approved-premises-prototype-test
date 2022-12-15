@@ -19,23 +19,17 @@
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Which type of AP does the person require?
+              Which type of Approved Premises (AP) does the person require?
             </h1>
           </legend>
 
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-              What are the different types of AP?
-              </span>
-            </summary>
-            <p class="govuk-details__text">
-              PIPE (psychologically informed planned environment) APs are for men who screen into the OPD (offender personality disorder) pathway. PIPE staff have additional training to manage individuals and create an enhanced safe and supportive environment.
-          <br><br>
-              ESAPs (enhanced security APs) offer additional security measures and are intended for individuals whose risk management plan and ability to manage in the community are reliant on those measures.
-
-            </p>
-          </details>
+          {{ govukDetails({
+            summaryText: "What are the different types of AP?",
+            html: '<p><b>Standard AP</b> provide 24 hour staff support and monitoring, an overnight curfew, CCTV, room searches, rehabilitative interventions, medication monitoring, and drug and alcohol testing.</p>
+            <p><b>Psychologically Informed Planned Environment (PIPE)</b> AP are for people who screen into the Offender Personality Disorder (OPD) pathway. PIPE staff have additional training to manage individuals and create an enhanced safe and supportive environment. </p>
+            <p><b>Enhanced Security AP (ESAP)</b> offer additional security measures and are intended to individuals whose risk management plan and ability to manage in the community are reliant on those measures. </p>
+            <p><b>Recovery Focused AP (RFAP)</b></p>'
+          }) }}
 
 
 
@@ -48,7 +42,7 @@
           items: [
             {
               value: "standard",
-              text: "Standard"
+              text: "Standard AP"
             },
             {
               value: "pipe",
@@ -57,11 +51,11 @@
             },
             {
               value: "esap",
-              text: "Enhanced Security Approved Premises (ESAP)"
+              text: "Enhanced Security AP (ESAP)"
             },
             {
               value: "recovery-focused",
-              text: "Recovery focused Approved Premises"
+              text: "Recovery Focused AP (RFAP)"
             }
           ]
         }) }}

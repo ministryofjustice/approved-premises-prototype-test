@@ -26,21 +26,28 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Location factors</h1>
 
+    <h2 class="govuk-heading-m">What is the preferred postcode area for the Approved Premises (AP) placement</h2>
 
-<h2 class="govuk-heading-m">What is the preferred location for the AP placement?</h2>
-<p>Guidance TBC</p>
+    {{ govukDetails({
+      summaryText: "View guidance notes on postcode area",
+      html: ' <p>We aim to accommodate someone within 50 miles of the postcode area provided. </p>
+      <p>If you are unsure about which postcode area to provide, you can use the postcode area for the probation office.</p>'
+    }) }}
 
     {{ govukInput({
-    classes: "govuk-input--width-10",
-     id: "ap-pdu",
-     name: "ap-pdu"
+      classes: "govuk-input--width-10",
+      hint: {
+        text: "For example SW1"
+      },
+      id: "ap-pdu",
+      name: "ap-pdu"
     }) }}
 
     {{ govukTextarea({
       name: "positive-location-factors",
       id: "positive-location-factors",
       label: {
-        text: "Give details of any positive factors for the person in this location.",
+        text: "Give details of why this postcode area would benefit the person",
         classes: "govuk-label--s",
         isPageHeading: true
         }
@@ -55,7 +62,7 @@
       spellcheck: false,
       classes: "textarea",
       label: {
-        text: "Type the PDU location below"
+        text: "Type an alternative postcode area below"
       }
     }) }}
     {% endset -%}
@@ -65,13 +72,10 @@
       name: "alternative-location",
       fieldset: {
         legend: {
-          text: "If an AP Placement is not available in the person's preferred area, would a placement in an alternative locality be considered?",
+          text: "If an AP placement is not available in the person’s preferred area, would a placement in another postcode area be considered?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
-      },
-      hint: {
-        text: "This includes other PDU’s within the region"
       },
       items: [
         {
@@ -103,7 +107,8 @@
           spellcheck: false,
           classes: "textarea",
           label: {
-            text: "Provide details of any restraining orders, exclusion zones, inclusion zones or other location based licence conditions."
+            html: '<p>Provide details of any restraining orders, exclusion zones or other location based licence conditions.</p>
+                  <p>You must also provide an exclusion zone map in the ‘attach required documents’ screen. </p>'
           }
         }) }}
       {% endset -%}

@@ -115,6 +115,16 @@
 <p><a href="/cru-allocation/cru-allocation-dashboard.html">CRU allocation dashboard</a></p>
 {% endset -%}
 
+{% set previousDesigns %}
+<h1 class="govuk-heading-l"> Previous designs </h1>
+
+<p> Over time we have changed the screens across the prototype. We have kept the screens listed below to show the changes made.  </p>
+
+<p><a href="/previous-designs/access-needs.html">Access & Healthcare needs</a></p>
+<p>Changed Sprint [X]</p>
+{% endset -%}
+
+
 
 {{ govukTabs({
   items: [
@@ -144,6 +154,13 @@
       id: "cru-allocation",
       panel: {
         html: cruAllocation
+      }
+    },
+    {
+      label: "Previous designs",
+      id: "previous-designs",
+      panel: {
+        html: previousDesigns
       }
     }
   ]

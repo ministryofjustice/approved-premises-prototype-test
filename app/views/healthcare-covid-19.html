@@ -24,8 +24,9 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Healthcare information
+      COVID information
     </h1>
+    <p>This information will be used to help decide whether the person can room share.</p>
 
 
     <!-- Radio area -->
@@ -40,7 +41,7 @@
         }
       },
       hint: {
-        text: "With a minimum of two vaccinations and a booster received."
+        text: "A person is considered fully vaccinated if they have had two doses and a booster of a COVID-19 vaccine."
       },
       items: [
         {
@@ -63,13 +64,13 @@
       name: "high-risk",
       fieldset: {
         legend: {
-          text: "Is the person high risk to COVID-19?",
+          text: "Is the person at high risk from COVID-19 based on the NHS guidance?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
-        text: "This includes immunosuppressed disorders and those eligible for nMAB treatment or higher risk"
+        text: "This includes people with autoimmune diseases and those eligible for nMAB treatment."
       },
       items: [
         {
