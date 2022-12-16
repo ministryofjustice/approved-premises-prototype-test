@@ -104,7 +104,7 @@ router.post('/ap-type-answer', function (req, res) {
   console.log(req.session.data)
 
   if (typeOfAp == "pipe"){
-    res.redirect('/pipe-application')
+    res.redirect('/pipe-referral')
   } else if (typeOfAp == "esap"){
     res.redirect('/esap-placement-reasons')
   } else if (typeOfAp == "recovery-focused"){
@@ -131,6 +131,22 @@ router.post('/sentence-type-info', function (req, res) {
 })
 
 
+// routing OPD screening
+
+router.post('/pipe-opd-screening', function (req, res) {
+
+  var pipeScreening = req.session.data['opd-pathway']
+  console.log({pipeScreening})
+  console.log(req.session.data)
+
+  if (pipeScreening == "yes-opd-pathway"){
+    res.redirect('/pipe-consultation-date')
+  } else {
+    res.redirect('/task-list-standard')
+  }
+})
+
+
 
 
 
@@ -145,7 +161,7 @@ router.post('/release-date-answer', function (req, res) {
   if (releaseDateKnown == "release-date-known"){
     res.redirect('/placement-date')
   } else {
-    res.redirect('/task-list-standard')
+    res.redirect('/pipe-not-eligible')
   }
 })
 
@@ -275,7 +291,7 @@ router.post('/tier-exemption', function (req, res) {
   if (exemptionType == "yes-exemption"){
     res.redirect('/exemption-questions')
   } else {
-    res.redirect('/task-list-standard')
+    res.redirect('/exemption-drop-out')
   }
 })
 

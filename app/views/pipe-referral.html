@@ -19,21 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% set opdPathway %}
-    {{ govukInput({
-      id: "opd-pathway-date",
-      name: "opd-pathway-date",
-      type: "date",
-      autocomplete: "date",
-      spellcheck: false,
-      classes: "govuk-!-width-one-half",
-      label: {
-        text: "When was the person's last consultation or formulation?"
-      }
-    }) }}
-    {% endset -%}
-
-   
+    <form action="/pipe-opd-screening" method="post" novalidate>
 
     {{ govukRadios({
       idPrefix: "opd-pathway",
@@ -61,11 +47,13 @@
       ]
     }) }}
 
-  {{ govukButton({
-    text: "Save and continue",
-    href: "/pipe-opd-screening"
-  }) }}
+        <input type="hidden" name="answers-checked" value="true">
 
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
 
   </div>
 </div>
