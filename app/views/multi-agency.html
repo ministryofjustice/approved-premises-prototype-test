@@ -1,0 +1,35 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+ 
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l"> Multi-agency cases </h1>
+   
+
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/pipe-screening-date"
+  }) }}
+
+
+  </div>
+</div>
+
+
+{% endblock %}
