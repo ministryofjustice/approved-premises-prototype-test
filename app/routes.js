@@ -284,7 +284,7 @@ router.post('/sentence-type-info', function (req, res) {
 
 router.post('/tier-exemption', function (req, res) {
 
-  var exemptionType = req.session.data['exemption-tier']
+  var exemptionType = req.session.data['tier-exemption']
   console.log({exemptionType})
   console.log(req.session.data)
 
