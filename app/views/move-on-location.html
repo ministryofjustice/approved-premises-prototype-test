@@ -19,18 +19,19 @@
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
     
+    <h2 class="govuk-heading-m">Where is the person most likely to live when they move on from the Approved Premises?</h2>
+    <p>If the move on location is not known, you can provide the postcode area for the probation office.</p>
+
     {{ govukInput({
       classes: "govuk-input--width-10",
       hint: {
-        text: "For example SW1"
+        text: "Enter a postcode area, for example SW1"
       },
       id: "ap-pdu",
-      name: "ap-pdu",
-      label: {
-        text: "Probation delivery unit (PDU) location"
-      }
+      name: "ap-pdu"
     }) }}
 
+  
     {{ govukButton({
       text: "Save and continue",
        href: "/move-on-arrangements"
