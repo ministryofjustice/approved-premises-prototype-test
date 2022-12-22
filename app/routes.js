@@ -142,11 +142,9 @@ router.post('/pipe-opd-screening', function (req, res) {
   if (pipeScreening == "yes-opd-pathway"){
     res.redirect('/pipe-consultation-date')
   } else {
-    res.redirect('/task-list-standard')
+    res.redirect('/pipe-not-eligible')
   }
 })
-
-
 
 
 
@@ -161,7 +159,7 @@ router.post('/release-date-answer', function (req, res) {
   if (releaseDateKnown == "release-date-known"){
     res.redirect('/placement-date')
   } else {
-    res.redirect('/pipe-not-eligible')
+    res.redirect('/oral-hearing-date')
   }
 })
 
@@ -245,7 +243,7 @@ router.post('/foreign-national-move-on', function (req, res) {
   if (foreignNational == "accommodation-homeoffice"){
     res.redirect('/move-on-foreign-national')
   } else {
-    res.redirect('/task-list-standard')
+    res.redirect('/move-on-location')
   }
 })
 
