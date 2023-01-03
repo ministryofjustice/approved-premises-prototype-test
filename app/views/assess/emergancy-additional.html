@@ -37,40 +37,40 @@
     },
     items: [
       {
-        value: "emergancy-reason-select",
+        value: "emergency-reason-select",
         text: "Select one",
         selected: true
       },
       {
-        value: "emergancy-reason-risk-escalated",
+        value: "emergency-reason-risk-escalated",
         text: "The risk level has recently escalated"
       },
       {
-        value: "emergancy-reason-rmp-broken",
+        value: "emergency-reason-rmp-broken",
         text: "The release plan or risk management plan has broken down"
       },
       {
-        value: "emergancy-reason-further-offence",
+        value: "emergency-reason-further-offence",
         text: "The individual has committed a further offence"
       },
       {
-        value: "emergancy-reason-alternative-recall",
+        value: "emergency-reason-alternative-recall",
         text: "AP placement is an alternative to recall"
       },
       {
-        value: "emergancy-reason-parole",
+        value: "emergency-reason-parole",
         text: "AP placement is a parole board or PPCS decision"
       },
       {
-        value: "emergancy-reason-sentence-short",
+        value: "emergency-reason-sentence-short",
         text: "The sentence is shorter than 12 months"
       },
       {
-        value: "emergancy-reason-bail",
+        value: "emergency-reason-bail",
         text: "The individual will be on bail"
       },
       {
-        value: "emergancy-reason-other",
+        value: "emergency-reason-other",
         text: "Other (please specify below)"
       }
     ]
@@ -79,7 +79,7 @@
 {% endset -%}
 
     {{ govukRadios({
-      name: "additional-emergancy",
+      name: "additional-emergency",
       fieldset: {
         legend: {
           text: "Do you agree with the applicant's reason for submission within 4 months of expected arrival?",
@@ -89,22 +89,22 @@
       },
       items: [
         {
-          value: "yes-emergancy-info",
+          value: "yes-emergency-info",
           text: "Yes"
         },
         {
-          value: "no-emergancy-info",
+          value: "no-emergency-info",
           text: "No",
           conditional: {
-            html: emergancyNo
+            html: emergencyNo
           }
         }
       ]
     }) }}
 
       {{ govukTextarea({
-        name: "assess-emergancy-details",
-        id: "assess-emergancy-details",
+        name: "assess-emergency-details",
+        id: "assess-emergency-details",
         label: {
           text: "Provide details to support the decision"
         }
