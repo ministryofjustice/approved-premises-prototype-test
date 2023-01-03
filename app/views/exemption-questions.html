@@ -36,17 +36,27 @@
     {% set exemptionInformationYes %}
     {{ govukInput({
       label: {
-        text: "Name of manager who agreed the exemption "
+        text: "Name of senior manager"
       },
       id: "manager-exemption",
       name: "manager-exemption"
+    }) }}
+
+    {{ govukInput({
+      id: "date-of-exemption",
+      name: "date-of-exemption",
+      type: "date",
+      classes: "govuk-!-width-one-half",
+      label: {
+        text: "Date exemption agreed"
+      }
     }) }}
 
     {{ govukTextarea({
       name: "more-detail",
       id: "more-detail",
       label: {
-        text: "Provide a record of the decision"
+        text: "Provide a summary of the reasons for an exceptional application"
       }
     }) }}
     {% endset -%}
