@@ -72,23 +72,27 @@
 
             <form action="/tier-exemption" method="post" novalidate>
               
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="tier-exemption" name="tier-exemption" type="radio" value="yes-exemption">
-                <label class="govuk-label govuk-radios__label" for="tier-exemption">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="tier-exemption" name="tier-exemption" type="radio" value="no-exemption">
-                <label class="govuk-label govuk-radios__label" for="tier-exemption">
-                  No
-                </label>
-              </div>
-            </div>
+              {{ govukRadios({
+                idPrefix: "tier-exemption",
+                name: "tier-exemption",
+                fieldset: {
+                  legend: {
+                  }
+                },
+                items: [
+                  {
+                    value: "yes-exemption",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no-exemption",
+                    text: "No"
+                  }
+                ]
+              }) }}
+              
           </fieldset>
         </div>
-
 
       </div>
     </div>
