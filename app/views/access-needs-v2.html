@@ -124,7 +124,20 @@
       <!-- Radio area -->
 
   
-      {% set needInterpreter %}
+      {% set needInterpreterAll %}
+      {{ govukInput({
+        id: "interpreter-required",
+        name: "interpreter-required",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Which language?"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set needInterpreterMeetings %}
       {{ govukInput({
         id: "interpreter-required",
         name: "interpreter-required",
@@ -149,10 +162,17 @@
         },
         items: [
           {
-            value: "yes-interpreter",
-            text: "Yes",
+            value: "yes-interpreter-all",
+            text: "Yes, for all communications",
             conditional: {
-              html: needInterpreter
+              html: needInterpreterAll
+            }
+          },
+          {
+            value: "yes-interpreter-meetings",
+            text: "Yes, for key meetings and formal documents",
+            conditional: {
+              html: needInterpreterMeetings
             }
           },
           {
