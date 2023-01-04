@@ -34,18 +34,31 @@
       }) }}
     {% endset -%}
 
+    {% set html %}
+    <p>
+      You should contact the FNORC regarding support for move on accommodation as soon as possible. 
+    </p>
+  {% endset %}
+    
+  {% set fnNotInformed %}
+    {{ govukNotificationBanner({
+      html: html
+    }) }}
+  {% endset -%}
+
+
     {{ govukRadios({
       idPrefix: "move-on-fn",
       name: "move-on-fn",
       fieldset: {
         legend: {
-          text: "Have you informed the Home Office 'Foreign National Returns Command' that accommodation will be required after placement?",
+          text: "Have you informed the Home Office Foreign National Returns Command (FNORC) that accommodation will be required after placement?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
-        text: "For any foreign nationals without recourse to public funds, you must notify the Home Office before you submit your application. You do not need to have any offers of accommodation yet."
+        text: "For people who are foreign nationals without recourse to public funds, you must make contact with the FNORC. The FNORC will determine whether someone is likely to meet the criteria for Home Office move on support based on their circumstances."
       },
       items: [
         {
@@ -57,7 +70,10 @@
         },
         {
           value: "fn-no",
-          text: "No"
+          text: "No",
+          conditional: {
+            html: fnNotInformed
+          }
         }
       ]
     }) }}
