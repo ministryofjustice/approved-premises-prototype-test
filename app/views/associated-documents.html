@@ -21,41 +21,38 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Select associated documents</h2>
+          <h2 class="govuk-heading-l">Select any additional documents that are required to support your application</h2>
             <p> Imported from Delius  <b> 23 October 2022 </b></p>
             <p>Select any additional documents that you want to include to support your application. </p>
 
 
         {% set detailsHTML %}
-        <b>Mandatory documents include: </b>
-          
-          <ul class="govuk-list govuk-list--bullet">
+        <b>All applications should include the following documents:</b>
+           <ul class="govuk-list govuk-list--bullet">
               <li>CPS documents from current event</li>
               <li>Previous convictions </li>
-
           </ul>
 
-          <b>Additional documents to support application:</b>
+          <b>Applications should include the following documents where they are available:</b>
           <ul class="govuk-list govuk-list--bullet">
-            <li>ARMS assessment</li>
-            <li>Pre sentence reports</li>
-            <li>Psychiatric reports</li>
-            <li>Care Act Assessments</li>
-            <li>Restraining orders</li>
-            <br>
-            <li>Sexual Offence registrations</li>
-            <li>Sexual harm prevention order (SHPO)  </li>
-            <li>Psychiatric reports</li>
-            <li>Parole reports</li>
+            <li>Active Risk Management System (ARMS) assessment</li>
             <li>Bail notice</li>
-            <li>Violent Offender Order (VOO) </li>
+            <li>Care Act assessment</li>
+            <li>Domestic violence prevention orders</li>
             <li>Exclusion zone map</li>
+            <li>Parole reports</li>
+            <li>Pre-sentence reports  </li>
+            <li>Psychiatric reports</li>
+            <li>Restraining orders</li>
+            <li>Sexual harm prevention order (SHPO)</li>
+            <li>Sexual offence registrations</li>
+            <li>Violent Offender Order (VOO)</li>
           </ul>
 
       {% endset %}
 
             {{ govukDetails({
-              summaryText: "View documents",
+              summaryText: "Which documents are required?",
               html: detailsHTML
             }) }}
 
