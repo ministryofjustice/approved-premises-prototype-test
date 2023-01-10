@@ -28,18 +28,35 @@
 {% endset -%}
 
 {% set applyHtml %}
-<h1 class="govuk-heading-l"> Apply </h1>
-<p> From the <a href="pp-dashboard">dashboard</a>, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the <a href="start.html">start screen</a>. If a user selects a case that is in progress, they will be taken to the <a href="task-list-standard.html">task list</a>.</p>
-<p>If the person's tier does not match the elegibility requirements, users will be shown the <a href="tier-drop-out">eligibility screen</a> where they can provide additional information for exceptional circumstances.</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li> If the user selects yes, they will be shown <a href="exemption-questions.html">exemption questions screen</a></li>
-  <li> If the user selects no, they will be shown <a href="exemption-drop-out.html"> a drop out screen</a></li>
-</ul>
+      <h1 class="govuk-heading-l"> Apply </h1>
+      <p> From the <a href="pp-dashboard">dashboard</a>, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the <a href="start.html">start screen</a>. If a user selects a case that is in progress, they will be taken to the <a href="task-list-standard.html">task list</a>.</p>
+      <p>If the person's tier does not match the elegibility requirements, users will be shown the <a href="tier-drop-out">eligibility screen</a> where they can provide additional information for exceptional circumstances.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li> If the user selects yes, they will be shown <a href="exemption-questions.html">exemption questions screen</a></li>
+        <li> If the user selects no, they will be shown <a href="exemption-drop-out.html"> a drop out screen</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m"> ESAP questions placeholder (04/01/23)</h2>
+      <p>We've created a new flow for ESAP questions, as we need to know whether the person is managed by the National Security Division.</p>
+      <p><a href="/esap-questions/managed-nsd.html">Managed by NSD (Start of user flow)</a></p>
 
 
-             <h2 class="govuk-heading-m">Emergency applications </h2>
-             <p>Emergency applications are for applications which are less than 4 months. These can be submitted by a practicioner in a standard way. If the release date is less than four months, the user will be presented with the 'emergency application tasklist'. </p>
-              <p>There are two additional tasks to complete.</p>
+      <h2 class="govuk-heading-m"> Complex case flow (05/01/23)</h2>
+      <p>We need to think about where the Complex Case questions sit within the flow, perhaps straight after the check details section?</p>
+      <p><a href="/complex-case/transgender-history.html">Complex case</a></p>
+
+      <h2 class="govuk-heading-m">Multi-agency / Emergency screens</h2>
+      <p>We need to show additional questions for Non-stat and PSS cases. PP's will need to provide additional information for a Multi-agency contingency plan.</p>
+      <p><a href="multi-agency.html">Multi-agency screen</a></p>
+      <br>
+      <p>We've created a second version of the multi-agency screens. This one feels more appropriate for the length of the screen</p>
+      <p><a href="multi-agency-partners.html">Input multi-agency partners</a></p>
+      <p><a href="multi-agency-questions.html">Input multi-agency question responses</a></p>
+
+
+      <h2 class="govuk-heading-m">Emergency applications </h2>
+      <p>Emergency applications are for applications which are less than 4 months. These can be submitted by a practicioner in a standard way. If the release date is less than four months, the user will be presented with the 'emergency application tasklist'. </p>
+      <p>There are two additional tasks to complete.</p>
             
               
             <p><a href="task-list-emergency.html">Emergency task list</a></p>
@@ -56,6 +73,11 @@
     
 
     <h2 class="govuk-heading-m">Additional assessment questions (PIPE, ESAP, Emergency)</h2>
+    <p><b>Offline process</b></p>
+    <p>If the assessor selects 'No' on <a href="assess/sufficient-information.html">the sufficient information task</a> the assessor will be presented with the PP's details. They will then use offline processes to gather the additional information.</p>
+    <p>The assessor will then add the information to the <a href="assess/assessor-add-info-offline.html">additional information screen</a> which will ask for any information requested, the information provided and when the information was received.</p>
+
+    <p><b>Future digital version</b></p>
     <p> For emergency, PIPE and ESAP assessments, users will be presented with an additional task on the list. They will be required to enter extra information to assess the information that's been provided in the Application. </p>
     <p><a href="assess/assess-tasklist-emergency.html">Emergency tasklist & additional questions</a></p>
     <p><a href="assess/assess-tasklist-pipe.html">PIPE tasklist and additional information</a></p>
