@@ -1,0 +1,199 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/task-list-standard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Enhanced Security questions</h1>
+   
+  <!-- Radio (BWVT)-->
+    <h2 class="govuk-heading-m">Will enhanced room searches through the use of Body Worn Video Technology (BWVT) enhance the management of the person’s risk?</h2>
+     
+    {{ govukDetails({
+      summaryText: "How does an AP placement help to manage risk?",
+      html: '<p class="govuk-body">Enhanced room searches with BWVT can be useful where the individual has a history of secreting items of relevance to risk / offending including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Literature and materials supporting radicalisation ideals</li>
+        <li>Offence related literature indicative of hate crimes or beliefs</li>
+        <li>Literature and/or items of relevance to child sexual abuse or exploitation</li>
+        <li>Drugs and drug paraphernalia indicative of dealing drugs</li>
+        <li>Weapons, actual or makeshift</li>
+        <li>Fire-setting or explosive materials</li>
+        <li>Electronic items of significance to the individuals offending profile</li>
+    </ul>
+    <p>Or where:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Partnership agencies, such as DOS, JEXU and NSD have specifically requested the sharing of intelligence that can be captured via room searches utilising BWVT</li>
+      <li>The person has received adjudications for items of concern found via room searches</li>
+    </ul>'
+    }) }}
+
+    {% set yesBwvt %}
+      {{ govukTextarea({
+        id: "esap-bwvt-details",
+        name: "esap-bwvt-details",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "esap-bwvt",
+      name: "esap-bwvt",
+      items: [
+        {
+          value: "yes-bwvt",
+          text: "Yes",
+          conditional: {
+            html: yesBwvt
+          }
+        },
+        {
+          value: "no-bwvt",
+          text: "No"
+        }
+      ]
+    }) }}
+    
+
+
+  <!-- Radio (Enhanced CCTV)-->
+      <h2 class="govuk-heading-m">Will Enhanced CCTV enhance the management of the person’s risk?      </h2>
+        
+      {{ govukDetails({
+        summaryText: "How does an AP placement help to manage risk?",
+        html: '<p class="govuk-body">Enhanced CCTV can aid in the monitoring and detection of behaviours where there is a history of:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>being known to change their appearance/clothing frequently as a means to offend and so regular CCTV images of clothing and appearance as the individual leaves or returns to the AP, are required.</li>
+          <li>being known to build networks within offender groups (CT/DOS/sex offending) and enhanced CCTV capability will assist in the monitoring and recording of such behaviours.</li>
+          <li>physically assaulting staff (in the last 3 years) and where enhanced CCTV provision could reduce the risk of assaults to staff and /or ensure any incidents are recorded and can be used in evidence.</li>
+      </ul>
+      <p>Or where:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Partnership agencies, such as DOS, JEXU and NSD have specifically requested the sharing of intelligence that can be captured via enhanced CCTV</li>
+        <li>There are credible threats to kill and the availability of enhanced CCTV and hardened security will support management of the risks to the individual and other residents and staff should attempts be made to act out on these threats.</li>
+        <li>There are external threats from the local community/media intrusion that place the individual and other residents and staff at risk</li>
+      </ul>'
+    }) }}
+
+    {% set yesEnhancedCctv %}
+      {{ govukTextarea({
+        id: "enhanced-cctv-details",
+        name: "enhanced-cctv-details",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "esap-enhanced-cctv",
+        name: "esap-enhanced-cctv",
+        items: [
+          {
+            value: "yes-cctv",
+            text: "Yes",
+            conditional: {
+              html: yesEnhancedCctv
+            }
+          },
+          {
+            value: "no-cctv",
+            text: "No"
+          }
+        ]
+      }) }}
+      
+
+<!----- Checkboxes (Risk) ------>
+
+    {{ govukCheckboxes({
+      name: "esap-risks",
+      fieldset: {
+        legend: {
+          text: "Do any of the following risks apply to the person?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+        {
+          value: "esap-neurodiverse",
+          text: "A diagnosis of autism or neurodiverse traits."
+        },
+        {
+          value: "esap-personality-complex",
+          text: "A complex personality presentation which has created challenges in the prison and where an AP PIPE is deemed unsuitable"
+        },
+        {
+          value: "esap-non-nsd",
+          text: "A Non-NSD case where enhanced national standards are required to manage the risks posed and thought to be beneficial to risk reduction"
+        },
+        {
+          value: "esap-care-unit",
+          text: "Has spent time in a Care and Separation Unit in the last 24 months"
+        },
+        {
+          value: "esap-officer-unlock",
+          text: "Has required a 2/3 prison officer unlock in the last 12 months"
+        },
+        {
+          value: "esap-corrupter",
+          text: "Has been identified as a known/suspected corrupter of staff"
+        },
+        {
+          value: "esap-none",
+          text: "No, none of the above"
+        }
+      ]
+    }) }}
+    
+    <!-- Textarea -->
+
+    <h2 class="govuk-heading-m">How will a staff team with enhanced knowledge, skills and confidence in safety, security and the resettlement of complex cases support the effective management of these factors?</h2>
+    {{ govukTextarea({
+      name: "staff-support-esap",
+      id: "staff-support-esap"
+    }) }}
+
+
+    {{ govukButton({
+      text: "Save and continue",
+      href: '../index#apply'
+    }) }}
+
+
+  </div>
+</div>
+
+
+{% endblock %}

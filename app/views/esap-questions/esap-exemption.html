@@ -1,0 +1,99 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/task-list-standard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/esap-exemption" method="post" novalidate>
+
+  {% set yesEsapExemption %}
+  {{ govukInput({
+    label: {
+      text: "Name of Community HOPP"
+    },
+    id: "manager-exemption",
+    name: "manager-exemption"
+  }) }}
+
+  {{ govukInput({
+    id: "date-of-exemption",
+    name: "date-of-exemption",
+    type: "date",
+    classes: "govuk-!-width-one-half",
+    label: {
+      text: "Date of agreement"
+    }
+  }) }}
+
+  {{ govukTextarea({
+    name: "more-detail",
+    id: "more-detail",
+    label: {
+      text: "Provide a summary of the reasons why this is an exempt application"
+    }
+  }) }}
+  {% endset -%}
+    
+    {{ govukRadios({
+      idPrefix: "esap-exemption",
+      name: "esap-exemption",
+      hint: {
+        text: "Guidance notes"
+      },
+      fieldset: {
+        legend: {
+          text: "Has there been agreement with the Community Head of Public Protection that an application should be made as an exceptional case?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes-esap-exemption",
+          text: "Yes",
+          conditional: {
+            html: yesEsapExemption
+          }
+        },
+        {
+          value: "no-esap-exemption",
+          text: "No"
+        }
+      ]
+    }) }}
+    
+    <input type="hidden" name="answers-checked" value="true">
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+
+  </form>
+
+
+
+
+  </div>
+</div>
+
+
+{% endblock %}
