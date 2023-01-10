@@ -14,7 +14,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/index#apply"
+    href: "/multi-agency-partners"
   }) }}
 {% endblock %}
 
@@ -24,128 +24,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> 
 
-  <h1 class="govuk-heading-l"> Multi-agency cases </h1>
-   
-  {{ govukInput({
-      label: {
-        text: "Name of partner agency"
-      },
-      id: "partner-agency",
-      name: "partner-agency",
-      classes: "govuk-input--width-20"
-    }) }}
+  <h1 class="govuk-heading-l"> Multi-agency questions </h1>
 
-    {{ govukInput({
-      label: {
-        text: "Named contact"
-      },
-      id: "named-contact",
-      name: "named-contact",
-      classes: "govuk-input--width-20"
-    }) }}
-
-    {{ govukInput({
-      label: {
-        text: "Contact details (phone)"
-      },
-      id: "partner-contact-details",
-      name: "partner-contact-details",
-      classes: "govuk-input--width-20"
-    }) }}
-
-    {{ govukInput({
-      label: {
-        text: "Role in contingency plan"
-      },
-      id: "partner-agency-role",
-      name: "partner-agency-role",
-      classes: "govuk-input--width-20"
-    }) }}
-
-    {{ govukButton({
-      text: "Add another agency",
-      classes: "govuk-button--secondary"
-    }) }}
-      
-    <hr>
-
-    <!-- Summary list -->
-<h2 class="govuk-heading-m">List of partner agencies</h2>
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Name of partner agency"
-          },
-          value: {
-            text: "Sarah Philips"
-          }
+ <div>
+  <p class="govuk-label--m">Partner agencies added to application</p>
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Partner agency"
         },
-        {
-          key: {
-            text: "Named contact"
-          },
-          value: {
-            text: "5 January 1978"
-          }
-        },
-        {
-          key: {
-            text: "Contact details (phone)"
-          },
-          value: {
-            text: "5 January 1978"
-          }
-        },
-        {
-          key: {
-            text: "Role in contingency plan"
-          },
-          value: {
-            text: "5 January 1978"
-          }
+        value: {
+          text: "Police"
         }
-      ]
-    }) }}
-
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Name of partner agency"
-          },
-          value: {
-            text: "Sarah Philips"
-          }
+      },
+      {
+        key: {
+          text: "Partner agency"
         },
-        {
-          key: {
-            text: "Named contact"
-          },
-          value: {
-            text: "5 January 1978"
-          }
-        },
-        {
-          key: {
-            text: "Contact details (phone)"
-          },
-          value: {
-            text: "5 January 1978"
-          }
-        },
-        {
-          key: {
-            text: "Role in contingency plan"
-          },
-          value: {
-            text: "5 January 1978"
-          }
+        value: {
+          text: "Example"
         }
-      ]
-    }) }}
+      }
+    ]
+  }) }}
 
-
+</div>
   
     {{ govukTextarea({
       name: "multi-agency-curfew",
@@ -159,6 +63,10 @@
         text: "List all actions and agencies involved. Identify who is responsible for each section."
       }
     }) }}
+
+
+
+
 
     {{ govukTextarea({
       name: "multi-agency-placement-withdrawn",
