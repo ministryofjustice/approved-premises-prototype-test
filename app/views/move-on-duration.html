@@ -18,19 +18,25 @@
     }) }}
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
-
-  <p> The placement duration for a <b>Standard</b> application is 12 weeks.</p>
-
-    {{ govukDetails({
-      summaryText: "Read more about Approved Premises placement guidance",
-      html: '<p>Standard AP placements usually last up to 12 weeks but can sometimes be longer. </p>
-      <p>PIPE placements usually last up to 26 weeks. </p> 
-      <p>Consider the level of support and risk management you expect the AP to provide and how long it will take to be effective.</p>'
-    }) }}
-
+   
     <h3 class="govuk-heading-m"> Expected dates of stay in Approved Premises:  </h3>
     <p><b>Arrival date:</b> 11 Feb 2023</p>
     <p><b>Departure date:</b> 11 May 2023</p>
+
+    {{ govukDetails({
+      summaryText: "View guidance on AP placement duration",
+      html: '<p>The typical placement duration for each type of AP is as follows: </p>
+   <ul>
+    <li>Standard AP, 12 weeks</li>
+    <li>Psychologically Informed Planned Environment (PIPE), 26 weeks</li>
+    <li>Enhanced Security AP, 56 weeks</li>
+    <li>Recovery Focussed AP, [x] weeks</li>
+   </ul>
+   <p>Placements can be longer or shorter in exceptional circumstances when required for risk management purposes.</p>
+   <p>Consider the level of support and risk management you expect the AP to provide and how long it will take to be effective.</p>'
+    }) }}
+
+
    
    
     {% set differentDuration %}
@@ -51,7 +57,7 @@
       spellcheck: false,
       classes: "textarea",
       label: {
-        text: "What is the reason for the placement being shorter than the standard length?"
+        text: "Why does this person require a different placement duration?"
       }
     }) }}
 
@@ -63,7 +69,7 @@
       name: "risk-to-resident",
       fieldset: {
         legend: {
-          text: "Does this application require a different  placement duration?",
+          text: "Does this application require a different placement duration?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
@@ -86,7 +92,7 @@
 
         {{ govukButton({
           text: "Save and continue",
-          href: "/move-on-arrangements"
+          href: "/move-on-location"
         }) }}
   </div>
 </div>

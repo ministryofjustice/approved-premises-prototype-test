@@ -19,6 +19,34 @@
 
     <h2 class="govuk-heading-l">Placement duration and move on</h2>
 
+    {% set arrangementsMade %}
+    {{ govukTextarea({
+      id: "placements",
+      name: "placements",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Provide further detail about the accommodation type, including how the move on plan will be supported"
+      }
+    }) }}
+  {% endset -%}
+
+  {% set noArrangementsMade %}
+    {{ govukTextarea({
+      id: "placements",
+      name: "placements",
+      type: "textarea",
+      spellcheck: false,
+      classes: "textarea",
+      label: {
+        text: "Provide detail about any plans to secure accommodation in preparation for move on"
+      }
+    }) }}
+  {% endset -%}
+
+
+
     {{ govukRadios({
       idPrefix: "move-on-arrangements",
       name: "move-on-arrangements",
@@ -32,11 +60,17 @@
       items: [
         {
           value: "yes-moveon-arrangements",
-          text: "Yes"
+          text: "Yes",
+          conditional: {
+            html: arrangementsMade
+          }
         },
         {
           value: "no-moveon-arrangements",
-          text: "No"
+          text: "No",
+          conditional: {
+            html: noArrangementsMade
+          }
         }
       ]
     }) }}
