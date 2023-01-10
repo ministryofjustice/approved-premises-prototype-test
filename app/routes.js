@@ -243,7 +243,7 @@ router.post('/foreign-national-move-on', function (req, res) {
   if (foreignNational == "accommodation-homeoffice"){
     res.redirect('/move-on-foreign-national')
   } else {
-    res.redirect('/move-on-location')
+    res.redirect('/move-on-arrangements')
   }
 })
 
@@ -256,7 +256,7 @@ router.post('/assess-suficient-info', function (req, res) {
   console.log(req.session.data)
 
   if (sufficientInfo == "no-not-enough-info"){
-    res.redirect('/assess/assessor-request-info')
+    res.redirect('/assess/assessor-add-info-offline')
   } else {
     res.redirect('/assess/tasklist')
   }
@@ -292,5 +292,96 @@ router.post('/tier-exemption', function (req, res) {
     res.redirect('/exemption-drop-out')
   }
 })
+
+// routing for ESAP flow (managed by NSD)
+
+router.post('/managed-by-nsd', function (req, res) {
+
+  var managedNsd = req.session.data['managed-by-nsd']
+  console.log({managedNsd})
+  console.log(req.session.data)
+
+  if (managedNsd == "yes-nsd"){
+    res.redirect('/esap-questions/esap-all-v1')
+  } else {
+    res.redirect('/esap-questions/esap-exemption')
+  }
+})
+
+// routing for ESAP flow (ESAP exemption)
+
+router.post('/esap-exemption', function (req, res) {
+
+  var esapExemption = req.session.data['esap-exemption']
+  console.log({esapExemption})
+  console.log(req.session.data)
+
+  if (esapExemption == "yes-esap-exemption"){
+    res.redirect('/esap-questions/esap-all-v1')
+  } else {
+    res.redirect('/esap-questions/esap-drop-out')
+  }
+})
+
+// routing for complex case flow (transgender history)
+
+router.post('/transgender-history', function (req, res) {
+
+  var transgenderHistory = req.session.data['transgender-history']
+  console.log({transgenderHistory})
+  console.log(req.session.data)
+
+  if (transgenderHistory == "yes-transgender-history"){
+    res.redirect('/complex-case/complex-case-review')
+  } else {
+    res.redirect('../task-list-standard')
+  }
+})
+
+// routing for complex case flow (require complex case review)
+
+router.post('/complex-case-review', function (req, res) {
+
+  var complexCaseReview = req.session.data['complex-case-review']
+  console.log({complexCaseReview})
+  console.log(req.session.data)
+
+  if (complexCaseReview == "yes-complex-case-review"){
+    res.redirect('/complex-case/complex-case-board')
+  } else {
+    res.redirect('../task-list-standard')
+  }
+})
+
+// routing for complex case flow (complex case board taken place)
+
+router.post('/complex-case-board', function (req, res) {
+
+  var complexCaseBoard = req.session.data['complex-case-board']
+  console.log({complexCaseBoard})
+  console.log(req.session.data)
+
+  if (complexCaseBoard == "yes-complex-case-board"){
+    res.redirect('/complex-case/complex-case-decision')
+  } else {
+    res.redirect('/complex-case/complex-case-pause')
+  }
+})
+
+// routing for complex case flow (complex case board decision (male or female AP place)
+
+router.post('/complex-case-decision', function (req, res) {
+
+  var complexCaseDecision = req.session.data['complex-case-decision']
+  console.log({complexCaseDecision})
+  console.log(req.session.data)
+
+  if (complexCaseDecision == "yes-male-ap"){
+    res.redirect('../task-list-standard')
+  } else {
+    res.redirect('/complex-case/complex-case-dropout')
+  }
+})
+
 
 module.exports = router
