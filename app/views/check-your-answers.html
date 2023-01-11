@@ -1153,7 +1153,65 @@ Home – GOV.UK Prototype Kit
           ]
           }) }}
 
-          <h2 class="govuk-label--m">Access and healthcare requirements</h2>
+          <h2 class="govuk-label--m">COVID information</h2>
+
+          {{ govukSummaryList({
+            rows: [
+            {
+            key: {
+            text: "Has the person been fully vaccinated for COVID-19?"
+            },
+            value: {
+            text: "Yes"
+            },
+            actions: {
+            items: [
+            {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+            }
+            ]
+            }
+            },
+            {
+            key: {
+            text: "Is the person at high risk from COVID-19 based on the NHS guidance?"
+            },
+            value: {
+            text: "No"
+            },
+            actions: {
+              items: [
+              {
+              href: "index.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+            },
+            {
+            key: {
+            text: "Other considerations and comments on COVID-19"
+            },
+            value: {
+            text: "No further comments"
+            },
+            actions: {
+              items: [
+              {
+              href: "index.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+            }
+            ]
+            }) }}
+
+
       </div>
     </div>
 
@@ -1247,7 +1305,7 @@ Home – GOV.UK Prototype Kit
         text: "Are you aware that the person is vulnerable to exploitation from others?"
         },
         value: {
-        text: ""
+        text: "No"
         },
         actions: {
         items: [
@@ -1264,7 +1322,7 @@ Home – GOV.UK Prototype Kit
         text: "Is there any evidence or expectation that the person may groom, radicalise or exploit others?"
         },
         value: {
-        text: ""
+        text: "No"
         },
         actions: {
           items: [
@@ -1287,7 +1345,8 @@ Home – GOV.UK Prototype Kit
         text: "Has the person stayed or been offered a placement in an AP before?"
         },
         value: {
-        text: ""
+        html: '<p>Yes</p>
+         <p>Has previously stayed in Elm Bank Approved Premises and recalled to custody</p>'
         },
         actions: {
         items: [
@@ -1310,7 +1369,7 @@ Home – GOV.UK Prototype Kit
         text: "Does the person's gender identity require a complex case board to review their application?"
         },
         value: {
-        text: ""
+        text: "No"
         },
         actions: {
         items: [
@@ -1330,10 +1389,59 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Do you have any concerns about the person catering for themself?"
+        text: "Can this person be placed in a self-catered Approved Premises?"
         },
         value: {
-        text: ""
+        text: "Yes"
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name",
+        classes: 'summarylist'
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Arson requirements</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Does this person pose an arson risk?"
+        },
+        value: {
+          html: '<p>Yes</p>
+          <p>Has current conviction of Arson. Has been known to set cell fires for manipulation</p>'
+        },
+        actions: {
+        items: [
+        {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "name",
+        classes: 'summarylist'
+        }
+        ]
+        }
+        }
+        ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Additional circumstances</h2>
+        {{ govukSummaryList({
+        rows: [
+        {
+        key: {
+        text: "Are there any additional circumstances that have helped the person do well in the past?"
+        },
+        value: {
+        text: "No"
         },
         actions: {
         items: [
@@ -1360,10 +1468,10 @@ Home – GOV.UK Prototype Kit
           rows: [
           {
           key: {
-          text: "What duration of placement do you recommend?"
+          text: "Does this application require a different placement duration?"
           },
           value: {
-          text: ""
+          text: "No"
           },
           actions: {
           items: [
@@ -1377,10 +1485,10 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Additional comments to support duration of placement"
+          text: "Where is the person most likely to live when they move on from the Approved Premises?"
           },
           value: {
-          text: ""
+          text: "NE1 8AY"
           },
           actions: {
           items: [
@@ -1394,10 +1502,10 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Where is the person most likely to live when he moves on from the AP?"
+          text: "What type of accommodation will the person have when they leave the AP?"
           },
           value: {
-          text: ""
+          text: "Living with partner, friends or family"
           },
           actions: {
             items: [
@@ -1414,7 +1522,8 @@ Home – GOV.UK Prototype Kit
           text: "Are move on arrangements already in place for when the person leaves the AP?"
           },
           value: {
-          text: ""
+         html: '<p>Yes</p>
+         <p>They will live with friends and family which is far away from the victim. Family and friends will support the rehabilitation of the person.</p>'
           },
           actions: {
             items: [
