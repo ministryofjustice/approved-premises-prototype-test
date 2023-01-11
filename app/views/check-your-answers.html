@@ -58,7 +58,7 @@ Home – GOV.UK Prototype Kit
         text: "NOMS number"
         },
         value: {
-        text: ""
+        text: "019232"
         }
         },
         {
@@ -66,7 +66,7 @@ Home – GOV.UK Prototype Kit
         text: "Nationality"
         },
         value: {
-        text: ""
+        text: "British"
         }
         },
         {
@@ -74,7 +74,7 @@ Home – GOV.UK Prototype Kit
         text: "Religion or belief"
         },
         value: {
-        text: ""
+        text: "Christian"
         }
         },
         {
@@ -82,7 +82,7 @@ Home – GOV.UK Prototype Kit
         text: "Sex"
         },
         value: {
-        text: ""
+        text: "Male"
         }
         },
         {
@@ -90,7 +90,7 @@ Home – GOV.UK Prototype Kit
         text: "Status"
         },
         value: {
-        text: ""
+        text: "In Custody"
         }
         },
         {
@@ -98,7 +98,7 @@ Home – GOV.UK Prototype Kit
         text: "Prison"
         },
         value: {
-        text: ""
+        text: "HMP Hewell"
         }
         }
         ]
@@ -116,7 +116,7 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Which type of AP does Robert require?"
+        text: "Which type of AP does the person require?"
         },
         value: {
         text: "Standard"
@@ -147,7 +147,7 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Which type of AP does Robert require?"
+        text: "Which type of AP does the person require?"
         },
         value: {
         text: "Psychologically Informed Planned Environment (PIPE)"
@@ -164,7 +164,7 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Has Robert been screened into the OPD pathway?"
+        text: "Has the person been screened into the OPD pathway?"
         },
         value: {
         text: "Yes"
@@ -181,7 +181,7 @@ Home – GOV.UK Prototype Kit
         },
         {
           key: {
-          text: "When was Robert's last consultation or formulation?"
+          text: "When was the person's last consultation or formulation?"
           },
           value: {
           text: "Yes"
@@ -215,7 +215,7 @@ Home – GOV.UK Prototype Kit
         },
         {
           key: {
-          text: "Provide any additional detail about why Robert needs a PIPE placement."
+          text: "Provide any additional detail about why the person needs a PIPE placement."
           },
           value: {
           text: "Yes"
@@ -246,7 +246,7 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Which type of AP does Robert require?"
+        text: "Which type of AP does the person require?"
         },
         value: {
         text: "Enhanced Security Approved Premises (ESAP)"
@@ -297,7 +297,7 @@ Home – GOV.UK Prototype Kit
           },
         {
         key: {
-        text: "Which items does Robert have a history of secreting?"
+        text: "Which items does the person have a history of secreting?"
         },
         value: {
         text: "List selected checkboxes"
@@ -331,7 +331,7 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Provide any supporting information about why Robert requires enhanced room searches."
+          text: "Provide any supporting information about why the person requires enhanced room searches."
           },
           value: {
           text: "Yes"
@@ -348,7 +348,7 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Which behaviours has Robert demonstrated that require enhanced CCTV provision to monitor?"
+          text: "Which behaviours has the person demonstrated that require enhanced CCTV provision to monitor?"
           },
           value: {
           text: "Yes"
@@ -382,7 +382,7 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Provide any supporting information about why Robert requires enhanced CCTV provision."
+          text: "Provide any supporting information about why the person requires enhanced CCTV provision."
           },
           value: {
           text: "Yes"
@@ -417,12 +417,12 @@ Home – GOV.UK Prototype Kit
         text: "Which of the following best describes the sentence type the person is on?"
         },
         value: {
-        text: ""
+        text: "Standard determinate custody"
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -431,17 +431,15 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "What type of release will the application support - or - Which of the following options best describes
-        the
-        situation"
+        text: "What type of release will the application support?"
         },
         value: {
-        text: ""
+        text: "Licence"
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -483,7 +481,7 @@ Home – GOV.UK Prototype Kit
         text: "What is the expected date of release?"
         },
         value: {
-        text: ""
+        text: "03 July 2023"
         },
         actions: {
         items: [
@@ -497,7 +495,7 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Is [release-date] the date you want the placement to start?"
+        text: "Is the release date the date you want the placement to start?"
         },
         value: {
         text: "Yes"
@@ -505,7 +503,7 @@ Home – GOV.UK Prototype Kit
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -560,7 +558,7 @@ Home – GOV.UK Prototype Kit
   <!--- If the user selects 'No, the release date is to be determined by the parole board' show the following in list -->
     <!--- {
       key: {
-      text: "Do you know {name} oral hearing date?"
+      text: "Do you know the person  oral hearing date?"
       },
       value: {
       text: "date"
@@ -613,12 +611,16 @@ Home – GOV.UK Prototype Kit
         text: "What is the purpose of the AP placement?"
         },
         value: {
-        text: ""
+        html: '<ul>
+          <li>Public protection</li>
+          <li>Prevent contact with a previous victim</li>
+          <li>Provide drug or alcohol monitoring</li>
+        </ul>'
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -660,7 +662,8 @@ Home – GOV.UK Prototype Kit
         }
         ]
         }) }}
-
+      
+        <p><a href="">View OASys Risk information</a></p>
 
       </div>
     </div>
@@ -674,10 +677,10 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Describe why the enhanced services of an AP are needed to manage risk"
+        text: "Describe why an AP placement is needed to manage the risk of this person"
         },
         value: {
-        text: ""
+        text: "To reduce the likelihood of reoffender and to offer drug and alcohol support"
         },
         actions: {
         items: [
@@ -691,10 +694,10 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Provide details of additional measures that will be necessary for the management of risk"
+        text: "Provide details of any additional measures that will be necessary for the management of risk"
         },
         value: {
-        text: ""
+        text: "Additional curfews or sign-ins at specific times or intervals will prevent the person being out at key times"
         },
         actions: {
         items: [
@@ -708,15 +711,15 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Has {{name}} ever been convicted of any of the following offences? "
+        text: "Has the person ever been convicted of any of the following offences? "
         },
         value: {
-        text: ""
+        text: "Yes"
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -725,15 +728,18 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "What type of offending has {name} been convicted for? "
+        text: "What type of offending has the person been convicted for? "
         },
         value: {
-        text: ""
+        html: '<ul>
+          <li>Arson</li>
+          <li>Sexual offence</li>
+        </ul>'
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -745,12 +751,15 @@ Home – GOV.UK Prototype Kit
         text: "What type of sexual offences has the person been convicted for?"
         },
         value: {
-        text: ""
+        html: '<ul>
+          <li>In-person sexual offence, child victim</li>
+          <li>Online sexual offence, adult victim</li>
+        </ul>'
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -762,12 +771,22 @@ Home – GOV.UK Prototype Kit
         text: "Is the offence a current or previous offence? "
         },
         value: {
-        text: ""
+        html: '<p>Current offence</p>
+        <ul>
+          <li>Arson</li>
+          <li>In-person sexual offence, child victim</li>
+          <li>Online sexual offence, adult victim</li>
+        </ul>
+        
+        <p>Previous offence</p>
+        <ul>
+          <li>Arson</li>
+        </ul>'
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -779,12 +798,16 @@ Home – GOV.UK Prototype Kit
         text: "Which of the Rehabilitative Activities will assist the person's rehabilitation in the AP"
         },
         value: {
-        text: ""
+        html: '<ul>
+          <li>Drugs and alcohol</li>
+          <li>Health</li>
+          <li>Attitudes, thinking and behaviour</li>
+        </ul>'
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -801,7 +824,7 @@ Home – GOV.UK Prototype Kit
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -843,7 +866,7 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Additional circumstances that have helped Robert do well in the past"
+        text: "Additional circumstances that have helped the person do well in the past"
         },
         value: {
         text: ""
@@ -873,10 +896,10 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Preferred location for AP placement"
+        text: "What is the preferred postcode area for the Approved Premises (AP) placement"
         },
         value: {
-        text: ""
+        text: "NE1 8DY"
         },
         actions: {
         items: [
@@ -890,10 +913,10 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Give details of any positive factors for {name} in this location."
+        text: "Give details of why this postcode area would benefit the person"
         },
         value: {
-        text: ""
+        text: "Family and friends are nearby which will provide support"
         },
         actions: {
         items: [
@@ -907,69 +930,15 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Are there any restrictions linked to placement location?"
+        text: "If an AP placement is not available in the person’s preferred area, would a placement in another postcode area be considered?"
         },
         value: {
-        text: ""
+        text: "Yes"
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
-        },
-        {
-        key: {
-        text: "If an AP Placement is not available in the person's preferred area, would a placement in an alternative
-        locality be considered?"
-        },
-        value: {
-        text: ""
-        },
-        actions: {
-          items: [
-          {
-          href: "associated-documents.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
-        },
-        {
-        key: {
-        text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit
-        (PDU)?"
-        },
-        value: {
-        text: ""
-        },
-        actions: {
-          items: [
-          {
-          href: "associated-documents.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
-        },
-        {
-        key: {
-        text: "Is {name} moving to a different area where they'll be managed by a different probation delivery unit
-        (PDU)?"
-        },
-        value: {
-        text: ""
-        },
-        actions: {
-          items: [
-          {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -978,38 +947,55 @@ Home – GOV.UK Prototype Kit
         },
         {
           key: {
-          text: "Have you agreed Robert Brown's transfer/supervision with the receiving PDU?"
+          text: "Alternative postcode"
           },
           value: {
-          text: ""
+          text: "NE7 6GB"
           },
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
             ]
             }
           },
-          {
-            key: {
-            text: "Who have you agreed this with?"
-            },
-            value: {
-            text: ""
-            },
-            actions: {
-              items: [
-              {
-              href: "associated-documents.html",
-              text: "Change",
-              visuallyHiddenText: "change"
-              }
-              ]
-              }
+        {
+          key: {
+          text: "Are there any restrictions linked to placement location?"
+          },
+          value: {
+          text: "No"
+          },
+          actions: {
+            items: [
+            {
+            href: "index.html",
+            text: "Change",
+            visuallyHiddenText: "change"
             }
+            ]
+            }
+          },
+        {
+          key: {
+          text: "Provide details of any restraining orders, exclusion zones or other location based licence conditions."
+          },
+          value: {
+          text: "Restraining order for the next 10 years. Not allowed to be within 50 miles of York city"
+          },
+          actions: {
+            items: [
+            {
+            href: "index.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          }
         ]
         }) }}
       </div>
@@ -1018,7 +1004,7 @@ Home – GOV.UK Prototype Kit
 <!-- Health and access needs  -->
     <div class="main-box">
       <div class="box-title govuk-heading-m" id="person-details">
-        Health and access needs
+        Access, cultural and healthcare needs
       </div>
       <div class="box-content">
 
@@ -1026,10 +1012,14 @@ Home – GOV.UK Prototype Kit
           rows: [
           {
           key: {
-          text: "Does {name} require use of a wheelchair?"
+          text: "Does the person have any of the following needs?"
           },
           value: {
-          text: ""
+          html: '<ul>
+            <li> Mobility needs </li>
+            <li> Visual impairment </li>
+            <li> Healthcare</li>
+          </ul>'
           },
           actions: {
           items: [
@@ -1043,10 +1033,10 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Does Robert have any other mobility, disability, or accessibility needs?"
+          text: "Does the person have any religious or cultural needs?"
           },
           value: {
-          text: ""
+          text: "No"
           },
           actions: {
           items: [
@@ -1063,12 +1053,12 @@ Home – GOV.UK Prototype Kit
           text: "Does the person need an interpreter?"
           },
           value: {
-          text: ""
+          text: "No"
           },
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
@@ -1077,15 +1067,15 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Does the person have any additional health issues or care and support needs? "
+          text: "Has a Care Act assessment been completed?"
           },
           value: {
-          text: ""
+          text: "I don't know"
           },
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
@@ -1094,73 +1084,76 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Has a care act assessment been completed?"
+          text: "Does the person require the use of a wheelchair?"
           },
           value: {
-          text: ""
+          text: "No"
           },
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
             ]
             }
-          },
+          }, 
           {
-          key: {
-          text: "Has the person been fully vaccinated for COVID-19?"
-          },
-          value: {
-          text: ""
-          },
-          actions: {
-            items: [
+            key: {
+            text: "Provide additional details for any mobility needs"
+            },
+            value: {
+            text: "Requires a walking stick and sometimes needs additional support when getting up stairs"
+            },
+            actions: {
+              items: [
+              {
+              href: "index.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+            },
             {
-            href: "associated-documents.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
-          },{
-          key: {
-          text: "Is Robert Brown high risk to COVID-19?"
-          },
-          value: {
-          text: ""
-          },
-          actions: {
-            items: [
-            {
-            href: "associated-documents.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
-          },
-          {
-          key: {
-          text: "Other considerations and comments on COVID-19"
-          },
-          value: {
-          text: ""
-          },
-          actions: {
-            items: [
-            {
-            href: "associated-documents.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
-          }
+              key: {
+              text: "Provide additional details for any visual impairments"
+              },
+              value: {
+              text: "Slight blindness in one eye, doesn't limit his ability"
+              },
+              actions: {
+                items: [
+                {
+                href: "index.html",
+                text: "Change",
+                visuallyHiddenText: "change"
+                }
+                ]
+                }
+              },
+              {
+                key: {
+                text: "Provide additional details for any healthcare needs"
+                },
+                value: {
+                text: "Requires a walking stick and sometimes needs additional support when getting up stairs"
+                },
+                actions: {
+                  items: [
+                  {
+                  href: "index.html",
+                  text: "Change",
+                  visuallyHiddenText: "change"
+                  }
+                  ]
+                  }
+                } 
           ]
           }) }}
+
+          <h2 class="govuk-label--m">Access and healthcare requirements</h2>
       </div>
     </div>
 
@@ -1179,7 +1172,7 @@ Home – GOV.UK Prototype Kit
         text: "Is there any evidence that the person may pose a risk to AP staff?"
         },
         value: {
-        text: ""
+        text: "No"
         },
         actions: {
         items: [
@@ -1193,15 +1186,15 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Is there any evidence that Robert Brown may pose a risk to other AP residents?"
+        text: "Is there any evidence that the person may pose a risk to other AP residents?"
         },
         value: {
-        text: ""
+        text: "No"
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -1210,15 +1203,15 @@ Home – GOV.UK Prototype Kit
         },
         {
         key: {
-        text: "Do you have any concerns about Robert Brown sharing a bedroom?"
+        text: "Do you have any concerns about the person sharing a bedroom?"
         },
         value: {
-        text: ""
+        text: "No"
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -1230,47 +1223,12 @@ Home – GOV.UK Prototype Kit
         text: "Is there potential for the person to benefit from a room share?"
         },
         value: {
-        text: ""
+        text: "Yes - in prison Robert got on well with his roommates which helped his progress in prison."
         },
         actions: {
           items: [
           {
-          href: "associated-documents.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
-        },
-        {
-        key: {
-        text: "Is there any evidence of previous trauma or significant event in the person's history which would indicate
-        that room share may not be suitable"
-        },
-        value: {
-        text: ""
-        },
-        actions: {
-          items: [
-          {
-          href: "associated-documents.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
-        },
-        {
-        key: {
-        text: "Do you have any concerns about Robert Brown sharing a bathroom?"
-        },
-        value: {
-        text: ""
-        },
-        actions: {
-          items: [
-          {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -1311,7 +1269,7 @@ Home – GOV.UK Prototype Kit
         actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
@@ -1372,7 +1330,7 @@ Home – GOV.UK Prototype Kit
         rows: [
         {
         key: {
-        text: "Do you have any concerns about Robert Brown catering for themself?"
+        text: "Do you have any concerns about the person catering for themself?"
         },
         value: {
         text: ""
@@ -1444,7 +1402,7 @@ Home – GOV.UK Prototype Kit
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
@@ -1453,7 +1411,7 @@ Home – GOV.UK Prototype Kit
           },
           {
           key: {
-          text: "Are move on arrangements already in place for when Robert Brown leaves the AP?"
+          text: "Are move on arrangements already in place for when the person leaves the AP?"
           },
           value: {
           text: ""
@@ -1461,7 +1419,7 @@ Home – GOV.UK Prototype Kit
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
@@ -1478,7 +1436,7 @@ Home – GOV.UK Prototype Kit
           actions: {
             items: [
             {
-            href: "associated-documents.html",
+            href: "index.html",
             text: "Change",
             visuallyHiddenText: "change"
             }
@@ -1532,7 +1490,7 @@ Home – GOV.UK Prototype Kit
           actions: {
           items: [
           {
-          href: "associated-documents.html",
+          href: "index.html",
           text: "Change",
           visuallyHiddenText: "change"
           }
