@@ -23,8 +23,6 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Access and healthcare requirements</h1>
     <p>Specify any additional details and the adjustments required</p>
-
-    <h2 class="govuk-heading-m">Mobility needs</h2>
     
     {{ govukRadios({
       idPrefix: "wheelchair-use",
@@ -51,236 +49,115 @@
       ]
     }) }}
 
+    {% set healthConditions %}
     {{ govukTextarea({
-      name: "mobility-needs-detail",
-      id: "mobility-needs-detail",
+      id: "health-conditions-text",
+      name: "health-conditions-text",
+      type: "textarea",
+      autocomplete: "textarea",
+      spellcheck: false,
+      classes: "govuk-!-width-full-width",
       label: {
-        text: "Mobility needs",
-        classes: "govuk-label--s",
-        isPageHeading: true
-        },
-        hint: {
-          text: "For example, if step-free access for reduced mobility is required"
+        text: "Provide detais"
+      }
+    }) }}
+{% endset -%}
+
+{% set prescribedMedication %}
+    {{ govukTextarea({
+      id: "prescribed-medication-text",
+      name: "prescribed-medication-text",
+      type: "textarea",
+      autocomplete: "textarea",
+      spellcheck: false,
+      classes: "govuk-!-width-full-width",
+      label: {
+        text: "Provide detais"
+      }
+    }) }}
+{% endset -%}
+
+
+  
+  {{ govukRadios({
+    idPrefix: "health-conditions",
+    name: "health-conditions",
+    fieldset: {
+      legend: {
+        text: "Does this person have any known health conditions?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      html: '<p>Guidance</p>'
+    },
+    items: [
+      {
+        value: "health-conditions-yes",
+        text: "Yes",
+        conditional: {
+          html: healthConditions
         }
-       }) }}
+      },
+      {
+        value: "health-conditions-no",
+        text: "No"
+      }
+    ]
+  }) }}
 
-       <hr>
+  {{ govukRadios({
+    idPrefix: "prescribed-medication",
+    name: "prescribed-medication",
+    fieldset: {
+      legend: {
+        text: "Does this person have any prescribed medication?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "prescribed-medication-yes",
+        text: "Yes",
+        conditional: {
+          html: prescribedMedication
+        }
+      },
+      {
+        value: "prescribed-medication-no",
+        text: "No"
+      },
+      {
+        value: "prescribed-medication-no",
+        text: "I don't know"
+      }
+    ]
+  }) }}
 
+  <p class="govuk-label--s">Specify any additional details and adjustments required for: </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Mobility needs</li>
+    <li>Visual impairments</li>
+    <li>Neurodivergent conditions</li>
+  </ul>
 
-       {{ govukTextarea({
-        name: "visual-impairment-detail",
-        id: "visual-impairment-detail",
-        label: {
-          text: "Visual impairment",
-          classes: "govuk-label--s",
-          isPageHeading: true
-          },
-          hint: {
-            text: "For example, if braille or tactile flooring is required"
-          }
-         }) }}
-         
-<hr>
-
-         {{ govukTextarea({
-          name: "learning-disability-detail",
-          id: "learning-disability-detail",
-          label: {
-            text: "Learning disability",
-            classes: "govuk-label--s",
-            isPageHeading: true
-            },
-            hint: {
-              text: "For example, "
-            }
-           }) }}
-
-<hr>
-
-           {{ govukTextarea({
-            name: "hearing-impairment-detail",
-            id: "hearing-impairment-detail",
-            label: {
-              text: "Hearing impairment",
-              classes: "govuk-label--s",
-              isPageHeading: true
-              },
-              hint: {
-                text: "For example, "
-              }
-             }) }}
-<hr>
-
-             {{ govukTextarea({
-              name: "neurodivergent-detail",
-              id: "neurodivergent-detail",
-              label: {
-                text: "Neurodivergent conditions",
-                classes: "govuk-label--s",
-                isPageHeading: true
-                },
-                hint: {
-                  text: "For example, "
-                }
-               }) }}
-
-<hr>
-        <h2 class="govuk-heading-m">Healthcare</h2>
-             
-      {% set healthConditions %}
-          {{ govukTextarea({
-            id: "health-conditions-text",
-            name: "health-conditions-text",
-            type: "textarea",
-            autocomplete: "textarea",
-            spellcheck: false,
-            classes: "govuk-!-width-full-width",
-            label: {
-              text: "Provide detais"
-            }
-          }) }}
-      {% endset -%}
-
-      {% set prescribedMedication %}
-          {{ govukTextarea({
-            id: "prescribed-medication-text",
-            name: "prescribed-medication-text",
-            type: "textarea",
-            autocomplete: "textarea",
-            spellcheck: false,
-            classes: "govuk-!-width-full-width",
-            label: {
-              text: "Provide detais"
-            }
-          }) }}
-      {% endset -%}
-
-      {% set careSupportNeeds %}
-        {{ govukTextarea({
-          id: "care-support-needstext",
-          name: "care-support-needstext",
-          type: "textarea",
-          autocomplete: "textarea",
-          spellcheck: false,
-          classes: "govuk-!-width-full-width",
-          label: {
-            text: "Provide detais"
-          }
-        }) }}
-      {% endset -%}
-        
-        {{ govukRadios({
-          idPrefix: "health-conditions",
-          name: "health-conditions",
-          fieldset: {
-            legend: {
-              text: "Does this person have any known health conditions?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            html: '<p>Guidance</p>'
-          },
-          items: [
-            {
-              value: "health-conditions-yes",
-              text: "Yes",
-              conditional: {
-                html: healthConditions
-              }
-            },
-            {
-              value: "health-conditions-no",
-              text: "No"
-            }
-          ]
-        }) }}
-
-        {{ govukRadios({
-          idPrefix: "prescribed-medication",
-          name: "prescribed-medication",
-          fieldset: {
-            legend: {
-              text: "Does this person have any prescribed medication?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "prescribed-medication-yes",
-              text: "Yes",
-              conditional: {
-                html: prescribedMedication
-              }
-            },
-            {
-              value: "prescribed-medication-no",
-              text: "No"
-            }
-          ]
-        }) }}
-
-        {{ govukRadios({
-          idPrefix: "care-support-needs",
-          name: "care-support-needs",
-          fieldset: {
-            legend: {
-              text: "Does this person have care and support needs?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "care-support-needs-yes",
-              text: "Yes",
-              conditional: {
-                html: careSupportNeeds
-              }
-            },
-            {
-              value: "care-support-needs-no",
-              text: "No"
-            }
-          ]
-        }) }}
+  {{ govukDetails({
+    summaryText: "What adjustments can be made?",
+    html: '<ul class="govuk-list govuk-list--bullet">
+      <li>Step-free access for reduced mobility</li>
+      <li>Wheelchair accessibility</li>
+      <li>Signs in braille, tactile and directional flooring</li>
+      <li>Hearing loop</li>
+    </ul>'
+  }) }}
 
 
-        {{ govukTextarea({
-              name: "healthcare-detail",
-              id: "healthcare-detail",
-              label: {
-                text: "Provide any additional detail about the person's healthcare needs",
-                classes: "govuk-label--s",
-                isPageHeading: true
-                },
-                hint: {
-                  text: "For example, "
-                }
-               }) }}
-
-          <hr>
-
-
-
-
-
-
-
-               {{ govukTextarea({
-                name: "other-detail",
-                id: "other-detail",
-                label: {
-                  text: "Other",
-                  classes: "govuk-label--m",
-                  isPageHeading: true
-                  },
-                  hint: {
-                    text: "For example, "
-                  }
-                 }) }}
+   {{ govukTextarea({
+      name: "adjustments-detail",
+      id: "adjustments-detail"
+   }) }}
 
 
        {{ govukButton({

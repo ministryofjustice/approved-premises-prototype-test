@@ -182,9 +182,48 @@
         ]
       }) }}
 
+      {% set careSupportNeeds %}
+      {{ govukTextarea({
+        id: "care-support-needstext",
+        name: "care-support-needstext",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
       {{ govukRadios({
-        idPrefix: "risk-to-resident",
-        name: "risk-to-resident",
+        idPrefix: "care-support-needs",
+        name: "care-support-needs",
+        fieldset: {
+          legend: {
+            text: "Does this person have care and support needs?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "care-support-needs-yes",
+            text: "Yes",
+            conditional: {
+              html: careSupportNeeds
+            }
+          },
+          {
+            value: "care-support-needs-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "care-act-assessment",
+        name: "care-act-assessment",
         fieldset: {
           legend: {
             text: "Has a Care Act assessment been completed?",
