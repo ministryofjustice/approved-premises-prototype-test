@@ -223,7 +223,7 @@ router.post('/access-needs-selected', function (req, res) {
   console.log(req.session.data)
 
   if (healthcareNeeds.length) {
-    res.redirect('/access-needs-follow-up')
+    res.redirect('/access-needs-all-selected')
   } else {
     res.redirect('/healthcare-needs')
   }
