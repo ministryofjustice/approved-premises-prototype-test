@@ -256,7 +256,7 @@ router.post('/assess-suficient-info', function (req, res) {
   console.log(req.session.data)
 
   if (sufficientInfo == "no-not-enough-info"){
-    res.redirect('/assess/assessor-add-info-offline')
+    res.redirect('/assess/assessor-next-step')
   } else {
     res.redirect('/assess/tasklist')
   }
