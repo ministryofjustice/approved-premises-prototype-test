@@ -7,15 +7,21 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/assess/assessor-next-step"
+  }) }}
+{% endblock %}
+
+
 {% block content %}
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "/assess/assessor-next-step"
-    }) }}
+
  
     <h2 class="govuk-heading-l">Additional information to support application</h2>
     <p>Provide any additional information that was provided from the probation practicioner to support this application.</p> 
@@ -55,7 +61,7 @@
     
         {{ govukButton({
           text: "Save and continue",
-          href: "/index"
+          href: "/assess/tasklist"
         }) }}
   </div>
 </div>
