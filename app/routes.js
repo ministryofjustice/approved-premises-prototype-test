@@ -383,5 +383,20 @@ router.post('/complex-case-decision', function (req, res) {
   }
 })
 
+// routing for assess (Information received by PP)
+
+router.post('/received-additional-info', function (req, res) {
+
+  var receivedAdditonalInfo = req.session.data['received-additional-info']
+  console.log({receivedAdditonalInfo})
+  console.log(req.session.data)
+
+  if (receivedAdditonalInfo == "received-additional-info-yes"){
+    res.redirect('/assess/assessor-add-info-requested')
+  } else {
+    res.redirect('/assess/suitability-assessment-rejected')
+  }
+})
+
 
 module.exports = router

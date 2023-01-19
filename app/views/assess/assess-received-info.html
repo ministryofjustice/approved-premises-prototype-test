@@ -1,0 +1,68 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/assess/tasklist"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+
+    <h1 class="govuk-heading-l">Additional information</h1>
+    <h2 class="govuk-heading-m">Have you received additional information from the probation practicioner?</h2>
+
+
+      <form action="/received-additional-info" method="post" novalidate>
+
+      
+      {{ govukRadios({
+        idPrefix: "received-additional-info",
+        name: "received-additional-info",
+        fieldset: {
+          legend: {
+          }
+        },
+        items: [
+          {
+            value: "received-additional-info-yes",
+            text: "Yes"
+          },
+          {
+            value: "received-additional-info-no",
+            text: "No, reject application"
+          }
+        ]
+      }) }}
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
