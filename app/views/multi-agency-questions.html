@@ -72,7 +72,7 @@
       name: "multi-agency-placement-withdrawn",
       id: "multi-agency-placement-withdrawn",
       label: {
-        text: "If the person's placement needs to be withdrawn, what actions should be taken?",
+        text: "If the person's placement needs to be withdrawn out of hours, what actions should be taken?",
         classes: "govuk-label--m",
         isPageHeading: true
       },
@@ -86,7 +86,7 @@
       name: "multi-agency-victim-considerations",
       id: "multi-agency-victim-considerations",
       label: {
-        text: "Provide any victim considerations that the AP need to be aware of.",
+        text: "Provide any victim considerations that the AP need to be aware of when out of hours",
         classes: "govuk-label--m",
         isPageHeading: true
       }
@@ -96,7 +96,7 @@
       name: "multi-agency-unsuitable-addresses",
       id: "multi-agency-unsuitable-addresses",
       label: {
-        text: "Provide any unsuitable addresses that the person can not reside in",
+        text: "In the event of an out of hours placement withdrawal, provide any unsuitable addresses that the person cannot reside at" ,
         classes: "govuk-label--m",
         isPageHeading: true
       },
@@ -109,24 +109,39 @@
       name: "multi-agency-alternative-addresses",
       id: "multi-agency-alternative-addresses",
       label: {
-        text: "Provide alternative suitable addresses that the person can reside in",
+        text: "In the event of an out of hours placement withdrawal, provide any unsuitable addresses that the person can reside at",
         classes: "govuk-label--m",
         isPageHeading: true
       },
       hint: {
-        text: "For situations where a placement is withdrawn, the person will need to be directed to alternative places to reside in."
+        text: "For situations where a placement is withdrawn and recall action is not taken, the person will need to be directed to alternative places to reside in"
       }
     }) }}
+
+    {{ govukTextarea({
+      name: "ooh-information",
+      id: "ooh-information",
+      label: {
+        text: "In the event of a breach, provide any further information to support Out of Hours (OoH) decision making",
+        classes: "govuk-label--m",
+        isPageHeading: true
+        },
+        hint: {
+          text: "For example, include any required actions or views from the probation practicioner regarding OoH recall following curfew breach"
+        }
+       }) }}
 
     {{ govukTextarea({
       name: "multi-agency-other-considerations",
       id: "multi-agency-other-considerations",
       label: {
-        text: "Other considerations",
+        text: "Are there any other considerations?",
         classes: "govuk-label--m",
         isPageHeading: true
       }
     }) }}
+
+   
 
   {{ govukButton({
     text: "Save and continue",

@@ -41,6 +41,32 @@
     {% endset -%}
 
     {{ govukRadios({
+      idPrefix: "trigger-plan",
+      name: "trigger-plan",
+      fieldset: {
+        legend: {
+          text: "Is there a trigger plan in place?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "If the document is available on Delius, attach it to this application. If the document is not available, share with the AP manager once the placement is confirmed."
+      },
+      items: [
+        {
+          value: "yes-trigger-plan",
+          text: "Yes"
+        },
+        {
+          value: "no-trigger-plan",
+          text: "No"
+        }
+      ]
+    }) }}
+
+
+    {{ govukRadios({
       idPrefix: "additional-licence-conditions",
       name: "additional-licence-conditions",
       fieldset: {
@@ -49,6 +75,9 @@
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
+      },
+      hint: {
+        text: "Need guidance for this"
       },
       items: [
         {
@@ -65,18 +94,7 @@
       ]
     }) }}
 
-    {{ govukTextarea({
-      name: "ooh-information",
-      id: "ooh-information",
-      label: {
-        text: "In the event of a breach, provide any further information to support Out of Hours (OoH) decision making.",
-        classes: "govuk-label--m",
-        isPageHeading: true
-        },
-        hint: {
-          text: "For example, include any required actions or views from OM regarding OoH recall following curfew breach"
-        }
-       }) }}
+   
 
 
     {{ govukButton({
