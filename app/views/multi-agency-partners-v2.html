@@ -64,15 +64,53 @@
 
     {{ govukButton({
       text: "Add another agency",
-      href: "/multi-agency-partners-v2",
       classes: "govuk-button--secondary"
     }) }}
+      
+    <hr>
 
-   <hr>
+    <!-- Summary list -->
+<h2 class="govuk-heading-m">List of partner agencies</h2>
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name of partner agency"
+          },
+          value: {
+            text: "Police"
+          }
+        },
+        {
+          key: {
+            text: "Named contact"
+          },
+          value: {
+            text: "Test User"
+          }
+        },
+        {
+          key: {
+            text: "Contact details (phone)"
+          },
+          value: {
+            text: "(0191) 192341"
+          }
+        },
+        {
+          key: {
+            text: "Role in contingency plan"
+          },
+          value: {
+            text: "Example description of role in contingency plan"
+          }
+        }
+      ]
+    }) }}
 
   {{ govukButton({
     text: "Save and continue",
-    href: "/multi-agency-partners-v2"
+    href: "/multi-agency-questions"
   }) }}
 
 

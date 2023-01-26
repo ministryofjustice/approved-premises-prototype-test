@@ -26,22 +26,6 @@
 
   <h1 class="govuk-heading-l"> Contingency plans</h1>
 
- <div>
-  <p class="govuk-label--m">Partner agencies added to application</p>
-  {{ govukSummaryList({
-    rows: [
-      {
-        key: {
-          text: "Partner agency"
-        },
-        value: {
-          text: "Police"
-        }
-      }
-    ]
-  }) }}
-
-</div>
   
     {{ govukTextarea({
       name: "multi-agency-curfew",
