@@ -27,7 +27,7 @@
       <li>Arson offences</li>
       <li>Sexual offences </li>
       <li>Hates crimes</li>
-      <li>Child victim, non-sexual offence</li>
+      <li>Offences against children</li>
     </ul>
 
     <form action="/convicted-of-offences" method="post" novalidate>
@@ -47,28 +47,6 @@
       ]
     }) }}
 
-
-    {{ govukRadios({
-      idPrefix: "convicted-offences-child",
-      name: "convicted-offences-child",
-      fieldset: {
-        legend: {
-          text: "Has the person ever convicted any offences against children?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "victim-child-yes",
-          text: "Yes"
-        },
-        {
-          value: "victim-child-no",
-          text: "No"
-        }
-      ]
-    }) }}
 
     <input type="hidden" name="answers-checked" value="true">
 

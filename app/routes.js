@@ -243,7 +243,7 @@ router.post('/foreign-national-move-on', function (req, res) {
   if (foreignNational == "accommodation-homeoffice"){
     res.redirect('/move-on-foreign-national')
   } else {
-    res.redirect('/move-on-arrangements')
+    res.redirect('/task-list-standard')
   }
 })
 
@@ -334,7 +334,7 @@ router.post('/transgender-history', function (req, res) {
   if (transgenderHistory == "yes-transgender-history"){
     res.redirect('/complex-case/complex-case-review')
   } else {
-    res.redirect('../task-list-standard')
+    res.redirect('../index-offence')
   }
 })
 
@@ -349,7 +349,7 @@ router.post('/complex-case-review', function (req, res) {
   if (complexCaseReview == "yes-complex-case-review"){
     res.redirect('/complex-case/complex-case-board')
   } else {
-    res.redirect('../task-list-standard')
+    res.redirect('../index-offence')
   }
 })
 
@@ -377,7 +377,7 @@ router.post('/complex-case-decision', function (req, res) {
   console.log(req.session.data)
 
   if (complexCaseDecision == "yes-male-ap"){
-    res.redirect('../task-list-standard')
+    res.redirect('../index-offence')
   } else {
     res.redirect('/complex-case/complex-case-dropout')
   }

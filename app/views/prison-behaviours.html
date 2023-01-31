@@ -59,7 +59,7 @@
 
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header" style="width:100px;">Selected</th>
+              <th scope="col" class="govuk-table__header" style="width:100px;">Select</th>
               <th scope="col" class="govuk-table__header">Created</th>
               <th scope="col" class="govuk-table__header">Case note comments</th>
             </tr>
@@ -108,14 +108,11 @@
         <p class="moj-pagination__results" style="float:right">Showing <b>10</b> results </p>
       </div>
 
-      <div class="govuk-grid-column-two-thirds">
 
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/task-list-standard"
-        }) }}
-
-        </div>
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/task-list-standard"
+      }) }}
 
       </div>
 

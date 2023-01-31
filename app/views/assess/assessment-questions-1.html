@@ -23,15 +23,27 @@
  
     <h1 class="govuk-heading-l">Suitability assessment</h1>
 
-          {{ govukRadios({
+    <p class="govuk-label--s">Does the application identify the risk factors that an Approved Premises (AP) placement can support?</p>
+     
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View guidance notes
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+       <p>Consider:</p>
+          <ul>
+            <li> If there is an immediate risk of harm which an AP placement can support in managing.</li>
+            <li> Whether an AP placement would still be necessary if alternative accommodation was available. AP placements are not solely for accommodation purposes even for a person who is considered high risk.  Consider suggesting whether CAS3 may be more appropriate. If you believe this to be an application for accommodation only, you must clearly explain why.</li>
+          </ul>
+            <p> Note that whilst there should be reference to the need for AP placement in the OASys Risk Management Plan, this may not be fully formed at the point of a timely application. An application should be made 6 months prior to arrival which in many cases will be during the OMiC handover period. 
+            </p>
+      </div>
+    </details>
+
+    {{ govukRadios({
         name: "identifies-risk-factors",
-        fieldset: {
-          legend: {
-            text: "Does the application identify the risk factors that an Approved Premises (AP) placement can support?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
         items: [
           {
             value: "yes-risk-factors",
@@ -44,23 +56,6 @@
         ]
       }) }}
   
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View guidance notes
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-         <p>Consider:</p>
-            <ul>
-              <li> If there is an immediate risk of harm which an AP placement can support in managing.</li>
-              <li> Whether an AP placement would still be necessary if alternative accommodation was available. AP placements are not solely for accommodation purposes even for a person who is considered high risk.  Consider suggesting whether CAS3 may be more appropriate. If you believe this to be an application for accommodation only, you must clearly explain why.</li>
-            </ul>
-              <p> Note that whilst there should be reference to the need for AP placement in the OASys Risk Management Plan, this may not be fully formed at the point of a timely application. An application should be made 6 months prior to arrival which in many cases will be during the OMiC handover period. 
-              </p>
-        </div>
-      </details>
-
       {{ govukTextarea({
         name: "risk-factors-details",
         id: "risk-factors-details",
@@ -72,28 +67,9 @@
       }) }}
 
       <!-- Question-->
+
+      <p class="govuk-label--s">Does the application explain how an AP placement would be beneficial for risk management?</p>
      
-      {{ govukRadios({
-        name: "identifies-risk-factors",
-        fieldset: {
-          legend: {
-            text: "Does the application explain how an AP placement would be beneficial for risk management?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "yes-risk-factors",
-            text: "Yes"
-          },
-          {
-            value: "no-risk-factors",
-            text: "No"
-          }
-        ]
-      }) }}
-  
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -118,6 +94,20 @@
         </div>
       </details>
 
+      {{ govukRadios({
+        name: "identifies-risk-factors",
+        items: [
+          {
+            value: "yes-risk-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-risk-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+
       {{ govukTextarea({
         name: "risk-factors-details",
         id: "risk-factors-details",
@@ -128,29 +118,8 @@
         }
       }) }}
 
-
-
-      {{ govukRadios({
-        idPrefix: "assess-location-factors",
-        name: "assess-location-factors",
-        fieldset: {
-          legend: {
-            text: "Are there factors to consider regarding the location of placement?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "yes-location-factors",
-            text: "Yes"
-          },
-          {
-            value: "no-location-factors",
-            text: "No"
-          }
-        ]
-      }) }}
+      <!-- Question 3 -->
+      <p class="govuk-label--s">Are there factors to consider regarding the location of placement?</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -178,6 +147,21 @@
         </div>
       </details>
 
+      {{ govukRadios({
+        idPrefix: "assess-location-factors",
+        name: "assess-location-factors",
+        items: [
+          {
+            value: "yes-location-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-location-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+
       {{ govukTextarea({
         name: "risk-factors-details",
         id: "risk-factors-details",
@@ -188,29 +172,9 @@
         }
       }) }}
 
+      <!-- Question 4 -->
+      <p class="govuk-label--s">Is the move on plan sufficient?</p>
 
-      {{ govukRadios({
-        name: "assess-move-on",
-        id: "assess-move-on",
-        fieldset: {
-          legend: {
-            text: "Is the move on plan sufficient?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "move-on-sufficient",
-            text: "Yes"
-          },
-          {
-            value: "move-on-not-sufficient",
-            text: "No"
-          }
-        ]
-      }) }}
-  
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -226,6 +190,21 @@
             <br>Consider whether the duration of placement identified in the application is sufficient to address the risk.</p>
         </div>
       </details>
+      
+      {{ govukRadios({
+        name: "assess-move-on",
+        id: "assess-move-on",
+        items: [
+          {
+            value: "move-on-sufficient",
+            text: "Yes"
+          },
+          {
+            value: "move-on-not-sufficient",
+            text: "No"
+          }
+        ]
+      }) }}
 
       {{ govukTextarea({
         name: "move-on-details",

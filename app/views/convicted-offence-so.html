@@ -23,6 +23,18 @@
     <p class="govuk-label--m">What type of sexual offences has the person been convicted for? </p>
       <p class="govuk-body">This information will be used to match the applicant to a bed in an AP</p>
 
+    {% set otherSoOffence %}
+      {{ govukTextarea({
+        label: {
+          text: "Provide details"
+        },
+        id: "other-so-offence",
+        name: "other-so-offence",
+        classes: "govuk-input--width-20"
+      }) }}
+    {% endset -%}
+
+
       {{ govukCheckboxes({
         idPrefix: "offence-convictions-so",
         name: "offence-convictions-so",
@@ -32,19 +44,26 @@
         items: [
           {
             value: "in-person-so-adult",
-            text: "In-person sexual offence, adult victim"
+            text: "Contact sexual offences against an adult/adults"
           },
           {
             value: "online-so-adult",
-            text: "Online sexual offence, adult victim"
+            text: "Non-contact sexual offences against an adult/adults"
           },
           {
             value: "in-person-so-child",
-            text: "In-person sexual offence, child victim"
+            text: "Contact sexual offences against children"
           },
           {
             value: "online-so-child",
-            text: "Online sexual offence, child victim"
+            text: "Non-contact sexual offences against children"
+          },
+          {
+            value: "so-other",
+            text: "Other",
+            conditional: {
+              html: otherSoOffence
+            }
           }
         ]
       }) }}

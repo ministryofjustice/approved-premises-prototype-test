@@ -55,16 +55,35 @@
 
 
     {% set alternativeLocation %}
-    {{ govukInput({
-      id: "alternative-location-input",
-      name: "alternative-location-input",
-      type: "textarea",
-      spellcheck: false,
-      classes: "textarea",
-      label: {
-        text: "Type an alternative postcode area below"
-      }
-    }) }}
+        {{ govukSelect({
+          id: "sort",
+          name: "sort",
+          label: {
+            text: "Choose the maximum radius (in miles)"
+          },
+          items: [
+            {
+              value: "sixty-miles",
+              text: "60 miles"
+            },
+            {
+              value: "seventy-miles",
+              text: "70 miles"
+            },
+            {
+              value: "eighty-miles",
+              text: "80 miles"
+            },
+            {
+              value: "ninety-miles",
+              text: "90 miles"
+            },
+            {
+              value: "hundred-miles",
+              text: "100 miles"
+            }
+          ]
+        }) }}
     {% endset -%}
 
     {{ govukRadios({
@@ -72,7 +91,7 @@
       name: "alternative-location",
       fieldset: {
         legend: {
-          text: "If an AP placement is not available in the person’s preferred area, would a placement in another postcode area be considered?",
+          text: "If an AP Placement is not available in the persons preferred area, would a placement further away be considered?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
