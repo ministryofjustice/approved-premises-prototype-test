@@ -70,6 +70,20 @@
       }) }}
     {% endset -%}
 
+    {% set previousTrauma %}
+      {{ govukTextarea({
+        id: "previous-trauma",
+        name: "previous-trauma",
+        type: "textarea",
+        spellcheck: false,
+        classes: "textarea",
+        label: {
+          text: "Provide details"
+        }
+      }) }}
+    {% endset -%}
+
+
     {% set benefitBedShare %}
       {{ govukTextarea({
         id: "benefit-from-bedshare",
@@ -148,6 +162,36 @@
         }
       ]
     }) }}
+
+    
+    {{ govukRadios({
+      idPrefix: "previous-trauma-q",
+      name: "previous-trauma-q",
+      fieldset: {
+        legend: {
+          text: "Is there any evidence of previous trauma or significant event in the persons history which would indicate that room share may not be suitable?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, a survivor of sexual abuse or violence or a witness of suicide in custody."
+      },
+      items: [
+        {
+          value: "yes-previous-trauma",
+          text: "Yes",
+          conditional: {
+            html: previousTrauma
+          }
+        },
+        {
+          value: "no-previous-trauma",
+          text: "No"
+        }
+      ]
+    }) }}
+
 
     {{ govukRadios({
       idPrefix: "sharing-bedroom",
