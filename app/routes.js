@@ -106,7 +106,7 @@ router.post('/ap-type-answer', function (req, res) {
   if (typeOfAp == "pipe"){
     res.redirect('/pipe-referral')
   } else if (typeOfAp == "esap"){
-    res.redirect('/esap-placement-reasons')
+    res.redirect('/esap-questions/managed-nsd')
   } else if (typeOfAp == "recovery-focused"){
     res.redirect('/recovery-ap')
   }
@@ -140,7 +140,7 @@ router.post('/pipe-opd-screening', function (req, res) {
   console.log(req.session.data)
 
   if (pipeScreening == "yes-opd-pathway"){
-    res.redirect('/pipe-consultation-date')
+    res.redirect('/pipe-opd-recommendation')
   } else {
     res.redirect('/pipe-not-eligible')
   }

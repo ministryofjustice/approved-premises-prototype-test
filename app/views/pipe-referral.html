@@ -21,6 +21,22 @@
 
     <form action="/pipe-opd-screening" method="post" novalidate>
 
+
+  {% set opdPathway %}
+      {{ govukDateInput({
+        id: "opd-screening-date",
+        namePrefix: "opd-screening-date",
+        fieldset: {
+          legend: {
+            text: "When was the person's last consultation or formulation?"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2007"
+        }
+      }) }}
+  {% endset -%}
+
     {{ govukRadios({
       idPrefix: "opd-pathway",
       name: "opd-pathway",
