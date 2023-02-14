@@ -143,6 +143,72 @@
       </div>
     </div>
 
+    <!--  Approved Premises requirements -->
+    <div class="main-box">
+      <div class="box-title govuk-heading-m" id="approved-premises-requirements">
+      Approved Premises requirements
+      </div>
+      <div class="box-content">
+      {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Type of AP required"
+            },
+            value: {
+              text: "Standard"
+            }
+          },
+          {
+              key: {
+                text: "Which of the following best describes the sentence type the person is on?"
+              },
+              value: {
+                text: "Standard determinate custody"
+              }
+            },
+            {
+              key: {
+                text: "What type of release will the application support?"
+              },
+              value: {
+                text: "Licence"
+              }
+            },
+            {
+              key: {
+                text: "Do you know the person's release date?"
+              },
+              value: {
+                text: "Yes - 03 May 2023"
+              }
+            },
+            {
+              key: {
+                text: "Is release date the date you want the placement to start?"
+              },
+              value: {
+                text: "Yes"
+              }
+            },
+            {
+              key: {
+                text: "What is the purpose of the Approved Premises (AP) placement?"
+              },
+              value: {
+                html: '<ul>
+                  <li>Prevent contact with known individuals or victims</li>
+                  <li>Increased monitoring of risk factors</li>
+                  <li>Help individual readjust to life outside of custody</li>
+                  </ul>'
+              }
+            }
+          ]
+        }) }}
+        </div>
+      </div>
+    
+
     <!-- Choose sections of OASys to import  -->
     <div class="main-box">
       <div class="box-title govuk-heading-m" id="risk">
@@ -169,42 +235,7 @@
       </div>
     </div>
 
-     <!--  Approved Premises requirements -->
-     <div class="main-box">
-      <div class="box-title govuk-heading-m" id="approved-premises-requirements">
-      Approved Premises requirements
-      </div>
-      <div class="box-content">
-      {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Date of release"
-              },
-              value: {
-                text: "DD/MM/YYYY"
-              }
-            },
-            {
-              key: {
-                text: "Date of arrival"
-              },
-              value: {
-                text: "DD/MM/YYYY"
-              }
-            },
-            {
-              key: {
-                text: "Type of Approved Premises required"
-              },
-              value: {
-                text: "Standard"
-              }
-            }
-          ]
-        }) }}
-        </div>
-      </div>
+     
 
       <!--- If PIPE/ ESAP ARE SELECTED, INCLUDE THE FOLLOWING ANSWERS --->
 
@@ -390,33 +421,74 @@
   <!-- Purpose of placement -->
   <div class="main-box">
     <div class="box-title govuk-heading-m" id="purpose-of-placement">
-      Reasons for placement
+     Details about managing risks and needs
     </div>
     <div class="box-content">
      {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Desired outcomes of this placement"
+              text: "Describe why an AP placement is needed to manage the risk of this person"
             },
             value: {
-              text: "Examples of desired outcomes for placement"
+              text: "Examples of why an AP placement is needed to manage the risk of this person"
             }
           },
           {
             key: {
-              text: "Features of an AP that are expected to be useful"
+              text: "Provide details of any additional measures that will be necessary for the management of risk"
             },
             value: {
-              text: "Example content - features that are expected to be useful"
+              text: "Example content - details of any additional measures that will be necessary for the management of risk"
             }
           },
           {
             key: {
-              text: "How features are expected to help manage risk "
+              text: "Has the person ever been convicted of any of the following offences? "
             },
             value: {
-              text: "Example content - features that will help manage risk"
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "What type of offending has the person been convicted for? "
+            },
+            value: {
+              html: '<ul>
+                <li>Arson</li>
+                <li>Hate crimes</li>
+              </ul>'
+            }
+          },
+          {
+            key: {
+              text: "Is this a current or previous offence?"
+            },
+            value: {
+              html: '<ul>
+                <li>Arson - current </li>
+                <li>Hate crimes - previous</li>
+              </ul>'
+            }
+          },
+          {
+            key: {
+              text: "Which of the rehabilitative activities will assist the person rehabilitation in the Approved Premises (AP)?"
+            },
+            value: {
+              html: '<ul>
+                <li>Accommodation</li>
+                <li>Drugs and alcohol</li>
+              </ul>'
+            }
+          },
+          {
+            key: {
+              text: "Provide a summary of how these will assist the person's rehabilitation within the AP"
+            },
+            value: {
+              text: "These will assist the person with finding accommodation and taking part in drug and alcohol interventions to reduce the likelihood of relapse."
             }
           }
         ]
@@ -502,24 +574,7 @@
         value: {
         text: "No"
         }
-        },
-        {
-        key: {
-        text: "Is the person moving to a different area where they'll be managed by a different probation delivery unit
-        (PDU)?"
-        },
-        value: {
-        text: "No"
         }
-        },
-        {
-          key: {
-          text: "Have you agreed the person's transfer/supervision with the receiving PDU?"
-          },
-          value: {
-          text: "Not applicable"
-          }
-          }
         ]
         }) }}
       </div>
@@ -536,10 +591,14 @@
           rows: [
           {
           key: {
-          text: "Does the person require use of a wheelchair?"
+          text: "Does the person have any of the following needs?"
           },
           value: {
-          text: "Yes"
+          html: '<ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>'
           }
           },
           {
