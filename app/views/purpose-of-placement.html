@@ -33,7 +33,7 @@
       name: "other-reason",
       type: "text",
       label: {
-        text: "Please specify other purpose"
+        text: "Please specify"
       }
     }) }}
     {% endset -%}
@@ -54,7 +54,7 @@
         },
         {
           value: "prevent-contact",
-          text: "Prevent contact with a previous victim"
+          text: "Prevent contact with known individuals or victims"
         },
         {
           value: "re-adjust",
@@ -66,14 +66,14 @@
         },
         {
           value: "prevent-self-harm",
-          text: "Prevent self harm or suicide"
+          text: "Increased monitoring of risk factors"
         },
         {
           divider: "or"
         },
         {
           value: "other-reason",
-          text: "Other (please specify)",
+          text: "Other",
           conditional: {
             html: otherReason
           }

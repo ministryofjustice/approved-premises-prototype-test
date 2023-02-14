@@ -37,7 +37,8 @@
     {{ govukInput({
       classes: "govuk-input--width-10",
       hint: {
-        text: "For example SW1"
+        html: '<p>Please provide the postcode area only. To get the postcode from the full postcode remove the last 3 characters. </p>
+        <p>For example, the postcode area for SW1A 0AA is SW1A.</p>'
       },
       id: "ap-pdu",
       name: "ap-pdu"

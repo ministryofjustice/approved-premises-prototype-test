@@ -22,6 +22,51 @@
 
     <h1 class="govuk-heading-l"> Recovery Focused Approved Premises </h1>
 
+    {% set isflArea %}
+      {{ govukTextarea({
+        id: "isfl-area",
+        name: "isfl-area",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
+
+    {% set rfapCompliance %}
+      {{ govukTextarea({
+        id: "rfap-compliance",
+        name: "rfap-compliance",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
+
+    {% set dartEngaged %}
+      {{ govukTextarea({
+        id: "engaged-with-dart",
+        name: "engaged-with-dart",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
+
       
       {{ govukRadios({
         idPrefix: "isfl-custody",
@@ -36,7 +81,10 @@
         items: [
           {
             value: "isfl-yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: isflArea
+            }
           },
           {
             value: "isfl-no",
@@ -60,7 +108,10 @@
       items: [
         {
           value: "dart-yes",
-          text: "Yes"
+          text: "Yes",
+          conditional: {
+            html: dartEngaged
+          }
         },
         {
           value: "dart-no",
@@ -84,7 +135,10 @@
       items: [
         {
           value: "compliance-yes",
-          text: "Yes"
+          text: "Yes",
+          conditional: {
+            html: rfapCompliance
+          }
         },
         {
           value: "compliance-no",

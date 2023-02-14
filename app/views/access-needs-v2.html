@@ -149,6 +149,19 @@
         }
       }) }}
       {% endset -%}
+
+      {% set html %}
+      <p class="govuk-body">
+        If a Care Act assessment has been completed, you must upload it in the ‘attach required documents’ screen.  
+      </p>
+    {% endset %}
+
+    {% set careActAssessment %}
+        {{ govukNotificationBanner({
+          html: html
+        }) }}
+    {% endset -%}
+
   
       {{ govukRadios({
         idPrefix: "interpreter-radios",
@@ -234,7 +247,10 @@
         items: [
           {
             value: "yes-CAA",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: careActAssessment
+            }
           },
           {
             value: "no-CAA",
