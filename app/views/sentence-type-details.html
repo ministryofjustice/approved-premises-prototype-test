@@ -50,22 +50,19 @@
 
     {% elseif (data['sentence-type'] == "Community order") %}
 
-    <h2 class="govuk-heading-l">Is there a specified residency requirement as part of the order?</h2>
+    <h2 class="govuk-heading-l">Which of the following options best describes the situation?    </h2>
     
     {{ govukRadios({
       idPrefix: "sentence-community-order",
       name: "sentence-community-order",
-      hint: {
-        text: "Select the option which best describes the situation"
-      },
       items: [
         {
-          value: "yes-residency-requirement",
-          text: "Yes"
+          value: "sso-co-risk-management",
+          text: "Referral for risk management/ public protection"
         },
         {
-          value: "no-residency-requirement",
-          text: "No"
+          value: "sso-co-residency-requirement",
+          text: "Specified residency requirement as part of a community based Order"
         }
       ]
     }) }}
@@ -79,7 +76,7 @@
         items: [
           {
             value: "bail-part-of-sentence",
-            text: "Bail assessment for residency requirement as part of a community based Order"
+            text: "Bail assessment for a possible placement as part of a specific residency requirement on a Community Order or Suspended Sentence Order"
           },
           {
             value: "bail-for-protection",
