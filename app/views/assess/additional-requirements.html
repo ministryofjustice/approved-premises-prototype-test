@@ -21,15 +21,33 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Required actions to support a placement</h1>
 
-      {{ govukRadios({
+
+    <p class="govuk-label--s">Are there any additional actions required by the probation practitioner to make a placement viable?</p>
+     
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View guidance notes
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+       <p>Consider if the probation practitioner should seek assisstance or intervention from other agencies to support effective management in the community, or address risk issues and additional needs. For example:</p>
+       <ul>
+        <li>GP support</li>
+        <li>Mental health services</li>
+        <li>Drug and alcohol support</li>
+        <li>Gambling support</li>
+        <li>Womens services</li>
+        <li>Care Act assessment</li>
+        <li>Assisstance from the local authority with care and support needs</li>
+        <li>Liaison with accommodation providers regarding move on plans</li>
+       </ul>
+        <p>Consider if there is any further information that may be required by the receiving Approved Premises (AP) but is not necessary for the purpose of determining suitability.</p>
+      </div>
+    </details>
+    
+    {{ govukRadios({
         name: "identifies-risk-factors",
-        fieldset: {
-          legend: {
-            text: "Are there any additional actions required by the probation practitioner to make a placement viable?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
         items: [
           {
             value: "yes-risk-factors",
@@ -42,27 +60,7 @@
         ]
       }) }}
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View guidance notes
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-         <p>Consider if the probation practitioner should seek assisstance or intervention from other agencies to support effective management in the community, or address risk issues and additional needs. For example:</p>
-         <ul>
-          <li>GP support</li>
-          <li>Mental health services</li>
-          <li>Drug and alcohol support</li>
-          <li>Gambling support</li>
-          <li>Womens services</li>
-          <li>Care Act assessment</li>
-          <li>Assisstance from the local authority with care and support needs</li>
-          <li>Liaison with accommodation providers regarding move on plans</li>
-         </ul>
-          <p>Consider if there is any further information that may be required by the receiving Approved Premises (AP) but is not necessary for the purpose of determining suitability.</p>
-        </div>
-      </details>
+      
 
       {{ govukTextarea({
         name: "risk-factors-details",
@@ -76,26 +74,7 @@
 
       <!-- Question-->
 
-      {{ govukRadios({
-        name: "identifies-risk-factors",
-        fieldset: {
-          legend: {
-            text: "Are any additional curfews or sign ins recommended?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "yes-risk-factors",
-            text: "Yes"
-          },
-          {
-            value: "no-risk-factors",
-            text: "No"
-          }
-        ]
-      }) }}
+      <p class="govuk-label--s"> Are any additional curfews or sign ins recommended?</p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -108,6 +87,22 @@
         <p>Consider whether these are sufficient and make recommendations for additional curfews or sign ins where these are assessed as necessary and proportionate.</p>
         </div>
       </details>
+
+      {{ govukRadios({
+        name: "identifies-risk-factors",
+        items: [
+          {
+            value: "yes-risk-factors",
+            text: "Yes"
+          },
+          {
+            value: "no-risk-factors",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      
 
       {{ govukTextarea({
         name: "risk-factors-details",
@@ -144,16 +139,26 @@
 
     <!-- Radio area -->
 
+    <p class="govuk-label--s">Are there concerns that the person poses a potentially unmanageable risk to staff or others?</p>
+     
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          View guidance notes
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+      <p>There may be occasions where there is evidence that a person’s behaviour would pose an unacceptable risk to staff, self, others in the AP, or the local community which would not be mitigated by the proposed licence conditions or the regime and security of the AP.</p>
+      <p>In these instances, the assessor cannot decide the application is unsuitable without first discussing the application with an APAM to identify potential mitigations to make the risk manageable. This may include the need for additional resources.</p>
+      <p><b>If 'yes' is selected</b>
+      <br>Record the nature of the concerns in the additional comments box and why these are considered unmanageable.</p>
+      <p>Additional recommendations for the receiving AP manager must be provided in the next question.</p>
+      </div>
+    </details>
+
       {{ govukRadios({
         idPrefix: "assess-location-factors",
         name: "assess-location-factors",
-        fieldset: {
-          legend: {
-            text: "Are there concerns that the person poses a potentially unmanageable risk to staff or others?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
         hint: {
           text: "If yes, the application must be discussed with the Approved Premises Area Manager (APAM) to identify additional support that may be required"
         },
@@ -171,21 +176,7 @@
           }
         ]
       }) }}
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View guidance notes
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-        <p>There may be occasions where there is evidence that a person’s behaviour would pose an unacceptable risk to staff, self, others in the AP, or the local community which would not be mitigated by the proposed licence conditions or the regime and security of the AP.</p>
-        <p>In these instances, the assessor cannot decide the application is unsuitable without first discussing the application with an APAM to identify potential mitigations to make the risk manageable. This may include the need for additional resources.</p>
-        <p><b>If 'yes' is selected</b>
-        <br>Record the nature of the concerns in the additional comments box and why these are considered unmanageable.</p>
-        <p>Additional recommendations for the receiving AP manager must be provided in the next question.</p>
-        </div>
-      </details>
+      
 
       {{ govukTextarea({
         name: "risk-factors-details",
@@ -197,17 +188,26 @@
         }
       }) }}
 
+<!-- Question -->
+
+<p class="govuk-label--s">Are there any additional recommendations for the receiving AP manager?</p>
+     
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      View guidance notes
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>Record observations which may be helpful for the receiving AP to follow up on as part of pre-arrival planning.</p>
+    <p>For example, any additional actions required by the probation practitioner to make a placement viable. Or any agreements regarding funding for additional resources that may be required.  </p>
+    <p> This should also include any meetings the receiving AP manager may need to attend to, including MAPPA or transgender case boards. </p>
+  </div>
+</details>
 
       {{ govukRadios({
         name: "assess-move-on",
         id: "assess-move-on",
-        fieldset: {
-          legend: {
-            text: "Are there any additional recommendations for the receiving AP manager?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
         items: [
           {
             value: "move-on-sufficient",
@@ -219,17 +219,7 @@
           }
         ]
       }) }}
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            View guidance notes
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-         <p>Record any observations which may be helpful for the receiving AP to follow up on as part of pre-arrival planning.</p>
-        <p>For example, this may include any additional actions required by the probation practitioner to make a placement viable. Or include reference to any agreements regarding funding for additional resources that may be required.</p>
-        </div>
-      </details>
+      
 
       {{ govukTextarea({
         name: "move-on-details",
