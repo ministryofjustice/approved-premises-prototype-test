@@ -17,13 +17,15 @@
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+
  
     <h2 class="govuk-heading-l">Suitability assessment</h2>
 
-          {% set additionalPipeYes %}
+          {% set additionalRfapYes %}
           {{ govukTextarea({
-            id: "assess-pipe-info-yes",
-            name: "assess-pipe-info-yes",
+            id: "assess-rfap-info-yes",
+            name: "assess-rfap-info-yes",
             type: "textarea",
             spellcheck: false,
             classes: "textarea",
@@ -33,10 +35,10 @@
           }) }}
         {% endset -%}
 
-        {% set additionalPipeNo %}
+        {% set additionalRfapNo %}
         {{ govukTextarea({
-          id: "assess-pipe-info-no",
-          name: "assess-pipe-info-no",
+          id: "assess-rfap-info-no",
+          name: "assess-rfap-info-no",
           type: "textarea",
           spellcheck: false,
           classes: "textarea",
@@ -46,38 +48,38 @@
           }) }}
         {% endset -%}
 
+
+        <!-- Radios -->
+
+        <p class="govuk-label--m"> Has a Recovery Focused Approved Premises (RFAP) been identified as a suitable placement?</p>
+
+
       {{ govukRadios({
-        name: "additional-pipe",
-        fieldset: {
-          legend: {
-            text: "Has Psychologically Informed Planned Environment (PIPE) been identified as a viable pathway?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
+        name: "additional-rfap",
         items: [
           {
-            value: "yes-pipe-info",
+            value: "yes-rfap-info",
             text: "Yes",
             conditional: {
-              html: additionalPipeYes
+              html: additionalRfapYes
             }
           },
           {
-            value: "no-pipe-info",
+            value: "no-rfap-info",
             text: "No",
             conditional: {
-              html: additionalPipeNo
+              html: additionalRfapNo
             }
           }
         ]
       }) }}
 
+      
   {{ govukTextarea({
-    name: "assess-pipe-details",
-    id: "assess-pipe-details",
+    name: "assess-rfap-details",
+    id: "assess-rfap-details",
     label: {
-      text: "If the person is unsuitable for a PIPE placement  yet suitable for a standard placement, summarise the rationale for the decision."
+      text: "If the person is unsuitable for a RFAP placement yet suitable for a standard placement, summarise the rationale for the decision."
     }
   }) }}
     

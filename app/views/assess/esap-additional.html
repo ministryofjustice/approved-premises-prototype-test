@@ -6,16 +6,19 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/index#assess"
+    }) }}
+{% endblock %}
+
+
 {% block content %}
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "/index"
-    }) }}
- 
     <h2 class="govuk-heading-l">Suitability assessment</h2>
 
           {% set additionalEsapYes %}
@@ -48,7 +51,7 @@
         name: "additional-esap",
         fieldset: {
           legend: {
-            text: "Is an ESAP Placement necessary for the management of the person referred?",
+            text: "Is an Enhanced Security Approved Premises (ESAP) placement necessary for the management of the individual referred?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
