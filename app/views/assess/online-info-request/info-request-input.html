@@ -1,0 +1,105 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/assess/tasklist"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+ 
+
+    <h1 class="govuk-heading-l">Additional information</h1>
+    <h2 class="govuk-heading-m">Have you received additional information from the probation practicioner?</h2>
+
+      <form action="/info-request-info-received" method="post" novalidate>
+
+        {% set infoReceived %}
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "What additional information is required?"
+          }
+        }) }}
+
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "What information was requested from the probation practitioner?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          }
+          }) }}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          rows: "10",
+          label: {
+            text: "Outline the additional information provided by the probation practitioner"
+          }
+        }) }}
+
+      {% endset -%}
+
+      
+      {{ govukRadios({
+        idPrefix: "received-info",
+        name: "received-info",
+        fieldset: {
+          legend: {
+          }
+        },
+        items: [
+          {
+            value: "yes-received-info",
+            text: "Yes",
+            conditional: {
+              html: infoReceived
+            }
+          },
+          {
+            value: "no-not-received-info",
+            text: "No, reject application"
+          }
+        ]
+      }) }}
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

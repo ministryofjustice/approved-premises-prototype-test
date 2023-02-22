@@ -398,5 +398,20 @@ router.post('/received-additional-info', function (req, res) {
   }
 })
 
+// routing for assess (Information request - Assessor provides information)
+
+router.post('/info-request-info-received', function (req, res) {
+
+  var receivedAdditonalInfo = req.session.data['received-info']
+  console.log({receivedAdditonalInfo})
+  console.log(req.session.data)
+
+  if (receivedAdditonalInfo == "yes-received-info"){
+    res.redirect('/assess/tasklist')
+  } else {
+    res.redirect('/assess/online-info-request/suitability-questions')
+  }
+})
+
 
 module.exports = router
