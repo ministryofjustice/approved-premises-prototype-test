@@ -80,7 +80,13 @@
     <p><a href="assess/rfap-additional.html">RFAP additional questions</a></p>
     <p><a href="assess/contingency-additional.html">Contingency plans additional questions</a></p>
 
-    <h2 class="govuk-heading-m">Request further information (PP & Assessor screens)</h2>
+
+    <h2 class="govuk-heading-m">Offline process - request further information </h2>
+    <p>The assessor will select 'No' on the <a href="assess/sufficient-information.html">sufficient information</a> screen and will be asked to provide the information required in the text box. They will then be taken to the next screen which gives them the PP's information.</p>
+    <p><a href="assess/online-info-request/info-request-input.html">Assessor inputs information received from PP</a></p>
+
+
+    <h2 class="govuk-heading-m">Digital process - request further information (PP & Assessor screens)</h2>
     <p><a href="assess/assessor-request-info.html">Request information (assessor)</a></p>
     <p><a href="assess/pp-info-request.html">Provide information (Probation practicioner)</a></p>
     <p><a href="assess/pp-check-info.html">Check additional information (Probation practicioner)</a></p>
@@ -89,41 +95,6 @@
   
 {% endset -%}
 
-
-{% set designHistoryHtml %}
-<h1 class="govuk-heading-l">Design history</h1>
-
-  <table class="govuk-table">
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header">Screen</th>
-        <th scope="col" class="govuk-table__header" >Date of change</th>
-        <th scope="col" class="govuk-table__header" style="width: 30%;">Changes made</th>
-        <th scope="col" class="govuk-table__header" style="width: 40%;">Reason for change</th>
-      </tr>
-    </thead>
-    <tbody class="govuk-table__body">
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="import-oasys.html">Import OASys screen</a></td>
-        <td class="govuk-table__cell">12 Oct 2022</td>
-        <td class="govuk-table__cell">We've moved 'Drug and Alcohol' from <b>Needs linked to risk of serious harm are automatically imported</b> to the section above, "We'll automatically import:"</td>
-        <td class="govuk-table__cell">We have agreed that these will be imported for all users, so would like to show that this is imported with the other information that's automatically imported. </td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><a href="risk-ROSH.html">Risk information - ROSH</a></td>
-        <td class="govuk-table__cell">12 Oct 2022</td>
-        <td class="govuk-table__cell">We've removed the free text box at the bottom of the page for users to enter 'How will AP placement support this area in management of risk'</td>
-        <td class="govuk-table__cell">Users already provide detail about risk management on the 'purpose of placement' and 'Useful features of an AP' screen. We have not tested this with users, but believe the textbox might be confusing for users, as it's an empty textbox at the bottom of the OASys information. There's an assumption that this may be missed, or mistaken as an empty OASys field that's been pulled in. We're going to remove it for now and see how this tests in research.</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"></td>
-        <td class="govuk-table__cell"></td>
-        <td class="govuk-table__cell"></td>
-        <td class="govuk-table__cell"></td>
-      </tr>
-    </tbody>
-  </table>
-{% endset -%}
 
 {% set cruAllocation %}
 <h1 class="govuk-heading-l"> CRU allocation </h1>
