@@ -1,0 +1,87 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/task-list-standard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        <span class="govuk-caption-l">Parole</span>
+        Request for placement</h2>
+      <p>Guidance</p>
+
+     
+
+      {{ govukDateInput({
+        id: "parole-decision-date",
+        namePrefix: "parole-decision-date",
+        fieldset: {
+          legend: {
+            text: "What was the date of the decision?"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2007"
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "parole-earliest-release-date",
+        namePrefix: "parole-earliest-release-date",
+        fieldset: {
+          legend: {
+            text: "When is the earliest release date?"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2007"
+        }
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "parole-board-detail",
+        id: "parole-board-detail",
+        label: {
+          text: "Provide information from the parole board that will impact the location of placement, including the type of Approved Premises (AP)"
+        }
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "key-points-parole",
+        id: "key-points-parole",
+        label: {
+          text: "Summarise key points of decision that will influence type of placement and location"
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/request-for-placement/rfp-documents"
+      }) }}
+
+  </div>
+</div>
+
+
+
+{% endblock %}

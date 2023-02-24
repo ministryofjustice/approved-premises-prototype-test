@@ -36,16 +36,9 @@
         <li> If the user selects no, they will be shown <a href="exemption-drop-out.html"> a drop out screen</a></li>
       </ul>
 
-      <h2 class="govuk-heading-m"> ESAP questions placeholder (04/01/23)</h2>
-      <p>We've created a new flow for ESAP questions, as we need to know whether the person is managed by the National Security Division.</p>
-      <p><a href="/esap-questions/managed-nsd.html">Managed by NSD (Start of user flow)</a></p>
+ 
 
-
-      <h2 class="govuk-heading-m"> Complex case flow (05/01/23)</h2>
-      <p>We need to think about where the Complex Case questions sit within the flow, perhaps straight after the check details section?</p>
-      <p><a href="/complex-case/transgender-history.html">Complex case</a></p>
-
-      <h2 class="govuk-heading-m">Multi-agency / Emergency screens</h2>
+      <h2 class="govuk-heading-m">Multi-agency & emergency screens</h2>
       <p>We need to show additional questions for applications that are <b>Post sentence supervision</b> or <b>Non-Statutory</b>. PP's will need to provide additional information to form a contingency plan.</p>
   
       <p>The following screens will be shown to users within the further placement considerations task</p>
@@ -62,6 +55,11 @@
       <p>The pages will be presented if the arrival date is either less than 7 days, or 4 months of the application date. </p>
 
       <p>If the screen is less than 4 months, or less than 7 days they will be shown the <a href="emergency-late-submission.html">following screen</a></p>
+
+      <h2 class="govuk-heading-m">Request for placement screens </h2>
+      <p>If an application is parole (where no date of release is confirmed) or a ROTL, the probation practicioner will need to create a request for placement.</p>
+
+      <p><a href="/request-for-placement/type-of-rfp.html">Request for placement journey</a></p>
        
 {% endset -%}
 
@@ -105,13 +103,14 @@
 <p><a href="/cru-allocation/cru-allocation-dashboard.html">CRU allocation dashboard</a></p>
 {% endset -%}
 
-{% set previousDesigns %}
-<h1 class="govuk-heading-l"> Previous designs </h1>
+{% set requestForPlacement %}
+<h1 class="govuk-heading-l"> Request for Placement </h1>
 
-<p> Over time we have changed the screens across the prototype. We have kept the screens listed below to show the changes made.  </p>
+<p> The CRU managers will review any request for placements in that region. They will log on to the service, and go through the following process  </p>
 
-<p><a href="/previous-designs/access-needs.html">Access & Healthcare needs</a></p>
-<p>Changed Sprint [X]</p>
+<p><a href="/">CRU manager 'Review' dashboard</a></p>
+<p><a href="/request-for-placement/review-check-answers">Review request for placement</a></p>
+
 {% endset -%}
 
 
@@ -147,10 +146,10 @@
       }
     },
     {
-      label: "Previous designs",
-      id: "previous-designs",
+      label: "Request for placement",
+      id: "request-for-placement",
       panel: {
-        html: previousDesigns
+        html: requestForPlacement
       }
     }
   ]

@@ -1,0 +1,175 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/task-list-standard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        Additional information to support information
+      </h2>
+      <p>Provide details of any information that have changed since this application has been assessed.</p>
+      <p>This application will be reviewed at the matching stage.</p>
+
+     
+      <p><strong>Application</strong>: Completed 19 December 2022</p>
+      <p><a href="">View application (opens in new window)</a></p>
+
+      {% set riskLevelChanged %}
+        {{ govukTextarea({
+          id: "risk-level-changed",
+          name: "risk-level-changed",
+          type: "textarea",
+          autocomplete: "textarea",
+          spellcheck: false,
+          classes: "govuk-!-width-full-width",
+          label: {
+            text: "Provide detais"
+          }
+        }) }}
+    {% endset -%}
+
+    {% set needsChanged %}
+      {{ govukTextarea({
+        id: "needs-changed",
+        name: "needs-changed",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
+    {% set locationChanged %}
+        {{ govukTextarea({
+          id: "location-changed",
+          name: "location-changed",
+          type: "textarea",
+          autocomplete: "textarea",
+          spellcheck: false,
+          classes: "govuk-!-width-full-width",
+          label: {
+            text: "Provide detais"
+          }
+        }) }}
+    {% endset -%}
+
+    <!--- Radio buttons -->
+
+      {{ govukRadios({
+        name: "risk-additional-information",
+        fieldset: {
+          legend: {
+            text: "Has the person's risk level changed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-risk-changed",
+            text: "Yes",
+            conditional: {
+              html: riskLevelChanged
+            }
+          },
+          {
+            value: "no--risk-changed",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "needs-additional-information",
+        fieldset: {
+          legend: {
+            text: "Has the person's access or healthcare needs changed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-needs-changed",
+            text: "Yes",
+            conditional: {
+              html: needsChanged
+            }
+          },
+          {
+            value: "no-needs-changed",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "location-additional-information",
+        fieldset: {
+          legend: {
+            text: "Have any location factors changed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes-location-changed",
+            text: "Yes",
+            conditional: {
+              html: locationChanged
+            }
+          },
+          {
+            value: "no-location-changed",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+
+
+
+
+     
+
+
+
+
+
+      
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/request-for-placement/check-answers"
+      }) }}
+
+  </div>
+</div>
+
+
+
+{% endblock %}

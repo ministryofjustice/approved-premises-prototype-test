@@ -1,0 +1,114 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/task-list-standard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        <span class="govuk-caption-l">ROTL</span>
+        Request for placement
+      </h2>
+
+      
+      {% set previousApPlacement %}
+
+      {{ govukDateInput({
+        id: "last-placement-date",
+        namePrefix: "last-placement-date",
+        fieldset: {
+          legend: {
+            text: "When was the last placement?"
+          }
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Which Approved Premises did the person last stay at?"
+        },
+        id: "last-ap",
+        name: "last-ap"
+      }) }}
+      
+      {{ govukTextarea({
+            id: "other-rotl-details",
+            name: "other-rotl-details",
+            type: "textarea",
+            autocomplete: "textarea",
+            spellcheck: false,
+            classes: "govuk-!-width-full-width",
+            label: {
+              text: "Provide details of any other previous ROTL placements (including the location) and dates of stays."
+            }
+          }) }}
+
+      {% endset -%}
+
+      {% set noPreviousPlacement %}
+        {{ govukInput({
+          label: {
+            text: "Which Approved Premises do you want the person to stay in?"
+          },
+          id: "last-ap",
+          name: "last-ap"
+        }) }}
+
+      {% endset -%}
+
+
+
+
+      {{ govukRadios({
+        id: "previous-rotl-placement",
+        name: "previous-rotl-placement",
+        fieldset: {
+          legend: {
+            text: "Has this person previously had a placement at an Approved Premises for ROTL?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "previous-rotl-yes",
+            text: "Yes",
+            conditional: {
+              html: previousApPlacement
+            }
+          },
+          {
+            value: "previous-rotl-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/request-for-placement/rfp-rotl-dates"
+      }) }}
+
+  </div>
+</div>
+
+
+
+{% endblock %}

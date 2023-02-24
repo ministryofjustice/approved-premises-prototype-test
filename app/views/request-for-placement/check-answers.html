@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/assess/tasklist"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-full-width">
+        <h1 class="govuk-heading-xl">Check your answers </h1>
+
+        <div class="main-box">
+        <div class="box-title govuk-heading-m" id="person-details">
+         Additional documents
+        </div>
+        <div class="box-content">
+          {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "document-name.doc"
+          },
+          value: {
+          text: "Parole board report"
+          },
+          actions: {
+            items: [
+            {
+            href: "index.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          }
+          ]
+          }) }}
+        </div>
+      </div>
+
+      <div class="main-box">
+        <div class="box-title govuk-heading-m" id="person-details">
+         Additional information
+        </div>
+        <div class="box-content">
+          {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "Has the person's risk level changed?"
+          },
+          value: {
+          text: "Parole board report"
+          },
+          actions: {
+            items: [
+            {
+            href: "index.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+            key: {
+            text: "Has the person's access or healthcare needs changed?"
+            },
+            value: {
+            text: "Parole board report"
+            },
+            actions: {
+              items: [
+              {
+              href: "index.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+            },
+            {
+              key: {
+              text: "Have any location factors changed?"
+              },
+              value: {
+              text: "Parole board report"
+              },
+              actions: {
+                items: [
+                {
+                href: "index.html",
+                text: "Change",
+                visuallyHiddenText: "change"
+                }
+                ]
+                }
+              }
+          ]
+          }) }}
+        </div>
+      </div>
+
+      <h2 class="app-task-list__section">
+       Submit your application
+      </h2>
+
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+      {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        items: [
+          {
+            value: "submit",
+            text: "I confirm the information provided is complete, accurate and up to date."
+          }
+        ]
+      }) }}
+    </li>
+   
+      {{ govukButton({
+        text: "Submit",
+        href: "/request-for-placement/confirmation"
+      }) }}
+    </div>
+  </div>
+{% endblock %}

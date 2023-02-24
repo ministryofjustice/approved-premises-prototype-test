@@ -414,4 +414,20 @@ router.post('/info-request-info-received', function (req, res) {
 })
 
 
+// routing for request for placement (Type of RfP)
+
+router.post('/request-for-placement-type', function (req, res) {
+
+  var receivedAdditonalInfo = req.session.data['type-of-rfp']
+  console.log({receivedAdditonalInfo})
+  console.log(req.session.data)
+
+  if (receivedAdditonalInfo == "type-of-rfp-parole"){
+    res.redirect('/request-for-placement/rfp-parole-details')
+  } else {
+    res.redirect('/request-for-placement/rfp-rotl-details')
+  }
+})
+
+
 module.exports = router

@@ -1,0 +1,106 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/task-list-standard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        <span class="govuk-caption-l">ROTL</span>
+        Request for placement
+      </h2>
+
+      
+
+      {% set newRotlAp %}
+        {{ govukInput({
+          label: {
+            text: "Which Approved Premises do you want the person to stay in?"
+          },
+          id: "last-ap",
+          name: "last-ap"
+        }) }}
+
+      {% endset -%}
+
+
+
+
+      {{ govukRadios({
+        id: "rotl-same-ap",
+        name: "rotl-same-ap",
+        fieldset: {
+          legend: {
+            text: "Do you want this person to stay in [previous AP]?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "rotl-same-ap-yes",
+            text: "Yes"
+          },
+          {
+            value: "rotl-same-ap-no",
+            text: "No",
+            conditional: {
+              html: newRotlAp
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-label--m">What date do you want the person to stay at the Approved Premises (AP)?</p>
+
+      {{ govukDateInput({
+        id: "rotl-start-date",
+        namePrefix: "rotl-start-date",
+        fieldset: {
+          legend: {
+            text: "Start date"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2007"
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "rotl-end-date",
+        namePrefix: "rotl-end-date",
+        fieldset: {
+          legend: {
+            text: "End date"
+          }
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/request-for-placement/rfp-additional-information"
+      }) }}
+
+  </div>
+</div>
+
+
+
+{% endblock %}
