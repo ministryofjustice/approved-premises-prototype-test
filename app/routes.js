@@ -413,6 +413,21 @@ router.post('/info-request-info-received', function (req, res) {
   }
 })
 
+// routing for RFAP in Further placement considerations
+
+router.post('/rfap-required', function (req, res) {
+
+  var rfapRequired = req.session.data['rfap-required']
+  console.log({rfapRequired})
+  console.log(req.session.data)
+
+  if (rfapRequired == "yes-rfap-required"){
+    res.redirect('/recovery-ap')
+  } else {
+    res.redirect('/further-considerations-catering')
+  }
+})
+
 
 // routing for request for placement (Type of RfP)
 
