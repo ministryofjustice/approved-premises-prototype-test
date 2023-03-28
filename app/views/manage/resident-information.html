@@ -1,0 +1,99 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/ap-dashboard"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ <div class="govuk-grid-row">
+  <div style="float: right;">
+    {{ mojButtonMenu({
+      items: [{
+        text: "Mark as arrived",
+        href: "/manage/mark-an-arrival"
+      }, {
+        text: "Mark as not arrived",
+        href: "/manage/mark-non-arrival",
+        classes: "govuk-button--secondary"
+      }, {
+        text: "Extend placement",
+        href: "/manage/extend-placement",
+        classes: "govuk-button--secondary"
+      }, 
+      {
+        text: "Log a departure",
+        href: "/manage/log-a-departure",
+        classes: "govuk-button--secondary"
+      }, 
+      {
+        text: "Cancel placement",
+        href: "/manage/cancel-placement",
+        classes: "govuk-button--secondary"
+      }, 
+      {
+        text: "Appeal placement",
+        href: "/manage/appeal-placement",
+        classes: "govuk-button--secondary"
+      }]
+    }) }}
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Persons name</h2>
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Person Name"
+          }
+        },
+        {
+          key: {
+            text: "CRN"
+          },
+          value: {
+            text: "315VWWC"
+          }
+        }
+      ]
+    }) }}
+
+  </div>
+
+ 
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

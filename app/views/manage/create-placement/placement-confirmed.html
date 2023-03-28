@@ -1,0 +1,74 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/start"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Placement confirmed"
+    }) }}
+
+   
+      
+   {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          text: "Person Name"
+        }
+      },
+      {
+        key: {
+          text: "CRN"
+        },
+        value: {
+          text: "315VWWC"
+        }
+      },
+      {
+        key: {
+          text: "Expected arrival date"
+        },
+        value: {
+          text: "Thursday 23 March 2023"
+        }
+      },
+      {
+        key: {
+          text: "Expected departure date"
+        },
+        value: {
+          text: "Thursday 23 June 2023"
+        }
+      }
+    ]
+  }) }}
+  
+  <p><a href="/manage/ap-dashboard">Back to dashboard</a></p>
+  </div>
+</div>
+
+
+{% endblock %}

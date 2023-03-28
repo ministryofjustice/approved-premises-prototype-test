@@ -10,17 +10,19 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/ap-dashboard"
+  }) }}
+{% endblock %}
+
+
 {% block content %}
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-width">
-
-    {{ govukBackLink({
-      text: "Back",
-      href: "/index"
-    }) }}
- 
-    <h2 class="govuk-heading-l">Bed occupancy</h2>
+        <h2 class="govuk-heading-l">Bed occupancy</h2>
    
     {{ govukSummaryList({
       classes: 'govuk-summary-list--no-border',
@@ -122,12 +124,6 @@
   </div>
 </div>
 
-    
-
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/index"
-        }) }}
   </div>
 </div>
 

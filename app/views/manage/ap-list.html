@@ -1,0 +1,101 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/start"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+
+<div class="govuk-grid-row">
+
+
+
+       
+
+
+<div class="govuk-grid-column-full-width">
+
+  <h2 class="govuk-heading-l">List of Approved Premises</h2>
+
+{{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Code"
+    },
+    {
+      text: "Number of beds"
+    },
+    {
+      text: ""
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Beckenham Road"
+      },
+      {
+        text: "BCKNHAM"
+      },
+      {
+        text: "20"
+      },
+      {
+        html: '<p><a href="/manage/ap-dashboard">View</a></p>'
+      }
+    ],
+    [
+      {
+        text: "Bedford AP"
+      },
+      {
+        text: "BDFORD"
+      },
+      {
+        text: "30"
+      },
+      {
+        html: '<p><a href="/manage/ap-dashboard">View</a></p>'
+      }
+    ],
+    [
+      {
+        text: "Cuthbert House"
+      },
+      {
+        text: "CUNE"
+      },
+      {
+        text: "24"
+      },
+      {
+        html: '<p><a href="/manage/ap-dashboard">View</a></p>'
+      }
+    ]
+  ]
+}) }}
+
+</div>
+</div>
+
+
+{% endblock %}

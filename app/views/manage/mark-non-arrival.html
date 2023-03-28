@@ -1,0 +1,100 @@
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/resident-information"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Record a non-arrival</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Expected arrival date"
+            },
+            value: {
+              text: "24 March 2023"
+            }
+          },
+          {
+            key: {
+              text: "Expected departure date"
+            },
+            value: {
+              text: "24 June 2023"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "non-arrival-reason",
+        fieldset: {
+          legend: {
+            text: "Reason for non-arrival",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "custodial-disposal",
+            text: "Custodial disposal - RIC"
+          },
+          {
+            value: "withdrawn",
+            text: "Offer Withdrawn"
+          },
+          {
+            value: "other",
+            text: "Other"
+          },
+          {
+            value: "parole-not-granted",
+            text: "Parole Licence not granted"
+          },
+          {
+            value: "referrer-withdrawn",
+            text: "Withdrawn by referrer"
+          }
+        ]
+      }) }}
+        
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Arrival information and notes"
+          }
+        }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/manage/resident-information"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

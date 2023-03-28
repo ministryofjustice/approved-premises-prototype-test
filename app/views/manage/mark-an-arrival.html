@@ -1,0 +1,107 @@
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/resident-information"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l"> Mark the person as arrived</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Expected arrival date"
+            },
+            value: {
+              text: "24 March 2023"
+            }
+          },
+          {
+            key: {
+              text: "Expected departure date"
+            },
+            value: {
+              text: "24 June 2023"
+            }
+          }
+        ]
+      }) }}
+  
+      {{ govukInput({
+        label: {
+          text: "What time did the person arrive?"
+        },
+        classes: "govuk-input--width-4",
+        id: "arrival-time",
+        name: "arrival-time"
+      }) }}
+
+
+      
+        {{ govukSelect({
+          id: "key-worker-list",
+          name: "key-worker-list",
+          label: {
+            text: "Key worker"
+          },
+          items: [
+            {
+              value: "key-worker-1",
+              text: "Alan Brown"
+            },
+            {
+              value: "key-worker-2",
+              text: "Sofia Smith",
+              selected: true
+            },
+            {
+              value: "key-worker-3",
+              text: "Nicola Roomer"
+            },
+            {
+              value: "key-worker-4",
+              text: "David Blackhall"
+            }
+          ]
+        }) }}
+
+        
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Arrival information and notes"
+          }
+        }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/manage/resident-information"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

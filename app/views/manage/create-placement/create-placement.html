@@ -1,0 +1,87 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/start"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Create a placement</h2>
+     
+   {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Person Name"
+          }
+        },
+        {
+          key: {
+            text: "CRN"
+          },
+          value: {
+            text: "315VWWC"
+          }
+        }
+      ]
+    }) }}
+    
+   
+    {{ govukDateInput({
+      id: "expected-arrival-date",
+      namePrefix: "expected-arrival-date",
+      fieldset: {
+        legend: {
+          text: "What is the expected arrival date?"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "expected-departure-date",
+      namePrefix: "expected-departure-date",
+      fieldset: {
+        legend: {
+          text: "What is the expected departure date?"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2007"
+      }
+    }) }}
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/manage/create-placement/placement-confirmed"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

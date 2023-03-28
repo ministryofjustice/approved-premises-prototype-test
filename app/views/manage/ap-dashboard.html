@@ -1,0 +1,419 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/ap-list"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+
+<div class="govuk-grid-row">
+
+
+  <div style="float: right;">
+    {{ mojButtonMenu({
+      items: [{
+        text: "Create a placement",
+        href: "/manage/create-placement/enter-crn"
+      }, {
+        text: "Mark beds as out of service",
+        href: "/manage/lost-beds",
+        classes: "govuk-button--secondary"
+      }, {
+        text: "Manage out of service beds",
+        href: "/manage/out-of-service-beds-board",
+        classes: "govuk-button--secondary"
+      }]
+    }) }}
+  </div>
+
+  <div>
+    <h2 class="govuk-heading-l">Bedford Approved Premises</h2>
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Code"
+          },
+          value: {
+            text: "BDFORD"
+          }
+        },
+        {
+          key: {
+            text: "Postcode"
+          },
+          value: {
+            text: "	GL56 0QQ"
+          }
+        },
+        {
+          key: {
+            text: "Number of beds"
+          },
+          value: {
+            text: "30"
+          }
+        },
+        {
+          key: {
+            text: "Available beds"
+          },
+          value: {
+            text: "4"
+          }
+        }
+      ]
+    }) }}
+
+  </div>
+
+  <div class="govuk-grid-column-full-width">
+    
+    <h2 class="govuk-label--l">Arrivals and departures</h2>
+  <br>
+    {% set arrivingToday %}
+    <h2 class="govuk-heading-l">Arriving today</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "CRN"
+        },
+        {
+          text: "Expected arrival date"
+        },
+        {
+          text: ""
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="/manage/resident-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="/manage/resident-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="/manage/resident-information">View</a></p>'
+          }
+        ]
+      ]
+    }) }}
+    {% endset -%}
+
+    {% set departingToday %}
+    <h2 class="govuk-heading-l">Departing today</h2>
+    <p>There are no planned departures today.</p>
+    {% endset -%}
+
+    {% set upcomingArrivals %}
+    <h2 class="govuk-heading-l">Upcoming arrivals</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "CRN"
+        },
+        {
+          text: "Expected arrival date"
+        },
+        {
+          text: ""
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="">View</a></p>'
+          }
+        ]
+      ]
+    }) }}
+    {% endset -%}
+
+  
+
+    {% set upcomingDepartures %}
+    <h2 class="govuk-heading-l">Upcoming departures</h2>
+    {{ govukTable({
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "CRN"
+        },
+        {
+          text: "Expected departure date"
+        },
+        {
+          text: ""
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "David Francis"
+          },
+          {
+            text: "DO372B"
+          },
+          {
+            text: "23 Mar 2023"
+          },
+          {
+            html: '<p><a href="">View</a></p>'
+          }
+        ]
+      ]
+    }) }}
+    {% endset -%}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Arriving today",
+          id: "arriving-day",
+          panel: {
+            html: arrivingToday
+          }
+        },
+        {
+          label: "Departing today",
+          id: "departing-today",
+          panel: {
+            html: departingToday
+          }
+        },
+        {
+          label: "Upcoming arrivals",
+          id: "upcoming-arrivals",
+          panel: {
+            html: upcomingArrivals
+          }
+        },
+        {
+          label: "Upcoming departures",
+          id: "upcoming-departures",
+          panel: {
+            html: upcomingDepartures
+          }
+        }
+      ]
+    }) }}
+
+    </div>
+
+
+  <div class="govuk-grid-column-full-width">
+    <h2 class="govuk-label--l">Current residents</h2>
+  
+    {{ govukTable({
+      head: [
+        {
+          text: "Resident name"
+        },
+        {
+          text: "CRN"
+        },
+        {
+          text: "Expected arrival date"
+        },
+        {
+          text: "Expected departure date"
+        },
+        {
+          text: "Action"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ]
+      ]
+    }) }}
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

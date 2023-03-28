@@ -7,19 +7,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+  Approved Premises - Mark a bed as out of service
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "/manage/ap-dashboard"
+}) }}
 {% endblock %}
 
 {% block content %}
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    {{ govukBackLink({
-      text: "Back",
-      href: "/index"
-    }) }}
- 
     <h2 class="govuk-heading-l">Mark a bed as out of service</h2>
       <p> Provide details of beds that are out of service within your AP estate.</p>
    
@@ -85,32 +86,28 @@
         },
         items: [
           {
-            value: "Accident-flood-fire",
-            text: "Accident, flood or fire"
+            value: "planned-facilities-management",
+            text: "Planned facilities management (FM) works required"
           },
           {
-            value: "Damange",
-            text: "Damage by resident"
+            value: "ap-closure",
+            text: "AP closure / operational reduction in capacity (non- FM)"
+          },
+          {
+            value: "doubleroom-other",
+            text: "Double room with single occupancy (other)"
           },
           {
             value: "doubleroom-risk",
             text: "Double room with single occupancy (risk)"
           },
           {
-            value: "doubleroom-helath",
-            text: "Double room with single occupancy (health)"
+            value: "incident",
+            text: "Incident not requiring FM repair"
           },
           {
-            value: "refurbishment",
-            text: "Refurbishment"
-          },
-          {
-            value: "staff-shortage",
-            text: "Staff shortage or illness"
-          },
-          {
-            value: "other",
-            text: "Other"
+            value: "unplanned-fm",
+            text: "Unplanned FM works required"
           }
         ]
       }) }}
@@ -125,7 +122,7 @@
 
         {{ govukButton({
           text: "Save and continue",
-          href: "/index"
+          href: "/manage/ap-dashboard"
         }) }}
   </div>
 </div>
