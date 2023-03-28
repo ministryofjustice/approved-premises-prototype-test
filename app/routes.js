@@ -173,7 +173,7 @@ router.post('/convicted-of-offences', function (req, res) {
   console.log(req.session.data)
 
   if (convictedOfOffences == "convicted-offences-yes"){
-    res.redirect('/type-of-convicted-offence')
+    res.redirect('/date-of-convicted-offences')
   } else {
     res.redirect('rehabilitative-activities')
   }
