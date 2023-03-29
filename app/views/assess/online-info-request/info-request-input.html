@@ -28,6 +28,8 @@
     <h1 class="govuk-heading-l">Additional information</h1>
     <h2 class="govuk-heading-m">Have you received additional information from the probation practicioner?</h2>
 
+    <p>Any requests for information must be responded to within 5 working days of the request. If the information hasn't been received, you can mark this assessment as rejected.</p>
+
       <form action="/info-request-info-received" method="post" novalidate>
 
         {% set infoReceived %}
@@ -35,7 +37,7 @@
           name: "more-detail",
           id: "more-detail",
           label: {
-            text: "What additional information is required?"
+            text: "What information has been requested from the probation practicioner?"
           }
         }) }}
 
@@ -44,9 +46,8 @@
           namePrefix: "passport-issued",
           fieldset: {
             legend: {
-              text: "What information was requested from the probation practitioner?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              text: "What date was the information requested?",
+              isPageHeading: true
             }
           },
           hint: {
