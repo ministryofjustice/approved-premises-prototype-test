@@ -27,6 +27,14 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Access, cultural and healthcare needs</h1>
 
+    {{ govukDetails({
+      summaryText: "View guidance on what needs a person might have",
+      html: '<p>For example, if the person has sight loss, uses a hearing aid or has an ADHD diagnosis.</p>
+      <p>Further information on neurodiversity is in the <a href="">let’s talk about neurodiversity toolkit.</a></p> 
+      <p>There is also a <a href="">guide for supporting people with learning disabilities and learning difficulties (LDC)</a></p>
+     '
+    }) }}
+
     <!-- Checkboxes -->
     <form action="/access-needs-selected" method="post" novalidate>
       
@@ -41,8 +49,7 @@
         }
       },
       hint: {
-        html: '<p>For example, if the person has a visual impairment, uses a hearing aid or has an ADHD diagnosis</p>
-        <p>Further information can be provided on the next screen</p>'
+        text: 'Further information can be provided on the next screen'
       },
       items: [
         {
@@ -55,7 +62,7 @@
         },
         {
           value: "laerning-disability",
-          text: "Learning disability"
+          text: "Learning disabilities and/or learning challenges"
         },
         {
           value: "hearing-impairment",
