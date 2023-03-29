@@ -25,7 +25,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-l">Cancel placement</h2>
-    <p>If the person has not arrived or no longer requires this bed, cancel this placement. Cancelling this placement will make the bed available to another person. </p>
+    <p>If the person no longer requires this bed, cancel this placement. Cancelling this placement will make the bed available for another person. </p>
 
       {{ govukSummaryList({
         rows: [
@@ -77,7 +77,7 @@
         namePrefix: "cancel-placement",
         fieldset: {
           legend: {
-            text: "What date do you want to cancel this placement?",
+            text: "When was this placement cancelled?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -91,7 +91,7 @@
         name: "cancel-reason",
         fieldset: {
           legend: {
-            text: "What is the reason for cancelling this placement?",
+            text: "Why was this placement cancelled?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }

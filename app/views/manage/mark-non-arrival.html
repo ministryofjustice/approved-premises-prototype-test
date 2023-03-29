@@ -24,11 +24,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class="govuk-heading-l">Record a non-arrival</h2>
+    <h2 class="govuk-heading-l">Mark as not arrived</h2>
 
       {{ govukSummaryList({
         rows: [
-          {
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Alan Brown"
+          }
+        },
+        {
+          key: {
+            text: "CRN"
+          },
+          value: {
+            text: "315VWWC"
+          }
+        },
+        {
             key: {
               text: "Expected arrival date"
             },
@@ -84,7 +100,7 @@
           name: "more-detail",
           id: "more-detail",
           label: {
-            text: "Arrival information and notes"
+            text: "Provide further details"
           }
         }) }}
 

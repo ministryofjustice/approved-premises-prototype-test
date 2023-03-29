@@ -21,8 +21,7 @@
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Mark a bed as out of service</h2>
-      <p> Provide details of beds that are out of service within your AP estate.</p>
+    <h2 class="govuk-heading-l">Mark beds as out of service</h2>
    
  <!-- Number of beds lost -->
 
@@ -79,7 +78,7 @@
         name: "lost-placement-reason",
         fieldset: {
           legend: {
-            text: "What is the reason for marking this bed as lost?",
+            text: "Why are these beds out of service?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -116,7 +115,11 @@
         name: "Additional notes",
         id: "Notes",
         label: {
-          text: "Additional notes"
+          text: "Provide detail about why the bed is out of service",
+          classes: "govuk-label--s"
+        },
+        hint: {
+          text: "If facilities management (FM) works are required you should update this record with any progress of the work."
         }
       }) }}
 
