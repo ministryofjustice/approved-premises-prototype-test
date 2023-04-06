@@ -480,6 +480,19 @@
 </tbody>
 </table>
 
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+        text: "Recommendations for Central Referral Unit (CRU) manager",
+        classes: "govuk-label--m",
+        isPageHeading: true
+      },
+      hint: {
+        text: "Provide recommendations for the CRU manager who will be matching this person to a suitable Approved Premises bed."
+      }
+    }) }}
+
     
         {{ govukButton({
           text: "Save and continue",
