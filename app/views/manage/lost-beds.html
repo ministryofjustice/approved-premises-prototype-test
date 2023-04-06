@@ -25,24 +25,60 @@
    
  <!-- Number of beds lost -->
 
-      {{ govukInput({
+      {{ govukSelect({
+        id: "room-number",
+        name: "room-number",
         label: {
-          text: "Room number",
-          classes: "govuk-heading-s"
+          text: "Room number"
         },
-        classes: "govuk-input--width-2",
-        id: "width-2",
-        name: "width-2"
+        items: [
+          {
+            value: "room-1",
+            text: " 1"
+          },
+          {
+            value: "room-2",
+            text: " 2",
+            selected: true
+          },
+          {
+            value: "room-3",
+            text: " 3"
+          },
+          {
+            value: "room-4",
+            text: " 4"
+          }
+        ]
       }) }}
 
-      {{ govukInput({
+      {{ govukSelect({
+        id: "bed-number",
+        name: "bed-number",
         label: {
           text: "Bed number"
         },
-        classes: "govuk-input--width-2",
-        id: "width-2",
-        name: "width-2"
+        items: [
+          {
+            value: "bed-1",
+            text: " 1"
+          },
+          {
+            value: "bed-2",
+            text: " 2",
+            selected: true
+          },
+          {
+            value: "bed-3",
+            text: " 3"
+          },
+          {
+            value: "bed-4",
+            text: " 4"
+          }
+        ]
       }) }}
+
 
  <!-- Start date -->
 
@@ -64,7 +100,7 @@
         namePrefix: "end-date",
         fieldset: {
           legend: {
-            text: "End date",
+            text: "Out of service until",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
