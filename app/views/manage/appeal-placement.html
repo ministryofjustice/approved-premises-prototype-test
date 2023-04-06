@@ -84,7 +84,7 @@
         name: "appeal-reason",
         fieldset: {
           legend: {
-            text: "What is the reason for appealing this placement?",
+            text: "Why are you appealing this placement?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -109,14 +109,14 @@
         ]
       }) }}
 
-      <p class="govuk-label--m">Provide detail of conversation</p>
+      <p class="govuk-label--m">Approved Premises Area Manager (APAM) confirmation</p>
 
-      <p>Please provide details of the Approved Premises Area Manager (APAM) that you have spoken to about this appeal.</p>
+      <p>Provide details of the discussion with the APAM about this appeal.</p>
 
 
         {{ govukInput({
           label: {
-            text: "Name of Approved Premises Area Manager (APAM)",
+            text: "Name of APAM",
             classes: "govuk-label--s",
             isPageHeading: true
           },
@@ -126,7 +126,7 @@
 
         {{ govukInput({
           label: {
-            text: "Area manager email address",
+            text: "APAM email address",
             classes: "govuk-label--s",
             isPageHeading: true
           },
@@ -138,7 +138,8 @@
           name: "appeal-notes",
           id: "appeal-notes",
           label: {
-            text: "Notes"
+            text: "Briefly outline your discussion with the APAM",
+            classes: "govuk-label--s"
           }
         }) }}
         
