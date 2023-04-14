@@ -1,0 +1,151 @@
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/resident-information"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l"> Move resident to a new bed</h2>
+
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Alan Brown"
+          }
+        },
+        {
+          key: {
+            text: "CRN"
+          },
+          value: {
+            text: "315VWWC"
+          }
+        },
+        {
+            key: {
+              text: "Arrival date"
+            },
+            value: {
+              text: "24 March 2023"
+            }
+          },
+          {
+            key: {
+              text: "Departure date"
+            },
+            value: {
+              text: "24 June 2023"
+            }
+          },
+          {
+            key: {
+              text: "Bed"
+            },
+            value: {
+              text: "7"
+            }
+          }
+        ]
+      }) }}
+
+      <p><a href="">View occupancy calendar</a></p>
+  
+      
+        {{ govukDateInput({
+          id: "date-of-move",
+          namePrefix: "date-of-move",
+          fieldset: {
+            legend: {
+              text: "What date do you want to move this person?",
+              isPageHeading: true,
+              classes: "govuk-label--m"
+            }
+          }
+        }) }}
+
+        {{ govukSelect({
+          id: "select-bed-number",
+          name: "select-bed-number",
+          label: {
+            text: "Select bed number",
+            classes: "govuk-label--m"
+          },
+          items: [
+            {
+              value: "bed-1",
+              text: "1"
+            },
+            {
+              value: "bed-2",
+              text: "2",
+              selected: true
+            },
+            {
+              value: "bed-3",
+              text: "3"
+            },
+            {
+              value: "bed-4",
+              text: "4"
+            },
+            {
+              value: "bed-5",
+              text: "5",
+              selected: true
+            },
+            {
+              value: "bed-6",
+              text: "6"
+            },
+            {
+              value: "bed-7",
+              text: "7"
+            }
+          ]
+        }) }}
+
+      
+        
+        {{ govukTextarea({
+          name: "move-bed-detail",
+          id: "move-bed-detail",
+          label: {
+            text: "What is the reason for moving this person's bed?",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/manage/resident-information"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}
