@@ -77,6 +77,10 @@
           text: "Healthcare"
         },
         {
+          value: "pregnancy",
+          text: "Pregnancy"
+        },
+        {
           value: "other",
           text: "Other"
         },
@@ -242,57 +246,7 @@
       }) }}
 
 
-      {% set pregnancy %}
-      {{ govukDateInput({
-        id: "end-date",
-        namePrefix: "end-date",
-        fieldset: {
-          legend: {
-            text: "What is their expected arrival date?",
-            isPageHeading: true,
-            classes: "govuk-label--s"
-          }
-        }
-      }) }}
       
-      {{ govukTextarea({
-        id: "pregnant-information",
-        name: "pregnant-information",
-        type: "textarea",
-        autocomplete: "textarea",
-        spellcheck: false,
-        classes: "govuk-!-width-full-width",
-        label: {
-          text: "Are there any other considerations",
-          classes: "govuk-label--s"
-        }
-      }) }}
-    {% endset -%}
-
-      {{ govukRadios({
-        idPrefix: "pregnancy",
-        name: "pregnancy",
-        fieldset: {
-          legend: {
-            text: "Is this person pregnant?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "pregnant-yes",
-            text: "Yes",
-            conditional: {
-              html: pregnancy
-            }
-          },
-          {
-            value: "pregnant-no",
-            text: "No"
-          }
-        ]
-      }) }}
 
 
       {{ govukRadios({

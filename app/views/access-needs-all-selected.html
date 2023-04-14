@@ -136,11 +136,95 @@
     ]
   }) }}
 
-  <p class="govuk-label--s">Specify any additional details and adjustments required for: </p>
+  
+  {% set pregnancy %}
+      {{ govukDateInput({
+        id: "end-date",
+        namePrefix: "end-date",
+        fieldset: {
+          legend: {
+            text: "What is their expected delivery date?",
+            isPageHeading: true,
+            classes: "govuk-label--s"
+          }
+        }
+      }) }}
+      
+      {{ govukTextarea({
+        id: "pregnant-information",
+        name: "pregnant-information",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Are there any other considerations?",
+          classes: "govuk-label--s"
+        }
+      }) }}
+    {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "pregnancy",
+        name: "pregnancy",
+        fieldset: {
+          legend: {
+            text: "Is this person pregnant?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "pregnant-yes",
+            text: "Yes",
+            conditional: {
+              html: pregnancy
+            }
+          },
+          {
+            value: "pregnant-no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        idPrefix: "pregnancy-child-removed",
+        name: "pregnancy-child-removed",
+        fieldset: {
+          legend: {
+            text: "Will the child be removed from the person's care at birth?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "This will help determine a person's move on plan. Someone cannot stay at an Approved Premises with a child."
+        },
+        items: [
+          {
+            value: "child-removed-yes",
+            text: "Yes"
+          },
+          {
+            value: "child-removed-no",
+            text: "No"
+          },
+          {
+            value: "child-removed-pending",
+            text: "Decision pending"
+          }
+        ]
+      }) }}
+
+  <p class="govuk-label--m">Specify any additional details and adjustments required for: </p>
   <ul class="govuk-list govuk-list--bullet">
     <li>Mobility needs</li>
     <li>Visual impairments</li>
     <li>Neurodivergent conditions</li>
+    <li>Pregnancy</li>
   </ul>
 
   {{ govukDetails({
