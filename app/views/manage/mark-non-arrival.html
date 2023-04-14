@@ -63,6 +63,18 @@
         ]
       }) }}
 
+
+      {% set otherReason %}
+        {{ govukInput({
+          id: "other-reason",
+          name: "other-reason",
+          label: {
+            text: "Provide reason for non-arrival"
+          }
+        }) }}
+      {% endset -%}
+
+
       {{ govukRadios({
         name: "non-arrival-reason",
         fieldset: {
@@ -78,20 +90,23 @@
             text: "Custodial disposal - RIC"
           },
           {
-            value: "withdrawn",
-            text: "Offer Withdrawn"
-          },
-          {
-            value: "other",
-            text: "Other"
-          },
-          {
             value: "parole-not-granted",
             text: "Parole Licence not granted"
           },
           {
+            value: "withdrawn",
+            text: "Offer Withdrawn"
+          },
+          {
             value: "referrer-withdrawn",
-            text: "Withdrawn by referrer"
+            text: "Withdrawn by probation practicioner"
+          },
+          {
+            value: "other",
+            text: "Other", 
+            conditional: {
+              html: otherReason
+            }
           }
         ]
       }) }}
