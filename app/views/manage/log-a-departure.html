@@ -15,7 +15,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/manage/resident-information"
+    href: "/manage/resident-information-current"
   }) }}
 {% endblock %}
 
@@ -64,27 +64,20 @@
         ]
       }) }}
   
-      {{ govukRadios({
-        name: "departure-date",
+      {{ govukDateInput({
+        id: "change-departure-date",
+        namePrefix: "change-departure-date",
         fieldset: {
           legend: {
-            text: "Is the person departing today?",
+            text: "What is the new departure date?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
-        items: [
-          {
-            value: "yes-departing-today",
-            text: "Yes"
-          },
-          {
-            value: "not-departing-today",
-            text: "No"
-          }
-        ]
+        hint: {
+          text: "For example, 27 3 2007"
+        }
       }) }}
-
      
       {{ govukInput({
         label: {
@@ -125,36 +118,105 @@
           },
           {
             value: "breach-recall-behaviour",
-            text: "Breach or recall - Absconded"
+            text: "Breach or recall - Behaviour/increased risk"
+          },
+          {
+            value: "breach-recall-curfew",
+            text: "Breach or recall - Curfew"
+          },
+          {
+            value: "breach-recall-licence",
+            text: "Breach or recall - Licence or bail conditions"
+          },
+          {
+            value: "breach-recall-drugs",
+            text: "Breach or recall - Positive drug tests"
+          },
+          {
+            value: "breach-recall-other",
+            text: "Breach or recall - Other"
+          },
+          {
+            value: "deceased",
+            text: "Deceased"
+          },
+          {
+            value: "end-of-rotl",
+            text: "End of ROTL"
+          },
+          {
+            value: "left-own-volition",
+            text: "Left of own volition"
+          },
+          {
+            value: "planned-move-on",
+            text: "Planned move on"
+          },
+          {
+            value: "other",
+            text: "Other"
           }
         ]
       }) }}
 
       {{ govukSelect({
-        id: "destination-provider",
-        name: "destination-provider",
+        id: "move-on-category",
+        name: "move-on-category",
         label: {
-          text: "Destination provider",
+          text: "Move on category ",
           classes: "govuk-label--m"
         },
         items: [
           {
-            value: "published",
-            text: "Recently published"
+            value: "short-term-housing",
+            text: "Short-term housing"
           },
           {
-            value: "updated",
-            text: "Recently updated",
-            selected: true
+            value: "custody",
+            text: "Custody"
           },
           {
-            value: "views",
-            text: "Most views"
+            value: "deported",
+            text: "Deported / Detention centre / IRC"
           },
           {
-            value: "comments",
-            text: "Most comments"
+            value: "housing-association",
+            text: "Housing association"
+          },
+          {
+            value: "family",
+            text: "Living with family or partner"
+          },
+          {
+            value: "loca-authority",
+            text: "Local authority (rented)"
+          },
+          {
+            value: "no-fixed-abode",
+            text: "No fixed abode"
+          },
+          {
+            value: "not-applicatble",
+            text: "Not applicable"
+          },
+          {
+            value: "owner-occupied",
+            text: "Owner occupied"
+          },
+          {
+            value: "private-rented",
+            text: "Private rented"
+          },
+          {
+            value: "supported-housing",
+            text: "Supported housing"
+          },
+          {
+            value: "transferred-ap",
+            text: "Transferred to a different AP"
           }
+
+          
         ]
       }) }}
 
