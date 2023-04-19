@@ -69,7 +69,7 @@
         namePrefix: "change-departure-date",
         fieldset: {
           legend: {
-            text: "What is the new departure date?",
+            text: "What date did the person depart?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -159,7 +159,7 @@
         ]
       }) }}
 
-      {{ govukSelect({
+      {{ govukRadios({
         id: "move-on-category",
         name: "move-on-category",
         label: {
