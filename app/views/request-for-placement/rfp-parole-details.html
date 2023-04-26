@@ -25,17 +25,17 @@
 
       <h2 class="govuk-heading-l">
         <span class="govuk-caption-l">Parole</span>
-        Request for placement</h2>
-      <p>Guidance</p>
+        Request for placement
+      </h2>
 
-     
 
       {{ govukDateInput({
         id: "parole-decision-date",
         namePrefix: "parole-decision-date",
         fieldset: {
           legend: {
-            text: "What was the date of the decision?"
+            text: "What was the date of the decision?",
+            classes: "govuk-label--m"
           }
         },
         hint: {
@@ -48,7 +48,8 @@
         namePrefix: "parole-earliest-release-date",
         fieldset: {
           legend: {
-            text: "When is the earliest release date?"
+            text: "When is the earliest release date?",
+            classes: "govuk-label--m"
           }
         },
         hint: {
