@@ -164,6 +164,21 @@
       }) }}
     {% endset -%}
 
+  {% set pregnancyIssues %}
+    {{ govukTextarea({
+      id: "pregnancy-issues",
+      name: "pregnancy-issues",
+      type: "textarea",
+      autocomplete: "textarea",
+      spellcheck: false,
+      classes: "govuk-!-width-full-width",
+      label: {
+        text: "Provide details"
+      }
+    }) }}
+   {% endset -%}
+
+  
       {{ govukRadios({
         idPrefix: "pregnancy",
         name: "pregnancy",
@@ -215,6 +230,31 @@
           {
             value: "child-removed-pending",
             text: "Decision pending"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "pregnancy-issues",
+        name: "pregnancy-issues",
+        fieldset: {
+          legend: {
+            text: "Are there any pregnancy related issues relevant to placement?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "pregnancy-issues-yes",
+            text: "Yes",
+            conditional: {
+              html: pregnancyIssues
+            }
+          },
+          {
+            value: "pregnancy-issues-no",
+            text: "No"
           }
         ]
       }) }}
