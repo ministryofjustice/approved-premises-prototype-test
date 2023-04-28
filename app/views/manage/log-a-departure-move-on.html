@@ -1,0 +1,163 @@
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/resident-information-current"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l"> Log a departure </h2>
+
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Person Name"
+          }
+        },
+        {
+          key: {
+            text: "CRN"
+          },
+          value: {
+            text: "315VWWC"
+          }
+        },
+        {
+            key: {
+              text: "Arrival date"
+            },
+            value: {
+              text: "24 March 2023"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-label--m">Departure information</p>
+
+      {{ govukSummaryList({
+        rows: [
+        {
+          key: {
+            text: "Date of departure"
+          },
+          value: {
+            text: "Person Name"
+          }
+        },
+        {
+          key: {
+            text: "Time of departure"
+          },
+          value: {
+            text: "315VWWC"
+          }
+        },
+        {
+            key: {
+              text: "Reason for departure"
+            },
+            value: {
+              text: "24 March 2023"
+            }
+          }
+        ]
+      }) }}
+  
+      
+      {{ govukRadios({
+        name: "departure-move-on-reason",
+        fieldset: {
+          legend: {
+            text: "Where is the person moving to?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "short-term-housing",
+            text: "Short-term housing"
+          },
+          {
+            value: "custody",
+            text: "Custody"
+          },
+          {
+            value: "deported",
+            text: "Deported / Detention centre / IRC"
+          },
+          {
+            value: "housing-association",
+            text: "Housing association"
+          },
+          {
+            value: "family",
+            text: "Living with family or partner"
+          },
+          {
+            value: "loca-authority",
+            text: "Local authority (rented)"
+          },
+          {
+            value: "no-fixed-abode",
+            text: "No fixed abode"
+          },
+          {
+            value: "not-applicatble",
+            text: "Not applicable"
+          },
+          {
+            value: "owner-occupied",
+            text: "Owner occupied"
+          },
+          {
+            value: "private-rented",
+            text: "Private rented"
+          },
+          {
+            value: "supported-housing",
+            text: "Supported housing"
+          },
+          {
+            value: "transferred-ap",
+            text: "Transferred to a different AP"
+          }
+
+          
+        ]
+      }) }}
+
+    
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "/manage/resident-information-current"
+        }) }}
+  </div>
+</div>
+
+
+{% endblock %}

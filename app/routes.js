@@ -445,4 +445,23 @@ router.post('/request-for-placement-type', function (req, res) {
 })
 
 
+
+//route for manage - log a departure 
+
+router.post('/log-a-departure', function (req, res) {
+
+  var departureReason = req.session.data['departure-reason']
+  console.log({departureReason})
+  console.log(req.session.data)
+
+  if (departureReason == "placement-withdrawn" || departureReason == "order-expired" || departureReason == "planned-move-on-under-50" || departureReason == "planned-move-on-over-50" ){
+    res.redirect('/manage/log-a-departure-move-on')
+  } else {
+    res.redirect('/manage/resident-information-new')
+  }
+})
+
+
+
+
 module.exports = router

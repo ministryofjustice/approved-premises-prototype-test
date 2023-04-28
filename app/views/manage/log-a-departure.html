@@ -90,6 +90,7 @@
         
       }) }}
 
+      <form action="/log-a-departure" method="post" novalidate>
 
       {{ govukRadios({
         name: "departure-reason",
@@ -149,8 +150,8 @@
             text: "End of ROTL"
           },
           {
-            value: "",
-            text: ""
+            value: "order-expired",
+            text: "Order license expired"
           },
           {
             value: "planned-move-on-under-50",
@@ -167,86 +168,18 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">Move on category</h2>
-      {{ govukRadios({
-        id: "move-on-category",
-        name: "move-on-category",
-        label: {
-          text: "Move on category ",
-          classes: "govuk-label--m"
-        },
-        items: [
-          {
-            value: "short-term-housing",
-            text: "Short-term housing"
-          },
-          {
-            value: "custody",
-            text: "Custody"
-          },
-          {
-            value: "deported",
-            text: "Deported / Detention centre / IRC"
-          },
-          {
-            value: "housing-association",
-            text: "Housing association"
-          },
-          {
-            value: "family",
-            text: "Living with family or partner"
-          },
-          {
-            value: "loca-authority",
-            text: "Local authority (rented)"
-          },
-          {
-            value: "no-fixed-abode",
-            text: "No fixed abode"
-          },
-          {
-            value: "not-applicatble",
-            text: "Not applicable"
-          },
-          {
-            value: "owner-occupied",
-            text: "Owner occupied"
-          },
-          {
-            value: "private-rented",
-            text: "Private rented"
-          },
-          {
-            value: "supported-housing",
-            text: "Supported housing"
-          },
-          {
-            value: "transferred-ap",
-            text: "Transferred to a different AP"
-          }
-
-          
-        ]
-      }) }}
-
-
-      
+   
       
 
         
-        {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          label: {
-            text: "Departure information and notes"
-          }
-        }) }}
+      <input type="hidden" name="answers-checked" value="true">
 
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
 
-        {{ govukButton({
-          text: "Save and continue",
-          href: "/manage/resident-information-current"
-        }) }}
+    </form>
+
   </div>
 </div>
 
