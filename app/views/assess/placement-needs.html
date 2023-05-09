@@ -480,6 +480,78 @@
 </tbody>
 </table>
 
+
+<p class="govuk-label--m">Do you agree with the placement length requested?</p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Placement length"
+      },
+      value: {
+        text: "12 weeks"
+      }
+    },
+    {
+      key: {
+        text: "Dates of placement"
+      },
+      value: {
+        text: "30 May 2023 - 30 Aug 2023"
+      }
+    }
+  ]
+}) }}
+
+{% set dateInput %}
+  {{ govukInput({
+    label: {
+      text: "What placement length do you recommend?",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    classes: "govuk-input--width-10",
+    hint: {
+      text: "Length in weeks"
+    },
+    id: "account-number",
+    name: "account-number",
+    inputmode: "numeric",
+    spellcheck: false
+  }) }}
+
+
+  {{ govukTextarea({
+    name: "date-change-reason",
+    id: "date-change-reason",
+    label: {
+      text: "Provide rationale for suggested length of stay",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    }
+  }) }}
+
+
+{% endset -%}
+
+{{ govukRadios({
+  name: "assess-placement-length",
+  items: [
+    {
+      value: "yes-placement-length",
+      text: "Yes"
+    },
+    {
+      value: "no--placement-length",
+      text: "No",
+      conditional: {
+        html: dateInput
+      }
+    }
+  ]
+}) }}
+
     {{ govukTextarea({
       name: "more-detail",
       id: "more-detail",
