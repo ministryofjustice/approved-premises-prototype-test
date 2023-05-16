@@ -116,21 +116,7 @@
         ]
       }) }}
         
-      {% set cancelationDate %}
-      {{ govukDateInput({
-        id: "date-of-cancellation",
-        namePrefix: "date-of-cancellation",
-        fieldset: {
-          legend: {
-            text: "When was the placement cancelled?"
-          }
-        },
-        hint: {
-          text: "For example, 27 3 2007"
-        }
-      }) }}
-    {% endset -%}
-
+    
 
       {{ govukRadios({
         name: "cancel-placement",
@@ -144,10 +130,7 @@
         items: [
           {
             value: "yes-cancel",
-            text: "Yes",
-            conditional: {
-              html: cancelationDate
-            }
+            text: "Yes"
           },
           {
             value: "no-cancel",

@@ -33,7 +33,7 @@
             text: "Name"
           },
           value: {
-            text: "Person Name"
+            text: "James Brown"
           }
         },
         {
@@ -42,6 +42,22 @@
           },
           value: {
             text: "315VWWC"
+          }
+        },
+        {
+          key: {
+            text: "Room"
+          },
+          value: {
+            text: "4"
+          }
+        },
+        {
+          key: {
+            text: "Bed"
+          },
+          value: {
+            text: "6"
           }
         }
       ]
@@ -62,19 +78,37 @@
       }
     }) }}
 
-    {{ govukDateInput({
-      id: "expected-departure-date",
-      namePrefix: "expected-departure-date",
-      fieldset: {
-        legend: {
-          text: "What is the expected departure date?",
-          classes: "govuk-label--m"
-        }
-      },
-      hint: {
-        text: "For example, 27 3 2007"
-      }
-    }) }}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        
+          <h1 class="govuk-label--m">
+            How long will the person stay at the AP?
+          </h1>
+        <div id="passport-issued-hint" class="govuk-hint">
+          For example, 27 3 2007
+        </div>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Weeks
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Days
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <p>The expected departure date is the 7th August 2023.</p>
 
 
 

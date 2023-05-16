@@ -72,21 +72,6 @@
         ]
       }) }}
 
-      {{ govukDateInput({
-        id: "cancel-placement",
-        namePrefix: "cancel-placement",
-        fieldset: {
-          legend: {
-            text: "When was this placement cancelled?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 27 3 2007"
-        }
-      }) }}
-
       {{ govukRadios({
         name: "cancel-reason",
         fieldset: {
@@ -98,20 +83,20 @@
         },
         items: [
           {
+            value: "deceased",
+            text: "Deceased"
+          },
+          {
+            value: "priority-allocation",
+            text: "Priority allocations"
+          },
+         {
             value: "withdrawn-ap",
             text: "Withdrawn by AP"
           },
           {
             value: "withdrawn-pp",
             text: "Withdrawn by PP"
-          },
-          {
-            value: "priority-allocation",
-            text: "Priority allocations"
-          },
-          {
-            value: "deceased",
-            text: "Deceased"
           }
         ]
       }) }}

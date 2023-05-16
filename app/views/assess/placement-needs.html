@@ -90,11 +90,12 @@
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-        If this person requires specialist mental health support, select the box below
+        If this person would benefit from specialist support, select the relevant option below
       </h2>
     </legend>
     <div id="waste-hint" class="govuk-hint">
-      There are only two AP nationally with a semi-specialism in mental health. Placement in one of these AP is not guaranteed. 
+      <p>There are only two AP nationally with a semi-specialism in mental health. Placement in one of these AP is not guaranteed.</p>
+      <p>Recovery Focused AP's are currently being piloted nationally. Placement is not guaranteed.</p>
     </div>
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
@@ -102,12 +103,18 @@
         Semi-specialist mental health
       </label>
     </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+       Recovery Focused AP
+      </label>
+    </div>
 
   </fieldset>
 </div>
 
 <!-- Essential/desirable requirements -->
-<br><br>
+
       <h2 class="govuk-heading-m">Specify placement requirements</h2>
 
 <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">

@@ -1,0 +1,198 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/ap-list"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+ 
+
+
+<div class="govuk-grid-row">
+
+
+  <div style="float: right;">
+    {{ mojButtonMenu({
+      items: [{
+        text: "Manage rooms",
+        href: "/manage/out-of-service-beds-board",
+        classes: "govuk-button--secondary"
+      }, {
+        text: "View occupancy",
+        href: "/manage/out-of-service-beds-board",
+        classes: "govuk-button--secondary"
+      }]
+    }) }}
+  </div>
+
+  <div>
+    
+
+  </div>
+
+
+  <div class="govuk-grid-column-full-width">
+    <h2 class="govuk-label--l">Manage beds</h2>
+  
+    {{ govukTable({
+      head: [
+        {
+          text: "Room number"
+        },
+        {
+          text: "Bed number"
+        },
+        {
+          text: "Status"
+        },
+        {
+          text: "Action"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Darius Salmon"
+          },
+          {
+            text: "HUN3BN0"
+          },
+          {
+            text: "18 May 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "Javid Salan"
+          },
+          {
+            text: "315VWWC"
+          },
+          {
+            text: "1 May 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "Keith Coundon"
+          },
+          {
+            text: "4Y29R9P"
+          },
+          {
+            text: "7 May 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "Paul Simon"
+          },
+          {
+            text: "52W7TQG"
+          },
+          {
+            text: "1 May 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "Joshua Twoomey"
+          },
+          {
+            text: "JCRH9V5"
+          },
+          {
+            text: "27 Apr 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "Abdul Mohammed"
+          },
+          {
+            text: "19 Jan 2023"
+          },
+          {
+            text: "19 Apr 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+          {
+            text: "Darren Wilson"
+          },
+          {
+            text: "4ZUIHFX"
+          },
+          {
+            text: "8 Jan 2023"
+          },
+          {
+            html: '<p><a href="/manage/bed-information">View</a></p>'
+          }
+        ],
+        [
+        {
+          text: "Josh Jones"
+        },
+        {
+          text: "BWEFOI7"
+        },
+        {
+          text: "1 Jan 2023"
+        },
+        {
+          html: '<p><a href="/manage/bed-information">View</a></p>'
+        }
+      ]
+      ]
+    }) }}
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+{% endblock %}

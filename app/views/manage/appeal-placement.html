@@ -79,6 +79,16 @@
         ]
       }) }}
 
+      {% set appealOther %}
+        {{ govukTextarea({
+          name: "appeal-other",
+          id: "appeal-other",
+          label: {
+            text: "Provide details"
+          }
+        }) }}
+      {% endset -%}
+
       
       {{ govukRadios({
         name: "appeal-reason",
@@ -90,17 +100,28 @@
           }
         },
         items: [
-          {
+        {
+          value: "co-accused",
+          text: "Co-accused"
+        },
+        {
+          value: "gangs",
+          text: "Gang / rival members"
+        },
+        {
             value: "mix-behaviour-types",
             text: "Mix of offence and behaviour types in the AP"
           },
           {
-            value: "co-accused",
-            text: "Co-accused"
+            value: "staff-conflict",
+            text: "Staff conflict of interest"
           },
           {
-            value: "gangs",
-            text: "Gang / rival members"
+            value: "other-appeal",
+            text: "Other",
+            conditional: {
+              html: appealOther
+            }
           }
         ]
       }) }}

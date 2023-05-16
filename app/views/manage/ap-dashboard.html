@@ -33,15 +33,12 @@
   <div style="float: right;">
     {{ mojButtonMenu({
       items: [{
-        text: "Create a manual  placement",
-        href: "/manage/create-placement/enter-crn"
-      }, {
-        text: "Mark beds as out of service",
-        href: "/manage/lost-beds",
+        text: "Manage beds",
+        href: "/manage/manage-beds",
         classes: "govuk-button--secondary"
       }, {
-        text: "Manage out of service beds",
-        href: "/manage/out-of-service-beds-board",
+        text: "View occupancy",
+        href: "https://www.figma.com/proto/kP7jyX3L01CQap6ErAX648/Approved-Premises-Beta?page-id=439%3A14130&type=design&node-id=458-16492&viewport=2059%2C563%2C0.14&scaling=scale-down-width&starting-point-node-id=645%3A24629",
         classes: "govuk-button--secondary"
       }]
     }) }}
@@ -84,9 +81,19 @@
           value: {
             text: "4"
           }
+        },
+        {
+          key: {
+            text: "Current occupancy"
+          },
+          value: {
+            text: "80%"
+          }
         }
       ]
     }) }}
+
+    <p class="govuk-body"><a href="#" class="govuk-link">View occupancy</a></p>
 
   </div>
 

@@ -1,8 +1,8 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
 
 
 {% extends "layout.html" %}
@@ -71,34 +71,57 @@
         ]
       }) }}
 
-      {{ govukDateInput({
-        id: "change-arrival-date",
-        namePrefix: "change-arrival-date",
-        fieldset: {
-          legend: {
-            text: "What is the new arrival date?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 27 3 2007"
-        }
-      }) }}
 
-      {{ govukDateInput({
+      {% set arrivalDate %}
+      {{ govukInput({
+        id: "change-arrival-date",
+        name: "change-arrival-date",
+        type: "date",
+        autocomplete: "date",
+        classes: "govuk-!-width-one-third"
+      }) }}
+      {% endset -%}
+
+      {% set departureDate %}
+      {{ govukInput({
         id: "change-departure-date",
-        namePrefix: "change-departure-date",
+        name: "change-departure-date",
+        type: "date",
+        autocomplete: "date",
+        classes: "govuk-!-width-one-third"
+      }) }}
+      {% endset -%}
+
+      
+
+      {{ govukCheckboxes({
+        name: "date-change",
         fieldset: {
           legend: {
-            text: "What is the new departure date?",
+            text: "What date do you want to change?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "For example, 27 3 2007"
-        }
+          text: "Select all options that are relevant to you."
+        },
+        items: [
+          {
+            value: "arrival-date",
+            text: "Arrival date",
+            conditional: {
+              html: arrivalDate
+            }
+          },
+          {
+            value: "departure-date",
+            text: "Departure date",
+            conditional: {
+              html: departureDate
+            }
+          }
+        ]
       }) }}
 
 

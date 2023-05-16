@@ -22,60 +22,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Mark bed as out of service</h2>
-   
- <!-- Number of beds lost -->
-
-      {{ govukSelect({
-        id: "room-number",
-        name: "room-number",
-        label: {
-          text: "Room number"
-        },
-        items: [
-          {
-            value: "room-1",
-            text: " 1"
-          },
-          {
-            value: "room-2",
-            text: " 2"
-          },
-          {
-            value: "room-3",
-            text: " 3"
-          },
-          {
-            value: "room-4",
-            text: " 4"
-          }
-        ]
-      }) }}
-
-      {{ govukSelect({
-        id: "bed-number",
-        name: "bed-number",
-        label: {
-          text: "Bed number"
-        },
-        items: [
-          {
-            value: "bed-1",
-            text: " 1"
-          },
-          {
-            value: "bed-2",
-            text: " 2"
-          },
-          {
-            value: "bed-3",
-            text: " 3"
-          },
-          {
-            value: "bed-4",
-            text: " 4"
-          }
-        ]
-      }) }}
 
 
  <!-- Start date -->
@@ -85,7 +31,7 @@
         namePrefix: "start-date",
         fieldset: {
           legend: {
-            text: "Out of service from",
+            text: "What date did this bed go out of service?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -98,7 +44,7 @@
         namePrefix: "end-date",
         fieldset: {
           legend: {
-            text: "Out of service until",
+            text: "What date is this bed out of service until?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
