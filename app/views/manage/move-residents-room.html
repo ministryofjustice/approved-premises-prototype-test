@@ -63,18 +63,53 @@
           },
           {
             key: {
+              text: "Room"
+            },
+            value: {
+              text: "4"
+            }
+          },
+          {
+            key: {
               text: "Bed"
             },
             value: {
-              text: "7"
+              text: "6"
             }
           }
         ]
       }) }}
 
       <p><a href="">View occupancy calendar</a></p>
-  
-      
+
+        {{ govukSelect({
+          id: "select-person-move",
+          name: "select-person-move",
+          label: {
+            text: "Who do you want to move to this bed?",
+            classes: "govuk-label--m"
+          },
+          items: [
+            {
+              value: "person-1",
+              text: "John Brown"
+            },
+            {
+              value: "person-2",
+              text: "Danny Wilson",
+              selected: true
+            },
+            {
+              value: "person-3",
+              text: "James Smith"
+            },
+            {
+              value: "person-4",
+              text: "Abdul Karim"
+            }
+          ]
+        }) }}
+
         {{ govukDateInput({
           id: "date-of-move",
           namePrefix: "date-of-move",
@@ -86,49 +121,6 @@
             }
           }
         }) }}
-
-        {{ govukSelect({
-          id: "select-bed-number",
-          name: "select-bed-number",
-          label: {
-            text: "Select bed number",
-            classes: "govuk-label--m"
-          },
-          items: [
-            {
-              value: "bed-1",
-              text: "1"
-            },
-            {
-              value: "bed-2",
-              text: "2",
-              selected: true
-            },
-            {
-              value: "bed-3",
-              text: "3"
-            },
-            {
-              value: "bed-4",
-              text: "4"
-            },
-            {
-              value: "bed-5",
-              text: "5",
-              selected: true
-            },
-            {
-              value: "bed-6",
-              text: "6"
-            },
-            {
-              value: "bed-7",
-              text: "7"
-            }
-          ]
-        }) }}
-
-      
         
         {{ govukTextarea({
           name: "move-bed-detail",
@@ -139,6 +131,7 @@
           }
         }) }}
 
+        <p>The person will stay in this bed until their departure date</p>
 
         {{ govukButton({
           text: "Save and continue",

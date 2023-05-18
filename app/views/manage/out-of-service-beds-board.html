@@ -29,26 +29,10 @@
       rows: [
         {
           key: {
-            text: "Current occupancy"
+            text: "Out of service"
           },
           value: {
-            text: "16 of 35 beds (45%)"
-          }
-        },
-        {
-          key: {
-            text: "Available"
-          },
-          value: {
-            text: "5 beds"
-          }
-        },
-        {
-          key: {
-            text: "Out of Service"
-          },
-          value: {
-            text: "4 beds"
+            text: "3 beds"
           }
         }
       ]
@@ -70,14 +54,14 @@
 
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
-    <h2 class="govuk-heading-l">Currently out of service</h2>
+    <h2 class="govuk-heading-m">Out of service</h2>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Bed</th>
           <th scope="col" class="govuk-table__header">Room</th>
-          <th scope="col" class="govuk-table__header">Start date</th>
-          <th scope="col" class="govuk-table__header">End date</th>
+          <th scope="col" class="govuk-table__header">Out of service from</th>
+          <th scope="col" class="govuk-table__header">Out of service until</th>
           <th scope="col" class="govuk-table__header">Reason</th>
           <th scope="col" class="govuk-table__header">Ref number</th>
           <th scope="col" class="govuk-table__header">Action</th>
@@ -118,7 +102,7 @@
   </div>
 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="out-of-service">
-    <h2 class="govuk-heading-l">Available beds</h2>
+    <h2 class="govuk-heading-l"></h2>
     <table class="govuk-table">
     </table>
   </div>
