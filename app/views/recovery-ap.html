@@ -1,6 +1,5 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
 {% extends "layout.html" %}
 
@@ -22,10 +21,36 @@
 
     <h1 class="govuk-heading-l"> Recovery Focused Approved Premises </h1>
 
-    {% set isflArea %}
+    <p>If additional information is required please contact the prison offender manager.</p>
+
+    
+   
+
       {{ govukTextarea({
-        id: "isfl-area",
-        name: "isfl-area",
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "How has the person demonstrated their motivation to address their substance misuse?",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: 'This could include if the person has been, or is:
+          <ul>
+            <li>living on an incentivised substance free living (ISFL) unit in custody</li>
+            <li>on an abstinence or drug recovery wing</li>
+            <li>engaged with the drugs and alcohol rehabilitation treatment (DART) team in custody</li>
+            <li>engaged with support services (for example the prison chaplaincy)</li>
+          </ul>'
+        }
+      }) }}
+
+
+
+    {% set rfapTreatment %}
+      {{ govukTextarea({
+        id: "rfap-treatment",
+        name: "rfap-treatment",
         type: "textarea",
         autocomplete: "textarea",
         spellcheck: false,
@@ -36,117 +61,46 @@
       }) }}
     {% endset -%}
 
-
-    {% set rfapCompliance %}
-      {{ govukTextarea({
-        id: "rfap-compliance",
-        name: "rfap-compliance",
-        type: "textarea",
-        autocomplete: "textarea",
-        spellcheck: false,
-        classes: "govuk-!-width-full-width",
-        label: {
-          text: "Provide detais"
-        }
-      }) }}
-    {% endset -%}
-
-
-    {% set dartEngaged %}
-      {{ govukTextarea({
-        id: "engaged-with-dart",
-        name: "engaged-with-dart",
-        type: "textarea",
-        autocomplete: "textarea",
-        spellcheck: false,
-        classes: "govuk-!-width-full-width",
-        label: {
-          text: "Provide detais"
-        }
-      }) }}
-    {% endset -%}
-
-
-      
       {{ govukRadios({
-        idPrefix: "isfl-custody",
-        name: "isfl-custody",
+        idPrefix: "rfap-receiving-treatment",
+        name: "rfap-receiving-treatment",
         fieldset: {
           legend: {
-            text: "Has this person been in an incentivised substance free living (ISFL) area in custody?",
+            text: "Is this person receiving clinical, medical and/or psychosocial treatment for their substance misuse?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          text: 'Such as a clinical treatment pathway. Or an intervention (for example, an accredited programme)'
+        },
         items: [
           {
-            value: "isfl-yes",
+            value: "treatment-yes",
             text: "Yes",
             conditional: {
-              html: isflArea
+              html: rfapTreatment
             }
           },
           {
-            value: "isfl-no",
+            value: "treatment-no",
             text: "No"
           }
         ]
       }) }}
 
-    <!-- Radios 2 -->
-
-    {{ govukRadios({
-      idPrefix: "dart-engagement",
-      name: "dart-engagement",
-      fieldset: {
-        legend: {
-          text: "Has the person engaged with the DART Team in custody?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "dart-yes",
-          text: "Yes",
-          conditional: {
-            html: dartEngaged
-          }
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "How is the person planning to continue their recovery work whilst in the AP?",
+          classes: "govuk-label--m",
+          isPageHeading: true
         },
-        {
-          value: "dart-no",
-          text: "No"
+        hint: {
+          text: 'This could include working with a sober coach, continuing with mutual aid groups (such as AA/NA/CA), or assessing treatment options. '
         }
-      ]
-    }) }}
-
-    <!-- Radio 3 -->
-
-    {{ govukRadios({
-      idPrefix: "recovery-ap-compliance",
-      name: "recovery-ap-compliance",
-      fieldset: {
-        legend: {
-          text: "Is this person willing to comply with the Recovery Focused AP regime?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "compliance-yes",
-          text: "Yes",
-          conditional: {
-            html: rfapCompliance
-          }
-        },
-        {
-          value: "compliance-no",
-          text: "No"
-        }
-      ]
-    }) }}
-
+      }) }}
 
 
     {{ govukButton({
