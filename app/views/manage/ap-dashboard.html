@@ -52,14 +52,6 @@
       rows: [
         {
           key: {
-            text: "Code"
-          },
-          value: {
-            text: "BDFORD"
-          }
-        },
-        {
-          key: {
             text: "Postcode"
           },
           value: {
@@ -172,6 +164,7 @@
 
     {% set upcomingArrivals %}
     <h2 class="govuk-heading-l">Upcoming arrivals</h2>
+    <p>Showing all arrivals in the next 40 days</p>
     {{ govukTable({
       head: [
         {
@@ -238,6 +231,7 @@
 
     {% set upcomingDepartures %}
     <h2 class="govuk-heading-l">Upcoming departures</h2>
+     <p>Showing all departures in the next 40 days</p>
     {{ govukTable({
       head: [
         {

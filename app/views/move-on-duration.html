@@ -43,15 +43,37 @@
    
     {% set differentDuration %}
 
-    {{ govukInput({
-      label: {
-        text: "How many weeks will the person stay at the AP?"
-      },
-      classes: "govuk-!-width-one-quarter",
-      id: "one-quarter",
-      name: "one-quarter"
-    }) }}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        
+          <p class="govuk-body">
+            How long will the person stay at the AP?
+          </p>
+        <div id="passport-issued-hint" class="govuk-hint">
+          
+        </div>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Weeks
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Days
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
 
+    
     {{ govukTextarea({
       id: "risk-resident",
       name: "risk-resident",
