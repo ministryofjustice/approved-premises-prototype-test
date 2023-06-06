@@ -445,6 +445,21 @@ router.post('/request-for-placement-type', function (req, res) {
 })
 
 
+// routing for contact information (Case manager responisbility)
+
+router.post('/confirm-details', function (req, res) {
+
+  var caseManagerResponsibility = req.session.data['case-management-responsibility']
+  console.log({caseManagerResponsibility})
+  console.log(req.session.data)
+
+  if (caseManagerResponsibility == "case-resposibility-yes"){
+    res.redirect('/task-list-standard')
+  } else {
+    res.redirect('/confirm-case-manager-details')
+  }
+})
+
 
 //route for manage - log a departure 
 
