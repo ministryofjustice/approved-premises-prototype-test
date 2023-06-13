@@ -3,6 +3,8 @@
 {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
 
 {% extends "layout.html" %}
 
@@ -89,6 +91,17 @@
             text: "Unplanned FM works required"
           }
         ]
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Work  order reference number",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        id: "event-name",
+        name: "event-name"
       }) }}
 
       {{ govukTextarea({
