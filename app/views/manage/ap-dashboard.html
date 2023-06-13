@@ -17,7 +17,7 @@
 
 {% block beforeContent %}
   {{ govukBackLink({
-    text: "Back",
+    text: "Back to list of Approved Premises",
     href: "/manage/ap-list"
   }) }}
 {% endblock %}
@@ -80,6 +80,14 @@
           },
           value: {
             text: "80%"
+          }
+        },
+        {
+          key: {
+            text: "Overbooked beds"
+          },
+          value: {
+            html: '<p><a href="">8</a></p>'
           }
         }
       ]
