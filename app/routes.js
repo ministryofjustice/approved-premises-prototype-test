@@ -433,16 +433,52 @@ router.post('/rfap-required', function (req, res) {
 
 router.post('/request-for-placement-type', function (req, res) {
 
-  var receivedAdditonalInfo = req.session.data['type-of-rfp']
-  console.log({receivedAdditonalInfo})
+  var typeOfRfp = req.session.data['type-of-rfp']
+  console.log({typeOfRfp})
   console.log(req.session.data)
 
-  if (receivedAdditonalInfo == "type-of-rfp-parole"){
+  if (typeOfRfp == "type-of-rfp-parole"){
     res.redirect('/request-for-placement/rfp-parole-details')
-  } else {
+  } else if (typeOfRfp == "type-of-rfp-rotl"){
     res.redirect('/request-for-placement/rfp-rotl-details')
+  } else {
+    res.redirect('/request-for-placement/rfp-additional-details')
   }
 })
+
+
+// routing for ROTL location on ROTL details screen
+
+router.post('/rotl-location', function (req, res) {
+
+  var rotlPlacement = req.session.data['previous-rotl-placement']
+  console.log({rotlPlacement})
+  console.log(req.session.data)
+
+  if (rotlPlacement == "previous-rotl-yes"){
+    res.redirect('/request-for-placement/rfp-rotl-same-ap')
+  } else {
+    res.redirect('/request-for-placement/rfp-rotl-ap-location')
+  }
+})
+
+
+// routing for ROTL placement location. Asking if the person wants to be located in the same one
+
+router.post('/rotl-ap-placement', function (req, res) {
+
+  var rotlSameAp = req.session.data['rotl-same-ap']
+  console.log({rotlSameAp})
+  console.log(req.session.data)
+
+  if (rotlSameAp == "rotl-same-ap-yes"){
+    res.redirect('/request-for-placement/rfp-rotl-dates')
+  } else {
+    res.redirect('/request-for-placement/rfp-rotl-ap-location')
+  }
+})
+
+
 
 
 // routing for contact information (Case manager responisbility)

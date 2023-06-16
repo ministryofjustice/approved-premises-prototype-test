@@ -13,11 +13,154 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-full-width">
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Check your answers </h1>
 
         <div class="main-box">
-        <div class="box-title govuk-heading-m" id="person-details">
+        <div class="box-title govuk-heading-s" id="person-details">
+         Parole information
+        </div>
+        <div class="box-content">
+          {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "Date of parole board decision"
+          },
+          value: {
+          text: "16 Jun 2023"
+          },
+          actions: {
+            items: [
+            {
+            href: "index.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+            key: {
+            text: "Information from the direction to release will impact the placement"
+            },
+            value: {
+            text: "Example text here "
+            },
+            actions: {
+              items: [
+              {
+              href: "index.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+          }
+          ]
+          }) }}
+        </div>
+      </div>
+
+      <div class="main-box">
+        <div class="box-title govuk-heading-s" id="person-details">
+         Updates to application
+        </div>
+        <div class="box-content">
+          {{ govukSummaryList({
+          rows: [
+          {
+          key: {
+          text: "Have there been any significant events since the application was assessed?"
+          },
+          value: {
+          text: "No"
+          },
+          actions: {
+            items: [
+            {
+            href: "index.html",
+            text: "Change",
+            visuallyHiddenText: "change"
+            }
+            ]
+            }
+          },
+          {
+            key: {
+            text: "Has the person’s circumstances changed which affect the planned AP placement?"
+            },
+            value: {
+            text: "No"
+            },
+            actions: {
+              items: [
+              {
+              href: "index.html",
+              text: "Change",
+              visuallyHiddenText: "change"
+              }
+              ]
+              }
+            },
+            {
+              key: {
+              text: "Has the person’s risk factors changed since the application was assessed?"
+              },
+              value: {
+              text: "Yes - The persons risk of room sharing has increased due to the person setting cell fires in custody, it is advised that he is placed in a single room"
+              },
+              actions: {
+                items: [
+                {
+                href: "index.html",
+                text: "Change",
+                visuallyHiddenText: "change"
+                }
+                ]
+                }
+              },
+              {
+                key: {
+                text: "Has the person’s access or healthcare needs changed since the application was assessed?"
+                },
+                value: {
+                text: "No"
+                },
+                actions: {
+                  items: [
+                  {
+                  href: "index.html",
+                  text: "Change",
+                  visuallyHiddenText: "change"
+                  }
+                  ]
+                  }
+                },
+                {
+                  key: {
+                  text: "Have any location factors changed since the application was assessed?"
+                  },
+                  value: {
+                  text: "No"
+                  },
+                  actions: {
+                    items: [
+                    {
+                    href: "index.html",
+                    text: "Change",
+                    visuallyHiddenText: "change"
+                    }
+                    ]
+                    }
+                  }
+          ]
+          }) }}
+        </div>
+      </div>
+
+      <div class="main-box">
+        <div class="box-title govuk-heading-s" id="person-details">
          Additional documents
         </div>
         <div class="box-content">
@@ -25,10 +168,10 @@
           rows: [
           {
           key: {
-          text: "document-name.doc"
+          text: "Parole report"
           },
           value: {
-          text: "Parole board report"
+          html: '<p><a href="">View document</a></p>'
           },
           actions: {
             items: [
@@ -45,68 +188,6 @@
         </div>
       </div>
 
-      <div class="main-box">
-        <div class="box-title govuk-heading-m" id="person-details">
-         Additional information
-        </div>
-        <div class="box-content">
-          {{ govukSummaryList({
-          rows: [
-          {
-          key: {
-          text: "Has the person's risk level changed?"
-          },
-          value: {
-          text: "Parole board report"
-          },
-          actions: {
-            items: [
-            {
-            href: "index.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
-          },
-          {
-            key: {
-            text: "Has the person's access or healthcare needs changed?"
-            },
-            value: {
-            text: "Parole board report"
-            },
-            actions: {
-              items: [
-              {
-              href: "index.html",
-              text: "Change",
-              visuallyHiddenText: "change"
-              }
-              ]
-              }
-            },
-            {
-              key: {
-              text: "Have any location factors changed?"
-              },
-              value: {
-              text: "Parole board report"
-              },
-              actions: {
-                items: [
-                {
-                href: "index.html",
-                text: "Change",
-                visuallyHiddenText: "change"
-                }
-                ]
-                }
-              }
-          ]
-          }) }}
-        </div>
-      </div>
 
       <h2 class="app-task-list__section">
        Submit your application

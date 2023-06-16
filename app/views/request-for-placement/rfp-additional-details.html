@@ -2,6 +2,7 @@
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 
 {% extends "layout.html" %}
@@ -13,7 +14,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/request-for-placement/rfp-rotl-details"
+    href: "/request-for-placement/type-of-rfp"
   }) }}
 {% endblock %}
 
@@ -23,19 +24,18 @@
   <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-l">
-        <span class="govuk-caption-l">ROTL</span>
+        <span class="govuk-caption-l">Additional placements</span>
         Request for placement
       </h2>
 
-    
+
       {{ govukDateInput({
-        id: "rotl-arrival-date",
-        namePrefix: "rotl-arrival-date",
+        id: "rfp-arrival-date",
+        namePrefix: "rfp-arrival-date",
         fieldset: {
           legend: {
-            text: "When will the person arrive?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            text: "When will the person arrive at the Approved Premises (AP)?",
+            classes: "govuk-label--m"
           }
         },
         hint: {
@@ -51,6 +51,9 @@
               How long should the AP placement be?
             </label>
           </h1>
+          <!-- <div id="more-detail-hint" class="govuk-hint">
+            Do not include personal or financial information, like your National Insurance number or credit card details.
+          </div> -->
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -72,12 +75,19 @@
         </fieldset>
       </div>
 
-      <p class="govuk-body">The departure date will be the 7th August 2023</p>
-     
+    
+      {{ govukTextarea({
+        name: "additional-placement-reason",
+        id: "additional-placement-reason",
+        label: {
+          text: "Why are you requesting this placement?",
+          classes: "govuk-label--m"
+        }
+      }) }}
 
       {{ govukButton({
         text: "Save and continue",
-        href: "/request-for-placement/rfp-additional-information"
+        href: "/request-for-placement/check-answers"
       }) }}
 
   </div>

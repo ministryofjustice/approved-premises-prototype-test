@@ -1,0 +1,62 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/request-for-placement/rfp-rotl-details"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">
+        <span class="govuk-caption-l">ROTL</span>
+        Request for placement
+      </h2>
+
+      {{ govukInput({
+        label: {
+          text: "What is the preferred postcode area for the Approved Premises (AP) placement?",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        classes: "govuk-input--width-4",
+        hint: {
+          html: '<p>If the person can not be placed in the same Approved Premises (AP), provide the preferred location for placement. </p>
+
+           <p> Please provide the postcode area only. To get the postcode from the full postcode remove the last 3 characters.</p>
+            
+           <p> For example, the postcode area for SW11 4NJ is SW11</p>'
+        },
+        id: "account-number",
+        name: "account-number",
+        inputmode: "numeric",
+        spellcheck: false
+      }) }}
+
+      
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "/request-for-placement/rfp-rotl-dates"
+      }) }}
+
+  </div>
+</div>
+
+
+
+{% endblock %}

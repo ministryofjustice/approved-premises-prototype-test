@@ -13,7 +13,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/task-list-standard"
+    href: "/request-for-placement/rfp-rotl-details"
   }) }}
 {% endblock %}
 
@@ -22,38 +22,39 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/request-for-placement-type" method="post" novalidate>
+      <h2 class="govuk-heading-l">
+        <span class="govuk-caption-l">ROTL</span>
+        Request for placement
+      </h2>
 
-    
+      <form action="/rotl-ap-placement" method="post" novalidate>
 
-      <h2 class="govuk-heading-l">Request for placement</h2>
-    
 
       {{ govukRadios({
-        id: "type-of-rfp",
-        name: "type-of-rfp",
+        id: "rotl-same-ap",
+        name: "rotl-same-ap",
         fieldset: {
           legend: {
-            text: "What is the reason you would like to make a request for placement?",
+            text: "Do you want this person to stay in the same Approved Premises (AP)?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          text: "Placement in this AP is not guaranteed"
+        },
         items: [
           {
-            value: "type-of-rfp-parole",
-            text: "Release directed following parole board or oral hearing"
+            value: "rotl-same-ap-yes",
+            text: "Yes"
           },
           {
-            value: "type-of-rfp-rotl",
-            text: "Release on Temporary Licence (ROTL)"
-          },
-          {
-            value: "type-of-rfp-additional",
-            text: "An additional placement on an existing application"
+            value: "rotl-same-ap-no",
+            text: "No"
           }
         ]
       }) }}
+
 
       <input type="hidden" name="answers-checked" value="true">
 

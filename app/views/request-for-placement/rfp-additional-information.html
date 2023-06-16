@@ -23,17 +23,49 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-heading-l">
-        Additional information 
-      </h2>
-      <p>Provide details of any information that have changed since this application has been assessed.</p>
-      <p>This application will be reviewed at the matching stage.</p>
+    <h2 class="govuk-heading-l">
+      <span class="govuk-caption-l">Placement request</span>
+      Updates to application    
+    </h2>
+
+
+      <p>Provide details of things that might have changed since the application was assessed. </p>
+      <p>This could include a significant event, such as a further offence. The person’s risk factors, access or healthcare needs. Or the preferred location for placement. </p>
+      <p>This information will be assessed by a central referral unit manager. They will make a decision on whether this application is still suitable for placement. </p>
 
      
-      <p><strong>Application</strong>: Completed 19 December 2022</p>
-      <p><a href="">View application (opens in new window)</a></p>
+     
+      <p><a href="">View application</a> (Submitted on 9 April 2023)</p>
 
-      {% set riskLevelChanged %}
+      {% set signigicantEvents %}
+      {{ govukTextarea({
+        id: "significant-events",
+        name: "significant-events",
+        type: "textarea",
+        autocomplete: "textarea",
+        spellcheck: false,
+        classes: "govuk-!-width-full-width",
+        label: {
+          text: "Provide detais"
+        }
+      }) }}
+    {% endset -%}
+
+    {% set changeInCircumstances %}
+    {{ govukTextarea({
+      id: "change-in-circumstances",
+      name: "change-in-circumstances",
+      type: "textarea",
+      autocomplete: "textarea",
+      spellcheck: false,
+      classes: "govuk-!-width-full-width",
+      label: {
+        text: "Provide detais"
+      }
+    }) }}
+  {% endset -%}
+    
+    {% set riskLevelChanged %}
         {{ govukTextarea({
           id: "risk-level-changed",
           name: "risk-level-changed",
@@ -45,46 +77,97 @@
             text: "Provide detais"
           }
         }) }}
-    {% endset -%}
+      {% endset -%}
 
-    {% set needsChanged %}
-      {{ govukTextarea({
-        id: "needs-changed",
-        name: "needs-changed",
-        type: "textarea",
-        autocomplete: "textarea",
-        spellcheck: false,
-        classes: "govuk-!-width-full-width",
-        label: {
-          text: "Provide detais"
-        }
-      }) }}
-    {% endset -%}
-
-    {% set locationChanged %}
+      {% set needsChanged %}
         {{ govukTextarea({
-          id: "location-changed",
-          name: "location-changed",
+          id: "needs-changed",
+          name: "needs-changed",
           type: "textarea",
           autocomplete: "textarea",
           spellcheck: false,
           classes: "govuk-!-width-full-width",
           label: {
-            text: "Provide detais"
+            text: "Provide details of the changes and adjustments that the person requires"
           }
         }) }}
-    {% endset -%}
+      {% endset -%}
+
+      {% set locationChanged %}
+          {{ govukTextarea({
+            id: "location-changed",
+            name: "location-changed",
+            type: "textarea",
+            autocomplete: "textarea",
+            spellcheck: false,
+            classes: "govuk-!-width-full-width",
+            label: {
+              text: "Provide detais"
+            }
+          }) }}
+      {% endset -%}
 
     <!--- Radio buttons -->
 
-      {{ govukRadios({
+    {{ govukRadios({
+      name: "rfp-significant-events",
+      fieldset: {
+        legend: {
+          text: "Have there been any significant events since the application was assessed?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-significant-events",
+          text: "Yes",
+          conditional: {
+            html: signigicantEvents
+          }
+        },
+        {
+          value: "no--significant-events",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      name: "rfp-change-circumstances",
+      fieldset: {
+        legend: {
+          text: "Has the person’s circumstances changed which affect the planned AP placement?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes-change-circumstances",
+          text: "Yes",
+          conditional: {
+            html: changeInCircumstances
+          }
+        },
+        {
+          value: "no-change-circumstances",
+          text: "No"
+        }
+      ]
+    }) }}
+    
+    {{ govukRadios({
         name: "risk-additional-information",
         fieldset: {
           legend: {
-            text: "Has the person's risk level changed?",
+            text: "Has the person’s risk factors changed since the application was assessed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          text: "For example, the person recently caused a fire in their prison cell"
         },
         items: [
           {
@@ -105,10 +188,13 @@
         name: "needs-additional-information",
         fieldset: {
           legend: {
-            text: "Has the person's access or healthcare needs changed?",
+            text: "Has the person’s access or healthcare needs changed since the application was assessed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          text: "For example, the person now requires a wheelchair accessible room"
         },
         items: [
           {
@@ -129,10 +215,13 @@
         name: "location-additional-information",
         fieldset: {
           legend: {
-            text: "Have any location factors changed?",
+            text: "Have any location factors changed since the application was assessed?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          text: "For example, the person can no longer reside in a certain area"
         },
         items: [
           {
@@ -148,19 +237,6 @@
           }
         ]
       }) }}
-
-
-
-
-
-
-     
-
-
-
-
-
-      
 
       {{ govukButton({
         text: "Save and continue",
