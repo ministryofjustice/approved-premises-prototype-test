@@ -65,16 +65,7 @@
 
       {% endset -%}
 
-      {% set noPreviousPlacement %}
-        {{ govukInput({
-          label: {
-            text: "Which Approved Premises do you want the person to stay in?"
-          },
-          id: "last-ap",
-          name: "last-ap"
-        }) }}
-
-      {% endset -%}
+      
 
 
 
@@ -99,10 +90,7 @@
           },
           {
             value: "previous-rotl-no",
-            text: "No",
-            conditional: {
-              html: noPreviousPlacement
-            }
+            text: "No"
           }
         ]
       }) }}
