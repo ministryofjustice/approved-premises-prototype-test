@@ -53,8 +53,6 @@
 
 
 
-
-
     {{ govukSummaryList({
       rows: [
         {
@@ -72,86 +70,86 @@
           value: {
             text: "315VWWC"
           }
+        },
+        {
+          key: {
+            text: "Arrival date"
+          },
+          value: {
+            text: "19 Jun 2023"
+          }
+        },
+        {
+          key: {
+            text: "Departure date"
+          },
+          value: {
+            text: "19 Sep 2023"
+          }
+        },
+        {
+          key: {
+            text: "Length of stay"
+          },
+          value: {
+            text: "12 weeks"
+          }
+        },
+        {
+          key: {
+            text: "Key worker"
+          },
+          value: {
+            text: "Janice Coundon"
+          }
+        },
+        {
+          key: {
+            text: "Tier"
+          },
+          value: {
+            html: '<span class="moj-badge moj-badge--green">A1</span>'
+          }
+        },
+        {
+          key: {
+            text: "Bed"
+          },
+          value: {
+            text: "1-2"
+          }
         }
       ]
     }) }}
 
-    <h1 class="govuk-heading-m">Persons information</h1>
-
-   
-
-{{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Name"
-      },
-      value: {
-        text: "Sarah Philips"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "name"
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Application"
+          },
+          value: {
+            html: '<p><a href="">View document</a></p>'
           }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Date of birth"
-      },
-      value: {
-        text: "5 January 1978"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "date of birth"
+        },
+        {
+          key: {
+            text: "Assessment"
+          },
+          value: {
+            html: '<p><a href="">View document</a></p>'
           }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Address"
-      },
-      value: {
-        html: "72 Guild Street<br>London<br>SE23 6FH"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "address"
+        },
+        {
+          key: {
+            text: "Matching information"
+          },
+          value: {
+            html: '<p><a href="">View document</a></p>'
           }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "Contact details"
-      },
-      value: {
-        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "contact details"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
+        }
+      ]
+    }) }}
 
 
   

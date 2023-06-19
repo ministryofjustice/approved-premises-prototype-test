@@ -57,10 +57,6 @@
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Alan Brown</h2>
 
-
-
-
-
     {{ govukSummaryList({
       rows: [
         {
@@ -78,171 +74,86 @@
           value: {
             text: "315VWWC"
           }
-        }
-      ]
-    }) }}
-
-
-    {{ govukAccordion({
-      id: "accordion-default",
-      items: [
+        },
         {
-          heading: {
-            text: "Personal information"
+          key: {
+            text: "Arrival date"
           },
-          content: {
-            html: '
-            <table class="govuk-table">
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Arrival date</th>
-                  <td class="govuk-table__cell">23 Apr 2023</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Departure date</th>
-                  <td class="govuk-table__cell">23 Jul 2023</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Length of stay</th>
-                  <td class="govuk-table__cell">12 weeks</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Tier</th>
-                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">A1</span></td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Key worker</th>
-                  <td class="govuk-table__cell">Donna Wilson</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Bed</th>
-                  <td class="govuk-table__cell">2</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Ethnicity</th>
-                  <td class="govuk-table__cell">White British</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Religion</th>
-                  <td class="govuk-table__cell">None</td>
-                </tr>
-              </tbody>
-            </table> '
+          value: {
+            text: ""
           }
         },
         {
-          heading: {
-            text: "Risk information"
+          key: {
+            text: "Departure date"
           },
-          content: {
-            html: '<table class="govuk-table">
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Risk of Serious Harm (RoSH)</th>
-                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">HIGH</span></td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">MAPPA</th>
-                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--purple">LEVEL 2</span></td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Delius Risk registers</th>
-                  <td class="govuk-table__cell">
-                    <ul>
-                    <li>Restraining order</li>
-                    <li>Risk to known adult</li>
-                    <li>Domestic Abuse Partner </li>
-                  </ul>
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Risk to staff</th>
-                  <td class="govuk-table__cell">No</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Risk to others</th>
-                  <td class="govuk-table__cell">Yes</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Arson risk</th>
-                  <td class="govuk-table__cell">No</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Vulnerable to exploitation</th>
-                  <td class="govuk-table__cell">Yes</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Potential to exploit others</th>
-                  <td class="govuk-table__cell">No</td>
-                </tr>
-              </tbody>
-            </table>'
+          value: {
+            text: ""
           }
         },
         {
-          heading: {
-            text: "Access, cultural and healthcare needs"
+          key: {
+            text: "Length of stay"
           },
-          content: {
-            html: '<table class="govuk-table">
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Needs</th>
-                  <td class="govuk-table__cell">
-                    <ul>
-                      <li>Mobility needs</li>
-                      <li>Neurodivergent conditions</li>
-                      <li>Healthcare</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Religious needs</th>
-                  <td class="govuk-table__cell">None</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Care and support needs</th>
-                  <td class="govuk-table__cell">None</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Known health conditions</th>
-                  <td class="govuk-table__cell">None</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Adjustments required</th>
-                  <td class="govuk-table__cell">Alan Brown needs a single room with step-free access. His mobility is declining and he may require a wheelchair accessible room in the future.</td>
-                </tr>
-              </tbody>
-            </table>'
+          value: {
+            text: "12 weeks"
           }
         },
         {
-          heading: {
-            text: "Documents"
+          key: {
+            text: "Key worker"
           },
-          content: {
-            html: '<table class="govuk-table">
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Application</th>
-                  <td class="govuk-table__cell"><a href="">View document</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Assessment</th>
-                  <td class="govuk-table__cell"><a href="">View document</a></td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">Matching information</th>
-                  <td class="govuk-table__cell"><a href="">View document</a></td>
-                </tr>
-              </tbody>
-            </table>'
+          value: {
+            text: "Janice Coundon"
+          }
+        },
+        {
+          key: {
+            text: "Tier"
+          },
+          value: {
+            html: '<span class="moj-badge moj-badge--green">A1</span>'
+          }
+        },
+        {
+          key: {
+            text: "Bed"
+          },
+          value: {
+            text: "1-2"
           }
         }
       ]
     }) }}
 
-  
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Application"
+          },
+          value: {
+            html: '<p><a href="">View document</a></p>'
+          }
+        },
+        {
+          key: {
+            text: "Assessment"
+          },
+          value: {
+            html: '<p><a href="">View document</a></p>'
+          }
+        },
+        {
+          key: {
+            text: "Matching information"
+          },
+          value: {
+            html: '<p><a href="">View document</a></p>'
+          }
+        }
+      ]
+    }) }}
 
   </div>
 </div>
