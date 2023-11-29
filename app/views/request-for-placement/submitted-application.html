@@ -1,6 +1,8 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
 
 {% extends "layout.html" %}
@@ -10,10 +12,30 @@ Home – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+
+<!-- 
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Apply',
+      href: '../pp-dashboard',
+      active: true
+    },
+    {
+      text: 'Search',
+      href: '/search/search'
+    }
+  ]
+}) }}
+
+-->
+
 {{ govukBackLink({
   text: "Back",
-  href: "task-list-standard"
+  href: "../pp-dashboard#submitted"
 }) }}
+
 {% endblock %}
 
 {% block content %}
@@ -21,14 +43,31 @@ Home – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-width">
 
-    {{ mojPageHeaderActions({
-      heading: {
-        text: 'View application'
-      },
-      items: [{
-        text: 'Request a placement',
+
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      David Francis
+    </h1>
+
+    {{ govukButton({
+      text: 'Create a new placement request',
         classes: 'govuk-button--primary',
         href: "/request-for-placement/type-of-rfp"
+    }) }}
+
+    {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'Application',
+        href: '/request-for-placement/submitted-application',
+        active: true
+      }, {
+        text: 'Assessment',
+        href: '/request-for-placement/submitted-assessment'
+      }, {
+        text: 'Timeline',
+        href: '/request-for-placement/submitted-timeline'
       }]
     }) }}
 
@@ -131,15 +170,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Standard"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         }
         ]
@@ -162,15 +192,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Psychologically Informed Planned Environment (PIPE)"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -179,15 +200,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -196,15 +208,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
         {
@@ -213,15 +216,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -230,15 +224,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           }
         ]
@@ -261,15 +246,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Enhanced Security Approved Premises (ESAP)"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -278,15 +254,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "List checkboxes selected"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -295,15 +262,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "List checkboxes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
         {
@@ -312,15 +270,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "List selected checkboxes"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -329,15 +278,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -346,15 +286,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -363,15 +294,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -380,15 +302,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -397,15 +310,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Yes"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           }
         ]
@@ -429,16 +333,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Standard determinate custody"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -446,16 +341,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Licence"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         }
         ]
         }) }}
@@ -476,15 +362,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -493,15 +370,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "03 July 2023"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -510,16 +378,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         }
         ]
         }) }}
@@ -627,16 +486,7 @@ Home – GOV.UK Prototype Kit
           <li>Prevent contact with a previous victim</li>
           <li>Provide drug or alcohol monitoring</li>
         </ul>'
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+         }
         }
         ]
         }) }}
@@ -660,15 +510,6 @@ Home – GOV.UK Prototype Kit
           <li>9. Drug misuse</li>
           <li>10. Alcohol misuse</li>
         </ul>'
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         }
         ]
@@ -692,15 +533,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "To reduce the likelihood of reoffender and to offer drug and alcohol support"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -709,15 +541,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Additional curfews or sign-ins at specific times or intervals will prevent the person being out at key times"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -726,16 +549,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -746,16 +560,7 @@ Home – GOV.UK Prototype Kit
           <li>Arson</li>
           <li>Sexual offence</li>
         </ul>'
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -766,16 +571,7 @@ Home – GOV.UK Prototype Kit
           <li>In-person sexual offence, child victim</li>
           <li>Online sexual offence, adult victim</li>
         </ul>'
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -793,16 +589,7 @@ Home – GOV.UK Prototype Kit
         <ul>
           <li>Arson</li>
         </ul>'
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -814,16 +601,7 @@ Home – GOV.UK Prototype Kit
           <li>Health</li>
           <li>Attitudes, thinking and behaviour</li>
         </ul>'
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -831,16 +609,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: ""
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         }
         ]
         }) }}
@@ -864,15 +633,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: ""
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -881,15 +641,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: ""
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         }
         ]
@@ -911,15 +662,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "NE1 8DY"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -928,15 +670,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Family and friends are nearby which will provide support"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -945,16 +678,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
           key: {
@@ -1031,15 +755,6 @@ Home – GOV.UK Prototype Kit
             <li> Visual impairment </li>
             <li> Healthcare</li>
           </ul>'
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -1048,15 +763,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "No"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -1065,16 +771,7 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "No"
-          },
-          actions: {
-            items: [
-            {
-            href: "index.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
+          }
           },
           {
           key: {
@@ -1082,16 +779,7 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "I don't know"
-          },
-          actions: {
-            items: [
-            {
-            href: "index.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
+          }
           },
           {
           key: {
@@ -1099,16 +787,7 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "No"
-          },
-          actions: {
-            items: [
-            {
-            href: "index.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
+          }
           }, 
           {
             key: {
@@ -1116,16 +795,7 @@ Home – GOV.UK Prototype Kit
             },
             value: {
             text: "Requires a walking stick and sometimes needs additional support when getting up stairs"
-            },
-            actions: {
-              items: [
-              {
-              href: "index.html",
-              text: "Change",
-              visuallyHiddenText: "change"
-              }
-              ]
-              }
+            }
             },
             {
               key: {
@@ -1133,16 +803,7 @@ Home – GOV.UK Prototype Kit
               },
               value: {
               text: "Slight blindness in one eye, doesn't limit his ability"
-              },
-              actions: {
-                items: [
-                {
-                href: "index.html",
-                text: "Change",
-                visuallyHiddenText: "change"
-                }
-                ]
-                }
+              }
               },
               {
                 key: {
@@ -1191,16 +852,7 @@ Home – GOV.UK Prototype Kit
             },
             value: {
             text: "No"
-            },
-            actions: {
-              items: [
-              {
-              href: "index.html",
-              text: "Change",
-              visuallyHiddenText: "change"
-              }
-              ]
-              }
+            }
             },
             {
             key: {
@@ -1208,16 +860,7 @@ Home – GOV.UK Prototype Kit
             },
             value: {
             text: "No further comments"
-            },
-            actions: {
-              items: [
-              {
-              href: "index.html",
-              text: "Change",
-              visuallyHiddenText: "change"
-              }
-              ]
-              }
+            }
             }
             ]
             }) }}
@@ -1242,15 +885,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -1259,16 +893,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -1276,16 +901,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         },
         {
         key: {
@@ -1293,16 +909,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes - in prison Robert got on well with his roommates which helped his progress in prison."
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         }
         ]
         }) }}
@@ -1317,15 +924,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         },
         {
@@ -1334,16 +932,7 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
-          }
+        }
         }
         ]
         }) }}
@@ -1358,15 +947,6 @@ Home – GOV.UK Prototype Kit
         value: {
         html: '<p>Yes</p>
          <p>Has previously stayed in Elm Bank Approved Premises and recalled to custody</p>'
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         }
         ]
@@ -1381,15 +961,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
         }
         }
         ]
@@ -1404,16 +975,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "Yes"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name",
-        classes: 'summarylist'
-        }
-        ]
         }
         }
         ]
@@ -1429,16 +990,6 @@ Home – GOV.UK Prototype Kit
         value: {
           html: '<p>Yes</p>
           <p>Has current conviction of Arson. Has been known to set cell fires for manipulation</p>'
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name",
-        classes: 'summarylist'
-        }
-        ]
         }
         }
         ]
@@ -1453,16 +1004,6 @@ Home – GOV.UK Prototype Kit
         },
         value: {
         text: "No"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name",
-        classes: 'summarylist'
-        }
-        ]
         }
         }
         ]
@@ -1483,15 +1024,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "No"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -1500,15 +1032,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "NE1 8AY"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -1517,16 +1040,7 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Living with partner, friends or family"
-          },
-          actions: {
-            items: [
-            {
-            href: "index.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
+          }
           },
           {
           key: {
@@ -1535,16 +1049,7 @@ Home – GOV.UK Prototype Kit
           value: {
          html: '<p>Yes</p>
          <p>They will live with friends and family which is far away from the victim. Family and friends will support the rehabilitation of the person.</p>'
-          },
-          actions: {
-            items: [
-            {
-            href: "index.html",
-            text: "Change",
-            visuallyHiddenText: "change"
-            }
-            ]
-            }
+          }
           }
           ]
           }) }}
@@ -1565,15 +1070,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Description"
-          },
-          actions: {
-          items: [
-          {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "name"
-          }
-          ]
           }
           },
           {
@@ -1582,15 +1078,6 @@ Home – GOV.UK Prototype Kit
           },
           value: {
           text: "Description"
-          },
-          actions: {
-          items: [
-          {
-          href: "index.html",
-          text: "Change",
-          visuallyHiddenText: "change"
-          }
-          ]
           }
           }
           ]

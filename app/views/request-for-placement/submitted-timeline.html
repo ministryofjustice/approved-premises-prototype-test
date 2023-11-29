@@ -1,0 +1,63 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../pp-dashboard#submitted"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Application</span>
+      David Francis
+    </h1>
+
+    {{ govukButton({
+      text: 'Create a new placement request',
+        classes: 'govuk-button--primary',
+        href: "/request-for-placement/type-of-rfp"
+    }) }}
+
+    {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'Application',
+        href: '/request-for-placement/submitted-application'
+      }, {
+        text: 'Assessment',
+        href: '/request-for-placement/submitted-assessment'
+      }, {
+        text: 'Timeline',
+        href: '/request-for-placement/submitted-timeline',
+        active: true
+      }]
+    }) }}
+
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
