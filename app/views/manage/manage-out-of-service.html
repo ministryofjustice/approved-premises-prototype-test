@@ -9,20 +9,26 @@
   Home – GOV.UK Prototype Kit
 {% endblock %}
 
+
+{% block beforeContent %}
+  
+  {{ govukBackLink({
+    text: "Back",
+    href: "/manage/out-of-service-beds-board"
+  }) }}
+
+{% endblock %}
+
 {% block content %}
  
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukBackLink({
-      text: "Back",
-      href: "/manage/out-of-service-beds-board"
-    }) }}
- 
+  
     <h2 class="govuk-heading-l">Manage out of service bed </h2>
    
     {{ govukSummaryList({
-      classes: 'govuk-summary-list--no-border',
+      classes: 'govuk-summary-list',
       rows: [
         {
           key: {
@@ -45,7 +51,7 @@
             text: "Start date"
           },
           value: {
-            text: "3 October 2022"
+            text: "18 Jun 2023"
           }
         },
         {
@@ -53,7 +59,7 @@
             text: "Expected end date"
           },
           value: {
-            text: "10 October 2022"
+            text: "22 Jun 2023"
           }
         },
         {
@@ -75,12 +81,11 @@
       ]
     }) }}
 
-    <hr>
 <br>
     <h2 class="govuk-heading-m">Room updates</h2> 
     <h3 class="govuk-heading-s">Sarah Brown</h3> 
     <p>26 October 2022, 12:04pm</p>
-    <p>Room was refurbished on dfhsdhsjfd, still awaiting new X, Y, X.</p>
+    <p>Room was refurbished on Monday, still awaiting new X, Y, X.</p>
     <p><a href="">Edit note</a></p>
 
     {{ govukDateInput({
