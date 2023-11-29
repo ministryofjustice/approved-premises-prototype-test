@@ -13,6 +13,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full-width">
 
+    <h1 class="govuk-heading-xl"> Approved Premises (CAS1) prototypes </h1>
+    <p>These prototypes have been created for the Approved Premises service. </p>
+
 {% set miniManageHtml %}
       <h1 class="govuk-heading-l"> Manage </h1>
 
@@ -28,38 +31,47 @@
 
 {% set applyHtml %}
       <h1 class="govuk-heading-l"> Apply </h1>
-      <p> From the <a href="pp-dashboard">dashboard</a>, a user can select a case that is in progress, or can start a new case. If the user starts a new case, they will be taken to the <a href="start.html">start screen</a>. If a user selects a case that is in progress, they will be taken to the <a href="task-list-standard.html">task list</a>.</p>
+      
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="pp-dashboard"> PP views their list of applications</a> </li>
+        <li><a href="start.html">PP starts a new application</a></li>
+        <li><a href="task-list-standard.html">Task list of in progress application</a></li>
+      </ul></il>
+
+      <h2 class="govuk-heading-s">Tier exemptions</h2>
       <p>If the person's tier does not match the elegibility requirements, users will be shown the <a href="tier-drop-out">eligibility screen</a> where they can provide additional information for exceptional circumstances.</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li> If the user selects yes, they will be shown <a href="exemption-questions.html">exemption questions screen</a></li>
-        <li> If the user selects no, they will be shown <a href="exemption-drop-out.html"> a drop out screen</a></li>
-      </ul>
+    
+        <ul class="govuk-list govuk-list--bullet"> 
+          <li><a href="tier-drop-out">An application does not meet the tiering requirements</a></li>
+        </ul>
+      
 
- 
-
-      <h2 class="govuk-heading-m">Multi-agency & emergency screens</h2>
-      <p>We need to show additional questions for applications that are <b>Post sentence supervision</b> or <b>Non-Statutory</b>. PP's will need to provide additional information to form a contingency plan.</p>
+      <h2 class="govuk-heading-s">Multi-agency & emergency screens</h2>
+        <p>Some applications for PSS (Post sentence supervision) and Non-statutory cases require contingency plans. These are used in the Approved Premises for out of hours assistance. </p>
+        <p>If the type of application is either of the above, the following questions will be shown under 'further placement considerations'   task</p>
   
-      <p>The following screens will be shown to users within the further placement considerations task</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="multi-agency-partners.html">Input multi-agency partners</a></li>
-        <li><a href="multi-agency-questions.html">Input multi-agency question responses</a></li>
-     </ul>
+        <p>If an application is an emergency case, the PP will only need to provide information about the multi-agency questions </p>
+        
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="multi-agency-partners.html">Input multi-agency partners</a></li>
+            <li><a href="multi-agency-questions.html">Input multi-agency question responses</a></li>
+          </ul>
 
-     <p>If an application is an emergency case, the PP will need to provide follow up information for the AP manager. They will be shown the following screens at the beginning of the 'Further placement considerations' task flow. <a href="contingency-plans-emergency.html">Contingency plans - emergency</a></p>
-  
+    
 
-      <h2 class="govuk-heading-m">Emergency applications </h2>
-      <p>Emergency applications are for applications which are less than 7 days. If the application is submitted in less than four months an additional screen will be presented. </p>
-      <p>The pages will be presented if the arrival date is either less than 7 days, or 4 months of the application date. </p>
-
-      <p>If the screen is less than 4 months, or less than 7 days they will be shown the <a href="emergency-late-submission.html">following screen</a></p>
+      <h2 class="govuk-heading-s">Emergency applications </h2>
+        <p>Some applications will be emergency or short term applications. 
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Emergency applications are those submitted where arrival is less than 7 days.</li>
+            <li>Short notice applications are those within a 28 day period.</li>
+          </ul>
+        <p>Users will be <a href="emergency-late-submission.html">asked for the reason for a short term application.</a></p>
 
       <h2 class="govuk-heading-m">Request for placement screens </h2>
-      <p>If an application is parole (where no date of release is confirmed) or a ROTL, the probation practicioner will need to create a request for placement.</p>
+      <p>Once a parole or ROTL application has been assessed (as suitable), PPs can submit a request for placement. This is done when a date of arrival is known. </p>
 
       <p><a href="/request-for-placement/type-of-rfp.html">Request for placement journey</a></p>
-       
+      
 {% endset -%}
 
 {% set assessHtml %}
@@ -112,17 +124,53 @@
 
 {% endset -%}
 
+{% set matchManage %}
+<h1 class="govuk-heading-l"> Match and manage user journey </h1>
+
+<p>We are redesigning the match and manage user journey, whilst thinking about moving from allocating beds (to spaces) at a CRU level</p>
+
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  head: [
+    {
+      text: "Task"
+    },
+    {
+      text: "Link"
+    },
+    {
+      text: "Description"
+    },
+    {
+      text: "Date added"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Match"
+      },
+      {
+        html: '<p><a href="/match/matching-information">View list of placements to be matched</a></p>'
+      },
+      {
+        text: ""
+      },
+      {
+        text: "29 Nov 2023"
+      }
+    ]
+  ]
+}) }}
+
+
+{% endset -%}
+
 
 
 {{ govukTabs({
   items: [
-    {
-      label: "Manage",
-      id: "mini-manage",
-      panel: {
-        html: miniManageHtml
-      }
-    },
     {
       label: "Apply",
       id: "apply",
@@ -149,6 +197,20 @@
       id: "request-for-placement",
       panel: {
         html: requestForPlacement
+      }
+    },
+    {
+      label: "Match",
+      id: "match-manage",
+      panel: {
+        html: matchManage
+      }
+    },
+    {
+      label: "Manage",
+      id: "mini-manage",
+      panel: {
+        html: miniManageHtml
       }
     }
   ]
