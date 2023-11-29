@@ -2,6 +2,7 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 {%- from "moj/components/badge/macro.njk" import mojBadge -%}
 
 {% extends "layout.html" %}
@@ -11,6 +12,23 @@
 {% endblock %}
 
 {% block beforeContent %}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Apply',
+      href: '../pp-dashboard',
+      active: true
+    },
+    {
+      text: 'Search',
+      href: '/search/search'
+    }
+  ]
+}) }}
+
+
 {{ govukBackLink({
   text: "Back",
   href: "/index"
@@ -53,6 +71,7 @@
                 <th scope="col" class="govuk-table__header">Tier</th>
                 <th scope="col" class="govuk-table__header">Arrival date</th>
                 <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Action</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -72,9 +91,10 @@
                     classes: "govuk-tag--blue"
                   })}}
                 </td>
+                <td class="govuk-table__cell"><a href="">Withdraw</a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="">Paul Farmer</a></td>
+                <td class="govuk-table__cell"><a href="">Adam Dixon</a></td>
                 <td class="govuk-table__cell">894DBAS</td>
                 <td class="govuk-table__cell">
                   {{ mojBadge({
@@ -89,9 +109,10 @@
                     classes: "govuk-tag--blue"
                   })}}
                 </td>
+                <td class="govuk-table__cell"><a href="">Withdraw</a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
+                <td class="govuk-table__cell"><a href="">Jason Mamoa</a></td>
                 <td class="govuk-table__cell">123AKMO</td>
                 <td class="govuk-table__cell">
                   {{ mojBadge({
@@ -106,6 +127,7 @@
                     classes: "govuk-tag--blue"
                   })}}
                 </td>
+                <td class="govuk-table__cell"><a href="">Withdraw</a></td>
               </tr>
             </tbody>
           </table>
@@ -122,11 +144,12 @@
               <th scope="col" class="govuk-table__header">Tier</th>
               <th scope="col" class="govuk-table__header">Arrival date</th>
               <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Action</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="request-for-placement/check-your-answers.html">David Francis</a></td>
+              <td class="govuk-table__cell"><a href="request-for-placement/submitted-application.html">David Francis</a></td>
               <td class="govuk-table__cell">783JSAA</td>
               <td class="govuk-table__cell">
                 {{ mojBadge({
@@ -140,9 +163,10 @@
                   text: "Submitted"
                 })}}
               </td>
+              <td class="govuk-table__cell"><a href="">Withdraw</a></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="">Paul Farmer</a></td>
+              <td class="govuk-table__cell"><a href="request-for-placement/submitted-application.html">Paul Farmer</a></td>
               <td class="govuk-table__cell">894DBAS</td>
               <td class="govuk-table__cell">
                 {{ mojBadge({
@@ -156,9 +180,10 @@
                   text: "Submitted"
                 })}}
               </td>
+              <td class="govuk-table__cell"><a href="">Withdraw</a></td>
             </tr>
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
+              <td class="govuk-table__cell"><a href="request-for-placement/submitted-application.html">Jas Patel</a></td>
               <td class="govuk-table__cell">123AKMO</td>
               <td class="govuk-table__cell">
                 {{ mojBadge({
@@ -172,6 +197,7 @@
                   text: "Submitted"
                 })}}
               </td>
+              <td class="govuk-table__cell"><a href="">Withdraw</a></td>
             </tr>
           </tbody>
         </table>
@@ -217,7 +243,7 @@
                 </td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="">Rita Patel</a></td>
+                <td class="govuk-table__cell"><a href="">Jas Patel</a></td>
                 <td class="govuk-table__cell">894DBAS</td>
                 <td class="govuk-table__cell">29 Aug 2022</td>
                 <td class="govuk-table__cell">Rowan King</td>
