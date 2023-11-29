@@ -1,0 +1,107 @@
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+
+<div class="govuk-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+        <h2 class="govuk-heading-m">Personal details</h2>
+        
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['pp-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/pp-details.html">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['pp-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/pp-details.html">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['pp-email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/pp-details.html">
+                Change<span class="govuk-visually-hidden"> customer reference</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Office address 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['address-line-1'] }}<br>
+              {{ data['address-line-2'] }} <br>
+              {{ data['address-town'] }} <br>
+              {{ data['address-county'] }}<br>
+              {{ data['address-postcode'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/pp-details.html">
+                Change<span class="govuk-visually-hidden"> address</span>
+              </a>
+            </dd>
+          </div>
+         
+       
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Accept and send
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
