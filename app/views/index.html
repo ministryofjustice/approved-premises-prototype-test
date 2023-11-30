@@ -77,50 +77,56 @@
 {% set assessHtml %}
     <h1 class="govuk-heading-l"> Assess </h1>
    
-    <p>An assessor will log in and arrive at their <a href="assess/assess-dashboard.html"> dashboard</a> where they can view cases that are in progress, have requested further information from a PP and cases that have been submitted.</p>
-    <p>If a user wants to view a case that's in progress, they will be taken to a <a href="assess/tasklist.html">task list</a> where they can work through each task. </p> 
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="assess/assess-dashboard.html"> Assessor dashboard </a> </li>
+      <li><a href="assess/tasklist.html">Tasklist</a></li>
+    </ul></il>
     
+    <p>We need to ask additional questions within the assessment for applications that are</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="assess/emergancy-additional.html">are emergency or short term applications</a></li>
+        <li><a href="assess/contingency-additional.html">require a contingency plan</a></li>
+        <li><a href="assess/pipe-additional.html">PIPE</a></li>
+        <li><a href="assess/esap-additional.html">ESAP</a></li>
+        <li><a href="assess/rfap-additional.html">Recovery Focused (?) </a></li>
+      </ul>
+  
 
-    <p><b>Contingency plan, ESAP, PIPE and timeliness questions</b></p>
-    <p>We need to show additional screens for PIPE, ESAP, RFAP, timeliness  and contingency plans.</p>
-    <p><a href="assess/emergancy-additional.html">Timeliness (applications that have been submitted within four months of arrival)</a></p>
-    <p><a href="assess/pipe-additional.html">PIPE additional questions</a></p>
-    <p><a href="assess/esap-additional.html">ESAP additional questions</a></p>
-    <p><a href="assess/rfap-additional.html">RFAP additional questions</a></p>
-    <p><a href="assess/contingency-additional.html">Contingency plans additional questions</a></p>
+    <h2 class="govuk-heading-s">If an assessor requires further information about the application</h2>
+     <p>This currently remains as an offline process</p>
+     
+     <p>The assessor will select no on the <a href="assess/sufficient-information.html">sufficient information</a> screen and will be asked to provide the information required in the text box. We show the PPs information on the following screen. When the assessor has received this information, they will provide the <a href="assess/online-info-request/info-request-input.html">outline any information given</a> before returning to the assessment.</p>
 
 
-    <h2 class="govuk-heading-m">Offline process - request further information </h2>
-    <p>The assessor will select 'No' on the <a href="assess/sufficient-information.html">sufficient information</a> screen and will be asked to provide the information required in the text box. They will then be taken to the next screen which gives them the PP's information.</p>
-    <p><a href="assess/online-info-request/info-request-input.html">Assessor inputs information received from PP</a></p>
-
-
-    <h2 class="govuk-heading-m">Digital process - request further information (PP & Assessor screens)</h2>
-    <p><a href="assess/assessor-request-info.html">Request information (assessor)</a></p>
-    <p><a href="assess/pp-info-request.html">Provide information (Probation practicioner)</a></p>
-    <p><a href="assess/pp-check-info.html">Check additional information (Probation practicioner)</a></p>
-    <p><a href="assess/assessor-review-info.html">Review additional information (Assessor)</a></p>
+    <h2 class="govuk-heading-s">We designed a concept for a digital information request journey</h2>
+    <p>The assessor will <a href="assess/assessor-request-info.html">request information using the form.</a> The PP will then provide the relevant information and <a href="assess/pp-info-request.html">provide the information and check their answers</a>. The assessor will then <a href="assess/assessor-review-info.html">review additional information</a> and make a decision on whether they require further information.</p>
 
   
 {% endset -%}
 
 
 {% set cruAllocation %}
-<h1 class="govuk-heading-l"> CRU allocation </h1>
+  <h1 class="govuk-heading-l"> Workflow (Allocation) </h1>
 
-<p> CRU staff will use the system to track cases that are being assessed and matched, and will have the ability to unalocate cases that aren't being completed. </p>
-<p>We have designed allocation screens for the CRU</p>
+  <p><strong> This concept is out of date </strong></p>
+    <p> CRU staff will use the workflow service to monitor assessments and placements that are ready to be matched. CRU staff will have the ability to reassign cases to other users. </p>
+     <p><a href="/cru-allocation/cru-allocation-dashboard.html">CRU allocation dashboard</a></p>
 
-<p><a href="/cru-allocation/cru-allocation-dashboard.html">CRU allocation dashboard</a></p>
 {% endset -%}
 
 {% set requestForPlacement %}
-<h1 class="govuk-heading-l"> Request for Placement </h1>
+  <h1 class="govuk-heading-l"> Requesting a placement </h1>
+    <p>Placement requests can be made by a PP for an applications that have been assessed as suitable and have a confirmed release date. </p>
+    <p>CRU managers will review all placement requests.</p>
 
-<p> The CRU managers will review any request for placements in that region. They will log on to the service, and go through the following process  </p>
 
-<p><a href="/">CRU manager 'Review' dashboard</a></p>
-<p><a href="/request-for-placement/review-check-answers">Review request for placement</a></p>
+    <h2 class="govuk-heading-s">PP submits a placement request </h2>
+    <p>Once a parole or ROTL application has been assessed (as suitable), PPs can submit a request for placement. This is done when a date of arrival is known. </p>
+
+    <p><a href="/request-for-placement/type-of-rfp.html">Request for placement journey</a></p>
+
+    <h2 class="govuk-heading-s">CRU manager reviews a placement request </h2>
+<p><a href="/request-for-placement/review-check-answers">CRU manager reviews a placement request</a></p>
 
 {% endset -%}
 
