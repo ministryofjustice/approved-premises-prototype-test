@@ -1,0 +1,96 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="crn" method="get">
+                <input type="hidden" name="" value="">
+                <h1 class="govuk-heading-l">Apply for an Approved Premises (AP) placement</h1>
+
+                <p class="govuk-body">Use this service to apply for a placement in a male or female Approved Premises (AP).</p>
+
+            
+
+                <p class="govuk-body">Approved Premises support the risk management of individuals who pose a very high
+                    / high risk of serious harm and have complex needs. When applying for an Approved Premises placement
+                    you must identify how the placement will contribute to risk management.</p>
+
+                    <p class="govuk-body">Applications should not be made solely for accommodation needs. Where appropriate, consider alternatives such as CAS2 or CAS3</p>
+
+                    <p class="govuk-body">Applications should be completed 6 months before a person leaves prison. There are some exceptions, for example if the sentence is shorter than 6 months or there has been a change in risk or circumstances.</p>
+
+                    <p class="govuk-body">You can save your progress and return to your application at any time.</p>
+
+                
+
+
+                <h2 class="govuk-heading-m">Before you start</h2>
+
+                <h3 class="govuk-heading-s">You need:</h3>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>the person's CRN </li>
+                    <li>an up to date OASys assessment completed within the last 6 months - this is required in order
+                        for the service to import OASys information</li>
+                </ul>
+
+                <h3 class="govuk-heading-s">You need to know:</h3>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        <a
+                            href="">eligibility
+                            requirements</a> - you'll need to demonstrate why an AP is necessary over other
+                        interventions and accommodation options
+                    </li>
+                    <li>factors impacting which location, type of AP, and type of room will be suitable</li>
+                    <li>how you'll prepare for move on after the AP</li>
+                </ul>
+
+                <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                        <span class="govuk-visually-hidden">Warning</span>
+                        <p class="govuk-!-font-weight-bold">The person's OASys record must be updated before starting an
+                            application.</p>
+                        <p class="govuk-!-font-weight-bold">If you start an application and then update the OASys
+                            record, any changes will not be imported. You will need to restart the application from the
+                            beginning for the changes to be imported.</p>
+                    </strong>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--start"
+                    data-module="govuk-button">
+                    Start now
+                    <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+                        viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+                    </svg>
+                </button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

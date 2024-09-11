@@ -1,0 +1,37 @@
+{% extends "layouts/hmpps-logged-in.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<h1 class="govuk-heading-l">Approved Premises</h1>
+
+<div class="card-container">
+
+
+  <div class="card" data-cy-card-service="apply">
+    <div class="card-body">
+      <h2 class="govuk-heading-s">
+        <a class="govuk-link" href="applications">Apply for an Approved Premises placement</a>
+      </h2>
+      <p class="govuk-body">Apply for an Approved Premises placement on behalf of a person in custody or on probation.</p>
+    </div>
+  </div>
+
+  <div class="card" data-cy-card-service="timeline">
+    <div class="card-body">
+      <h2 class="govuk-heading-s">
+        <a class="govuk-link" href="/people/timeline/find">View a person's timeline</a>
+      </h2>
+      <p class="govuk-body">View activity about a person, including previous applications, placements, and assessments.</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+  </div>
+
+{% endblock %}

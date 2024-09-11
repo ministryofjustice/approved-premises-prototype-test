@@ -1,20 +1,64 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-logged-out.html" %}
 
 {% set pageName="Home" %}
 
 {% block content %}
 
+<div class="govuk-width-container">
+        
+
+    
+
+
+
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
+<span class="govuk-hint">All prototypes for</span>
+<h1 class="govuk-heading-l">
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
+Approved premises
+
+</h1>
+
+<h2 class="govuk-heading-l">Beta - all sprints (jira)</h2>
+<h3 class="govuk-heading-m">Mar -   3 September 2024</h3>
+
+<p> <a href="sprints">All sprints</a></p>
+
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="govuk-grid-column-one-third">
+<h3 class="govuk-heading-m">Resources</h3>
+<ul class="govuk-list">
+<li><a href="">Research</a></li>
+<li><a href="">Flow diagrams</a></li>
+<li><a href="">Service maps</a></li>
+<li><a href="">Jira board</a></li>
+<li><a href="">Confluence</a></li>
+
+</ul>
+</div>
+</div>
+
 </div>
 
 {% endblock %}
