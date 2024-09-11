@@ -1,0 +1,42 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{{ govukRadios({
+    classes: "",
+    idPrefix: "married",
+    name: "married",
+    fieldset: {
+      legend: {
+        text: "Has the Complex Case Board determined that the person should be placed in a female AP??",
+        
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes~/womens-estate/transgender",
+        text: "Yes"
+      },
+      {
+        value: "no~/womens-estate/case-manager-information",
+        text: "No"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+  
+{% endblock %}

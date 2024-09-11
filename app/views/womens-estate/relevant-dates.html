@@ -1,0 +1,556 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/applications/2d22d0cc-1f8c-499c-8bfb-b11f5dfd4134/tasks/basic-information/pages/relevant-dates?_method=PUT" method="post">
+      <input type="hidden" name="_csrf" value="LWrqw4m1-PpsATALOskNpHkj8Ck9n8wI5vuw">
+
+      
+
+
+
+
+
+      
+
+<h1 class="govuk-heading-l">
+  Which of the following dates are relevant?
+</h1>
+
+
+
+
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+<div id="selectedDates[]-hint" class="govuk-hint">
+  Select any dates that are relevant to this application. Select all that apply
+</div>
+
+
+<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+  
+  
+    
+
+
+  
+  
+  
+  
+  
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="selectedDates[]" name="selectedDates[]" type="checkbox" value="paroleEligibilityDate" aria-describedby="selectedDates[]-hint" aria-controls="conditional-selectedDates[]" aria-expanded="true">
+    <label class="govuk-label govuk-checkboxes__label" for="selectedDates[]">
+      Parole eligibility date
+    </label>
+    
+  </div>
+  
+  <div class="govuk-checkboxes__conditional" id="conditional-selectedDates[]">
+    <div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" role="group">
+  
+
+  <div class="govuk-date-input" id="paroleEligibilityDate">
+    
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="paroleEligibilityDate-day">
+          Day
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="paroleEligibilityDate-day" name="paroleEligibilityDate-day" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="paroleEligibilityDate-month">
+          Month
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="paroleEligibilityDate-month" name="paroleEligibilityDate-month" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="paroleEligibilityDate-year">
+          Year
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="paroleEligibilityDate-year" name="paroleEligibilityDate-year" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+  </div>
+  
+
+
+  
+    
+
+
+  
+  
+  
+  
+  
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="selectedDates[]-2" name="selectedDates[]" type="checkbox" value="homeDetentionCurfewDate" aria-describedby="selectedDates[]-hint" aria-controls="conditional-selectedDates[]-2" aria-expanded="false">
+    <label class="govuk-label govuk-checkboxes__label" for="selectedDates[]-2">
+      Home Detention Curfew (HDC) date
+    </label>
+    
+  </div>
+  
+  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-selectedDates[]-2">
+    <div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" role="group">
+  
+
+  <div class="govuk-date-input" id="homeDetentionCurfewDate">
+    
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="homeDetentionCurfewDate-day">
+          Day
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="homeDetentionCurfewDate-day" name="homeDetentionCurfewDate-day" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="homeDetentionCurfewDate-month">
+          Month
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="homeDetentionCurfewDate-month" name="homeDetentionCurfewDate-month" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="homeDetentionCurfewDate-year">
+          Year
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="homeDetentionCurfewDate-year" name="homeDetentionCurfewDate-year" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+  </div>
+  
+
+
+  
+    
+
+
+  
+  
+  
+  
+  
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="selectedDates[]-3" name="selectedDates[]" type="checkbox" value="licenceExpiryDate" aria-describedby="selectedDates[]-hint" aria-controls="conditional-selectedDates[]-3" aria-expanded="false">
+    <label class="govuk-label govuk-checkboxes__label" for="selectedDates[]-3">
+      Licence expiry date
+    </label>
+    
+  </div>
+  
+  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-selectedDates[]-3">
+    <div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" role="group">
+  
+
+  <div class="govuk-date-input" id="licenceExpiryDate">
+    
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="licenceExpiryDate-day">
+          Day
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="licenceExpiryDate-day" name="licenceExpiryDate-day" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="licenceExpiryDate-month">
+          Month
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="licenceExpiryDate-month" name="licenceExpiryDate-month" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="licenceExpiryDate-year">
+          Year
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="licenceExpiryDate-year" name="licenceExpiryDate-year" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+  </div>
+  
+
+
+  
+    
+
+
+  
+  
+  
+  
+  
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="selectedDates[]-4" name="selectedDates[]" type="checkbox" value="pssStartDate" aria-describedby="selectedDates[]-hint" aria-controls="conditional-selectedDates[]-4" aria-expanded="false">
+    <label class="govuk-label govuk-checkboxes__label" for="selectedDates[]-4">
+      Post sentence supervision (PSS) start date
+    </label>
+    
+  </div>
+  
+  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-selectedDates[]-4">
+    <div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" role="group">
+  
+
+  <div class="govuk-date-input" id="pssStartDate">
+    
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="pssStartDate-day">
+          Day
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="pssStartDate-day" name="pssStartDate-day" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="pssStartDate-month">
+          Month
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="pssStartDate-month" name="pssStartDate-month" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="pssStartDate-year">
+          Year
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="pssStartDate-year" name="pssStartDate-year" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+  </div>
+  
+
+
+  
+    
+
+
+  
+  
+  
+  
+  
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="selectedDates[]-5" name="selectedDates[]" type="checkbox" value="pssEndDate" aria-describedby="selectedDates[]-hint" aria-controls="conditional-selectedDates[]-5" aria-expanded="false">
+    <label class="govuk-label govuk-checkboxes__label" for="selectedDates[]-5">
+      Post sentence supervision (PSS) end date
+    </label>
+    
+  </div>
+  
+  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-selectedDates[]-5">
+    <div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" role="group">
+  
+
+  <div class="govuk-date-input" id="pssEndDate">
+    
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="pssEndDate-day">
+          Day
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="pssEndDate-day" name="pssEndDate-day" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="pssEndDate-month">
+          Month
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="pssEndDate-month" name="pssEndDate-month" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="pssEndDate-year">
+          Year
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="pssEndDate-year" name="pssEndDate-year" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+  </div>
+  
+
+
+  
+    
+
+
+  
+  
+  
+  
+  
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input" id="selectedDates[]-6" name="selectedDates[]" type="checkbox" value="sentenceExpiryDate" aria-describedby="selectedDates[]-hint" aria-controls="conditional-selectedDates[]-6" aria-expanded="false">
+    <label class="govuk-label govuk-checkboxes__label" for="selectedDates[]-6">
+      Sentence expiry date
+    </label>
+    
+  </div>
+  
+  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-selectedDates[]-6">
+    <div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" role="group">
+  
+
+  <div class="govuk-date-input" id="sentenceExpiryDate">
+    
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="sentenceExpiryDate-day">
+          Day
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="sentenceExpiryDate-day" name="sentenceExpiryDate-day" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="sentenceExpiryDate-month">
+          Month
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="sentenceExpiryDate-month" name="sentenceExpiryDate-month" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="sentenceExpiryDate-year">
+          Year
+        </label>
+      
+      
+        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="sentenceExpiryDate-year" name="sentenceExpiryDate-year" type="text" inputmode="numeric">
+      
+      </div>
+    </div>
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+  </div>
+  
+
+
+  
+  
+</div>
+
+</div>
+
+
+
+
+
+      
+
+  
+
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+Save and continue
+</button>
+
+    </form>
+  </div>
+</div>
+  
+{% endblock %}

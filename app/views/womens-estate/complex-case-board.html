@@ -1,0 +1,101 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/applications/16169b99-78b9-4ccc-8cdd-a8f0da0eb127/tasks/basic-information/pages/complex-case-board?_method=PUT" method="post">
+        <input type="hidden" name="_csrf" value="9IlcYV7G-LkfUo5y134VYqeCGivdO7V6NhvE">
+
+        
+
+  
+
+
+
+        
+
+  <h1 class="govuk-heading-l">
+
+    Does the person's gender identity require a complex case board to review their application?
+  </h1>
+
+  <p> A complex case board will determine whether the person requires placement in an Approved Premises (AP) that is different to their legal gender.
+Please see <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1148946/transgender-pf.pdf">The Care and Management of Individuals who are Transgender' framework</a> or contact <a href="mailto:HMPPStransgender@justice.gov.uk">HMPPStransgender@justice.gov.uk</a> for further advice</p>
+
+  
+  
+
+  
+    
+  
+    
+  
+
+  
+
+
+
+<div class="govuk-form-group">
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="reviewRequired" name="reviewRequired" type="radio" value="yes">
+      <label class="govuk-label govuk-radios__label" for="reviewRequired">
+        Yes
+      </label>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="reviewRequired-2" name="reviewRequired" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="reviewRequired-2">
+        No
+      </label>
+      
+    </div>
+    
+  
+    
+    
+  </div>
+
+</div>
+
+
+
+
+        
+  
+    
+  
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

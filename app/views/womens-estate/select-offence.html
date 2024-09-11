@@ -1,0 +1,90 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="Index offence" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Select index offence for Ben Davies</h1>
+
+      <p class="govuk-body">
+        Please select the main offence that will be used to assess Ben Davies's sutability
+        for an Approved Premises (the 'index offence') below:
+      </p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          If the required offence is not visible here, you will not be able to proceed with the application until the
+          offence has been added to NDelius
+        </strong>
+      </div>
+      <form action="confirm-your-details" method="post">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+
+              <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Select offence</span></th>
+
+              <th scope="col" class="govuk-table__header">Offence description</th>
+
+              <th scope="col" class="govuk-table__header">Delius event number</th>
+
+              <th scope="col" class="govuk-table__header">Offence date</th>
+
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="M2500403796" name="offenceId" type="radio" value="M2500403796">
+                  <label class="govuk-label govuk-radios__label" for="M2500403796">
+                    <span class="govuk-visually-hidden">
+                      Select as index offence
+                    </span>
+                  </label>
+                </div>
+              </td>
+
+
+
+
+              <td class="govuk-table__cell">Aggrevated assault</td>
+              <td class="govuk-table__cell">2</td>
+
+
+
+
+              <td class="govuk-table__cell">Wed 6 Jan 2021</td>
+
+
+            </tr>
+
+
+          </tbody>
+        </table>
+
+
+
+        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

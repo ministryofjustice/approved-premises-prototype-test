@@ -1,0 +1,193 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="" method="post">
+      
+
+<h1 class="govuk-heading-l">
+  Provide details for exemption application
+</h1>
+
+
+
+
+<div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+    Have you agreed the case with a senior manager?
+  
+  </legend>
+  
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="agreedCaseWithManager" name="agreedCaseWithManager" type="radio" value="yes" aria-controls="conditional-agreedCaseWithManager" aria-expanded="false">
+      <label class="govuk-label govuk-radios__label" for="agreedCaseWithManager">
+        Yes
+      </label>
+      
+    </div>
+    
+    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-agreedCaseWithManager">
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="managerName">
+    Name of senior manager
+  </label>
+
+
+  <input class="govuk-input" id="managerName" name="managerName" type="text">
+
+</div>
+
+
+
+  
+  
+
+
+
+
+  
+<div class="govuk-form-group">
+
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="agreementDate-hint">
+    
+    <legend class="govuk-fieldset__legend">
+    
+      What date was this agreed?
+    
+    </legend>
+    
+  
+    <div id="agreementDate-hint" class="govuk-hint">
+      For example, 27 3 2007
+    </div>
+  
+  
+    <div class="govuk-date-input" id="agreementDate">
+      
+      
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="agreementDate-day">
+            Day
+          </label>
+        
+        
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="agreementDate-day" name="agreementDate-day" type="text" inputmode="numeric">
+        
+        </div>
+      </div>
+      
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="agreementDate-month">
+            Month
+          </label>
+        
+        
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="agreementDate-month" name="agreementDate-month" type="text" inputmode="numeric">
+        
+        </div>
+      </div>
+      
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="agreementDate-year">
+            Year
+          </label>
+        
+        
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="agreementDate-year" name="agreementDate-year" type="text" inputmode="numeric">
+        
+        </div>
+      </div>
+      
+      
+    </div>
+  
+  </fieldset>
+
+</div>
+
+
+
+  
+  
+
+
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="agreementSummary">
+    Provide a summary of the reasons why this is an exempt application
+  </label>
+
+
+
+  <textarea class="govuk-textarea" id="agreementSummary" name="agreementSummary" rows="5"></textarea>
+
+</div>
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="agreedCaseWithManager-2" name="agreedCaseWithManager" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="agreedCaseWithManager-2">
+        No
+      </label>
+      
+    </div>
+    
+  
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+
+
+
+
+
+      
+
+  
+
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+Save and continue
+</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

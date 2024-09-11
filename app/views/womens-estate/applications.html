@@ -1,0 +1,202 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="Applications" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Approved Premises applications</h1>
+
+
+      <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+        <ul class="moj-sub-navigation__list">
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" aria-current="page" href="applications">My Applications</a>
+          </li>
+
+          <li class="moj-sub-navigation__item">
+            <a class="moj-sub-navigation__link" href="all-applications">All Applications</a>
+          </li>
+        </ul>
+
+      </nav>
+
+
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <ul class="govuk-tabs__list">
+
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#applications">
+              In progress
+            </a>
+          </li>
+
+
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#further-information-requested">
+              Further information requested
+            </a>
+          </li>
+
+
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#applications-submitted">
+              Submitted
+            </a>
+          </li>
+
+
+        </ul>
+
+        <div class="govuk-tabs__panel" id="applications">
+
+          <table class="govuk-table">
+
+            <caption class="govuk-table__caption govuk-table__caption--m">Applications</caption>
+
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+
+                <th scope="col" class="govuk-table__header">Person</th>
+
+                <th scope="col" class="govuk-table__header">CRN</th>
+
+                <th scope="col" class="govuk-table__header">Tier</th>
+
+                <th scope="col" class="govuk-table__header">Arrival date</th>
+
+                <th scope="col" class="govuk-table__header">Started</th>
+
+                <th scope="col" class="govuk-table__header">Status</th>
+
+                <th scope="col" class="govuk-table__header">Actions</th>
+
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+            </tbody>
+          </table>
+
+        </div>
+
+
+        <div class="govuk-tabs__panel" id="further-information-requested">
+
+          <table class="govuk-table">
+
+            <caption class="govuk-table__caption govuk-table__caption--m">Applications</caption>
+
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+
+                <th scope="col" class="govuk-table__header">Person</th>
+
+                <th scope="col" class="govuk-table__header">CRN</th>
+
+                <th scope="col" class="govuk-table__header">Tier</th>
+
+                <th scope="col" class="govuk-table__header">Arrival date</th>
+
+                <th scope="col" class="govuk-table__header">Started</th>
+
+                <th scope="col" class="govuk-table__header">Status</th>
+
+                <th scope="col" class="govuk-table__header">Actions</th>
+
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+            </tbody>
+          </table>
+
+        </div>
+
+
+        <div class="govuk-tabs__panel" id="applications-submitted">
+
+          <table class="govuk-table">
+
+            <caption class="govuk-table__caption govuk-table__caption--m">Applications</caption>
+
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+
+                <th scope="col" class="govuk-table__header">Person</th>
+
+                <th scope="col" class="govuk-table__header">CRN</th>
+
+                <th scope="col" class="govuk-table__header">Tier</th>
+
+                <th scope="col" class="govuk-table__header">Arrival date</th>
+
+                <th scope="col" class="govuk-table__header">Started</th>
+
+                <th scope="col" class="govuk-table__header">Status</th>
+
+                <th scope="col" class="govuk-table__header">Actions</th>
+
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+            </tbody>
+          </table>
+
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Start a new application</h2>
+      <p>Start a new application for an Approved Premises by clicking on the start button below.</p>
+
+
+
+
+
+
+      <a href="start" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Start now
+      </a>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

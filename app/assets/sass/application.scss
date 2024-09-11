@@ -4,3 +4,40 @@
 // 
 
 // Add extra styles here
+@import "cards";
+@import "search";
+
+
+
+// MASTHEAD
+
+.app-masthead {
+    background-color: #1d70b8;
+  }
+  
+  @media (min-width: 40.0625em) {
+    .app-masthead {
+      padding-top: 40px;
+    }
+  }
+  .app-masthead__title, .app-masthead__subtitle, .app-masthead p {
+    color: #ffffff;
+  }
+  
+  .place-context-header {
+    background-color: #f3f2f1;
+    padding: 15px;
+    border-left: 5px solid #1d70b8;
+    margin-bottom: 0;
+  }
+  
+  .place-context-header__attribute-container > div {
+    display: inline;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #0b0c0c;
+  }
+  
+  .place-context-header__attribute-container > div:last-child {
+    border-right: 0;
+  }

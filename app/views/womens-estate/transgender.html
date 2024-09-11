@@ -1,0 +1,72 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/applications/d0f9ac65-bdb1-4899-9123-d8f83ef7473e/tasks/basic-information/pages/transgender?_method=PUT" method="post">
+        <input type="hidden" name="_csrf" value="kgFLYJ94-IEz1vZ0AkV_SkI0dFmHFwKRWw2U">
+
+        
+
+  
+
+
+    
+
+{{ govukRadios({
+  classes: "",
+  idPrefix: "married",
+  name: "married",
+  fieldset: {
+    legend: {
+      text: "Is the person transgender or do they have a transgender history?",
+      isPageHeading: true,
+      
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes~/womens-estate/complex-case-board",
+      text: "Yes"
+    },
+    {
+      value: "no~/womens-estate/",
+      text: "No"
+    }
+  ]
+}) }}
+  
+
+  
+    
+  
+    
+  
+
+
+
+
+
+
+        
+  
+    
+  
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

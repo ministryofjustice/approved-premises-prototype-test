@@ -1,0 +1,32 @@
+
+.search-and-filter__wrapper {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f3f2f1
+}
+
+@media(min-width: 40.0625em) {
+    .search-and-filter__wrapper {
+        padding:30px
+    }
+}
+
+@media(min-width: 40.0625em) {
+    .search-and-filter__wrapper {
+        margin-bottom:30px
+    }
+}
+
+.search-and-filter__crn-label--small {
+    margin-bottom: 5px
+}
+
+.search-and-filter__submit {
+    margin-top: 20px
+}
+
+@media(min-width: 40.0625em) {
+    .search-and-filter__submit {
+        margin-top:30px
+    }
+}
