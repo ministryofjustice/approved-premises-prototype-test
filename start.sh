@@ -2,4 +2,4 @@
 
 set -eu pipefail
 
-npm run build && npm start
+npm run serve
