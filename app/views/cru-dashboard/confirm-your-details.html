@@ -1,0 +1,358 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="Confirm details" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="transgender" method="post">
+      
+
+      
+
+
+
+
+
+      
+
+  <h1 class="govuk-heading-l">
+      Confirm your details
+  </h1>
+  <p class="govuk-body">This information has been imported from Delius.</p>
+
+  <input type="hidden" name="userDetailsFromDelius[name]" value="temporary-accommodation training-2">
+  <input type="hidden" name="userDetailsFromDelius[emailAddress]" value="tom.hipkin@digital.justice.gov.uk">
+  <input type="hidden" name="userDetailsFromDelius[phoneNumber]" value="">
+  <input type="hidden" name="userDetailsFromDelius[area]" value="[object Object]">
+
+  <h2 class="govuk-heading-m">Your details</h2>
+
+  
+
+  
+
+
+
+
+
+
+<dl class="govuk-summary-list">
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Name
+  </dt>
+  <dd class="govuk-summary-list__value">
+    temporary-accommodation training-2
+  </dd>
+  
+</div>
+
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Email
+  </dt>
+  <dd class="govuk-summary-list__value">
+    tom.hipkin@digital.justice.gov.uk
+  </dd>
+  
+</div>
+
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    
+  </dd>
+  
+</div>
+
+
+</dl>
+
+
+  <h2 class="govuk-heading-m">Case details</h2>
+
+  
+
+
+<dl class="govuk-summary-list">
+
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Area
+  </dt>
+  <dd class="govuk-summary-list__value">
+    South East &amp; Eastern
+  </dd>
+  
+</div>
+
+
+</dl>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+<div class="govuk-form-group">
+
+<fieldset class="govuk-fieldset" aria-describedby="detailsToUpdate[]-hint">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+    If you need to update your details, select the relevant box below
+  
+  </legend>
+  
+
+  <div id="detailsToUpdate[]-hint" class="govuk-hint">
+    <p class="govuk-hint">Select all that need to be changed.</p>
+          <p class="govuk-hint">This information will not be written back to Delius</p>
+  </div>
+
+
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    
+    
+      
+  
+  
+    
+    
+    
+    
+    
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="detailsToUpdate[]" name="detailsToUpdate[]" type="checkbox" value="name" aria-controls="conditional-detailsToUpdate[]" aria-expanded="false">
+      <label class="govuk-label govuk-checkboxes__label" for="detailsToUpdate[]">
+        Name
+      </label>
+      
+    </div>
+    
+    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-detailsToUpdate[]">
+      <div class="govuk-form-group">
+  <label class="govuk-label govuk-visually-hidden" for="name">
+    Name
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
+
+</div>
+    </div>
+    
+  
+
+    
+      
+  
+  
+    
+    
+    
+    
+    
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="detailsToUpdate[]-2" name="detailsToUpdate[]" type="checkbox" value="emailAddress" aria-controls="conditional-detailsToUpdate[]-2" aria-expanded="false">
+      <label class="govuk-label govuk-checkboxes__label" for="detailsToUpdate[]-2">
+        Email address
+      </label>
+      
+    </div>
+    
+    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-detailsToUpdate[]-2">
+      <div class="govuk-form-group">
+  <label class="govuk-label govuk-visually-hidden" for="emailAddress">
+    Email address
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-25" id="emailAddress" name="emailAddress" type="text" inputmode="email">
+
+</div>
+    </div>
+    
+  
+
+    
+      
+  
+  
+    
+    
+    
+    
+    
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="detailsToUpdate[]-3" name="detailsToUpdate[]" type="checkbox" value="phoneNumber" aria-controls="conditional-detailsToUpdate[]-3" aria-expanded="false">
+      <label class="govuk-label govuk-checkboxes__label" for="detailsToUpdate[]-3">
+        Phone number
+      </label>
+      
+    </div>
+    
+    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-detailsToUpdate[]-3">
+      <div class="govuk-form-group">
+  <label class="govuk-label govuk-visually-hidden" for="phoneNumber">
+    Phone number
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="phoneNumber" name="phoneNumber" type="text" inputmode="tel">
+
+</div>
+    </div>
+    
+  
+
+    
+      
+  
+  
+    
+    
+    
+    
+    
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="detailsToUpdate[]-4" name="detailsToUpdate[]" type="checkbox" value="area" aria-controls="conditional-detailsToUpdate[]-4" aria-expanded="false">
+      <label class="govuk-label govuk-checkboxes__label" for="detailsToUpdate[]-4">
+        Area
+      </label>
+      
+    </div>
+    
+    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-detailsToUpdate[]-4">
+      <div class="govuk-form-group">
+  <label class="govuk-label govuk-visually-hidden" for="area">
+    AP area
+  </label>
+
+
+
+  <select class="govuk-select govuk-input--width-20" id="area" name="area">
+  
+    
+    <option value="">All areas</option>
+    
+  
+    
+    <option value="c482836a-bd2a-4cce-be6f-c5d548f621f8">London</option>
+    
+  
+    
+    <option value="37ceb2bf-c588-4f08-ab62-8f3e7f9b0c0f">Midlands</option>
+    
+  
+    
+    <option value="6025b8c6-883f-4300-bc26-2b01fbd6e272">North East</option>
+    
+  
+    
+    <option value="93a59a2d-1730-4154-8e02-aee6f2f01a76">North West</option>
+    
+  
+    
+    <option value="858a01cf-9fd1-482c-a983-1a74713f9227" selected="">South East &amp; Eastern</option>
+    
+  
+    
+    <option value="2cc6bc0f-58cf-4d82-99dd-dfc67b7f5c33">South West &amp; South Central</option>
+    
+  
+    
+    <option value="56d78348-64d4-4af2-a13c-e5c0d4d30dd0">Wales</option>
+    
+  
+  </select>
+
+</div>
+    </div>
+    
+  
+
+    
+    
+  </div>
+
+</fieldset>
+
+</div>
+
+
+
+  
+
+{{ govukRadios({
+  classes: "",
+  idPrefix: "married",
+  name: "married",
+  fieldset: {
+    legend: {
+      text: "Do you have case management responsibility?",
+      
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes~/womens-estate/transgender",
+      text: "Yes"
+    },
+    {
+      value: "no~/womens-estate/case-manager-information",
+      text: "No"
+    }
+  ]
+}) }}
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+Save and continue
+</button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

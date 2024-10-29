@@ -1,0 +1,37 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+{{ govukRadios({
+    classes: "",
+    idPrefix: "married",
+    name: "married",
+    fieldset: {
+      legend: {
+        text: "Has the Complex Case Board board taken place?",
+        
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes~/womens-estate/transgender",
+        text: "Yes"
+      },
+      {
+        value: "no~/womens-estate/case-manager-information",
+        text: "No"
+      }
+    ]
+  }) }}
+
+
+{% endblock %}

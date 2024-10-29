@@ -1,0 +1,322 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <h1 class="govuk-heading-l">Task allocation</h1>
+            <div class="search-and-filter__wrapper">
+
+                <form action="/applications/dashboard" method="get">
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                            {% call govukFieldset({
+                            legend: {
+                            text: "Search for a task",
+                            classes: "govuk-fieldset__legend--m",
+                            isPageHeading: true
+                            }
+                            }) %}
+
+                            {{ govukInput({
+                            label: {
+                            text: "Enter a CRN or name"
+                            },
+                            id: "",
+                            name: "",
+                            autocomplete: ""
+                            }) }}
+                            {% endcall %}
+                        </div>
+                    </div>
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">
+                         Filter
+                        </h2>
+                      </legend>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-third">
+
+                        
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="status">
+                                    AP Areas
+                                </label>
+
+
+
+                                <select class="govuk-select" id="status" name="status">
+
+
+                                    <option value="" selected="">All areas</option>
+
+
+
+                                    <option value="">Womens</option>
+
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="status">
+                                Allocated user
+                                </label>
+
+
+
+                                <select class="govuk-select" id="status" name="status">
+
+
+                                    <option value="" selected="">All users</option>
+
+
+
+                                    
+
+
+
+                                
+
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                    
+                        <div class="govuk-grid-column-one-third">
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="status">
+                                Required qualification
+                                </label>
+
+
+
+                                <select class="govuk-select" id="status" name="status">
+
+
+                                    <option value="" selected>All qualifications</option>
+                                    <option value="">Womens AP</option>
+
+
+
+                          
+
+
+
+                                    
+
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                      
+                    
+
+
+
+
+
+
+
+
+                        
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+
+                            {{ govukCheckboxes({
+                                name: "organisation",
+                                classes: "govuk-checkboxes--small",
+                                
+                                items: [
+                                  {
+                                    value: "remember",
+                                    text: "Remember this filter"
+                                  }
+                                 
+                                ]
+                              }) }}
+
+                              <button type="submit" name="submit" data-prevent-double-click="true"
+                              class="govuk-button" data-module="govuk-button">
+                              Apply filters
+                          </button>
+
+                    
+
+                        </div>
+                    </div>
+                    
+
+                </form>
+            </div>
+
+            {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+            {{ mojSubNavigation({
+            label: 'Sub navigation',
+            items: [{
+            text: 'Allocated',
+            href: '#1',
+            active: true
+            }, {
+            text: 'Unallocated',
+            href: '#2'
+            }, {
+            text: 'Completed',
+            href: '#3'
+            }]
+            }) }}
+
+            <table class="govuk-table" data-module="moj-sortable-table">
+
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                
+                      <th scope="col" class="govuk-table__header" aria-sort="ascending">Person</th>
+                
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Due</th>
+                
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Allocated to</th>
+                
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Task type</th>
+
+                      <th scope="col" class="govuk-table__header" aria-sort="none">AP area</th>
+
+                
+                    </tr>
+                  </thead>
+
+                <tbody class="govuk-table__body">
+
+
+                    <tr class="govuk-table__row">
+
+
+
+                        
+                            <td class="govuk-table__cell"><strong><a href="">Gillian Clarkeson</a></strong><br/><span class="govuk-hint">Female</span></td>
+
+
+
+
+                        <td class="govuk-table__cell">-22 Days</td>
+
+
+
+
+                        <td class="govuk-table__cell">EMMA AKAZARAH</td>
+
+
+
+
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Info requested</strong></td>
+
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Assessment</strong></td>
+
+
+
+
+                    
+
+
+
+
+
+                        <td class="govuk-table__cell">
+                        London
+                        </td>
+
+
+                    </tr>
+
+
+
+
+                    
+
+
+                </tbody>
+            </table>
+
+
+            <nav class="govuk-pagination" aria-label="Pagination">
+
+
+                <ul class="govuk-pagination__list">
+
+                    <li class="govuk-pagination__item govuk-pagination__item--current">
+
+                        <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=1"
+                            aria-label="Page 1" aria-current="page">
+                            1
+                        </a>
+
+                    </li>
+
+                    <li class="govuk-pagination__item">
+
+                        <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=2"
+                            aria-label="Page 2">
+                            2
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+
+                <div class="govuk-pagination__next">
+                    <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=2" rel="next">
+
+                        <span class="govuk-pagination__link-title">
+                            Next<span class="govuk-visually-hidden"> page</span>
+                        </span>
+
+
+                        <svg class="govuk-pagination__icon govuk-pagination__icon--next"
+                            xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true"
+                            focusable="false" viewBox="0 0 15 13">
+                            <path
+                                d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                            </path>
+                        </svg>
+
+                    </a>
+                </div>
+
+
+            </nav>
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
