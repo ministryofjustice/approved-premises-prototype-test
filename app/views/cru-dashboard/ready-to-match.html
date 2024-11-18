@@ -1,0 +1,238 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-l">CRU dashboard</h1>
+            <p>All applications that have been assessed as suitable and require matching tyo an AP are listed below</p>
+            <div class="search-and-filter__wrapper">
+                <form action="/applications/dashboard" method="get">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">
+                            Filters
+                        </h2>
+                    </legend>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-third">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="status">
+                                    AP Area
+                                </label>
+                                <select class="govuk-select" id="status" name="status">
+                                    <option value="" selected="">All areas</option>
+                                    <option value="">Womens</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="status">
+                                    Request type
+                                </label>
+                                <select class="govuk-select" id="status" name="status">
+
+
+                                    <option value="" selected="">All request types</option>
+                                    <option value="" selected="">Womens AP</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-third">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <fieldset class="govuk-fieldset govuk-!-margin-top-4">
+
+                                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                                        data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation"
+                                                type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                Remember this filter
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+
+
+
+                            <button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button"
+                                data-module="govuk-button">
+                                Apply filters
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+            {{ mojSubNavigation({
+            label: 'Sub navigation',
+            items: [
+
+
+            {
+                text: 'Unable to match',
+                href: 'unable-to-match'
+         
+            
+                },
+
+
+
+            {
+            text: 'Ready to match',
+            href: 'ready-to-match',
+            active:'true'
+            
+            },
+
+
+            {
+            text: 'Search',
+            href: 'search'
+            }
+
+            ]
+            }) }}
+
+            <table class="govuk-table" data-module="moj-sortable-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Ready to match applications</caption>
+
+
+
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+
+                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Tier</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Requested arrival date</th>
+
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
+
+
+
+
+                    </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+
+                    <tr class="govuk-table__row">
+
+
+                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Gillian
+                                    Clarkeson</a></strong><br /><span class="govuk-body-s">Female</span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
+                        <td class="govuk-table__cell govuk-body-s">20 Jan 2025</td>
+                        <td class="govuk-table__cell govuk-body-s">02 Dec 2024</td>
+                        <td class="govuk-table__cell govuk-body-s">12 weeks</td>
+
+                        <td class="govuk-table__cell govuk-body-s">Standard</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Joe
+                            Smith</a></strong><br /><span class="govuk-body-s"></span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">A2</span></td>
+                        <td class="govuk-table__cell govuk-body-s">20 August 2024</td>
+
+
+
+
+
+
+                        <td class="govuk-table__cell govuk-body-s">28 May 2024</td>
+                        <td class="govuk-table__cell govuk-body-s">12 weeks</td>
+
+                        <td class="govuk-table__cell govuk-body-s">Standard</td>
+
+
+
+
+                    </tr>
+
+
+
+
+
+
+
+                </tbody>
+            </table>
+
+
+            <nav class="govuk-pagination" aria-label="Pagination">
+
+
+                <ul class="govuk-pagination__list">
+
+                    <li class="govuk-pagination__item govuk-pagination__item--current">
+
+                        <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=1"
+                            aria-label="Page 1" aria-current="page">
+                            1
+                        </a>
+
+                    </li>
+
+                    <li class="govuk-pagination__item">
+
+                        <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=2"
+                            aria-label="Page 2">
+                            2
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+
+                <div class="govuk-pagination__next">
+                    <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=2" rel="next">
+
+                        <span class="govuk-pagination__link-title">
+                            Next<span class="govuk-visually-hidden"> page</span>
+                        </span>
+
+
+                        <svg class="govuk-pagination__icon govuk-pagination__icon--next"
+                            xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true"
+                            focusable="false" viewBox="0 0 15 13">
+                            <path
+                                d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                            </path>
+                        </svg>
+
+                    </a>
+                </div>
+
+
+            </nav>
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
