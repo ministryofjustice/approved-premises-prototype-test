@@ -1,0 +1,135 @@
+
+.risk-widgets-columns {
+    display: flex;
+    gap: 30px;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+.risk-widgets-columns div {
+    flex: 1
+}
+
+.rosh-widget {
+    border: 2px solid #0b0c0c;
+    padding: 20px;
+    margin-bottom: 20px
+}
+
+.rosh-widget h2 {
+    margin-bottom: 5px;
+    font-weight: 400
+}
+
+.rosh-widget :nth-child(2) {
+    margin-bottom: 10px
+}
+
+.rosh-widget :nth-child(3) {
+    margin-bottom: 5px
+}
+
+.rosh-widget--low {
+    border: 2px solid #85994b
+}
+
+.rosh-widget--low h2 {
+    color: #485b10
+}
+
+.rosh-widget--medium {
+    border: 2px solid #f47738
+}
+
+.rosh-widget--medium h2 {
+    color: #a34e00
+}
+
+.rosh-widget--high {
+    border: 2px solid #d4351c
+}
+
+.rosh-widget--high h2 {
+    color: #942514
+}
+
+.rosh-widget--very-high {
+    border: 2px solid #942514
+}
+
+.rosh-widget--very-high h2 {
+    color: #711a0d
+}
+
+.rosh-widget__table {
+    text-align: left;
+    margin: 0
+}
+
+.rosh-widget__table tbody th {
+    font-weight: 400
+}
+
+.rosh-widget__table tbody td {
+    font-weight: bold
+}
+
+.rosh-widget__risk--low {
+    color: #485b10
+}
+
+.rosh-widget__risk--medium {
+    color: #a34e00
+}
+
+.rosh-widget__risk--high {
+    color: #942514
+}
+
+.rosh-widget__risk--very-high {
+    color: #711a0d
+}
+
+.mappa-widget {
+    border: 2px solid #4c2c92;
+    padding: 20px;
+    margin-bottom: 20px
+}
+
+.mappa-widget h2 {
+    color: #4c2c92;
+    margin-bottom: 0;
+    font-weight: 400
+}
+
+.mappa-widget p {
+    margin-bottom: 5px
+}
+
+.mappa-widget :last-child {
+    margin-bottom: 0
+}
+
+.risk-flag-widget {
+    border: 2px solid #93afc3;
+    background-color: #ebf7ff;
+    padding: 20px;
+    margin-bottom: 20px
+}
+
+.tier-widget {
+    color: #28a197;
+    border: 2px solid #28a197;
+    padding: 15px;
+    margin-bottom: 20px
+}
+
+.tier-widget h2 {
+    color: #28a197;
+    margin-bottom: 0;
+    font-weight: 400
+}
+
+.tier-widget :last-child {
+    margin-bottom: 0
+}

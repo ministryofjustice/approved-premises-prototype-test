@@ -1,0 +1,90 @@
+// Base styles for the pill component
+
+ .pill-container{
+    margin: 0 15px;
+  }
+  
+  @media (min-width: 40.0625em) {
+ .pill-container{
+      margin: 0 30px;
+    }
+  }
+  @media (min-width: 1020px) {
+   .pill-container{
+      margin: 0 30px;
+    }
+  }
+  @media (min-width: 1170px) {
+ .pill-container{
+      margin: 0 auto;
+    }
+  }
+.pill-container {
+    background-color: #F3F2F1;
+    padding: 20px; // Optional padding for better spacing within the container
+    
+
+.pill-list {
+    list-style: none;
+    max-width: 1170px;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; // Adjust the gap between pills if needed
+  
+    li {
+      display: inline-block;
+      background-color: #fff; // Default background color
+      font-family: 'Helvetica', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      color: #0B0C0C; // Font color for all variants
+      padding: 4px 5px;
+      border-radius: 5px;
+      border: 3px solid;
+  
+      // Default variant (no additional styles needed as it's the same as the base styles)
+      &.pill--default {
+        border-color: #0B0C0C;
+      }
+  
+      // Primary variant
+      &.pill--primary {
+        border-color: #0056b3;
+      }
+  
+      // Success variant
+      &.pill--success {
+        border-color: #1e7e34;
+      }
+  
+      // Danger variant
+      &.pill--danger {
+        border-color: #b21f2d;
+      }
+  
+      // Warning variant
+      &.pill--warning {
+        border-color: #d39e00;
+      }
+  
+      // Info variant
+      &.pill--info {
+        border-color: #117a8b;
+      }
+  
+      // Light variant
+      &.pill--light {
+        border-color: #dae0e5;
+      }
+  
+      // Dark variant
+      &.pill--dark {
+        border-color: #1d2124;
+      }
+    }
+  }
+}
+  

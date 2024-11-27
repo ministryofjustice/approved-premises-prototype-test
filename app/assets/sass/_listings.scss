@@ -1,0 +1,172 @@
+
+.listing-entry {
+    margin-bottom: 30px;
+    border: 5px solid #f3f2f1;
+    background-color: #f3f2f1
+}
+
+@media(min-width: 40.0625em) {
+    .listing-entry {
+        margin-bottom:50px
+    }
+}
+
+.listing-entry:focus {
+    outline: 3px solid #fd0
+}
+
+.listing-entry__active {
+    border-color: #1d70b8;
+    background-color: #1d70b8
+}
+
+.listing-entry__active h2,.listing-entry__active a {
+    color: #fff
+}
+
+.listing-entry__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 2px 15px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0)
+}
+
+@media(min-width: 40.0625em) {
+    .listing-entry__header {
+        padding:2px 20px 5px
+    }
+}
+
+.listing-entry__title {
+    margin: 0;
+    padding: 0
+}
+
+.listing-entry__link {
+    margin: 0;
+    padding: 0
+}
+
+.listing-entry__content {
+    color: #0b0c0c;
+    padding: 5px 15px;
+    background-color: #fff
+}
+
+@media print {
+    .listing-entry__content {
+        color: #000
+    }
+}
+
+.listing-entry__content>:last-child {
+    margin-bottom: 0
+}
+
+.listing-entry__content .govuk-summary-list {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 5px
+}
+
+.listing-entry__content .govuk-summary-list__row {
+    border-width: 2px;
+    border-color: #f3f2f1;
+    width: 100%
+}
+
+.listing-entry__content .govuk-summary-list__row:last-child {
+    border-bottom: 0
+}
+
+.listing-entry__content h4 {
+    margin-top: 0px
+}
+
+.listing-entry__content .govuk-grid-row {
+    margin-bottom: 10px
+}
+
+
+.booking-info {
+    margin-bottom: 30px;
+    border: 5px solid #f3f2f1;
+    background-color: #f3f2f1
+}
+
+@media(min-width: 40.0625em) {
+    .booking-info {
+        margin-bottom:50px
+    }
+}
+
+.booking-info:focus {
+    outline: 3px solid #fd0
+}
+
+.booking-info__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 2px 15px 5px;
+    border-bottom: 1px solid rgba(0,0,0,0)
+}
+
+@media(min-width: 40.0625em) {
+    .booking-info__header {
+        padding:2px 20px 5px
+    }
+}
+
+.booking-info__title {
+    margin: 0;
+    padding: 0
+}
+
+.booking-info__history-link {
+    margin: 0;
+    padding: 0
+}
+
+.booking-info__content {
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #fff
+}
+
+@media print {
+    .booking-info__content {
+        color: #000
+    }
+}
+
+@media(min-width: 40.0625em) {
+    .booking-info__content {
+        padding:20px
+    }
+}
+
+.booking-info__content>* {
+    box-sizing: border-box;
+    max-width: 605px
+}
+
+.booking-info__content>:last-child {
+    margin-bottom: 0
+}
+
+.booking-info__content .govuk-summary-list {
+    width: 100%;
+    max-width: none
+}
+
+.booking-info__content .govuk-summary-list__row {
+    border-width: 2px;
+    border-color: #f3f2f1;
+    width: 100%
+}
+
+.booking-info__content .govuk-summary-list__row:last-child {
+    border-bottom: 0
+}

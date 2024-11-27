@@ -1,0 +1,214 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/applications/58cf5b62-6134-4454-8646-7053fe88d1e5/tasks/type-of-ap/pages/ap-type?_method=PUT" method="post">
+        <input type="hidden" name="_csrf" value="276NENsA-LYCmAxPCJxM5xWC_Urwlyuup6gA">
+
+        
+
+  
+
+
+
+        
+
+<h1 class="govuk-heading-l"> Which type of AP does the person require? </h1>
+
+    <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What are the different types of AP?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p><strong>Standard APs</strong> provide 24 hour staff support and monitoring, an overnight curfew, CCTV, room searches, rehabilitative activities, medication monitoring, and drug and alcohol testing.</p>
+            <p><strong>Psychologically Informed Planned Environment (PIPE)</strong> AP are for people who screen into the Offender Personality Disorder (OPD) pathway. PIPE staff have additional training to manage individuals and create an enhanced safe and supportive environment. </p>
+            <p><strong>Enhanced Security AP (ESAP)</strong> offer additional security measures and are intended to individuals whose risk management plan and ability to manage in the community are reliant on those measures. </p>
+            <p><strong>Recovery Focused AP (RFAP)</strong> provide concentrated support for prison leavers who have begun to address their substance misuse in custody. RFAP work closely with key recovery partners and organisations within the local community to offer people on probation the best level of support available. RFAP staff will be trained as recovery coaches and take a personalised approach to rehabilitation, including committing a minimum of 10 hours to each individual to work on a recovery plan tailored to their needs. </p>
+            <p><strong>Specialist Mental Health AP</strong> have additional mental health team support. They are for adult males who have a severe and enduring mental health diagnosis and require intervention from secondary services. There are two specialist mental health AP who each have their own criteria for admission.</p>
+  </div>
+</details>
+
+
+  
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
+
+
+
+<div class="govuk-form-group">
+
+  <div class="govuk-radios" data-module="govuk-radios">
+    
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type" name="type" type="radio" value="normal">
+      <label class="govuk-label govuk-radios__label" for="type">
+        Standard AP
+      </label>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="pipe">
+      <label class="govuk-label govuk-radios__label" for="type-2">
+        Psychologically Informed Planned Environment (PIPE)
+      </label>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type-3" name="type" type="radio" value="esap">
+      <label class="govuk-label govuk-radios__label" for="type-3">
+        Enhanced Security AP (ESAP)
+      </label>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="rfap" aria-describedby="type-4-item-hint">
+      <label class="govuk-label govuk-radios__label" for="type-4">
+        Recovery Focused AP (RFAP)
+      </label>
+      
+      <div id="type-4-item-hint" class="govuk-hint govuk-radios__hint">
+        <p class="govuk-body govuk-hint">You'll need to provide details on whether:</p>
+              <ul class="govuk-list govuk-list--bullet govuk-hint">
+                <li>the person has resided in an incentivised substance-free living (ISFL) area in custody</li>
+                <li>the person has interacted with the DART team in custody</li>
+                <li>the person is willing to comply with the RFAP regime</li>
+              </ul>
+              <p class="govuk-body govuk-hint">While not mandatory for RFAP placement, this information aids in determining suitable alternative placements (AP).</p>
+      </div>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type-5" name="type" type="radio" value="mhapElliottHouse" aria-describedby="type-5-item-hint">
+      <label class="govuk-label govuk-radios__label" for="type-5">
+        Specialist Mental Health AP (Elliott House - Midlands)
+      </label>
+      
+      <div id="type-5-item-hint" class="govuk-hint govuk-radios__hint">
+        <p class="govuk-body govuk-hint">To apply for this type of placement a person must have a confirmed diagnosis of a severe and enduring mental illness e.g. paranoid schizophrenia / bipolar affective disorder (the primary diagnosis should not be personality disorder).</p>
+                <p class="govuk-body govuk-hint">You will be required to complete and upload a <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/:w:/r/sites/ApprovedPremisesCareerDevelopment/Shared%20Documents/CRU/St%20Josephs%20Referral%20form.doc?d=w0e510931be504df7be3b360bbe1b37fe&amp;csf=1&amp;web=1&amp;e=XZd9u4">supplementary form (opens in a new tab)</a> to NDelius before your application is submitted.</p>
+      </div>
+      
+    </div>
+    
+  
+    
+      
+  
+    
+    
+    
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="type-6" name="type" type="radio" value="mhapStJosephs" aria-describedby="type-6-item-hint">
+      <label class="govuk-label govuk-radios__label" for="type-6">
+        Specialist Mental Health AP (St Josephs - Greater Manchester)
+      </label>
+      
+      <div id="type-6-item-hint" class="govuk-hint govuk-radios__hint">
+        <p class="govuk-body govuk-hint">To apply for this type of placement a person must:</p>
+              <ul class="govuk-list govuk-list--bullet govuk-hint">
+                <li>have a confirmed diagnosis of a severe and enduring mental illness e.g. paranoid schizophrenia / bipolar affective disorder</li>
+                <li>be managed by the Probation Service in Greater Manchester</li>
+              </ul>
+              <p class="govuk-body govuk-hint">They must also:</p>
+              <ul class="govuk-list govuk-list--bullet govuk-hint">
+                <li>have had a total of 6 months in a psychiatric ward or day hospital; or</li>
+                <li>have had 3 admissions to hospital or day hospital; or</li>
+                <li>have had 6 months of psychiatric community care involving more than one worker or the perceived need for such care if unavailable or refused; or</li>
+                <li>be under the care of community mental health services and the CPA process; or</li>
+                <li>be under the care of secondary care mental health services within a custodial setting as an alternative to community mental health services</li>
+              </ul>
+              <p class="govuk-body govuk-hint">You will be required to complete and upload a <a class="govuk-link" target="_blank" href="https://justiceuk.sharepoint.com/:w:/s/ApprovedPremisesCareerDevelopment/Eag6XVxypVBHhu-pBMrfvqIBTTva2uNFkKB9Tl6c6OX-jA?e=sGaEma">supplementary form (opens in a new tab)</a> to NDelius before your application is submitted.</p>
+      </div>
+      
+    </div>
+    
+  
+    
+    
+  </div>
+
+</div>
+
+
+
+
+
+        
+  
+    
+  
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+      </form>
+    </div>
+  </div>
+
+  
+{% endblock %}

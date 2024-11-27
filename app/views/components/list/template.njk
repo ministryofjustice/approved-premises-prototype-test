@@ -1,0 +1,9 @@
+<div class="simple-list">
+   {% if params.listTitle %}
+      <h2 class="govuk-heading-s">{{ params.listTitle }}</h2>
+   {% endif %}
+   <ul class="govuk-list">
+      <li class="govuk-list--item">{{ params.value.html | safe }}</li>
+   </ul>
+</div>
+

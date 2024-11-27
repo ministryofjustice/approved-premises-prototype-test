@@ -1,0 +1,15 @@
+<div class="person-list">
+
+   <dl>
+    {% if params.listTitle %}
+      <dt class="govuk-list">{{ params.value.html | safe }}</dt>
+   {% endif %}
+ 
+  <dd class="govuk-list-item">{{ params.value.html | safe }}</dd>
+  <dt><a href="">View the referral</a></dt>
+  
+</dl>
+
+
+</div>
+

@@ -1,0 +1,15 @@
+//
+
+.hmpps-highlight{
+    background-color: #ffe5cc;
+    border-bottom:2px solid #ffb266
+}
+.hmpps-highlight::before, .hmpps-highlight::after{
+    clip-path: inset(100%);
+    clip: rect(1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

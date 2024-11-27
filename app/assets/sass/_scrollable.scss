@@ -1,0 +1,12 @@
+// Mixin for individual borders
+@mixin individual-border($direction, $width: 1px) {
+    border-#{$direction}: {
+      border-width: $width;
+      border-color: $govuk-border-colour;
+    }
+  }
+  
+.Scrollable { 
+max-height: 600px; overflow-y: scroll;
+@include individual-border(left); 
+@include individual-border(right); }

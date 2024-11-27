@@ -1,0 +1,44 @@
+// MOBILE VERSION
+
+// * Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .moj-primary-navigation__container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .moj-primary-navigation__list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .moj-primary-navigation__item {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .moj-primary-navigation__link {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(243, 242, 241);
+    color: rgb(29, 112, 184);
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .moj-primary-navigation__link:hover,
+  .moj-primary-navigation__link:focus {
+    background-color: rgb(0, 48, 120);
+    color: #ffffff;
+  }
+
+  .region-header-navigation {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}

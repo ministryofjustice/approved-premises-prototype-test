@@ -1,0 +1,5 @@
+{# Pass values into macro (params): xxxTitle, xxxBody, xxxLinkText, xxxHref #}
+{# body can be HTML, use | safe when passing #}
+{% macro govukList(params) %}
+    {%- include "./template.njk" -%}
+{% endmacro %}

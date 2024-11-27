@@ -12,197 +12,147 @@
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-
             <h1 class="govuk-heading-l">CRU dashboard</h1>
             <p>All applications that have been assessed as suitable and require matching tyo an AP are listed below</p>
             <div class="search-and-filter__wrapper">
-
                 <form action="/applications/dashboard" method="get">
-
-            
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h2 class="govuk-fieldset__heading">
-                         Filters
+                            Filters
                         </h2>
-                      </legend>
+                    </legend>
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-third">
-
-                        
-
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
                                     AP Area
                                 </label>
-
-
-
                                 <select class="govuk-select" id="status" name="status">
-
-
                                     <option value="" selected="">All areas</option>
-
-
-
                                     <option value="">Womens</option>
-
-
                                 </select>
-
                             </div>
-
                         </div>
                         <div class="govuk-grid-column-one-third">
-
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
-                                Request type
+                                    Request type
                                 </label>
-
-
-
                                 <select class="govuk-select" id="status" name="status">
 
 
                                     <option value="" selected="">All request types</option>
                                     <option value="" selected="">Womens AP</option>
-
-
-
-                                    
-
-
-
-                                
-
-
                                 </select>
-
                             </div>
-
                         </div>
-                    
                         <div class="govuk-grid-column-one-third">
                             <div class="govuk-form-group govuk-!-margin-bottom-0">
                                 <fieldset class="govuk-fieldset govuk-!-margin-top-4">
-                                
-                                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                        Remember this filter
-                                      </label>
-                                    </div>
-                                    </div>
-                                    </fieldset>
-                                    </div>
 
-                        
-
+                                    <div class="govuk-checkboxes govuk-checkboxes--small"
+                                        data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation"
+                                                type="checkbox" value="hmrc">
+                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                                                Remember this filter
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
                         </div>
-
-
-                      
-                    
-
-
-
-
-
-
-
-
-                        
                     </div>
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-full">
 
-                        
 
-                              <button type="submit" name="submit" data-prevent-double-click="true"
-                              class="govuk-button" data-module="govuk-button">
-                              Apply filters
-                          </button>
 
-                    
-
+                            <button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button"
+                                data-module="govuk-button">
+                                Apply filters
+                            </button>
                         </div>
                     </div>
-                    
-
                 </form>
             </div>
-
             {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
-
             {{ mojSubNavigation({
             label: 'Sub navigation',
             items: [
+
+
+            {
+                text: 'Unable to match',
+                href: 'unable-to-match'
+         
             
-        
-
-            
-            {
-            text: 'Unable to match',
-            href: 'unable-to-match',
-            active: true
-            },
-            
-            {
-            text: 'Ready to match',
-            href: 'ready-to-match'
-            },
-
-            {
-                text: 'Matched',
-                href: 'matched'
-                },
-
-
-            {
-                text: 'Change requests',
-                href: 'requests'
                 },
 
                 {
-                    text: 'On hold',
-                    href: 'on-hold'
+                    text: 'Ready to match',
+                    href: 'ready-to-match',
+                    active:'true'
+             
+                
+                    },
+
+
+
+                {
+                    text: 'Matched',
+                    href: 'matched'
                     },
     
+    
                 {
-                    text: 'Search',
-                    href: ''
-                    }
+                    text: 'Change requests',
+                    href: 'requests'
+                    },
+    
+                    {
+                        text: 'On hold',
+                        href: 'on-hold'
+                        },
+        
+                    {
+                        text: 'Search',
+                        href: 'Search'
+                        }
 
-            
+
+
+         
+
             ]
             }) }}
 
             <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Unable to match applications</caption>
+                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Ready to match applications</caption>
 
 
 
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                
-                      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
-                
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Tier</th>
-                
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Requested arrival date</th>
-                
-                    
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
 
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
-                    
+                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Tier</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Requested arrival date</th>
 
 
-                
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
+
+
+
+
                     </tr>
-                  </thead>
+                </thead>
 
                 <tbody class="govuk-table__body">
 
@@ -210,30 +160,31 @@
                     <tr class="govuk-table__row">
 
 
-
-                        
-                            <td class="govuk-table__cell govuk-body-s"><strong><a href="">Gillian Clarkeson</a></strong><br/><span class="govuk-body-s">Female</span></td>
-
-
-
-
+                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Gillian
+                                    Clarkeson</a></strong><br /><span class="govuk-body-s">Female</span></td>
                         <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
+                        <td class="govuk-table__cell govuk-body-s">20 Jan 2025</td>
+                        <td class="govuk-table__cell govuk-body-s">02 Dec 2024</td>
+                        <td class="govuk-table__cell govuk-body-s">12 weeks</td>
+
+                        <td class="govuk-table__cell govuk-body-s">Standard</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Joe
+                            Smith</a></strong><br /><span class="govuk-body-s"></span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">A2</span></td>
+                        <td class="govuk-table__cell govuk-body-s">20 August 2024</td>
 
 
 
 
-                        <td class="govuk-table__cell govuk-body-s">14 August 2024</td>
 
 
+                        <td class="govuk-table__cell govuk-body-s">28 May 2024</td>
+                        <td class="govuk-table__cell govuk-body-s">12 weeks</td>
 
+                        <td class="govuk-table__cell govuk-body-s">Standard</td>
 
-                    
-
-                        <td class="govuk-table__cell govuk-body-s">28 June 2024</td>
-                        <td class="govuk-table__cell govuk-body-s">4 days</td>
-                    
-                        <td class="govuk-table__cell govuk-body-s">Standard release</td>
-                
 
 
 
@@ -242,7 +193,7 @@
 
 
 
-                    
+
 
 
                 </tbody>

@@ -1,0 +1,274 @@
+{% extends "layouts/hmpps-logged-in-profile.html" %}
+
+{% set pageName="Application" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+          
+    <!-- Main content -->
+    
+    
+    <div class="moj-page-header-actions">
+    
+      <div class="moj-page-header-actions__title">
+        <span class="moj-identity-bar__title">
+          <span class="govuk-caption-xl">Nelson House - Placement</span>
+          <h1 class="govuk-heading-xl">
+          09 July 2024 to 30 Aug 2024</h1>
+        </span>
+    
+       
+        
+    
+    
+      </div>
+    
+      <div class="moj-page-header-actions__actions">
+    
+        <div style="float: right;">
+      
+    
+    <div class="moj-button-menu"><button class="govuk-button moj-button-menu__toggle-button " type="button" aria-haspopup="true" aria-expanded="false">Task actions</button>
+      <div class="moj-button-menu__wrapper" role="menu">
+          
+      
+    
+      
+        
+      
+    
+    <a href="#" role="menuitem" draggable="false" class="moj-button-menu__item" data-module="govuk-button" data-secondary="true">
+      In review
+    </a>
+    
+        
+          
+      
+    
+      
+        
+      
+    
+    <a href="record_reject_reason_1" role="menuitem" draggable="false" class="moj-button-menu__item" data-module="govuk-button" data-secondary="true">
+      Reject
+    </a>
+    
+        </div>
+    </div>
+    
+    
+    </div>
+        
+    
+      </div>
+    
+    </div>
+    
+    
+    
+    <!-- IDENTIFIER -->
+      
+        <dl class="govuk-summary-list">
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Sean Gledhill
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  CRN
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  X371199
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  24 Apr 93
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  NOMS number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  A7779DY
+                </dd>
+                
+              </div>
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Nationality
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  British
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Religion or belief
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Apostolic
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Sex
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Male
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Ethnicity
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  White: British/English/Welsh/Scottish/Northern Irish
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Gender identity
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Male
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag" data-cy-status="InCustody">In Custody</strong>
+                </dd>
+                
+              </div>
+            
+          
+            
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Prison
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Moorland (HMP &amp; YOI)
+                </dd>
+                
+              </div>
+            
+          
+        </dl>
+      
+      
+      
+      
+        
+        
+      
+      
+        
+          
+        
+      
+      <a href="record_view" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View full referral
+      </a>
+      
+      
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <form action="/review-and-assess/889ff31a-8afc-4325-9d1c-8e738fea6c18/notes" method="post">
+              <input type="hidden" name="_csrf" value="hHfx47bh-X8I8e3S1y-5dgGbEAXABH_LxyiM">
+              
+        
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m referral-note" for="message">
+          Add a note
+        </label>
+      
+      
+        <textarea class="govuk-textarea" id="message" name="message" rows="5"></textarea>
+      </div>
+      
+      
+      
+              
+        
+      
+      
+        
+          
+        
+      
+      <button data-prevent-double-click="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save note
+      </button>
+      
+            </form>
+          </div>
+        </div>
+      
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l" id="notes">Referral history</h2>
+            <div class="moj-timeline"></div>
+      
+          </div>
+        </div>
+        
+    
+    
+            </main>
+  
+{% endblock %}

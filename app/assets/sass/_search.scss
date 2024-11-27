@@ -1,32 +1,24 @@
+// Define border color variable
+$govuk-border-colour: #000; // Change this to your desired border color
 
-.search-and-filter__wrapper {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f3f2f1
+// Mixin for individual borders
+@mixin individual-border($direction, $width: 1px) {
+  border-#{$direction}: {
+    border-width: $width;
+    border-color: $govuk-border-colour;
+  }
 }
 
-@media(min-width: 40.0625em) {
-    .search-and-filter__wrapper {
-        padding:30px
-    }
+// Usage example
+.example-element {
+  @include individual-border(top); // Apply top border
+  @include individual-border(bottom, 2px); // Apply bottom border with custom width
+  @include individual-border(left); // Apply left border
+  @include individual-border(right); // Apply right border
 }
 
-@media(min-width: 40.0625em) {
-    .search-and-filter__wrapper {
-        margin-bottom:30px
-    }
-}
 
-.search-and-filter__crn-label--small {
-    margin-bottom: 5px
-}
-
-.search-and-filter__submit {
-    margin-top: 20px
-}
-
-@media(min-width: 40.0625em) {
-    .search-and-filter__submit {
-        margin-top:30px
-    }
+// Apply right border to an element
+.border-right {
+  @include individual-border(right);
 }
