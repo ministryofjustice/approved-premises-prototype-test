@@ -46,23 +46,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="govuk-grid-column-one-third">
-                            <div class="govuk-form-group govuk-!-margin-bottom-0">
-                                <fieldset class="govuk-fieldset govuk-!-margin-top-4">
-
-                                    <div class="govuk-checkboxes govuk-checkboxes--small"
-                                        data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="govuk-checkboxes__input" id="organisation" name="organisation"
-                                                type="checkbox" value="hmrc">
-                                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                                Remember this filter
-                                            </label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
+            
                     </div>
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-full">
@@ -84,19 +68,22 @@
 
 
             {
-                text: 'Unable to match',
+                text: 'Ready to book',
+                href: 'ready-to-match',
+                active:'true'
+         
+            
+                },
+
+
+            {
+                text: 'Unable to book',
                 href: 'unable-to-match'
          
             
                 },
 
-                {
-                    text: 'Ready to match',
-                    href: 'ready-to-match',
-                    active:'true'
              
-                
-                    },
 
 
 
@@ -118,7 +105,7 @@
         
                     {
                         text: 'Search',
-                        href: 'Search'
+                        href: ''
                         }
 
 
@@ -146,7 +133,7 @@
                         <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
 
                         <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Case type</th>
 
 
 
@@ -160,7 +147,7 @@
                     <tr class="govuk-table__row">
 
 
-                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Gillian
+                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Bridget Mann
                                     Clarkeson</a></strong><br /><span class="govuk-body-s">Female</span></td>
                         <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
                         <td class="govuk-table__cell govuk-body-s">20 Jan 2025</td>
@@ -170,8 +157,8 @@
                         <td class="govuk-table__cell govuk-body-s">Standard</td>
                     </tr>
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Joe
-                            Smith</a></strong><br /><span class="govuk-body-s"></span></td>
+                        <td class="govuk-table__cell govuk-body-s"><strong><a href="application">Sean Gledhill
+                        </a></strong><br /><span class="govuk-body-s"></span></td>
                         <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">A2</span></td>
                         <td class="govuk-table__cell govuk-body-s">20 August 2024</td>
 

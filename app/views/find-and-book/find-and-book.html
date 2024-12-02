@@ -1,0 +1,496 @@
+{% extends "layouts/hmpps-logged-in-profile.html" %}
+
+{% block pageTitle %}
+Dashboard {{serviceName}}
+{% endblock %}
+
+
+
+{% block beforeContent %}
+
+<!-- Breadcrumb -->
+{% endblock %}
+
+{% block content %}
+<!-- Main content -->
+
+
+<div class="moj-page-header-actions">
+
+  <div class="moj-page-header-actions__title">
+    <span class="moj-identity-bar__title">
+    
+      <h1 class="govuk-heading-xl">View spaces in Albion Street
+    </h1>
+    </span>
+
+   
+    
+
+
+  </div>
+
+  
+
+</div>
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Matching details
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <dl class="govuk-summary-list" data-cy-person-info="true">
+      
+        
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Expected arrival date
+        </dt>
+        <dd class="govuk-summary-list__value">
+        9 December 2024
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Expected departure date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 February 2025
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Length of stay
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 weeks
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Release type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Standard determinate
+        </dd>
+        
+      </div>
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+      Essential criteria
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sexual offences against children
+          Room suitable for a person with sexual offences
+        </dd>
+        
+      </div>
+    
+  
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total capacity
+        </dt>
+        <dd class="govuk-summary-list__value">
+          24 spaces
+        </dd>
+        
+      </div>
+    
+    
+    
+  
+</dl>
+
+  
+  </div>
+</details>
+
+
+<h3 class="govuk-heading-m">Availability for 12 weeks from 9 December 2024</h3>
+
+<h3 class="govuk-heading-m">Filter</h3>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-one-quarter">
+
+
+    {% from 'components/datepicker/macro.njk' import hmppsDatepicker %}
+    {{ hmppsDatepicker({
+        id: "date",
+        name: "date",
+        label: {
+            text: "Start date"
+        },
+    
+        classes: 'hmpps-datepicker--fixed-width'
+    }) }}
+</div>
+<div class="govuk-grid-column-one-quarter">
+
+
+
+  {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+  {{ govukSelect({
+    id: "sort",
+    name: "sort",
+    label: {
+      text: "Length of stay"
+    },
+    items: [
+      {
+        value: "published",
+        text: "Upto 12 weeks"
+      },
+      {
+        value: "updated",
+        text: "Upto 4 weeks",
+        selected: true
+      }
+    ]
+  }) }}
+  
+
+</div>
+</div>
+
+
+{{ govukCheckboxes({
+  
+  name: "organisation",
+  classes: "govuk-checkboxes--small govuk-radios--inline",
+  fieldset: {
+    legend: {
+      text: "Select from the following criteria",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "hmrc",
+      text: "Wheelchair accessible"
+    },
+    {
+      value: "employment-tribunal",
+      text: "Single room"
+    },
+    {
+      value: "MOD",
+      text: "Step-free"
+    },
+    {
+      value: "DfT",
+      text: "En-suite"
+    },
+    {
+      value: "DfT",
+      text: "Designated arson room"
+    }
+
+  ]
+}) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Update"
+}) }}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <p class="govuk-notification-banner__heading">
+  Important
+    
+  </p>
+
+<h3 class="govuk-heading-m">Available on</h3>
+
+<ul>
+
+  <li>
+    Monday 9 December 2024 to Wednesday 11 December 2024 - 3 days</li>
+    <li>Sunday 29 December 2024 - 1 day</li>
+  <li>Thursday 31 December 2024 to Saturday 3 February 2025 - 4 weeks and 6 days</li>
+</ul>
+
+<h3 class="govuk-heading-m">Overbooked on</h3>
+<ul><li>Thursday 12 December 2024 to Saturday 28 December 2024 - 2 weeks and 2 days</li>
+<li>Monday 30 December 2024 - 1 day</li></ul>
+  
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+
+
+{{ mojPageHeaderActions({
+  heading: {
+    text: 'Select an arrival date',
+    classes:"govuk-heading-m"
+  },
+  items: [{
+    text: 'Previous',
+    classes: 'govuk-button--secondary'
+  }, {
+    text: 'Next',
+    classes: 'govuk-button--secondary'
+  }]
+}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="moj-scrollable-pane">
+
+      <p class="govuk-body govuk-body--l">Key</p>
+  
+      <div class="calendar">
+  
+      <ul class="days">
+      <!-- add filler at beginning of month -->
+          <li class="out_of_range calendar-day">
+            
+              <div class="date day_cell">Available</div>
+          </li>
+          <li class="out_of_range calendar-day occupied">
+          
+            <div class="date day_cell">Occupied</div>
+          </li>            
+          <li class="calendar-day selected">
+              <div class="date day_cell">Selected</div>
+              
+          </li>
+          </ul>
+          </div>
+        
+
+<div class="calendar">
+  
+  
+  <ul class="days">
+  <!-- add filler at beginning of month -->
+      <li class="out_of_range calendar-day selected">
+          <div class="date day_cell">Mon 09 Dec</div>
+          <div class="show-info">0 spaces</div>
+      </li>
+      <li class="out_of_range calendar-day">
+        <div class="date day_cell">Tues 10 Dec</div>
+        <div class="show-info">0 spaces</div>
+      </li>            
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Wed 11 Dec</div>
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Thur 12 Dec</div>
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Fri 13 Dec</div>
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sat 14 Dec</div>
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sun 15 Dec</div>
+        
+          <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 16 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Tue 17 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Wed 18 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Thu 19 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Fri 20 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sat 21 Dec</div>
+        
+          <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sun 22 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 23 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Tue 24 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Wed 25 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Thur 26 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Fri 27 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sat 28 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Sun 29 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 30 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Tue 31 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+
+</ul>
+</div>
+
+<div class="calendar">
+  
+  
+  <ul class="days">
+  <!-- add filler at beginning of month -->
+
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+          <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+          <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      <li class="calendar-day occupied">
+        <div class="date day_cell">Mon 09 Dec</div>
+        
+        <div class="show-info">0 spaces</div>
+      </li>
+      
+              
+  <!-- add filler at end of month -->
+      <li class="out_of_range calendar-day">
+          <div class="date day_cell"></div>
+      </li>
+      <li class="out_of_range calendar-day">
+          <div class="date day_cell"></div>
+      </li>
+  </ul>
+  
+
+</div>
+
+
+  </div>
+</div>
+</div>
+  
+ 
+
+    
+
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+
+
+{% endblock %}

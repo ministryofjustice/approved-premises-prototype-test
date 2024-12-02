@@ -1,0 +1,202 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="All cases" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">View bookings and cases </h1>
+
+      
+  <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+  <ul class="moj-sub-navigation__list">
+      <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" aria-current="page"  href="cases">My cases</a>
+      </li>
+    
+      <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" href="all-cases">All cases</a>
+      </li>
+    </ul>
+
+</nav>
+
+
+
+      <div class="search-and-filter__wrapper">
+
+        <form action="/applications/dashboard" method="get">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              {% call govukFieldset({
+                legend: {
+                  text: "Filter my cases",
+                  classes: "govuk-fieldset__legend--m",
+                  isPageHeading: true
+                }
+              }) %}
+              
+                {{ govukInput({
+                  label: {
+                    text: "Name or CRN"
+                  },
+                  id: "",
+                  name: "",
+                  autocomplete: ""
+                }) }}
+                {% endcall %}
+            </div>
+          </div>
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+              
+
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+              
+  
+
+  
+    
+  
+
+<button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button search-and-filter__submit" data-module="govuk-button">
+  Apply filters
+</button>
+
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <table class="govuk-table">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    
+      <th scope="col" class="govuk-table__header">Name and CRN</th>
+    
+    
+    
+      <th scope="col" class="govuk-table__header" aria-sort="none" data-cy-sort-field="tier"><a href="/applications/dashboard?sortBy=tier">Tier</a></th>
+    
+      <th scope="col" class="govuk-table__header" aria-sort="none" data-cy-sort-field="arrivalDate"><a href="/applications/dashboard?sortBy=arrivalDate">Arrival Date</a></th>
+    
+      <th scope="col" class="govuk-table__header" aria-sort="none" data-cy-sort-field="createdAt"><a href="/applications/dashboard?sortBy=createdAt">Departure date</a></th>
+    
+    
+    
+      <th scope="col" class="govuk-table__header">Actions</th>
+    
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+  
+    <tr class="govuk-table__row">
+    
+      
+      
+      <th scope="row" class="govuk-table__header"><a href="case">Bryan Adams</a> <br> X371199</th>
+      
+    
+      
+      
+    
+      
+    
+      
+      
+      <td class="govuk-table__cell"><span class="moj-badge undefined">D2S</span></td>
+      
+    
+      
+      
+      <td class="govuk-table__cell">N/A</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell">06 Sep 2024</td>
+      
+    
+      
+      
+      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue " data-cy-status="started">Not submitted</strong></td>
+      
+    
+      
+      
+  
+      
+    
+    </tr>
+
+
+  
+
+  
+
+  </tbody>
+</table>
+
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+  
+  
+  <ul class="govuk-pagination__list">
+  
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+    
+      <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=1" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    
+    </li>
+  
+    <li class="govuk-pagination__item">
+    
+      <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=2" aria-label="Page 2">
+        2
+      </a>
+    
+    </li>
+  
+  </ul>
+  
+    
+  
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="/applications/dashboard?page=2" rel="next">
+      
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      
+          
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+      
+    </a>
+  </div>
+
+  
+</nav>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layouts/hmpps-logged-in-profile.html" %}
 
-{% set pageName="Application" %}
+{% set pageName="Assessment" %}
 
 {% block beforeContent %}
 <!-- Breadcrumb -->
@@ -77,11 +77,11 @@
   label: 'Sub navigation',
   items: [{
     text: 'Application',
-    href: '#',
-    active: true
+    href: '#'
   }, {
     text: 'Assessment',
-    href: 'assessment'
+    href: 'assessment',
+    active:'true'
   }, 
   {
     text: 'Request for placement',
@@ -102,17 +102,17 @@
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
-      Application
+      Assessment
     </h2>
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Name
+        Assessment outcome
         </dt>
         <dd class="govuk-summary-list__value">
-        Sean Gledhill
+        Suitable
         </dd>
         <dd class="govuk-summary-list__actions">
         
@@ -120,10 +120,10 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        CRN 
+        Date of assessment
         </dt>
         <dd class="govuk-summary-list__value">
-          S699512
+          23 Jul 2024
         </dd>
         <dd class="govuk-summary-list__actions">
         
@@ -131,26 +131,30 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Date of birth
+        Reason for decision
         </dt>
         <dd class="govuk-summary-list__value">
-        03 June 1987
+          Information provided
+      
         </dd>
         <dd class="govuk-summary-list__actions">
-        
+     
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-        Date of birth
+        Assessor details
         </dt>
         <dd class="govuk-summary-list__value">
-        03 June 1987
+        Karen Stoker
+        <br>karen.stoker@justice.gov.uk
         </dd>
         <dd class="govuk-summary-list__actions">
         
         </dd>
       </div>
+
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
       NOMS number
@@ -162,61 +166,7 @@
         
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Nationality
-        </dt>
-        <dd class="govuk-summary-list__value">
-      British
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Religion or belief
-        </dt>
-        <dd class="govuk-summary-list__value">
-        None
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
       
-        </dt>
-        <dd class="govuk-summary-list__value">
-      Sex
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        Make
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Gender identity
-        </dt>
-        <dd class="govuk-summary-list__value">
-        Male
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-        Status
-        </dt>
-        <dd class="govuk-summary-list__value">
-      In custody
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        
-        </dd>
-      </div>
     </dl>
   </div>
 </div>

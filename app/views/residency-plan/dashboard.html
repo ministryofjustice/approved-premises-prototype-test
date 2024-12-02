@@ -1,0 +1,46 @@
+{% extends "layouts/hmpps-logged-in.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<h1 class="govuk-heading-l">Approved Premises</h1>
+
+<div class="card-container">
+
+
+  <div class="card" data-cy-card-service="apply">
+    <div class="card-body">
+      <h2 class="govuk-heading-s">
+        <a class="govuk-link" href="cases">View bookings and assigned cases</a>
+      </h2>
+      <p class="govuk-body">A summary of current bookings and cases assigned. It includes key details such as risk levels, support needs, and residency plans</p>
+    </div>
+  </div>
+
+  <div class="card" data-cy-card-service="timeline">
+    <div class="card-body">
+      <h2 class="govuk-heading-s">
+        <a class="govuk-link" href="/people/timeline/find">View activity logs</a>
+      </h2>
+      <p class="govuk-body">Track and record meetings with residents at an approved premise.</p>
+    </div>
+  </div>
+
+  <div class="card" data-cy-card-service="">
+    <div class="card-body">
+      <h2 class="govuk-heading-s">
+        <a class="govuk-link" href="/people/timeline/find">Training and guidance</a>
+      </h2>
+      <p class="govuk-body">Upto date toolkits, templates and guidance that promote resident safety, rehabilitation, and successful community integration.</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+  </div>
+
+{% endblock %}

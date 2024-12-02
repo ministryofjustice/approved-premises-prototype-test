@@ -1,0 +1,99 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="start" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/applications/d0f9ac65-bdb1-4899-9123-d8f83ef7473e/tasks/basic-information/pages/case-manager-information?_method=PUT" method="post">
+        <input type="hidden" name="_csrf" value="CNPCuBAN-fm3LATYy_eWJN7WTz3zJ5TnB-FI">
+
+        
+
+  
+
+
+
+        
+
+    <h1 class="govuk-heading-l">
+
+        Add case manager information
+    </h1>
+
+    
+  
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--m" for="name">
+    Case manager name
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
+
+</div>
+
+
+
+    
+  
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--m" for="emailAddress">
+    Case manager email
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="emailAddress" name="emailAddress" type="text" inputmode="email">
+
+</div>
+
+
+
+    
+  
+
+
+
+  
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--m" for="phoneNumber">
+    Case manager phone number
+  </label>
+
+
+  <input class="govuk-input govuk-input--width-20" id="phoneNumber" name="phoneNumber" type="text" inputmode="tel">
+
+</div>
+
+
+
+
+
+
+        
+  
+    
+  
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

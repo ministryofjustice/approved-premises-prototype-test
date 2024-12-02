@@ -1,4 +1,4 @@
-{% extends "layouts/hmpps-logged-in-profile.html" %}
+{% extends "layouts/hmpps-logged-in-profile-plan.html" %}
 
 {% set pageName="Application" %}
 
@@ -10,16 +10,16 @@
 {% block content %}
 
 
-<main class="govuk-main-wrapper" id="main-content" role="main">
+
 
   <!-- Main content -->
   <div class="moj-page-header-actions">
 
     <div class="moj-page-header-actions__title">
       <span class="moj-identity-bar__title">
-        <span class="govuk-caption-xl">Nelson House - Placement</span>
+        <span class="govuk-caption-xl">Placement</span>
         <h1 class="govuk-heading-xl">
-          09 July 2024 to 30 Aug 2024</h1>
+          09 July to 30 August 2024</h1>
       </span>
     </div>
     <div class="moj-page-header-actions__actions">
@@ -29,9 +29,9 @@
           <div class="moj-button-menu__wrapper" role="menu">
             <a href="#" role="menuitem" draggable="false" class="moj-button-menu__item" data-module="govuk-button"
               data-secondary="true">
-              In review
+              Start residency plan
             </a>
-            <a href="record_reject_reason_1" role="menuitem" draggable="false" class="moj-button-menu__item"
+            <a href="" role="menuitem" draggable="false" class="moj-button-menu__item"
               data-module="govuk-button" data-secondary="true">
               Reject
             </a>
@@ -47,20 +47,20 @@
   {{ mojSubNavigation({
   label: 'Sub navigation',
   items: [{
-  text: 'Application',
+  text: 'Overview',
   href: '#',
   active: true
   }, {
-  text: 'Assessment',
-  href: 'assessment'
+  text: 'Placement preperation',
+  href: 'preperation'
   },
   {
-  text: 'Request for placement',
-  href: 'request'
+  text: 'Residency plan',
+  href: 'plan'
   },
   {
-  text: 'Placement details',
-  href: 'details'
+  text: 'Schedule',
+  href: 'schedule'
   },
   {
   text: 'Timeline',
@@ -69,70 +69,41 @@
 
   ]
   }) }}
-
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
   <div class="govuk-summary-card">
     <div class="govuk-summary-card__title-wrapper">
       <h2 class="govuk-summary-card__title">
-        Application
+        Schedule
       </h2>
     </div>
     <div class="govuk-summary-card__content">
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Name
+            Next appointment
           </dt>
           <dd class="govuk-summary-list__value">
-            Sean Gledhill
+            Not scheduled
           </dd>
           <dd class="govuk-summary-list__actions">
 
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            CRN
-          </dt>
-          <dd class="govuk-summary-list__value">
-            S699512
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            03 June 1987
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of birth
-          </dt>
-          <dd class="govuk-summary-list__value">
-            03 June 1987
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            NOMS number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            NOMS718
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
+      
+      
+    
+      </dl>
+    </div>
+  </div>
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Personal details
+      </h2>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Nationality
@@ -144,31 +115,13 @@
 
           </dd>
         </div>
+      </dl>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Religion or belief
-          </dt>
-          <dd class="govuk-summary-list__value">
-            None
-          </dd>
-          <dd class="govuk-summary-list__actions">
-
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Sex
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            Make
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Gender identity
+            Gender
           </dt>
           <dd class="govuk-summary-list__value">
             Male
@@ -177,12 +130,31 @@
 
           </dd>
         </div>
+      </dl>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Status
+            Current circumstances
           </dt>
           <dd class="govuk-summary-list__value">
-            In custody
+            -
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Disabilities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
           </dd>
           <dd class="govuk-summary-list__actions">
 
@@ -191,6 +163,29 @@
       </dl>
     </div>
   </div>
+  <!-- END COLUMN CONTENT -->
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="mappa-widget">
+      <h3 class="govuk-heading-m"><strong>CAT MAPPA Cat 1/LEVEL MAPPA Level 2</strong> MAPPA</h3>
+      <p class="govuk-body-m">Multi-agency public protection arrangements</p>
+      
+          <p class="govuk-hint govuk-body-m">Last updated: Fri 7 Dec 2018</p>
+      
+  </div>
+
+  <div class="rosh-widget ">
+    <h3 class="govuk-heading-m">
+        <strong>NO</strong> RoSH</h3>
+    <p class="govuk-body-m">Risk of serious harm</p>
+    <p class="govuk-hint govuk-body-m">A RoSH has not been completed for this individual.</p>
+</div>
+
+
+  </div>
+  </div>
+
+
 
 
   <!-- IDENTIFIER -->
@@ -204,11 +199,5 @@
 
 
 
-
-
-
-
-
-</main>
 
 {% endblock %}

@@ -139,37 +139,45 @@
             label: 'Sub navigation',
             items: [
             
-            {
-                text: 'Ready to book',
-                href: 'ready-to-match'
-                },
+        
 
             
             {
-            text: 'Unable to book',
+            text: 'Unable to match',
             href: 'unable-to-match'
-        
+            
             },
             
-         
+            {
+            text: 'Ready to match',
+            href: 'ready-to-match'
+            },
 
             {
                 text: 'Matched',
-                href: 'matched',
-                active: true
+                href: 'matched'
                 },
+
+
+            {
+                text: 'Change requests',
+                href: 'requests'
+               
+                },
+
                 {
-                    text: 'Change requests',
-                    href: 'requests'
+                    text: 'On hold',
+                    href: 'on-hold'
+                  
+                    
                     },
-                    {
-                        text: 'On hold',
-                        href: 'on-hold'
-                        },
+
+                
     
                 {
                     text: 'Search',
-                    href: ''
+                    href: 'Search',
+                    active: true
                     }
 
             
@@ -194,7 +202,7 @@
                       <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
 
                       <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Reason</th>
                     
 
 
@@ -210,28 +218,28 @@
 
 
                         
-                            <td class="govuk-table__cell govuk-body-s"><strong><a href="">Jack Jones</a></strong></td>
+                            <td class="govuk-table__cell govuk-body-s"><strong><a href="">Gillian Clarkeson</a></strong><br/><span class="govuk-body-s">Female</span></td>
 
 
 
 
-                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">A2</span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
+
+
+
+
+                        <td class="govuk-table__cell govuk-body-s">14 August 2024</td>
 
 
 
 
                     
-
-
-
-
-                        <td class="govuk-table__cell govuk-body-s">23 August 2024</td>
 
                         <td class="govuk-table__cell govuk-body-s">28 June 2024</td>
                         <td class="govuk-table__cell govuk-body-s">4 days</td>
                     
-                        <td class="govuk-table__cell govuk-body-s">Standard release</td>
-                     
+                        <td class="govuk-table__cell govuk-body-s">On hold reason</td>
+                
 
 
 

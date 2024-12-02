@@ -13,16 +13,35 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
 
-            <h1 class="govuk-heading-l">CRU dashboard</h1>
-            <p>All applications that have been assessed as suitable and require matching tyo an AP are listed below</p>
+            <h1 class="govuk-heading-l">Task allocation</h1>
             <div class="search-and-filter__wrapper">
 
                 <form action="/applications/dashboard" method="get">
 
-            
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                            {% call govukFieldset({
+                            legend: {
+                            text: "Search for a task",
+                            classes: "govuk-fieldset__legend--m",
+                            isPageHeading: true
+                            }
+                            }) %}
+
+                            {{ govukInput({
+                            label: {
+                            text: "Enter a CRN or name"
+                            },
+                            id: "",
+                            name: "",
+                            autocomplete: ""
+                            }) }}
+                            {% endcall %}
+                        </div>
+                    </div>
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h2 class="govuk-fieldset__heading">
-                         Filters
+                         Filter
                         </h2>
                       </legend>
                     <div class="govuk-grid-row">
@@ -32,7 +51,7 @@
 
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
-                                    AP Area
+                                    AP Areas
                                 </label>
 
 
@@ -56,7 +75,7 @@
 
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
-                                Request type
+                                Allocated user
                                 </label>
 
 
@@ -64,8 +83,7 @@
                                 <select class="govuk-select" id="status" name="status">
 
 
-                                    <option value="" selected="">All request types</option>
-                                    <option value="" selected="">Womens AP</option>
+                                    <option value="" selected="">All users</option>
 
 
 
@@ -83,21 +101,32 @@
                         </div>
                     
                         <div class="govuk-grid-column-one-third">
-                            <div class="govuk-form-group govuk-!-margin-bottom-0">
-                                <fieldset class="govuk-fieldset govuk-!-margin-top-4">
-                                
-                                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-                                      <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                      <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                        Remember this filter
-                                      </label>
-                                    </div>
-                                    </div>
-                                    </fieldset>
-                                    </div>
 
-                        
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="status">
+                                Required qualification
+                                </label>
+
+
+
+                                <select class="govuk-select" id="status" name="status">
+
+
+                                    <option value="" selected>All qualifications</option>
+                                    <option value="">Womens AP</option>
+
+
+
+                          
+
+
+
+                                    
+
+
+                                </select>
+
+                            </div>
 
                         </div>
 
@@ -117,7 +146,18 @@
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-full">
 
-                        
+                            {{ govukCheckboxes({
+                                name: "organisation",
+                                classes: "govuk-checkboxes--small",
+                                
+                                items: [
+                                  {
+                                    value: "remember",
+                                    text: "Remember this filter"
+                                  }
+                                 
+                                ]
+                              }) }}
 
                               <button type="submit" name="submit" data-prevent-double-click="true"
                               class="govuk-button" data-module="govuk-button">
@@ -137,66 +177,35 @@
 
             {{ mojSubNavigation({
             label: 'Sub navigation',
-            items: [
-            
-            {
-                text: 'Ready to book',
-                href: 'ready-to-match'
-                },
-
-            
-            {
-            text: 'Unable to book',
-            href: 'unable-to-match'
-        
-            },
-            
-         
-
-            {
-                text: 'Matched',
-                href: 'matched',
-                active: true
-                },
-                {
-                    text: 'Change requests',
-                    href: 'requests'
-                    },
-                    {
-                        text: 'On hold',
-                        href: 'on-hold'
-                        },
-    
-                {
-                    text: 'Search',
-                    href: ''
-                    }
-
-            
-            ]
+            items: [{
+            text: 'Allocated',
+            href: '#1',
+            active: true
+            }, {
+            text: 'Unallocated',
+            href: '#2'
+            }, {
+            text: 'Completed',
+            href: '#3'
+            }]
             }) }}
 
             <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Unable to match applications</caption>
-
 
 
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
                 
-                      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="ascending">Person</th>
                 
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Tier</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Due</th>
                 
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Requested arrival date</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Allocated to</th>
                 
-                    
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none">Task type</th>
 
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
-                    
-
+                      <th scope="col" class="govuk-table__header" aria-sort="none">AP area</th>
 
                 
                     </tr>
@@ -210,12 +219,24 @@
 
 
                         
-                            <td class="govuk-table__cell govuk-body-s"><strong><a href="">Jack Jones</a></strong></td>
+                            <td class="govuk-table__cell"><strong><a href="">Gillian Clarkeson</a></strong><br/><span class="govuk-hint">Female</span></td>
 
 
 
 
-                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">A2</span></td>
+                        <td class="govuk-table__cell">-22 Days</td>
+
+
+
+
+                        <td class="govuk-table__cell">EMMA AKAZARAH</td>
+
+
+
+
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Info requested</strong></td>
+
+                        <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Assessment</strong></td>
 
 
 
@@ -225,14 +246,10 @@
 
 
 
-                        <td class="govuk-table__cell govuk-body-s">23 August 2024</td>
 
-                        <td class="govuk-table__cell govuk-body-s">28 June 2024</td>
-                        <td class="govuk-table__cell govuk-body-s">4 days</td>
-                    
-                        <td class="govuk-table__cell govuk-body-s">Standard release</td>
-                     
-
+                        <td class="govuk-table__cell">
+                        London
+                        </td>
 
 
                     </tr>
