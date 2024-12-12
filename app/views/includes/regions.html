@@ -1,0 +1,86 @@
+{# <!-- Where this file is includes, set nunjucks variables for countryID, countryName and countryLabelText to change the defaults 
+    {% set countryID = "departure-country" %}
+    {% set countryName = "departure-country-name" %}
+    {% set countryLabelText = "Which country did they depart from" %}
+    
+    To remove the hint, set countryHint to an empty string
+    {% set countryHint = ""}
+    
+    To change the hint, set countryHint to the hint text
+    {% set countryHint = "Type to search for a country" %}
+    --> #}
+
+     
+    
+    <div class="govuk-form-group">
+      
+{{ govukSelect({
+    id: "sort",
+    name: "sort",
+    label: {
+      text: "Choose a region"
+    },
+        items: [
+      {
+          value: "All regions",
+          text: "All regions"
+      },
+
+    {
+        "value": "East Midlands",
+        "text": "East Midlands"
+    },
+    {
+        "value": "East of England",
+        "text": "East of England"
+    },
+    {
+        "value": "Kent, Surrey & Sussex",
+        "text": "Kent, Surrey & Sussex"
+    },
+    {
+        "value": "London",
+        "text": "London"
+    },
+    {
+        "value": "North East",
+        "text": "North East"
+    },
+    {
+        "value": "North West",
+        "text": "North West"
+    },
+    {
+        "value": "South Central",
+        "text": "South Central"
+    },
+    {
+        "value": "South West",
+        "text": "South West"
+    },
+    {
+        "value": "Wales",
+        "text": "Wales"
+    },
+    {
+        "value": "West Midlands",
+        "text": "West Midlands"
+    },
+    {
+        "value": "Yorkshire & The Humber",
+        "text": "Yorkshire & The Humber"
+    },
+    {
+        "value": "Greater Manchester",
+        "text": "Greater Manchester"
+    },
+    {
+        "value": "National",
+        "text": "National"
+    }
+
+      
+      
+        ]
+      }) }}
+    </div>

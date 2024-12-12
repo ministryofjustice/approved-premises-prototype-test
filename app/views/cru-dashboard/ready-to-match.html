@@ -34,6 +34,7 @@
                             </div>
                         </div>
                         <div class="govuk-grid-column-one-third">
+                            <div class="govuk-button-group">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
                                     Request type
@@ -44,21 +45,17 @@
                                     <option value="" selected="">All request types</option>
                                     <option value="" selected="">Womens AP</option>
                                 </select>
-                            </div>
-                        </div>
-            
-                    </div>
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full">
-
-
-
-                            <button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button"
+                                <button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button"
                                 data-module="govuk-button">
                                 Apply filters
                             </button>
+                            </div>
+
+                            </div>
                         </div>
+                            
                     </div>
+                
                 </form>
             </div>
             {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
@@ -133,7 +130,7 @@
                         <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
 
                         <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
-                        <th scope="col" class="govuk-table__header" aria-sort="none">Case type</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
 
 
 
@@ -147,34 +144,47 @@
                     <tr class="govuk-table__row">
 
 
-                        <td class="govuk-table__cell govuk-body-s"><strong><a href="">Bridget Mann
+                        <td class="govuk-table__cell"><strong><a href="">Bridget 
                                     Clarkeson</a></strong><br /><span class="govuk-body-s">Female</span></td>
                         <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
-                        <td class="govuk-table__cell govuk-body-s">20 Jan 2025</td>
-                        <td class="govuk-table__cell govuk-body-s">02 Dec 2024</td>
-                        <td class="govuk-table__cell govuk-body-s">12 weeks</td>
+                        <td class="govuk-table__cell">20 Jan 2025</td>
+                        <td class="govuk-table__cell">02 Dec 2024</td>
+                        <td class="govuk-table__cell">12 weeks</td>
 
-                        <td class="govuk-table__cell govuk-body-s">Standard</td>
+                        <td class="govuk-table__cell">Standard</td>
                     </tr>
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-body-s"><strong><a href="application">Sean Gledhill
+                        <td class="govuk-table__cell"><strong><a href="">Bob benson
                         </a></strong><br /><span class="govuk-body-s"></span></td>
-                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">A2</span></td>
-                        <td class="govuk-table__cell govuk-body-s">20 August 2024</td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">A2</span></td>
+                        <td class="govuk-table__cell">18 August 2024</td>
+                        <td class="govuk-table__cell">27 May 2024</td>
+                        <td class="govuk-table__cell">12 weeks</td>
+                        <td class="govuk-table__cell">Standard</td>
 
 
 
 
+                    </tr>
 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong><a href="placement-request-ready">Sean Gledhill
+                        </a></strong><br /><span class="govuk-body-s"></span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">A1</span></td>
+                        <td class="govuk-table__cell">20 August 2024</td>
+                        <td class="govuk-table__cell">28 May 2024</td>
+                        <td class="govuk-table__cell">12 weeks</td>
+                        <td class="govuk-table__cell">Standard</td>
+                    </tr>
 
-                        <td class="govuk-table__cell govuk-body-s">28 May 2024</td>
-                        <td class="govuk-table__cell govuk-body-s">12 weeks</td>
-
-                        <td class="govuk-table__cell govuk-body-s">Standard</td>
-
-
-
-
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong><a href="">Steven mann
+                        </a></strong><br /><span class="govuk-body-s"></span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">A2</span></td>
+                        <td class="govuk-table__cell">15 August 2024</td>
+                        <td class="govuk-table__cell">09 May 2024</td>
+                        <td class="govuk-table__cell">12 weeks</td>
+                        <td class="govuk-table__cell">Standard</td>
                     </tr>
 
 

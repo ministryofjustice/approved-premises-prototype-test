@@ -19,16 +19,16 @@
 
                 <form action="/applications/dashboard" method="get">
 
-            
+
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h2 class="govuk-fieldset__heading">
-                         Filters
+                            Filters
                         </h2>
-                      </legend>
+                    </legend>
                     <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-third">
 
-                        
+
 
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
@@ -53,51 +53,29 @@
 
                         </div>
                         <div class="govuk-grid-column-one-third">
-
+                            <div class="govuk-button-group">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
-                                Request type
+                                    Request type
                                 </label>
-
-
-
                                 <select class="govuk-select" id="status" name="status">
 
 
                                     <option value="" selected="">All request types</option>
                                     <option value="" selected="">Womens AP</option>
-
-
-
-                                    
-
-
-
-                                
-
-
                                 </select>
-
+                                <button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button"
+                                data-module="govuk-button">
+                                Apply filters
+                            </button>
                             </div>
 
+                            </div>
                         </div>
-  
-                    </div>
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full">
 
-                        
-
-                              <button type="submit" name="submit" data-prevent-double-click="true"
-                              class="govuk-button" data-module="govuk-button">
-                              Apply filters
-                          </button>
-
-                    
-
-                        </div>
                     </div>
                     
+
 
                 </form>
             </div>
@@ -107,88 +85,96 @@
             {{ mojSubNavigation({
             label: 'Sub navigation',
             items: [
-            
-        
 
-        
-            
+
+
+
+
             {
             text: 'Ready to match',
             href: 'ready-to-match'
             },
 
-               
-            {
-                text: 'Unable to match',
-                href: 'unable-to-match'
-                
-                },
 
             {
-                text: 'Matched',
-                href: 'matched'
-                },
+            text: 'Unable to match',
+            href: 'unable-to-match'
+
+            },
+
+            {
+            text: 'Matched',
+            href: 'matched'
+            },
 
 
             {
-                text: 'Change requests',
-                href: 'requests'
-               
-                },
+            text: 'Change requests',
+            href: 'requests'
 
-                {
-                    text: 'On hold',
-                    href: 'on-hold',
-                    active: true
-                    
-                    },
+            },
 
-                
-    
-                {
-                    text: 'Search',
-                    href: ''
-                    }
+            {
+            text: 'On hold',
+            href: 'on-hold',
+            active: true
 
-            
+            },
+
+
+
+            {
+            text: 'Search',
+            href: ''
+            }
+
+
             ]
             }) }}
 
             <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Unable to match applications</caption>
+                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: On hold applications
+                </caption>
 
 
 
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                
-                      <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
-                
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Tier</th>
-                
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Requested arrival date</th>
-                
-                    
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
 
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none">Reason</th>
-                    
+                        <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Tier</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Requested arrival date</th>
 
 
-                
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Application date</th>
+
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Length of stay</th>
+                        <th scope="col" class="govuk-table__header" aria-sort="none">Release type</th>
+
+
+
+
                     </tr>
-                  </thead>
+                </thead>
 
                 <tbody class="govuk-table__body">
-
-
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong><a href="">Jane
+                                    Miller</a></strong><br /><span class="govuk-body-s">Female</span></td>
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
+                        <td class="govuk-table__cell">14 August 2024</td>
+                        <td class="govuk-table__cell">28 June 2024</td>
+                        <td class="govuk-table__cell">4 days</td>
+                        <td class="govuk-table__cell">Licence</td>
+                    </tr>
                     <tr class="govuk-table__row">
 
 
 
-                        
-                            <td class="govuk-table__cell govuk-body-s"><strong><a href="">Gillian Clarkeson</a></strong><br/><span class="govuk-body-s">Female</span></td>
+
+                        <td class="govuk-table__cell"><strong><a href="">Ben Stewart</a></strong></td>
 
 
 
@@ -198,29 +184,67 @@
 
 
 
-                        <td class="govuk-table__cell govuk-body-s">14 August 2024</td>
+                        <td class="govuk-table__cell">14 August 2024</td>
 
 
 
 
-                    
 
-                        <td class="govuk-table__cell govuk-body-s">28 June 2024</td>
-                        <td class="govuk-table__cell govuk-body-s">4 days</td>
-                    
-                        <td class="govuk-table__cell govuk-body-s">On hold reason</td>
-                
+
+                        <td class="govuk-table__cell">28 June 2024</td>
+                        <td class="govuk-table__cell">4 days</td>
+
+                        <td class="govuk-table__cell">Standard</td>
+
 
 
 
                     </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong><a href="placement-request-on-hold">Gary Owens
+                        </a></strong></td>
+
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
+                        <td class="govuk-table__cell">14 August 2024</td>
+                        <td class="govuk-table__cell">28 June 2024</td>
+                        <td class="govuk-table__cell">4 days</td>
+                        <td class="govuk-table__cell">Standard</td>
 
 
 
 
-                    
+                    </tr>
+                    <tr class="govuk-table__row">
 
 
+
+
+                        <td class="govuk-table__cell"><strong><a href="">Filip Bracken</a></strong></td>
+
+
+
+
+                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--bright-purple">B2</span></td>
+
+
+
+
+                        <td class="govuk-table__cell">14 August 2024</td>
+
+
+
+
+
+
+                        <td class="govuk-table__cell">28 June 2024</td>
+                        <td class="govuk-table__cell">4 days</td>
+
+                        <td class="govuk-table__cell">Standard</td>
+
+
+
+
+                    </tr>
                 </tbody>
             </table>
 

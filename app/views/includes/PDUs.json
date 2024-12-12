@@ -1,0 +1,878 @@
+[
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "East Midlands"
+  },
+  {
+    "name": "All East Midlands Region",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Derby City",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Derbyshire",
+    "region": "East Midlands"
+  },
+  {
+    "name": "East and West Lincolnshire",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Leicester, Leicestershire and Rutland",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Nottingham City",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Nottinghamshire",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "East Midlands"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "East Midlands"
+  },
+  {
+    "name": "All East of England",
+    "region": "East of England"
+  },
+  {
+    "name": "Bedfordshire (includes Bedford, Central Bedfordshire and Luton)",
+    "region": "East of England"
+  },
+  {
+    "name": "Cambridgeshire (includes Peterborough)",
+    "region": "East of England"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "East of England"
+  },
+  {
+    "name": "Essex North (Braintree, Chelmsford, Malden, Colchester, Tendring, Harlow, Uttlesford and Epping Forest)",
+    "region": "East of England"
+  },
+  {
+    "name": "Essex South (Basildon, Brentwood, Rochford and Castlepoint, Southend-on-Sea)",
+    "region": "East of England"
+  },
+  {
+    "name": "Headquarters",
+    "region": "East of England"
+  },
+  {
+    "name": "Hertfordshire",
+    "region": "East of England"
+  },
+  {
+    "name": "Norfolk",
+    "region": "East of England"
+  },
+  {
+    "name": "Northamptonshire",
+    "region": "East of England"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "East of England"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "East of England"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "East of England"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "East of England"
+  },
+  {
+    "name": "Suffolk",
+    "region": "East of England"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "East of England"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "All Greater Manchester",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Bolton",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Bury and Rochdale",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Manchester North",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Manchester South",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Oldham",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Salford",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Stockport and Trafford",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Tameside",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Wigan",
+    "region": "Greater Manchester"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "All KSS",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "East Kent (Swale, Ashford, Canterbury, Folkestone and Hythe, Thanet and Dover)",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "East Sussex (includes Brighton and Hove)",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Enforcement",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Surrey",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "West Kent (Sevenoaks, Dartford, Gravesend, Tonbridge and Malling, Maidstone and Tonbridge Wells)",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "West Sussex",
+    "region": "Kent, Surrey & Sussex"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "London"
+  },
+  {
+    "name": "All London",
+    "region": "London"
+  },
+  {
+    "name": "Barking, Dagenham and Havering",
+    "region": "London"
+  },
+  {
+    "name": "Brent",
+    "region": "London"
+  },
+  {
+    "name": "Camden and Islington",
+    "region": "London"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "London"
+  },
+  {
+    "name": "Croydon",
+    "region": "London"
+  },
+  {
+    "name": "Default Unallocated Borough",
+    "region": "London"
+  },
+  {
+    "name": "Ealing and Hillingdon",
+    "region": "London"
+  },
+  {
+    "name": "Enfield and Haringey",
+    "region": "London"
+  },
+  {
+    "name": "Greenwich and Bexley",
+    "region": "London"
+  },
+  {
+    "name": "Hackney and City",
+    "region": "London"
+  },
+  {
+    "name": "Hammersmith, Fulham, Kensington, Chelsea and Westminster",
+    "region": "London"
+  },
+  {
+    "name": "Harrow and Barnet",
+    "region": "London"
+  },
+  {
+    "name": "Headquarters",
+    "region": "London"
+  },
+  {
+    "name": "IAPS Level 2(N07)",
+    "region": "London"
+  },
+  {
+    "name": "Kingston, Richmond and Hounslow",
+    "region": "London"
+  },
+  {
+    "name": "Lambeth",
+    "region": "London"
+  },
+  {
+    "name": "Lewisham and Bromley",
+    "region": "London"
+  },
+  {
+    "name": "Newham",
+    "region": "London"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "London"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "London"
+  },
+  {
+    "name": "Public Protection London",
+    "region": "London"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "London"
+  },
+  {
+    "name": "Redbridge and Waltham Forest",
+    "region": "London"
+  },
+  {
+    "name": "Southwark",
+    "region": "London"
+  },
+  {
+    "name": "Stakeholder Engagement London",
+    "region": "London"
+  },
+  {
+    "name": "Tower Hamlets",
+    "region": "London"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "London"
+  },
+  {
+    "name": "Wandsworth, Merton and Sutton",
+    "region": "London"
+  },
+  {
+    "name": "YOS",
+    "region": "London"
+  },
+  {
+    "name": "All Cluster - NSD",
+    "region": "National"
+  },
+  {
+    "name": "Bail Information Services",
+    "region": "National"
+  },
+  {
+    "name": "Effective Practice Team",
+    "region": "National"
+  },
+  {
+    "name": "Prevent",
+    "region": "National"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "North East"
+  },
+  {
+    "name": "All North East",
+    "region": "North East"
+  },
+  {
+    "name": "Community Integration",
+    "region": "North East"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "North East"
+  },
+  {
+    "name": "County Durham and Darlington",
+    "region": "North East"
+  },
+  {
+    "name": "Gateshead and South Tyneside",
+    "region": "North East"
+  },
+  {
+    "name": "Headquarters",
+    "region": "North East"
+  },
+  {
+    "name": "Newcastle upon Tyne",
+    "region": "North East"
+  },
+  {
+    "name": "North Tyneside and Northumberland",
+    "region": "North East"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "North East"
+  },
+  {
+    "name": "Personality Disorder Projects - North East",
+    "region": "North East"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "North East"
+  },
+  {
+    "name": "Public Protedtion Residential",
+    "region": "North East"
+  },
+  {
+    "name": "Redcar, Cleveland and Middlesborough",
+    "region": "North East"
+  },
+  {
+    "name": "Stockton and Hartlepool",
+    "region": "North East"
+  },
+  {
+    "name": "Sunderland",
+    "region": "North East"
+  },
+  {
+    "name": "Unallocated Level(N54)",
+    "region": "North East"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "North East"
+  },
+  {
+    "name": "YOS NE",
+    "region": "North East"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "North West"
+  },
+  {
+    "name": "All North West",
+    "region": "North West"
+  },
+  {
+    "name": "Blackburn (Blackburn with Darwin and lower tier LAs in Lancashire - parts of Ribble Valley)",
+    "region": "North West"
+  },
+  {
+    "name": "Central Lancashire",
+    "region": "North West"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "North West"
+  },
+  {
+    "name": "Cumbria",
+    "region": "North West"
+  },
+  {
+    "name": "East Cheshire",
+    "region": "North West"
+  },
+  {
+    "name": "East Lancashire (Burnley, Pendle, Hyndburn, Rossendale and parts of Ribble Valley)",
+    "region": "North West"
+  },
+  {
+    "name": "Knowsley and St Helens",
+    "region": "North West"
+  },
+  {
+    "name": "Liverpool North",
+    "region": "North West"
+  },
+  {
+    "name": "Liverpool South",
+    "region": "North West"
+  },
+  {
+    "name": "Merseyside Resettle",
+    "region": "North West"
+  },
+  {
+    "name": "North West Lancashire (Blackpool and lower tier LAs in Lancashire - Fylde, Wyre and Lancaster)",
+    "region": "North West"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "North West"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "North West"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "North West"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "North West"
+  },
+  {
+    "name": "Sefton",
+    "region": "North West"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "North West"
+  },
+  {
+    "name": "Warrington and Halton",
+    "region": "North West"
+  },
+  {
+    "name": "West Cheshire",
+    "region": "North West"
+  },
+  {
+    "name": "Wirral",
+    "region": "North West"
+  },
+  {
+    "name": "YOS YaTH",
+    "region": "North West"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "South Central"
+  },
+  {
+    "name": "All South Central",
+    "region": "South Central"
+  },
+  {
+    "name": "Buckinghamshire and Milton Keynes",
+    "region": "South Central"
+  },
+  {
+    "name": "East Berkshire (Bracknell Forest, Windsor & Maidenhead and Slough)",
+    "region": "South Central"
+  },
+  {
+    "name": "Enforcement",
+    "region": "South Central"
+  },
+  {
+    "name": "Hampshire North and East (Hampshire but excluding Eastleigh and New Forest)",
+    "region": "South Central"
+  },
+  {
+    "name": "Hampshire South and Isle of Wight (Portsmouth and Isle of Wight)",
+    "region": "South Central"
+  },
+  {
+    "name": "Hampshire South West (Southampton and includes lower tier LAs in Hampshire - Eastleigh and New Forest)",
+    "region": "South Central"
+  },
+  {
+    "name": "Oxfordshire",
+    "region": "South Central"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "South Central"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "South Central"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "South Central"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "South Central"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "South Central"
+  },
+  {
+    "name": "West Berkshire (Reading, Wokingham & West Berkshire)",
+    "region": "South Central"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "South West"
+  },
+  {
+    "name": "All South West",
+    "region": "South West"
+  },
+  {
+    "name": "Bath and North Somerset (Bath and North East Somerset and North Somerset)",
+    "region": "South West"
+  },
+  {
+    "name": "Bristol and South Gloucestershire",
+    "region": "South West"
+  },
+  {
+    "name": "Cornwall and Isles of Scilly",
+    "region": "South West"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "South West"
+  },
+  {
+    "name": "Devon and Torbay",
+    "region": "South West"
+  },
+  {
+    "name": "Dorset (includes Bournemouth, Christchurch and Poole)",
+    "region": "South West"
+  },
+  {
+    "name": "Gloucestershire",
+    "region": "South West"
+  },
+  {
+    "name": "Headquarters",
+    "region": "South West"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "South West"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "South West"
+  },
+  {
+    "name": "Plymouth",
+    "region": "South West"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "South West"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "South West"
+  },
+  {
+    "name": "Somerset",
+    "region": "South West"
+  },
+  {
+    "name": "Swindon and Wiltshire",
+    "region": "South West"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "South West"
+  },
+  {
+    "name": "All Wales",
+    "region": "Wales"
+  },
+  {
+    "name": "Cardiff and the Vale of Glamorgan",
+    "region": "Wales"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "Wales"
+  },
+  {
+    "name": "Cwm Taf Morgannwg (Bridgend, Merthyr Tydfil and Rhondda Cynon Taf)",
+    "region": "Wales"
+  },
+  {
+    "name": "Dyfed Powys (Carmarthenshire, Ceredigion, Pembrokeshire, Powys)",
+    "region": "Wales"
+  },
+  {
+    "name": "Gwent (Blaenau Gwent, Caerphilly, Monmouthshire, Newport, Torfaen)",
+    "region": "Wales"
+  },
+  {
+    "name": "North Wales (Isle of Anglesey, Gwynedd, Conway, Flintshire, Denbighshire)",
+    "region": "Wales"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "Wales"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "Wales"
+  },
+  {
+    "name": "Swansea, Neath Port Talbot",
+    "region": "Wales"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "West Midlands"
+  },
+  {
+    "name": "All West Midlands",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Birmingham Central and South",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Birmingham Courts and Centralised Functions",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Birmingham North, East and Solihull",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Community Integration",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Coventry",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Dudley and Sandwell",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Headquarters",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Herefordshire, Shropshire and Telford",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Staffordshire and Stoke",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Walsall and Wolverhampton",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Warwickshire",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Worcestershire",
+    "region": "West Midlands"
+  },
+  {
+    "name": "Accredited Programmes and Structured Interventions",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "All YaTH",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Barnsley and Rotherham",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Bradford and Calderdale",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Community Integration",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Corporate Services",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Doncaster",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Headquarters",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Hull and East Riding",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Kirklees",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Leeds",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "North and North East Lincolnshire",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "North Yorkshire",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Performance and Quality",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Personality Disorder Projects",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Public Protection Community",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Public Protection Residential",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Sheffield",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Unpaid Work and Attendance Centres",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "Wakefield",
+    "region": "Yorkshire & The Humber"
+  },
+  {
+    "name": "York",
+    "region": "Yorkshire & The Humber"
+  }
+]

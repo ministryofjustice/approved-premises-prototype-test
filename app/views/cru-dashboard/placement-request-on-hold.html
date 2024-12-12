@@ -1,0 +1,198 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+
+{% set pageName="Placement request" %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<a href="#" action="action" class="govuk-back-link" onclick="window.history.go(-1); return false;">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="placement-request-ready" method="post">
+  <!-- Main content -->
+  <div class="moj-page-header-actions">
+
+    <div class="moj-page-header-actions__title">
+      <span class="moj-identity-bar__title">
+        <span class="govuk-caption-xl">Placement request</span>
+        <h1 class="govuk-heading-xl">
+          Gary Owens</h1>
+      </span>
+    </div>
+
+    <div class="moj-page-header-actions__actions">
+
+      {% include "../includes/button-menu.html" %}
+      
+  
+    </div>
+
+    
+  </div>
+
+
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <p><a href="">View application</a> (completed 30 September 2024)</p>
+  <p><a href="">View assessment</a> (completed 04 October) 2024</p>
+  
+
+
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  classes: "govuk-summary-list--no-border",
+  rows: [
+    {
+      key: {
+        text: "CRN"
+      },
+      value: {
+        text: "E164909"
+      }
+    },
+    {
+      key: {
+        text: "Tier"
+      },
+      value: {
+        text: "A1"
+      }
+    },
+    {
+      key: {
+        text: "Requested arrival date"
+      },
+      value: {
+        text: "20 December 2020"
+      }
+    },
+    {
+      key: {
+        text: "Length of stay"
+      },
+      value: {
+        text: '12 weeks'
+      }
+    },
+    {
+      key: {
+        text: "Type of AP"
+      },
+      value: {
+        text: 'Standard'
+      }
+    },
+    {
+      key: {
+        text: "Release type"
+      },
+      value: {
+        text: 'Licence'
+      }
+    }
+
+  ]
+}) }}
+
+
+
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Information for matching
+      </h2>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Preferred APs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ol><li>Wenger House</li><li>Wharfe Lane</li><li>Mickelwaite House</li><li></li></ol>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Essential criteria
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sexual offenses against children
+            <br>
+            Room suitable for a person with sexual offenses
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Desirable criteria
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Observations from assessor
+          </dt>
+          <dd class="govuk-summary-list__value">
+            12 weeks feels the right amount of time to allow this person the required adjustment period
+            prior to moving on.
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
+        
+      </dl>
+    </div>
+  </div>
+
+
+
+
+  <!-- IDENTIFIER -->
+
+</div>
+</div>
+<input type="hidden" name="placement" value="on-hold" novalidate>
+
+</form>
+{% endblock %}
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script>
+
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+
+</script>
+
+{% endblock %}

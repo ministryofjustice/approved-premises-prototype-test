@@ -53,33 +53,24 @@
 
                         </div>
                         <div class="govuk-grid-column-one-third">
-
+                            <div class="govuk-button-group">
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="status">
-                                Request type
+                                    Request type
                                 </label>
-
-
-
                                 <select class="govuk-select" id="status" name="status">
 
 
                                     <option value="" selected="">All request types</option>
                                     <option value="" selected="">Womens AP</option>
-
-
-
-                                    
-
-
-
-                                
-
-
                                 </select>
-
+                                <button type="submit" name="submit" data-prevent-double-click="true" class="govuk-button"
+                                data-module="govuk-button">
+                                Apply filters
+                            </button>
                             </div>
 
+                            </div>
                         </div>
                     
                 
@@ -97,20 +88,7 @@
 
                         
                     </div>
-                    <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-full">
-
-                        
-
-                              <button type="submit" name="submit" data-prevent-double-click="true"
-                              class="govuk-button" data-module="govuk-button">
-                              Apply filters
-                          </button>
-
                     
-
-                        </div>
-                    </div>
                     
 
                 </form>
@@ -160,7 +138,7 @@
             }) }}
 
             <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Unable to match applications</caption>
+                <caption class="govuk-table__caption govuk-table__caption--m">Viewing: Matched applications</caption>
 
 
 
@@ -193,7 +171,7 @@
 
 
                         
-                            <td class="govuk-table__cell govuk-body-s"><strong><a href="">Jack Jones</a></strong></td>
+                            <td class="govuk-table__cell"><strong><a href="">Jack Jones</a></strong></td>
 
 
 
@@ -208,12 +186,12 @@
 
 
 
-                        <td class="govuk-table__cell govuk-body-s">23 August 2024</td>
+                        <td class="govuk-table__cell">23 August 2024</td>
 
-                        <td class="govuk-table__cell govuk-body-s">28 June 2024</td>
-                        <td class="govuk-table__cell govuk-body-s">4 days</td>
+                        <td class="govuk-table__cell">28 June 2024</td>
+                        <td class="govuk-table__cell">4 days</td>
                     
-                        <td class="govuk-table__cell govuk-body-s">Standard release</td>
+                        <td class="govuk-table__cell">Standard release</td>
                      
 
 
