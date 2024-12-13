@@ -6,9 +6,17 @@
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@ministryofjustice/frontend": "^2.2.5",
-    "govuk-frontend": "5.6.0",
-    "govuk-prototype-kit": "13.16.2",
+    
+    "@ministryofjustice/frontend": "3.2.0",
+    "govuk-frontend": "5.2.0",
+    "govuk-prototype-kit": "13.16.1",
+    "jquery": "^3.7.1",
     "radio-button-redirect": "^1.2.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@scottish-government/design-system": "^1.4.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-jinja-template": "^1.4.0"
   }
 }

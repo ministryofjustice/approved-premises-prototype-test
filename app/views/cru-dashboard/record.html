@@ -1,0 +1,365 @@
+{% extends "layouts/hmpps-logged-in-nav.html" %}
+{% block pageTitle %}
+Referral {{serviceName}}
+{% endblock %}
+
+
+
+{% block prisonersearch %}
+<!-- {% include "./includes/prisoner-search.html" %} -->
+{% endblock %}
+
+{% block beforeContent %}
+<!-- Breadcrumb -->
+<div class="govuk-breadcrumbs govuk-!-display-none-print govuk-breadcrumbs--collapse-on-mobile">
+  <ol class="govuk-breadcrumbs__list">
+    <a href="../layouts/hmpps-logged-in-nav.html"></a>
+
+  
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="../../cas-186/referrals/form/eligibility">Home</a>
+     
+    
+    </li>
+
+   
+    
+  
+    
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/review-and-assess">Referrals</a>
+    </li>
+    
+  
+    
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Ben Davies - Summary</li>
+    
+  
+  </ol>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Main content -->
+
+{% if data['eligibility-done'] == 'Yes' %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Update successful
+  </h3>
+  <p class="govuk-body">The referral summary has been updated with your changes</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: "success"
+}) }}
+
+
+
+
+{% endif %}
+
+
+<div class="moj-page-header-actions">
+
+  <div class="moj-page-header-actions__title">
+    <span class="moj-identity-bar__title">
+      <span class="govuk-caption-xl">Referral summary</span>
+      <h1 class="govuk-heading-xl">Ben Davies
+        <strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h1>
+    </span>
+
+  </div>
+
+  
+
+</div>
+
+{%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+{{ mojButtonMenu({
+    "button": {
+        "text": "Menu title"
+    },
+    "items": [
+        {
+            "text": "Menu item 1"
+        },
+        {
+            "text": "Menu item 2"
+        },
+        {
+            "text": "Menu item 3"
+        }
+    ]
+}) }}
+
+
+
+  
+ 
+  
+  
+  
+  
+    
+    
+  
+  
+    
+      
+    
+  
+ 
+  
+  
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <h2 class="govuk-heading-l">Accommodation need</h2>
+
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Sentence information"
+    }
+    },
+  
+  rows: [
+    {
+      key: {
+        text: "Offence ID"
+      },
+      value: {
+        html: "M1503639552"
+      }
+    },
+    {
+      key: {
+        text: "Summary of offending history"
+      },
+      value: {
+        html: "Convictions for sex offences"
+      }
+    },
+    {
+      key: {
+        text: "Which if the following best describes the sentence type?"
+      },
+      value: {
+        html: "Standard determinate custody"
+      }
+    },
+    {
+      key: {
+        text: "What is the sentence legth"
+      },
+      value: {
+        html: "10 months"
+      }
+    },
+    {
+      key: {
+        text: "Sentence expiry date"
+      },
+      value: {
+        html: "27 February 2025"
+      }
+    },
+    {
+      key: {
+        text: "What is the release type?"
+      },
+      value: {
+        html: "End of custody supervised licence (ECSL),
+        Licence, following fixed-term recall"
+      }
+      ,
+      actions: {
+        items: [
+          {
+            href: "../../../current/cas-395/referrals/form/release-type",
+            text: "Change",
+            visuallyHiddenText: "release date"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Licence start date"
+      },
+      value: {
+        html: "27 February 2024"
+      }
+    },
+  
+    {
+      key: {
+        text: "Licence end date"
+      },
+      value: {
+        html: "29 February 2025"
+      }
+    },
+    {
+      key: {
+        text: "PSS start date"
+      },
+      value: {
+        html: "27 February 2025"
+      }
+    },
+    {
+      key: {
+        text: "PSS end date"
+      },
+      value: {
+        html: "27 February 2025"
+      }
+    }
+  ]
+}) }}
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details"
+    }
+    },
+  
+  rows: [
+    {
+      key: {
+        text: "Probation practitioner details"
+      },
+      value: {
+        html: "Name"
+      }
+    },
+
+    {
+      key: {
+        text: "Backup contact / senior probation officer details"
+      },
+      value: {
+        html: "Name"
+      }
+    },
+
+    {
+      key: {
+        text: "PDU"
+      },
+      value: {
+        html: "Mansfield / Nottinghamshire"
+      }
+    },
+    {
+      key: {
+        text: "What is the person's phone number?"
+      },
+      value: {
+        html: "xxx xxx xxx"
+      }
+    }
+  
+    
+
+  ]
+}) }}
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Eligibility"
+    }
+  },
+  
+  rows: [
+  
+
+    {
+      key: {
+        text: "How is the person eligible for Transitional Accomodation? (CAS3)"
+      },
+      value: {
+        html: "  Moving on as homeless from Approved Premises (CAS1)"
+      }
+    },
+
+    {
+      key: {
+        text: "Release date"
+      },
+      value: {
+        html: "23 April 2024"
+      }
+      
+      ,
+      actions: {
+        items: [
+          {
+            href: "../../../current/cas-186/referrals/form/release-date",
+            text: "Change",
+            visuallyHiddenText: "release date"
+          }
+        ]
+      }
+    },
+
+    {
+      key: {
+        text: "Accommodation required from date"
+      },
+      value: {
+        html: "23 April 2024"
+      },
+      actions: {
+        items: [
+          {
+            href: "../../../current/cas-186/referrals/form/accom-required-from",
+            text: "Change",
+            visuallyHiddenText: "accomodation required from date"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+        
+      </div>
+    </div>
+  
+    
+    
+
+{% endblock %}
+
+{% block pageScripts %}
+<!-- Add any javascript files here. Include javascript files only on the pages
+that need them. Excessive javascript files loaded on other pages may slow down
+the response times of the prototype. -->
+<script type="text/javascript" src="/public/javascripts/moj/all.js"></script>
+
+<script>
+
+  new MOJFrontend.ButtonMenu({
+    container: $(".moj-button-menu"),
+    mq: "(min-width: 200em)",
+    buttonText: "Task actions",
+    buttonClasses:
+      "",
+  });
+
+</script>
+
+{% endblock %}

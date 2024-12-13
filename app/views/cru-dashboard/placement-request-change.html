@@ -24,30 +24,36 @@
     </div>
 
     <div class="moj-page-header-actions__actions">
-      <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Menu title">
-
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-        Action
-        </button>
-      
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-          Action
-        </button>
-      
-        <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-          Place on hold
-        </button>
-      
-      </div>
+      {% include "../includes/button-menu.html" %}
       
     </div>
   </div>
 
 
+
 <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+
+{{ mojTicketPanel({
+  attributes: {
+    'aria-label': ''
+  },
+  items: [{
+    html: ' <h2 class="govuk-heading-m govuk-!-margin-bottom-2">A change has been requested: Extension</h2>
+    <p class="govuk-body">Extension period:24 Dec - 7 Jan</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+      Action request
+    </a>',
+    attributes: {
+      'aria-label': 'Section 1'
+    },
+    classes: 'moj-ticket-panel__content--blue'
+  }]
+}) }}
 
   <p><a href="">View application</a> (completed 30 September 2024)</p>
   <p><a href="">View assessment</a> (completed 04 October) 2024</p>
@@ -170,6 +176,18 @@
 
           </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Notes
+          </dt>
+          <dd class="govuk-summary-list__value">
+            AP manager has agreed an extension of 2 weeks from 24th Dec to 7th Jan
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+
+          </dd>
+        </div>
         
       </dl>
     </div>
@@ -182,6 +200,7 @@
 
 </div>
 </div>
+
 <input type="hidden" name="placement" value="on-hold" novalidate>
 
 </form>
